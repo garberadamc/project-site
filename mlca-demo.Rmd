@@ -210,7 +210,7 @@ lca_enum_fit <- mplusModeler(lca_enum,
 
 ```
 
-```{r, eval=TRUE, results = 'asis'}
+```{r, eval=TRUE}
 
 output_enum <- readModels(here("enum_mplus"))
 
@@ -223,7 +223,7 @@ enum_summary <- LatexSummaryTable(output_enum,
                                    sortBy = "Title")
 
 enum_summary %>% 
-  kable("latex", booktabs = T, linesep = "") %>% 
+  kable(booktabs = T, linesep = "") %>% 
   kable_styling(c("striped"), 
                 full_width = F,
                 position = "left")
@@ -231,11 +231,6 @@ enum_summary %>%
 
 #### plot 4-class LCA probability plot
 ```{r}
-
-library(extrafont)
-library(gridExtra)
-library(scales)
-library(relimp)
 
 # extract posterior probabilities 
 pp1 <- as.data.frame(output_enum[["c_4_mlca_enum.out"]]
@@ -296,7 +291,7 @@ knitr::include_graphics(here("figures", "C4_LCA_MLCA.png"))
 
 ```{r}
 
-# ICC: in this example the ICC's are zero because items are dichotomous
+# Note: In this example the ICC's are zero because items are dichotomous
 
   mlca_00  <- mplusObject(
       
@@ -849,7 +844,7 @@ mlca_07_fit <- mplusModeler(mlca_07,
 ## ______________________________________________
 
 #### Table of model fit 
-```{r, eval=TRUE, results = 'asis'}
+```{r, eval=TRUE}
 
 output_mlca <- readModels(here("mlca_out"))
 
@@ -862,7 +857,7 @@ mlca_summary <- LatexSummaryTable(output_mlca,
                                    sortBy = "Title")
 
 mlca_summary %>% 
-  kable("latex", booktabs = T, linesep = "") %>% 
+  kable(booktabs = T, linesep = "") %>% 
   kable_styling(c("striped"), 
                 full_width = F,
                 position = "left")

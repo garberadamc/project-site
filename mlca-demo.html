@@ -812,7 +812,12 @@ lca_enum_fit &lt;- mplusModeler(lca_enum,
                             check=TRUE, run = TRUE, hashfilename = FALSE)
 })</code></pre>
 <pre class="r"><code>output_enum &lt;- readModels(here(&quot;enum_mplus&quot;))</code></pre>
-<p>Reading model: /Users/agarber/github/project-site/enum_mplus/c_1_mlca_enum.out Reading model: /Users/agarber/github/project-site/enum_mplus/c_2_mlca_enum.out Reading model: /Users/agarber/github/project-site/enum_mplus/c_3_mlca_enum.out Reading model: /Users/agarber/github/project-site/enum_mplus/c_4_mlca_enum.out Reading model: /Users/agarber/github/project-site/enum_mplus/c_5_mlca_enum.out Reading model: /Users/agarber/github/project-site/enum_mplus/c_6_mlca_enum.out</p>
+<pre><code>## Reading model:  /Users/agarber/github/project-site/enum_mplus/c_1_mlca_enum.out 
+## Reading model:  /Users/agarber/github/project-site/enum_mplus/c_2_mlca_enum.out 
+## Reading model:  /Users/agarber/github/project-site/enum_mplus/c_3_mlca_enum.out 
+## Reading model:  /Users/agarber/github/project-site/enum_mplus/c_4_mlca_enum.out 
+## Reading model:  /Users/agarber/github/project-site/enum_mplus/c_5_mlca_enum.out 
+## Reading model:  /Users/agarber/github/project-site/enum_mplus/c_6_mlca_enum.out</code></pre>
 <pre class="r"><code>enum_summary &lt;- LatexSummaryTable(output_enum, 
                 keepCols=c(&quot;Title&quot;, 
                            &quot;LL&quot;, 
@@ -821,19 +826,117 @@ lca_enum_fit &lt;- mplusModeler(lca_enum,
                                    sortBy = &quot;Title&quot;)
 
 enum_summary %&gt;% 
-  kable(&quot;latex&quot;, booktabs = T, linesep = &quot;&quot;) %&gt;% 
+  kable(booktabs = T, linesep = &quot;&quot;) %&gt;% 
   kable_styling(c(&quot;striped&quot;), 
                 full_width = F,
                 position = &quot;left&quot;)</code></pre>
-
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:right;">
+LL
+</th>
+<th style="text-align:right;">
+BIC
+</th>
+<th style="text-align:right;">
+aBIC
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+C1_mlca_enum_demo
+</td>
+<td style="text-align:right;">
+-13867.62
+</td>
+<td style="text-align:right;">
+27794.98
+</td>
+<td style="text-align:right;">
+27772.73
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C2_mlca_enum_demo
+</td>
+<td style="text-align:right;">
+-11348.33
+</td>
+<td style="text-align:right;">
+22824.67
+</td>
+<td style="text-align:right;">
+22777.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C3_mlca_enum_demo
+</td>
+<td style="text-align:right;">
+-10971.08
+</td>
+<td style="text-align:right;">
+22138.45
+</td>
+<td style="text-align:right;">
+22065.36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C4_mlca_enum_demo
+</td>
+<td style="text-align:right;">
+-10671.22
+</td>
+<td style="text-align:right;">
+21607.00
+</td>
+<td style="text-align:right;">
+21508.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C5_mlca_enum_demo
+</td>
+<td style="text-align:right;">
+-10628.89
+</td>
+<td style="text-align:right;">
+21590.62
+</td>
+<td style="text-align:right;">
+21466.69
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C6_mlca_enum_demo
+</td>
+<td style="text-align:right;">
+-10600.19
+</td>
+<td style="text-align:right;">
+21601.50
+</td>
+<td style="text-align:right;">
+21452.15
+</td>
+</tr>
+</tbody>
+</table>
 <div id="plot-4-class-lca-probability-plot" class="section level4">
 <h4>plot 4-class LCA probability plot</h4>
-<pre class="r"><code>library(extrafont)
-library(gridExtra)
-library(scales)
-library(relimp)
-
-# extract posterior probabilities 
+<pre class="r"><code># extract posterior probabilities 
 pp1 &lt;- as.data.frame(output_enum[[&quot;c_4_mlca_enum.out&quot;]]
                                 [[&quot;gh5&quot;]]
                                 [[&quot;means_and_variances_data&quot;]]
@@ -880,7 +983,7 @@ ggplot(pd_long, aes(as.integer(Var), value, shape = variable,
 </div>
 <div id="model00-compute-intra-class-correlations-type-basic-w-analysis-twolevel" class="section level4">
 <h4>model00: Compute intra-class correlations (type = basic; w/ analysis = TWOLEVEL;)</h4>
-<pre class="r"><code># ICC: in this example the ICC's are zero because items are dichotomous
+<pre class="r"><code># Note: In this example the ICC's are zero because items are dichotomous
 
   mlca_00  &lt;- mplusObject(
       
@@ -1403,7 +1506,12 @@ mlca_07_fit &lt;- mplusModeler(mlca_07,
 <div id="table-of-model-fit" class="section level4">
 <h4>Table of model fit</h4>
 <pre class="r"><code>output_mlca &lt;- readModels(here(&quot;mlca_out&quot;))</code></pre>
-<p>Reading model: /Users/agarber/github/project-site/mlca_out/model01_par_L2_3D.out Reading model: /Users/agarber/github/project-site/mlca_out/model02_par_L2_3D.out Reading model: /Users/agarber/github/project-site/mlca_out/model03_non_par.out Reading model: /Users/agarber/github/project-site/mlca_out/model05_par.out Reading model: /Users/agarber/github/project-site/mlca_out/model06_non_par.out Reading model: /Users/agarber/github/project-site/mlca_out/model07_par_final.out</p>
+<pre><code>## Reading model:  /Users/agarber/github/project-site/mlca_out/model01_par_L2_3D.out 
+## Reading model:  /Users/agarber/github/project-site/mlca_out/model02_par_L2_3D.out 
+## Reading model:  /Users/agarber/github/project-site/mlca_out/model03_non_par.out 
+## Reading model:  /Users/agarber/github/project-site/mlca_out/model05_par.out 
+## Reading model:  /Users/agarber/github/project-site/mlca_out/model06_non_par.out 
+## Reading model:  /Users/agarber/github/project-site/mlca_out/model07_par_final.out</code></pre>
 <pre class="r"><code>mlca_summary &lt;- LatexSummaryTable(output_mlca, 
                 keepCols=c(&quot;Title&quot;,
                            &quot;Parameters&quot;,
@@ -1413,11 +1521,135 @@ mlca_07_fit &lt;- mplusModeler(mlca_07,
                                    sortBy = &quot;Title&quot;)
 
 mlca_summary %&gt;% 
-  kable(&quot;latex&quot;, booktabs = T, linesep = &quot;&quot;) %&gt;% 
+  kable(booktabs = T, linesep = &quot;&quot;) %&gt;% 
   kable_styling(c(&quot;striped&quot;), 
                 full_width = F,
                 position = &quot;left&quot;)</code></pre>
-
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:right;">
+Parameters
+</th>
+<th style="text-align:right;">
+LL
+</th>
+<th style="text-align:right;">
+BIC
+</th>
+<th style="text-align:right;">
+aBIC
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+model01_parametric_mlca
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+-9928.028
+</td>
+<td style="text-align:right;">
+20171.83
+</td>
+<td style="text-align:right;">
+20054.26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+model02_parametric_mlca
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+-10025.484
+</td>
+<td style="text-align:right;">
+20341.14
+</td>
+<td style="text-align:right;">
+20233.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+model03_non_parametric_mlca
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+-10018.788
+</td>
+<td style="text-align:right;">
+20370.42
+</td>
+<td style="text-align:right;">
+20246.49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+model05_parametric_mlca
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+-9832.084
+</td>
+<td style="text-align:right;">
+20022.62
+</td>
+<td style="text-align:right;">
+19889.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+model06_non_parametric_mlca
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+-9847.624
+</td>
+<td style="text-align:right;">
+20062.23
+</td>
+<td style="text-align:right;">
+19925.59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+model07_parametric_mlca
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+-9768.308
+</td>
+<td style="text-align:right;">
+19971.87
+</td>
+<td style="text-align:right;">
+19809.81
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="create-a-path-diagram-of-the-final-model" class="section level4">
 <h4>create a path diagram of the final model</h4>
