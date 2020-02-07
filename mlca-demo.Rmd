@@ -3,8 +3,8 @@ title: "Multi-level LCA Demo"
 author: "Adam Garber"
 date: "2/7/2020"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 subtitle: ""
 ---
 
