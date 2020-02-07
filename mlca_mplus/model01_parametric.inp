@@ -1,0 +1,41 @@
+TITLE:
+model01_parametric_mlca
+DATA:
+FILE = "/Users/agarber/Desktop/multi_level_lca/mlca_mplus/model01_parametric.dat";
+ 
+VARIABLE:
+NAMES = pop source level d_middle d_high distcode schlcode postcode grade gender
+     d_female race i1 i2 i3 i4 i5 i6 i7 i8 i9 i10 i11 i12 i13 i14 i15 i16 i17 i18
+     i19 i20 i21 i22 i23 i24 i25 i26 i27 i28 i29 i30 i31 i32 i33 i34 i35 i36 i37 i38
+     i39 i40 pun_1 pos_1 sel_1 pun_2 pos_2 sel_2 pun_3 pos_3 sel_3 pun_4 pos_4 sel_4
+     pun_5 pos_5 sel_5 i9rev i14rev i24rev i27rev ii1rev ii4rev ii7rev ii10rev
+     ii13rev pos_1b pos_3b pos_2b pos_4b sel_5b sel_2b sel_1b; 
+ MISSING=.;
+ usevar = pos_1b-sel_1b;
+     categorical = pos_1b-sel_1b; 
+     classes = c(4);
+     
+     cluster = schlcode;      ! level 2 units are schools 
+     within = pos_1b-sel_1b;
+ANALYSIS:
+estimator = mlr; 
+    type = mixture twolevel;
+    integration=montecarlo(1000);
+    starts = 100 50;
+    processors = 10;
+MODEL:
+%WITHIN%
+     %OVERALL%
+     
+     %BETWEEN%
+     %OVERALL%
+     C#1;
+     C#2;
+     C#3;
+     C#1 WITH C#2;
+     C#3 WITH C#1 C#2; 
+OUTPUT:
+TECH8;
+PLOT:
+type = plot3; 
+    series = pos_1b-sel_1b(*);
