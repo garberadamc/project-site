@@ -29,22 +29,6 @@ Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An applica
 Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
 
 
-#### install packages
-```{r}
-
-install.packages(c("semPlot",
-                   "stargazer",
-                   "haven",
-                   "MplusAutomation",
-                   "tidyverse",
-                   "here",
-                   "glue",
-                   "janitor",
-                   "kableExtra"))
-
-```
-
-
 #### loading packages...
 ```{r, eval=TRUE}
 library(tidyverse)
@@ -71,21 +55,22 @@ data_spss <- read_spss(here("data", "teacher_discip_strat_data.sav")) %>%
 write_csv(data_spss, here("data", "teach_discip_data.csv"))
 ```
 
+#### read the unlabeled data back into R
 ```{r, eval=TRUE}
-# read the unlabeled data back into R
+
 mlca_data <- read_csv(here("data", "teach_discip_data.csv"), na = c("9999"))
 ```
 
+#### view data with labels and response-levels
 ```{r}
-# view data with labels and labeled-levels
 sjPlot::view_df(data_spss)
 ```
 
 #### prepare data for MplusAutomation
 ```{r, eval=TRUE}
-# remove columns with strings
+
 mlca_mplus <- mlca_data %>% 
-  select(-id, -districtname, -schoolname)
+  select(-id, -districtname, -schoolname) # remove columns with strings
 
 ```
 
@@ -103,22 +88,21 @@ mlca_mplus <- mlca_mplus %>%
 ```
 
 #### make summary descriptives table
-```{r, eval=TRUE, results='asis'}
+```{r, eval=TRUE}
 
 lca_summary <- mlca_mplus %>% 
   select(53:67)
 
-stargazer(as.data.frame(lca_summary), type="latex", header = FALSE, digits=1)
+stargazer(as.data.frame(lca_summary), type="text", header = FALSE, digits=1)
 
 ```
 
 #### look at some descriptives (grouped by school code)
 
-```{r}
+```{r, eval=TRUE}
 
 # how many school clusters are there?
-
-length(unique(mlca_mplus$schlcode)) # 130 schools
+# length(unique(mlca_mplus$schlcode)) # 130 schools
 
 school_summary <- mlca_mplus %>% 
   group_by(schlcode) %>% 
@@ -129,7 +113,7 @@ school_summary <- mlca_mplus %>%
     mean_sel_1 = mean(sel_1, na.rm = TRUE),
     sample_n = n())
 
-school_summary %>% 
+school_summary[1:10,] %>% 
   kable() %>% 
   kable_styling(bootstrap_options = "striped", 
                 full_width = F,
