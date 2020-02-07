@@ -18,7 +18,9 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 
 ### This example of Multi-level Latent Class Analysis (MLCA) replicates the models described in Henry & Muthén (2010)
 
-#### **Note:** In order to reduce computational estimation time for this example 7 indicators were chosen and dichotomized. For the same reason the 4-class solution was used in all MLCA models. 
+#### **Note:** All models are estimated in Mplus via the R package MplusAutomation.  
+
+
 
 ## ______________________________________________
 
@@ -120,6 +122,8 @@ school_summary[1:10,] %>%
                 position = "left")
 ```
 
+#### **Note:** In order to reduce computational estimation time for this example 7 indicators were chosen and dichotomized. For the same reason the 4-class solution was used in all MLCA models. 
+
 #### 7 indicators used in LCA demonstration
 
 1. pos_1 = Students are praised often.
@@ -169,7 +173,7 @@ table(mlca_mplus$sel_1b)
 
 ## ______________________________________________
 
-#### model 00: LCA enumeration (fixed effect model)
+### model 00: LCA enumeration (fixed effect model)
 
 ## ______________________________________________
 
@@ -287,7 +291,7 @@ knitr::include_graphics(here("figures", "C4_LCA_MLCA.png"))
 ```
 ## ______________________________________________
 
-#### model00: Compute intra-class correlations (type = basic; w/ analysis = TWOLEVEL;)
+### model00: Compute intra-class correlations (type = basic; w/ analysis = TWOLEVEL;)
 
 ```{r}
 
@@ -329,7 +333,7 @@ mlca_00_fit <- mplusModeler(mlca_00,
 
 ## ______________________________________________
 
-#### model01: parametric random effects model (4-class)
+### model01: parametric random effects model (4-class)
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.pos="h"}
 knitr::include_graphics(here("figures", "mlca_model01.png"))
@@ -390,7 +394,7 @@ mlca_01_fit <- mplusModeler(mlca_01,
 
 ## ______________________________________________
 
-#### model02: parametric model with 2nd level factor
+### model02: parametric model with 2nd level factor
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.pos="h"}
 knitr::include_graphics(here("figures", "mlca_model02.png"))
@@ -444,7 +448,7 @@ mlca_02_fit <- mplusModeler(mlca_02,
 
 ## ______________________________________________
 
-#### model03: non-parametric model 
+### model03: non-parametric model 
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.pos="h"}
 knitr::include_graphics(here("figures", "mlca_model03.png"))
@@ -510,7 +514,7 @@ mlca_03_fit <- mplusModeler(mlca_03,
 
 ## ______________________________________________
 
-#### model04: parametric model with 2nd level factor on random latent class indicators
+### model04: parametric model with 2nd level factor on random latent class indicators
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.pos="h"}
 knitr::include_graphics(here("figures", "mlca_model04.png"))
@@ -579,8 +583,7 @@ mlca_04_fit <- mplusModeler(mlca_04,
 
 ## ______________________________________________
 
-#### model05: parametric model with 2nd level factor on random latent class intercepts &
-#### 2nd level factor on random latent class indicators  
+### model05: parametric model with 2nd level factor on random latent class intercepts & 2nd level factor on random latent class indicators  
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.pos="h"}
 knitr::include_graphics(here("figures", "mlca_model05.png"))
@@ -645,7 +648,7 @@ mlca_05_fit <- mplusModeler(mlca_05,
 
 ## ______________________________________________
 
-#### model06: non-parametric model with level-2 factor on latent class indicators
+### model06: non-parametric model with level-2 factor on latent class indicators
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.pos="h"}
 knitr::include_graphics(here("figures", "mlca_model06.png"))
@@ -719,10 +722,9 @@ mlca_06_fit <- mplusModeler(mlca_06,
 
 ## ______________________________________________
 
-#### model07: parametric model with 2nd level factor on random latent class intercepts &
-#### 2nd level factor on random latent class indicators 
+### model07: parametric model with 2nd level factor on random latent class intercepts & 2nd level factor on random latent class indicators 
 
-## with one individual-level covariate & two school-level covariates
+#### Auxiliaries: one individual-level covariate & two school-level covariates
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.pos="h"}
 knitr::include_graphics(here("figures", "mlca_model07.png"))
