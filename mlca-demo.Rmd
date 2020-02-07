@@ -21,7 +21,6 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 #### **Note:** All models are estimated in Mplus via the R package MplusAutomation.  
 
 
-
 ## ______________________________________________
 
 #### References
@@ -30,6 +29,7 @@ Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An applica
 
 Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
 
+Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
 
 #### loading packages...
 ```{r, eval=TRUE}
