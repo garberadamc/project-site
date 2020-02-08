@@ -14,7 +14,7 @@ Projects &amp; teaching materials.
 
 Lab materials: Mixture modeling (ED 201F) 
 
-- Lab 1: https://garberadamc.github.io/project-site/mlca-demo
+- Lab 1: [Lab_1_MLCA](https://garberadamc.github.io/project-site/mlca-demo)
 
 
 
