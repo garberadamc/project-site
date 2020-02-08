@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 ## ______________________________________________
 ## ______________________________________________
 
-### This example of Multi-level Latent Class Analysis (MLCA) replicates the models described in Henry & Muthén (2010)
+#### This example of Multi-level Latent Class Analysis (MLCA) replicates the models described in Henry & Muthén (2010) using a different data example.
 
 #### **Note:** All models are estimated in Mplus via the R package MplusAutomation.  
 
@@ -45,6 +45,7 @@ library(janitor)
 library(semPlot)
 library(reshape2)
 library(cowplot)
+library(magick)
 ```
 
 #### read spss >>> write csv >>> read csv
@@ -58,7 +59,7 @@ write_csv(data_spss, here("data", "teach_discip_data.csv"))
 ```
 
 #### read the unlabeled data back into R
-```{r, eval=TRUE}
+```{r}
 
 mlca_data <- read_csv(here("data", "teach_discip_data.csv"), na = c("9999"))
 ```
@@ -95,7 +96,8 @@ mlca_mplus <- mlca_mplus %>%
 lca_summary <- mlca_mplus %>% 
   select(53:67)
 
-stargazer(as.data.frame(lca_summary), type="text", header = FALSE, digits=1)
+stargazer(as.data.frame(lca_summary), type="latex", header = FALSE, digits=1, 
+          out = here("figures", "indicator_descr.tex"))
 
 ```
 
@@ -116,10 +118,14 @@ school_summary <- mlca_mplus %>%
     sample_n = n())
 
 school_summary[1:10,] %>% 
-  kable() %>% 
+  kable("latex") %>% 
   kable_styling(bootstrap_options = "striped", 
                 full_width = F,
-                position = "left")
+                position = "left") %>% 
+                save_kable(here("figures", "grouped_descr_table.png"))
+  #kable_as_image()
+
+#save_kable(here("figures", "grouped_descr_table.png"))
 ```
 
 #### **Note:** In order to reduce computational estimation time for this example 7 indicators were chosen and dichotomized. For the same reason the 4-class solution was used in all MLCA models. 

@@ -12,6 +12,9 @@ Projects &amp; teaching materials.
 - Functions from the {tidyverse} are generally used to increase accessibilty of the code for applied audiences (Wickham et al., 2019)
 
 
+Lab materials: Mixture modeling (ED 201F) 
+
+- Lab 1: https://garberadamc.github.io/project-site/mlca-demo
 
 
 
@@ -23,7 +26,7 @@ Projects &amp; teaching materials.
 
 
 
-# -----------------------------------------------------------------------------------------------
+
 
 ### References
 
