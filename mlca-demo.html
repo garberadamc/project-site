@@ -383,10 +383,10 @@ summary {
 </div>
 <div id="section-1" class="section level2">
 <h2>______________________________________________</h2>
-<div id="this-example-of-multi-level-latent-class-analysis-mlca-replicates-the-models-described-in-henry-muthén-2010" class="section level3">
-<h3>This example of Multi-level Latent Class Analysis (MLCA) replicates the models described in Henry &amp; Muthén (2010)</h3>
-<div id="note-all-models-are-estimated-in-mplus-via-the-r-package-mplusautomation." class="section level4">
-<h4><strong>Note:</strong> All models are estimated in Mplus via the R package MplusAutomation.</h4>
+<div id="this-demonstration-of-multi-level-latent-class-analysis-mlca-replicates-the-7-models--resented-in-henry-muthén-2010-using-a-new-data-example." class="section level3">
+<h3>This demonstration of Multi-level Latent Class Analysis (MLCA) replicates the 7 models -resented in Henry &amp; Muthén (2010) using a new data example.</h3>
+<div id="note-all-models-are-estimated-in-mplus-via-the-interface-r-package-mplusautomation." class="section level4">
+<h4><strong>Note:</strong> All models are estimated in Mplus via the interface R package {MplusAutomation}.</h4>
 </div>
 </div>
 </div>
@@ -411,7 +411,8 @@ library(kableExtra)
 library(janitor)
 library(semPlot)
 library(reshape2)
-library(cowplot)</code></pre>
+library(cowplot)
+library(magick)</code></pre>
 </div>
 <div id="read-spss-write-csv-read-csv" class="section level4">
 <h4>read spss &gt;&gt;&gt; write csv &gt;&gt;&gt; read csv</h4>
@@ -423,7 +424,8 @@ write_csv(data_spss, here(&quot;data&quot;, &quot;teach_discip_data.csv&quot;))<
 </div>
 <div id="read-the-unlabeled-data-back-into-r" class="section level4">
 <h4>read the unlabeled data back into R</h4>
-<pre class="r"><code>mlca_data &lt;- read_csv(here(&quot;data&quot;, &quot;teach_discip_data.csv&quot;), na = c(&quot;9999&quot;))</code></pre>
+<pre class="r"><code>mlca_data &lt;- read_csv(here(&quot;data&quot;, &quot;teach_discip_data.csv&quot;), 
+                      na = c(&quot;9999&quot;))</code></pre>
 </div>
 <div id="view-data-with-labels-and-response-levels" class="section level4">
 <h4>view data with labels and response-levels</h4>
@@ -489,7 +491,7 @@ school_summary[1:10,] %&gt;%
   kable() %&gt;% 
   kable_styling(bootstrap_options = &quot;striped&quot;, 
                 full_width = F,
-                position = &quot;left&quot;)</code></pre>
+                position = &quot;left&quot;) </code></pre>
 <table class="table table-striped" style="width: auto !important; ">
 <thead>
 <tr>

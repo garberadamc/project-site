@@ -16,9 +16,9 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 ## ______________________________________________
 ## ______________________________________________
 
-#### This example of Multi-level Latent Class Analysis (MLCA) replicates the models described in Henry & Muthén (2010) using a different data example.
+### This demonstration of Multi-level Latent Class Analysis (MLCA) replicates the 7 models -resented in Henry & Muthén (2010) using a new data example.
 
-#### **Note:** All models are estimated in Mplus via the R package MplusAutomation.  
+#### **Note:** All models are estimated in Mplus via the interface R package {MplusAutomation}.  
 
 
 ## ______________________________________________
@@ -59,9 +59,10 @@ write_csv(data_spss, here("data", "teach_discip_data.csv"))
 ```
 
 #### read the unlabeled data back into R
-```{r}
+```{r, eval=TRUE}
 
-mlca_data <- read_csv(here("data", "teach_discip_data.csv"), na = c("9999"))
+mlca_data <- read_csv(here("data", "teach_discip_data.csv"), 
+                      na = c("9999"))
 ```
 
 #### view data with labels and response-levels
@@ -96,8 +97,7 @@ mlca_mplus <- mlca_mplus %>%
 lca_summary <- mlca_mplus %>% 
   select(53:67)
 
-stargazer(as.data.frame(lca_summary), type="latex", header = FALSE, digits=1, 
-          out = here("figures", "indicator_descr.tex"))
+stargazer(as.data.frame(lca_summary), type="text", header = FALSE, digits=1)
 
 ```
 
@@ -118,14 +118,10 @@ school_summary <- mlca_mplus %>%
     sample_n = n())
 
 school_summary[1:10,] %>% 
-  kable("latex") %>% 
+  kable() %>% 
   kable_styling(bootstrap_options = "striped", 
                 full_width = F,
-                position = "left") %>% 
-                save_kable(here("figures", "grouped_descr_table.png"))
-  #kable_as_image()
-
-#save_kable(here("figures", "grouped_descr_table.png"))
+                position = "left") 
 ```
 
 #### **Note:** In order to reduce computational estimation time for this example 7 indicators were chosen and dichotomized. For the same reason the 4-class solution was used in all MLCA models. 

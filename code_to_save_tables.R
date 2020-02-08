@@ -19,3 +19,6 @@ stargazer(as.data.frame(lca_summary), type="latex", header = FALSE, digits=1,
           out = "fig.png")
 
 ?stargazer
+
+stargazer(as.data.frame(lca_summary), type="latex", header = FALSE, digits=1, 
+          out = here("figures", "indicator_descr.tex"))
