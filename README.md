@@ -1,7 +1,10 @@
-# project-site
+# Project Website 
 Projects &amp; teaching materials. 
 
-![Repo List](figures/UCSB_Navy_mark.png)
+![Island mark](figures/island_mark.png)
+
+
+
 
 ## Modeling examples and labs for Mixture Models & Structural Equation Models
 
@@ -41,3 +44,4 @@ R Core Team (2017). R: A language and environment for statistical computing. R F
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
 
+![UCSB Mark](figures/UCSB_Navy_mark.png)
