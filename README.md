@@ -1,7 +1,7 @@
 # project-site
 Projects &amp; teaching materials. 
 
-![](UCSB_Navy_mark.png)
+![](figures/UCSB_Navy_mark.png)
 
 ## Modeling examples and labs for Mixture Models & Structural Equation Models
 
