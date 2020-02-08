@@ -40,11 +40,6 @@ Projects &amp; teaching materials.
 -
 -
 
-
-
-
-
-
 ### References
 
 Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
