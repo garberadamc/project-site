@@ -1,0 +1,92 @@
+TITLE:
+model07_parametric_mlca
+DATA:
+FILE = "/Users/agarber/Desktop/multi_level_lca/mlca_mplus/model07_parametric.dat";
+ 
+VARIABLE:
+NAMES = pop source level d_middle d_high distcode schlcode postcode grade gender
+     d_female race i1 i2 i3 i4 i5 i6 i7 i8 i9 i10 i11 i12 i13 i14 i15 i16 i17 i18
+     i19 i20 i21 i22 i23 i24 i25 i26 i27 i28 i29 i30 i31 i32 i33 i34 i35 i36 i37 i38
+     i39 i40 pun_1 pos_1 sel_1 pun_2 pos_2 sel_2 pun_3 pos_3 sel_3 pun_4 pos_4 sel_4
+     pun_5 pos_5 sel_5 i9rev i14rev i24rev i27rev ii1rev ii4rev ii7rev ii10rev
+     ii13rev pos_1b pos_3b pos_2b pos_4b sel_5b sel_2b sel_1b; 
+ MISSING=.;
+ usevar = pos_1b-sel_1b d_middle d_high d_female;
+     categorical = pos_1b-sel_1b; 
+     classes = c(4);
+
+     cluster = schlcode;
+     between = d_middle d_high;
+      within = d_female;
+    
+ANALYSIS:
+estimator = mlr;
+    algorithm = integration;
+    type = mixture twolevel; 
+    starts = 20 10;
+    processors = 10;
+MODEL:
+%WITHIN%
+     %OVERALL%
+     C#1-C#3 on d_female; 
+     
+     %BETWEEN%
+     %OVERALL%
+     FU BY pos_1b@1;
+     FU BY pos_3b (F_pos_3b);
+     FU BY pos_2b (F_pos_2b);
+     FU BY pos_4b (F_pos_4b);
+     FU BY sel_5b (F_sel_5b);
+     FU BY sel_2b (F_sel_2b);
+     FU BY sel_1b (F_sel_1b);
+
+     [FU@0];
+     FC BY C#1 (FC_C1);
+     FC BY C#2 (FC_C2);
+     FC BY C#3 (FC_C3);
+     FU WITH FC;
+     
+     C#2 ON d_middle (C2_mid);
+     C#2 ON d_high   (C2_hs);
+
+     FC ON d_middle (FC_mid);
+     FC ON d_high   (FC_hs);
+     FU ON d_middle (FU_mid);
+     FU ON d_high   (FU_hs);
+     
+     %C#1% 
+     [pos_1b$1-sel_1b$1];
+     %C#2%
+     [pos_1b$1-sel_1b$1];
+     %C#3%
+     [pos_1b$1-sel_1b$1];
+     %C#4% 
+     [pos_1b$1-sel_1b$1]; 
+MODEL CONSTRAINT:
+NEW(MID_EV MID_pos3 MID_pos2 MID_pos4 MID_sel5 MID_sel2 MID_sel1
+     HS_EV HS_pos3 HS_pos2 HS_pos4 HS_sel5 HS_sel2 HS_sel1
+     C2_MIDSC C2_HIGHS);
+       
+       MID_EV = FU_mid;
+     MID_pos3 = FU_mid*F_pos_3b;
+     MID_pos2 = FU_mid*F_pos_2b;
+     MID_pos4 = FU_mid*F_pos_4b;
+     MID_sel5 = FU_mid*F_sel_5b;
+     MID_sel2 = FU_mid*F_sel_2b;
+     MID_sel1 = FU_mid*F_sel_1b;
+ 
+       HS_EV = FU_hs;
+     HS_pos3 = FU_hs*F_pos_3b;
+     HS_pos2 = FU_hs*F_pos_2b;
+     HS_pos4 = FU_hs*F_pos_4b;
+     HS_sel5 = FU_hs*F_sel_5b;
+     HS_sel2 = FU_hs*F_sel_2b;
+     HS_sel1 = FU_hs*F_sel_1b;
+     
+     C2_MIDSC = (FC_mid*FC_C2)+C2_mid;
+     C2_HIGHS = (FC_hs*FC_C2)+C2_hs;
+OUTPUT:
+TECH8;
+PLOT:
+type = plot3; 
+    series = pos_1b-sel_1b(*);

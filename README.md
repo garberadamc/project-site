@@ -1,4 +1,4 @@
-# Project Website 
+# project-site
 Projects &amp; teaching materials. 
 
 ![Island mark](figures/island_mark.png)
@@ -16,16 +16,29 @@ Projects &amp; teaching materials.
 - Functions from the {tidyverse} are generally used to increase accessibilty of the code for applied audiences (Wickham et al., 2019)
 
 
-Lab materials: Mixture modeling (ED 201F) 
+### Lab materials: Mixture modeling (ED 201F) 
 
-- Lab 1: [Lab_1_MLCA](https://garberadamc.github.io/project-site/mlca-demo)
+- Lab 1: 
+- Lab 2:
+- Lab 3:
+- Lab 4:
+- Lab 5:
 
+### Lab materials: Factor Analysis  (ED 216B) 
 
+- Lab 1: 
+- Lab 2:
+- Lab 3:
+- Lab 4:
+- Lab 5:
 
+### Other topics: 
 
-
-
-
+- Multi-level Latent Class Analysis (MLCA): [Demonstration_MLCA](https://garberadamc.github.io/project-site/mlca-demo)
+- Monte Carlo Simulation of Power & Size: [Replication of models described in, Muthen & Muthen, 2002](https://garberadamc.github.io/project-site/sim-power-size)
+-
+-
+-
 
 
 

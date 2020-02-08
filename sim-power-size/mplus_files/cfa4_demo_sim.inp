@@ -1,0 +1,44 @@
+TITLE:
+CFA 4 - non-normal, missing (50%)
+MONTECARLO:
+NAMES ARE y1-y10;
+     NOBSERVATIONS = 315;
+     NREPS = 10000;
+     SEED = 53487;
+     CLASSES = C(1);
+     GENCLASSES = C(2);
+     PATMISS = y6 (.5) y7 (.5) y8 (.5) y9(.5) y10 (.5);
+     PATPROB = 1;
+     SAVE = cfa4.sav;
+MODEL POPULATION:
+%OVERALL%
+     f1 BY y1-y5*.8;
+     f2 BY y6-y10*.8;
+     f1@1 f2@1;
+     y1-y5*.36 y6-y10*9;
+     f1 WITH f2*.95;
+     [C#1@-2];
+
+     %C#1%
+
+     [f1@0 f2@15];
+     f1@1 f2@5;
+
+     %C#2%
+
+     [f1@0 f2@0];
+     f1@1 f2@1;
+ANALYSIS:
+TYPE = MIXTURE;
+     ESTIMATOR = MLR;
+MODEL:
+%OVERALL%
+   f1 BY y1-y5*.8;
+   f2 BY y6-y10*4;
+   f1@1 f2@1;
+   y1-y5*.36 y6-y10*9;
+   f1 WITH f2*.20;
+
+   [y6-y10*1.42];
+OUTPUT:
+PATTERNS TECH9;

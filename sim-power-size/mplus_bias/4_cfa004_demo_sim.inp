@@ -1,0 +1,42 @@
+TITLE:
+CFA 1 - non-normal, no missing
+MONTECARLO:
+NAMES ARE y1-y10;
+NOBSERVATIONS = 215; ! vary sample size
+NREPS = 10000;
+SEED = 53487;
+CLASSES = C(1);
+GENCLASSES = C(2);  
+SAVE = cfa004_4.sav;
+MODEL POPULATION:
+%OVERALL%
+     f1 BY y1-y5*.8;
+     f2 BY y6-y10*.8;
+     f1@1 f2@1;
+     y1-y5*.36 y6-y10*9;
+     f1 WITH f2*.95;
+     [C#1@-2];   
+
+     %C#1%         ! outlier class 
+
+     [f1@0 f2@15]; ! means (factor 2 set to 15 to tune skewness & kurtosis)
+     f1@1 f2@5;    ! variances (factor 2 set to 5  to tune skewness & kurtosis)
+
+     %C#2%         ! majority class 
+
+     [f1@0 f2@0]; 
+     f1@1 f2@1;
+ANALYSIS:
+TYPE = MIXTURE;
+     ESTIMATOR = MLR;
+MODEL:
+%OVERALL%
+     f1 BY y1-y5*.8;
+     f2 BY y6-y10*4;
+     f1@1 f2@1;
+     y1-y5*.36 y6-y10*9;
+     f1 WITH f2*.20;
+
+   [y6-y10*1.42];
+OUTPUT:
+ SAMPSTAT TECH9;

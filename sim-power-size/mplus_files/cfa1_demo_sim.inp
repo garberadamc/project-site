@@ -1,0 +1,29 @@
+TITLE:
+CFA 1 - normal, no missing
+MONTECARLO:
+NAMES ARE y1-y10;
+     NOBSERVATIONS = 150;
+     NREPS = 10000;
+     SEED = 53487;
+     CLASSES = C(1);
+     GENCLASSES = C(1);
+     SAVE = cfa1.sav;
+MODEL POPULATION:
+%OVERALL%
+     f1 BY y1-y5*.8;
+     f2 BY y6-y10*.8;
+     f1@1 f2@1;
+     y1-y10*.36;
+     f1 WITH f2*.25;
+ANALYSIS:
+TYPE = MIXTURE;
+     ESTIMATOR = ML; ! when normal MLR simplifies to ML
+MODEL:
+%OVERALL%
+   f1 BY y1-y5*.8;
+   f2 BY y6-y10*.8;
+   f1@1 f2@1;
+   y1-y10*.36;
+   f1 WITH f2*.25;
+OUTPUT:
+TECH9;
