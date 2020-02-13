@@ -1,0 +1,131 @@
+---
+title: "Lab 1 - Latent Class Analysis Enumeration in MplusAutomation"
+author: "Adam Garber"
+date: "2/7/2020"
+output:
+  html_document: default
+  pdf_document: default
+subtitle: ""
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE, tidy = TRUE)
+
+```
+
+### **Note:** All models are estimated in Mplus via the interface R package {`MplusAutomation`}.
+
+## ____________________________________
+
+### Getting started:
+
+1. Create an R-Project
+2. Install packages
+3. Load packages
+
+### R-Project instructions:
+
+1. click "NEW PROJECT" (upper right corner of window)
+2. choose option "NEW DIRECTORY"
+3. choose location of project (avoid long filepaths)
+
+Within R-studio under the files pane (bottom right):
+
+1. click "New Folder" and name folder "data"
+2. click "New Folder" and name folder "enum_mplus"
+3. click "New Folder" and name folder "figures"
+
+### loading packages...
+```{r}
+library(MplusAutomation)
+library(tidyverse)
+library(relimp)
+library(texreg)
+library(rhdf5)
+library(here)
+library(glue)
+library(kableExtra)
+```
+
+### filepaths are set using R-Projects & here::here()
+
+### read in data 
+```{r}
+
+example_data <- read_csv(here("data","example_data.csv"),
+                     na=c("",".", "999"))
+```
+
+## ____________________________________
+
+## Enumeration (compare *k*-class models 1 - 6)
+
+## ____________________________________
+
+####Example has 6 indicator (x1 x2 x3 x4 x5)
+```{r}
+
+lca_k1_6  <- lapply(1:6, function(k) {
+  lca_enum  <- mplusObject(
+      
+    TITLE = glue("C{k}_LCA_enumerate"), 
+  
+    VARIABLE = 
+  glue(
+    "categorical = x1 x2 x3 x4 x5; 
+     usevar = x1 x2 x3 x4 x5;
+    
+     classes = c({k});"),
+  
+  ANALYSIS = 
+   "estimator = mlr; 
+    type = mixture; 
+    starts = 500 100;",
+  
+  MODEL = "",
+  OUTPUT = "",
+  
+  PLOT = 
+    "type = plot3; 
+    series = x1 x2 x3 x4 x5(*);",
+  
+  usevariables = colnames(ies_data),
+  rdata = ies_data)
+
+lca_enum_fit <- mplusModeler(lca_enum, 
+                            dataout=glue(here("enum_mplus", "c_lca_enumerate.dat")),
+                            modelout=glue(here("enum_mplus", "c{k}_lca_enumerate.inp")) ,
+                            check=TRUE, run = TRUE, hashfilename = FALSE)
+})
+
+```
+
+#### compare model fit for enumerated models
+```{r}
+
+output_enum <- readModels(here("enum_mplus"))
+
+
+enum_summary <- LatexSummaryTable(output_enum, 
+                keepCols=c("Title", 
+                           "LL", 
+                           "BIC",
+                           "aBIC"), 
+                                   sortBy = "Title")
+
+enum_summary %>% 
+  kable(booktabs = T, linesep = "") %>% 
+  kable_styling(c("striped"), 
+                full_width = F,
+                position = "left")
+```
+
+## ____________________________________
+
+### References: 
+
+Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+
+Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
+
+## ____________________________________

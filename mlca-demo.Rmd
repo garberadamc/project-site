@@ -1,5 +1,5 @@
 ---
-title: "Multi-level LCA Demo"
+title: "Multi-level LCA Demonstration"
 author: "Adam Garber"
 date: "2/7/2020"
 output:
@@ -16,20 +16,15 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 ## ______________________________________________
 ## ______________________________________________
 
-### This demonstration of Multi-level Latent Class Analysis (MLCA) replicates the 7 models -resented in Henry & Muthén (2010) using a new data example.
+## This demonstration of Multi-level Latent Class Analysis (MLCA) replicates the 7 models presented in Henry & Muthén (2010) using a new data example.
 
-#### **Note:** All models are estimated in Mplus via the interface R package {MplusAutomation}.  
+Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An application of adolescent smoking typologies with individual and contextual predictors. Structural Equation Modeling, 17(2), 193-215.
+
+#### **Note:** All models are estimated in Mplus via the interface R package {`MplusAutomation`}.  
 
 
 ## ______________________________________________
 
-#### References
-
-Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An application of adolescent smoking typologies with individual and contextual predictors. Structural Equation Modeling, 17(2), 193-215.
-
-Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
-
-Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
 
 #### loading packages...
 ```{r, eval=TRUE}
@@ -884,6 +879,14 @@ semPaths(final_model,
 ```{r, echo=FALSE, eval=TRUE, out.width = "75%", out.height= "75%", fig.pos="h"}
 knitr::include_graphics(here("figures", "model07_path_plot.png"))
 ```
+
+#### References
+
+Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An application of adolescent smoking typologies with individual and contextual predictors. Structural Equation Modeling, 17(2), 193-215.
+
+Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+
+Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
 
 ## ______________________________________________
 ## ______________________________________________
