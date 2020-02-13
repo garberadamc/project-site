@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Lab materials: Mixture modeling (UCSB, ED 201F) 
 
-- Lab 1: 
+- Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation] ](https://garberadamc.github.io/project-site/lca-enumeration)
 - Lab 2:
 - Lab 3:
 - Lab 4:
