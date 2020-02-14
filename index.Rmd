@@ -18,16 +18,26 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Analytic workflow strategy:
 
-- The R pacakge {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
-- All models are esitated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
-- R-Projects and the {`here`} package allow for reproducability across operating systems.
-- The {`tidyverse`} highly coherent functions are used whenever possible to increase accessibilty for applied audiences (Wickham et al., 2019)
+### - The R pacakge {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
+### - All models are esitated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
+### - R-Projects and the {`here`} package allow for reproducability across operating systems.
+### - The {`tidyverse`} highly coherent functions are used whenever possible to increase accessibilty for applied audiences (Wickham et al., 2019)
+
+# Implementation strategy rationale:
+
+### 1. Why not use a package in R to estimate S.E.M models? 
+
+#### Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range of possible models. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and integration across model types (i.e., multi-level LTA with covariates & distals). Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
+
+### 2. Why not do S.E.M. modeling  entirely in Mplus? 
+
+#### Running complex models in Mplus is highly error prone due to workflow involving a proliferation of files. In practice, this results in organizational challenges and lots of copying and pasting. **Most importantly**, research in Mplus does not afford precise and convenient reproducablity for research decisions made from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction)
 
 <br>
 
 # Lab materials: Mixture modeling (UCSB, ED 201F) 
 
-- Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation] ](https://garberadamc.github.io/project-site/lca-enumeration)
+- Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation] (https://garberadamc.github.io/project-site/lca-enumeration)
 - Lab 2:
 - Lab 3:
 - Lab 4:
