@@ -15,9 +15,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](figures/island_mark.png){ width=50% }
 
+## __________________________________________________________
+
 ## Finite Mixture, Latent Variable, & Structural Equation Modeling 
 
-
+## __________________________________________________________
 
 
 
@@ -27,6 +29,8 @@ knitr::opts_chunk$set(echo = FALSE)
 ### - All models are esitated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
 ### - R-Projects and the {`here`} package allow for reproducability across operating systems.
 ### - The {`tidyverse`}'s highly coherent functions are used whenever possible to increase accessibilty for applied audiences (Wickham et al., 2019)
+
+## __________________________________________________________
 
 # Implementation strategy rationale:
 
@@ -42,6 +46,8 @@ knitr::opts_chunk$set(echo = FALSE)
 #### - In practice, this results in organizational challenges and lots of copying and pasting.
 #### - Importantly, Mplus does not provide convenient methods for conducting fully reproducable research projects. 
 #### - In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).
+
+## __________________________________________________________
 
 # Lab materials: Applied Mixture modeling (UCSB, ED 201F) 
 
@@ -61,6 +67,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <br>
 
+## __________________________________________________________
+
 # Replicating analyses using Tidy Workflow & MplusAutomation:
 
 #### - Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo)
@@ -70,6 +78,8 @@ knitr::opts_chunk$set(echo = FALSE)
 #### -
 
 <br>
+
+## __________________________________________________________
 
 # References
 
