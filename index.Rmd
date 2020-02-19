@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](figures/island_mark.png){ width=50% }
 
-## Finite mixture, Latent variable, & Structural equation model examples
+## Finite Mixture, Latent Variable, & Structural Equation Modeling 
 
 
 
@@ -26,13 +26,13 @@ knitr::opts_chunk$set(echo = FALSE)
 ### - The R pacakge {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
 ### - All models are esitated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
 ### - R-Projects and the {`here`} package allow for reproducability across operating systems.
-### - The {`tidyverse`} highly coherent functions are used whenever possible to increase accessibilty for applied audiences (Wickham et al., 2019)
+### - The {`tidyverse`}'s highly coherent functions are used whenever possible to increase accessibilty for applied audiences (Wickham et al., 2019)
 
 # Implementation strategy rationale:
 
 ### 1. Why not use a package in R to estimate S.E.M models? 
 
-#### - Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range of possible models. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
+#### - Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
 
 #### - Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
 
