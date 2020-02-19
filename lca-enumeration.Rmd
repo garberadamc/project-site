@@ -1,7 +1,7 @@
 ---
 title: "Lab 1 - Latent Class Analysis Enumeration in MplusAutomation"
 author: "Adam Garber"
-date: "2/7/2020"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document: default
   pdf_document: default

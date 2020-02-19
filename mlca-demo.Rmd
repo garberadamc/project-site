@@ -1,7 +1,7 @@
 ---
 title: "Multi-level LCA Demonstration"
 author: "Adam Garber"
-date: "2/7/2020"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document: default
   pdf_document: default
@@ -21,7 +21,6 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An application of adolescent smoking typologies with individual and contextual predictors. Structural Equation Modeling, 17(2), 193-215.
 
 #### **Note:** All models are estimated in Mplus via the interface R package {`MplusAutomation`}.  
-
 
 ## ______________________________________________
 
