@@ -1,0 +1,1430 @@
+Mplus VERSION 8.3 (Mac)
+MUTHEN & MUTHEN
+01/20/2020   7:17 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  FACTOR ANALYSIS EFA - REDUCED SET - LAB 2 DEMO
+  DATA:
+  FILE = "/Users/agarber/Desktop/FA_W20/Lab3_FA/efa_mplus/lab3_efa2_female.dat";
+
+  VARIABLE:
+  NAMES = BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G BYS20H BYS20I BYS20J BYS20K
+       BYS20L BYS20M BYS20N BYS21A BYS21B BYS21C BYS21D BYS21E BYSEX;
+   MISSING=.;
+   usevar =
+       BYS20A BYS20B BYS20E BYS20F BYS20G
+       ! remove: BYS20C BYS20D
+       BYS20J BYS20K BYS20M BYS20N
+       ! remove:BYS20H BYS20I BYS20L
+       BYS21A BYS21C BYS21D BYS21E;
+       ! remove: BYS21B
+
+       useobs = BYSEX == 2;
+  ANALYSIS:
+   type = efa 1 5;
+        estimator = MLR;
+        parallel=50;
+
+  OUTPUT:
+  sampstat;
+  PLOT:
+  type = plot3;
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  18
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+FACTOR ANALYSIS EFA - REDUCED SET - LAB 2 DEMO
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         359
+
+Number of dependent variables                                   13
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   BYS20A      BYS20B      BYS20E      BYS20F      BYS20G      BYS20J
+   BYS20K      BYS20M      BYS20N      BYS21A      BYS21C      BYS21D
+   BYS21E
+
+
+Estimator                                                      MLR
+Rotation                                                    GEOMIN
+Row standardization                                    CORRELATION
+Type of rotation                                           OBLIQUE
+Epsilon value                                               Varies
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization Specifications for the Exploratory Factor Analysis
+Rotation Algorithm
+  Number of random starts                                       30
+  Maximum number of iterations                               10000
+  Derivative convergence criterion                       0.100D-04
+
+Input data file(s)
+  /Users/agarber/Desktop/FA_W20/Lab3_FA/efa_mplus/lab3_efa2_female.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            20
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.997
+ BYS20B         0.994         0.997
+ BYS20E         0.978         0.978         0.981
+ BYS20F         0.983         0.983         0.969         0.986
+ BYS20G         0.978         0.978         0.969         0.969         0.981
+ BYS20J         0.981         0.983         0.967         0.972         0.969
+ BYS20K         0.986         0.983         0.967         0.972         0.972
+ BYS20M         0.978         0.981         0.964         0.967         0.964
+ BYS20N         0.986         0.986         0.972         0.978         0.978
+ BYS21A         0.992         0.994         0.975         0.981         0.975
+ BYS21C         0.989         0.989         0.975         0.981         0.975
+ BYS21D         0.986         0.986         0.969         0.978         0.969
+ BYS21E         0.992         0.992         0.975         0.981         0.975
+
+
+           Covariance Coverage
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.983
+ BYS20K         0.975         0.986
+ BYS20M         0.972         0.972         0.981
+ BYS20N         0.981         0.983         0.975         0.989
+ BYS21A         0.981         0.981         0.978         0.983         0.994
+ BYS21C         0.978         0.978         0.972         0.983         0.986
+ BYS21D         0.972         0.978         0.969         0.978         0.983
+ BYS21E         0.978         0.983         0.975         0.983         0.992
+
+
+           Covariance Coverage
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.992
+ BYS21D         0.983         0.989
+ BYS21E         0.986         0.986         0.994
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.203         2.181         2.089         2.189         2.276
+
+
+           Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.267         2.524         3.068         3.031         1.941
+
+
+           Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.350         2.293         2.205
+
+
+           Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.352
+ BYS20B         0.050         0.562
+ BYS20E         0.129         0.095         0.370
+ BYS20F         0.126         0.122         0.208         0.445
+ BYS20G         0.091         0.123         0.203         0.218         0.542
+ BYS20J        -0.092        -0.044        -0.087        -0.086        -0.108
+ BYS20K        -0.035        -0.069        -0.033        -0.009        -0.062
+ BYS20M        -0.092        -0.021        -0.053        -0.068        -0.054
+ BYS20N        -0.104        -0.051        -0.015        -0.084        -0.030
+ BYS21A         0.060         0.030         0.082         0.073         0.069
+ BYS21C         0.085         0.180         0.150         0.169         0.167
+ BYS21D         0.022         0.080         0.047         0.098         0.102
+ BYS21E        -0.008         0.039         0.049         0.080         0.117
+
+
+           Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.472
+ BYS20K         0.162         0.725
+ BYS20M         0.195         0.160         0.602
+ BYS20N         0.148         0.114         0.280         0.649
+ BYS21A        -0.094        -0.100        -0.078        -0.055         0.358
+ BYS21C        -0.101        -0.134        -0.029        -0.015         0.111
+ BYS21D        -0.061        -0.004        -0.015         0.005         0.059
+ BYS21E        -0.025        -0.063        -0.005         0.038         0.111
+
+
+           Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.756
+ BYS21D         0.170         0.456
+ BYS21E         0.189         0.134         0.428
+
+
+           Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.111         1.000
+ BYS20E         0.358         0.208         1.000
+ BYS20F         0.317         0.244         0.513         1.000
+ BYS20G         0.209         0.222         0.454         0.443         1.000
+ BYS20J        -0.225        -0.086        -0.209        -0.187        -0.214
+ BYS20K        -0.069        -0.108        -0.063        -0.015        -0.099
+ BYS20M        -0.199        -0.037        -0.112        -0.132        -0.095
+ BYS20N        -0.217        -0.085        -0.030        -0.157        -0.051
+ BYS21A         0.169         0.067         0.225         0.182         0.157
+ BYS21C         0.165         0.276         0.285         0.291         0.261
+ BYS21D         0.054         0.158         0.113         0.218         0.205
+ BYS21E        -0.021         0.080         0.123         0.184         0.243
+
+
+           Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.277         1.000
+ BYS20M         0.367         0.243         1.000
+ BYS20N         0.268         0.166         0.448         1.000
+ BYS21A        -0.230        -0.195        -0.168        -0.114         1.000
+ BYS21C        -0.170        -0.180        -0.044        -0.022         0.213
+ BYS21D        -0.132        -0.008        -0.029         0.010         0.145
+ BYS21E        -0.055        -0.113        -0.009         0.071         0.283
+
+
+           Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.290         1.000
+ BYS21E         0.332         0.304         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -4548.044
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     BYS20A                2.204       0.866       1.000    6.15%       2.000      2.000      2.000
+             358.000       0.352       1.503       4.000    3.35%       2.000      3.000
+     BYS20B                2.182       0.327       1.000   16.20%       2.000      2.000      2.000
+             358.000       0.562      -0.090       4.000    4.47%       2.000      3.000
+     BYS20E                2.091       0.646       1.000   11.65%       2.000      2.000      2.000
+             352.000       0.367       1.546       4.000    2.56%       2.000      2.000
+     BYS20F                2.184       0.290       1.000   12.15%       2.000      2.000      2.000
+             354.000       0.444       0.194       4.000    2.54%       2.000      3.000
+     BYS20G                2.276       0.074       1.000   13.35%       2.000      2.000      2.000
+             352.000       0.541      -0.347       4.000    3.69%       2.000      3.000
+     BYS20J                3.266      -0.610       1.000    1.13%       3.000      3.000      3.000
+             353.000       0.473       0.062       4.000   39.38%       3.000      4.000
+     BYS20K                2.520      -0.254       1.000   13.84%       2.000      2.000      3.000
+             354.000       0.724      -0.598       4.000    9.89%       3.000      3.000
+     BYS20M                3.068      -0.482       1.000    2.84%       2.000      3.000      3.000
+             352.000       0.603      -0.270       4.000   30.97%       3.000      4.000
+     BYS20N                3.031      -0.637       1.000    5.07%       2.000      3.000      3.000
+             355.000       0.650       0.072       4.000   29.01%       3.000      4.000
+     BYS21A                1.941       0.335       1.000   19.89%       1.000      2.000      2.000
+             357.000       0.358       0.945       4.000    1.12%       2.000      2.000
+     BYS21C                2.348       0.240       1.000   15.73%       2.000      2.000      2.000
+             356.000       0.755      -0.591       4.000   10.67%       2.000      3.000
+     BYS21D                2.293       0.285       1.000    8.73%       2.000      2.000      2.000
+             355.000       0.455       0.071       4.000    3.66%       2.000      3.000
+     BYS21E                2.207       0.540       1.000    9.52%       2.000      2.000      2.000
+             357.000       0.428       0.666       4.000    3.64%       2.000      3.000
+
+
+SUMMARY OF MODEL FIT INFORMATION
+
+
+                   Number of                   Degrees of
+     Model        Parameters      Chi-Square    Freedom     P-Value
+
+     1-factor          39            269.287        65       0.0000
+     2-factor          51            138.467        53       0.0000
+     3-factor          62             57.692        42       0.0541
+     4-factor          72             41.058        32       0.1310
+     5-factor          81             30.555        23       0.1341
+
+                                               Degrees of
+     Models Compared              Chi-Square    Freedom     P-Value
+
+     1-factor against 2-factor       112.080        12       0.0000
+     2-factor against 3-factor        74.833        11       0.0000
+     3-factor against 4-factor        15.517        10       0.1143
+     4-factor against 5-factor        11.163         9       0.2647
+
+
+
+RESULTS FOR EXPLORATORY FACTOR ANALYSIS
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                3.208         1.735         1.320         0.976         0.914
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                0.792         0.748         0.682         0.604         0.561
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                 11            12            13
+              ________      ________      ________
+                0.541         0.498         0.422
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                1.335         1.249         1.182         1.125         1.075
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                1.030         0.988         0.946         0.904         0.864
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                 11            12            13
+              ________      ________      ________
+                0.817         0.768         0.717
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                1.414         1.289         1.222         1.166         1.118
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                1.057         1.025         0.976         0.937         0.897
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                 11            12            13
+              ________      ________      ________
+                0.861         0.822         0.772
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 1 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       39
+
+Loglikelihood
+
+          H0 Value                       -4703.519
+          H0 Scaling Correction Factor      1.1702
+            for MLR
+          H1 Value                       -4548.044
+          H1 Scaling Correction Factor      1.1605
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    9485.038
+          Bayesian (BIC)                  9636.487
+          Sample-Size Adjusted BIC        9512.760
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            269.287*
+          Degrees of Freedom                    65
+          P-Value                           0.0000
+          Scaling Correction Factor         1.1547
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.094
+          90 Percent C.I.                    0.082  0.105
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.654
+          TLI                                0.585
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            669.135
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.085
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       2.44506
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1
+              ________
+ BYS20A         0.435*
+ BYS20B         0.344*
+ BYS20E         0.656*
+ BYS20F         0.675*
+ BYS20G         0.607*
+ BYS20J        -0.392*
+ BYS20K        -0.207*
+ BYS20M        -0.269*
+ BYS20N        -0.213*
+ BYS21A         0.368*
+ BYS21C         0.482*
+ BYS21D         0.319*
+ BYS21E         0.315*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1
+              ________
+      1         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.811         0.881         0.570         0.545         0.631
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.847         0.957         0.928         0.955         0.865
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.768         0.898         0.901
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ BYS20A         0.071
+ BYS20B         0.058
+ BYS20E         0.055
+ BYS20F         0.049
+ BYS20G         0.042
+ BYS20J         0.069
+ BYS20K         0.074
+ BYS20M         0.079
+ BYS20N         0.080
+ BYS21A         0.069
+ BYS21C         0.058
+ BYS21D         0.077
+ BYS21E         0.082
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.062         0.040         0.072         0.066         0.052
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.054         0.031         0.042         0.034         0.051
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.056         0.049         0.051
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ BYS20A         6.107
+ BYS20B         5.917
+ BYS20E        11.989
+ BYS20F        13.751
+ BYS20G        14.306
+ BYS20J        -5.714
+ BYS20K        -2.779
+ BYS20M        -3.413
+ BYS20N        -2.667
+ BYS21A         5.332
+ BYS21C         8.264
+ BYS21D         4.139
+ BYS21E         3.863
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               13.086        21.983         7.935         8.219        12.255
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               15.757        31.189        21.933        28.190        17.044
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               13.675        18.298        17.550
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 2 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       51
+
+Loglikelihood
+
+          H0 Value                       -4623.787
+          H0 Scaling Correction Factor      1.2297
+            for MLR
+          H1 Value                       -4548.044
+          H1 Scaling Correction Factor      1.1605
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    9349.575
+          Bayesian (BIC)                  9547.624
+          Sample-Size Adjusted BIC        9385.827
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            138.467*
+          Degrees of Freedom                    53
+          P-Value                           0.0000
+          Scaling Correction Factor         1.0940
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.067
+          90 Percent C.I.                    0.053  0.081
+          Probability RMSEA <= .05           0.020
+
+CFI/TLI
+
+          CFI                                0.855
+          TLI                                0.787
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            669.135
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.053
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.41885
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2
+              ________      ________
+ BYS20A         0.340*       -0.239*
+ BYS20B         0.351*       -0.001
+ BYS20E         0.668*       -0.004
+ BYS20F         0.674*       -0.041
+ BYS20G         0.630*        0.010
+ BYS20J        -0.220*        0.463*
+ BYS20K        -0.081         0.318*
+ BYS20M        -0.001         0.718*
+ BYS20N         0.026         0.611*
+ BYS21A         0.300*       -0.174*
+ BYS21C         0.510*        0.034
+ BYS21D         0.360*        0.069
+ BYS21E         0.372*        0.110
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2
+              ________      ________
+      1         1.000
+      2        -0.210*        1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.793         0.876         0.552         0.532         0.606
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.695         0.882         0.485         0.633         0.858
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.746         0.876         0.867
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ BYS20A         0.074         0.069
+ BYS20B         0.058         0.071
+ BYS20E         0.060         0.035
+ BYS20F         0.065         0.068
+ BYS20G         0.043         0.056
+ BYS20J         0.077         0.078
+ BYS20K         0.075         0.080
+ BYS20M         0.006         0.062
+ BYS20N         0.070         0.073
+ BYS21A         0.076         0.087
+ BYS21C         0.073         0.095
+ BYS21D         0.084         0.103
+ BYS21E         0.102         0.111
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         0.100         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.061         0.039         0.077         0.076         0.051
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.059         0.048         0.088         0.082         0.050
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.066         0.057         0.074
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ BYS20A         4.581        -3.474
+ BYS20B         6.069        -0.020
+ BYS20E        11.208        -0.114
+ BYS20F        10.384        -0.603
+ BYS20G        14.497         0.185
+ BYS20J        -2.849         5.921
+ BYS20K        -1.071         3.991
+ BYS20M        -0.164        11.604
+ BYS20N         0.375         8.409
+ BYS21A         3.937        -2.012
+ BYS21C         7.021         0.362
+ BYS21D         4.281         0.669
+ BYS21E         3.627         0.988
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2        -2.095         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               12.977        22.196         7.177         6.965        11.841
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               11.753        18.469         5.480         7.736        17.281
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               11.285        15.303        11.683
+
+
+           FACTOR STRUCTURE
+                  1             2
+              ________      ________
+ BYS20A         0.390        -0.311
+ BYS20B         0.352        -0.075
+ BYS20E         0.669        -0.144
+ BYS20F         0.683        -0.183
+ BYS20G         0.628        -0.122
+ BYS20J        -0.317         0.509
+ BYS20K        -0.147         0.335
+ BYS20M        -0.152         0.718
+ BYS20N        -0.102         0.605
+ BYS21A         0.337        -0.237
+ BYS21C         0.502        -0.073
+ BYS21D         0.346        -0.007
+ BYS21E         0.349         0.032
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 3 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       62
+
+Loglikelihood
+
+          H0 Value                       -4578.780
+          H0 Scaling Correction Factor      1.2249
+            for MLR
+          H1 Value                       -4548.044
+          H1 Scaling Correction Factor      1.1605
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    9281.560
+          Bayesian (BIC)                  9522.326
+          Sample-Size Adjusted BIC        9325.631
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             57.692*
+          Degrees of Freedom                    42
+          P-Value                           0.0541
+          Scaling Correction Factor         1.0655
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.032
+          90 Percent C.I.                    0.000  0.051
+          Probability RMSEA <= .05           0.935
+
+CFI/TLI
+
+          CFI                                0.973
+          TLI                                0.951
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            669.135
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.029
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.30974
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+ BYS20A         0.442*       -0.208*       -0.120
+ BYS20B         0.272*       -0.014         0.135
+ BYS20E         0.761*        0.048         0.000
+ BYS20F         0.675*       -0.012         0.079
+ BYS20G         0.539*        0.013         0.192*
+ BYS20J        -0.123         0.489*       -0.113
+ BYS20K         0.091         0.377*       -0.221
+ BYS20M         0.023         0.710*        0.010
+ BYS20N        -0.006         0.606*        0.110
+ BYS21A         0.097        -0.223*        0.333*
+ BYS21C         0.246*       -0.020         0.452*
+ BYS21D         0.105         0.015         0.423*
+ BYS21E        -0.011         0.044         0.681*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+      1         1.000
+      2        -0.281*        1.000
+      3         0.283*       -0.067         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.728         0.885         0.440         0.503         0.618
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.684         0.820         0.505         0.628         0.790
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.668         0.786         0.543
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ BYS20A         0.072         0.081         0.089
+ BYS20B         0.096         0.068         0.110
+ BYS20E         0.067         0.092         0.020
+ BYS20F         0.074         0.045         0.104
+ BYS20G         0.064         0.043         0.083
+ BYS20J         0.119         0.075         0.127
+ BYS20K         0.128         0.079         0.118
+ BYS20M         0.088         0.061         0.034
+ BYS20N         0.020         0.066         0.090
+ BYS21A         0.102         0.086         0.090
+ BYS21C         0.109         0.042         0.105
+ BYS21D         0.118         0.058         0.102
+ BYS21E         0.026         0.105         0.098
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2         0.113         0.000
+      3         0.136         0.133         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.061         0.038         0.085         0.076         0.049
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.058         0.065         0.080         0.078         0.064
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.067         0.071         0.135
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ BYS20A         6.129        -2.560        -1.350
+ BYS20B         2.840        -0.210         1.224
+ BYS20E        11.301         0.526        -0.012
+ BYS20F         9.117        -0.268         0.758
+ BYS20G         8.360         0.294         2.304
+ BYS20J        -1.037         6.494        -0.891
+ BYS20K         0.706         4.743        -1.873
+ BYS20M         0.262        11.576         0.296
+ BYS20N        -0.325         9.191         1.220
+ BYS21A         0.949        -2.585         3.704
+ BYS21C         2.252        -0.479         4.283
+ BYS21D         0.886         0.265         4.136
+ BYS21E        -0.422         0.416         6.913
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2        -2.495         0.000
+      3         2.088        -0.503         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               11.900        23.299         5.160         6.635        12.710
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               11.777        12.661         6.341         8.085        12.423
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                9.943        11.135         4.007
+
+
+           FACTOR STRUCTURE
+                  1             2             3
+              ________      ________      ________
+ BYS20A         0.467        -0.324         0.019
+ BYS20B         0.314        -0.100         0.212
+ BYS20E         0.747        -0.165         0.212
+ BYS20F         0.701        -0.207         0.271
+ BYS20G         0.590        -0.152         0.344
+ BYS20J        -0.293         0.531        -0.181
+ BYS20K        -0.078         0.366        -0.221
+ BYS20M        -0.174         0.703        -0.031
+ BYS20N        -0.146         0.601         0.067
+ BYS21A         0.254        -0.272         0.375
+ BYS21C         0.380        -0.120         0.523
+ BYS21D         0.220        -0.042         0.452
+ BYS21E         0.169         0.001         0.675
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 4 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       72
+
+Loglikelihood
+
+          H0 Value                       -4567.075
+          H0 Scaling Correction Factor      1.2643
+            for MLR
+          H1 Value                       -4548.044
+          H1 Scaling Correction Factor      1.1605
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    9278.150
+          Bayesian (BIC)                  9557.750
+          Sample-Size Adjusted BIC        9329.330
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             41.058*
+          Degrees of Freedom                    32
+          P-Value                           0.1310
+          Scaling Correction Factor         0.9270
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.028
+          90 Percent C.I.                    0.000  0.051
+          Probability RMSEA <= .05           0.942
+
+CFI/TLI
+
+          CFI                                0.985
+          TLI                                0.963
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            669.135
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.023
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.51339
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         0.423*       -0.218*       -0.063        -0.010
+ BYS20B         0.208*       -0.018         0.231        -0.082
+ BYS20E         0.795*       -0.003        -0.013         0.299
+ BYS20F         0.627*        0.016         0.260        -0.161
+ BYS20G         0.464*       -0.016         0.271*        0.048
+ BYS20J        -0.092         0.522*       -0.082        -0.021
+ BYS20K         0.128         0.454*       -0.122        -0.140
+ BYS20M         0.003         0.663*        0.024         0.180
+ BYS20N        -0.005         0.585*        0.032         0.425
+ BYS21A         0.052        -0.279*        0.276         0.127
+ BYS21C         0.146        -0.060         0.499*        0.039
+ BYS21D         0.007         0.032         0.536*       -0.141
+ BYS21E        -0.098         0.011         0.654*        0.040
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2             3             4
+              ________      ________      ________      ________
+      1         1.000
+      2        -0.265         1.000
+      3         0.276        -0.156         1.000
+      4        -0.079        -0.066         0.279         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.738         0.875         0.322         0.436         0.631
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.667         0.745         0.547         0.505         0.764
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.661         0.736         0.583
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         0.084         0.074         0.111         0.111
+ BYS20B         0.094         0.093         0.144         0.173
+ BYS20E         0.142         0.086         0.039         0.377
+ BYS20F         0.110         0.098         0.213         0.330
+ BYS20G         0.100         0.064         0.123         0.215
+ BYS20J         0.152         0.106         0.185         0.157
+ BYS20K         0.207         0.179         0.264         0.366
+ BYS20M         0.062         0.100         0.073         0.386
+ BYS20N         0.073         0.173         0.093         0.462
+ BYS21A         0.153         0.139         0.166         0.208
+ BYS21C         0.142         0.111         0.112         0.140
+ BYS21D         0.071         0.069         0.121         0.167
+ BYS21E         0.147         0.097         0.125         0.109
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3             4
+              ________      ________      ________      ________
+      1         0.000
+      2         0.167         0.000
+      3         0.153         0.260         0.000
+      4         0.140         0.241         0.314         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.060         0.055         0.165         0.091         0.048
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.069         0.113         0.085         0.151         0.086
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.064         0.082         0.122
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         5.062        -2.959        -0.572        -0.093
+ BYS20B         2.213        -0.197         1.600        -0.473
+ BYS20E         5.611        -0.038        -0.335         0.792
+ BYS20F         5.710         0.159         1.225        -0.487
+ BYS20G         4.662        -0.249         2.204         0.222
+ BYS20J        -0.604         4.950        -0.442        -0.130
+ BYS20K         0.619         2.535        -0.462        -0.383
+ BYS20M         0.050         6.618         0.331         0.467
+ BYS20N        -0.071         3.379         0.340         0.920
+ BYS21A         0.338        -2.015         1.657         0.613
+ BYS21C         1.028        -0.538         4.471         0.280
+ BYS21D         0.101         0.465         4.442        -0.845
+ BYS21E        -0.665         0.111         5.220         0.364
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3             4
+              ________      ________      ________      ________
+      1         0.000
+      2        -1.587         0.000
+      3         1.802        -0.599         0.000
+      4        -0.561        -0.274         0.886         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               12.374        15.890         1.952         4.788        13.247
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                9.660         6.565         6.422         3.345         8.935
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               10.315         8.996         4.780
+
+
+           FACTOR STRUCTURE
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         0.464        -0.320         0.084        -0.047
+ BYS20B         0.283        -0.104         0.268        -0.033
+ BYS20E         0.769        -0.232         0.290         0.233
+ BYS20F         0.708        -0.180         0.386        -0.138
+ BYS20G         0.539        -0.184         0.414         0.088
+ BYS20J        -0.251         0.561        -0.194        -0.071
+ BYS20K        -0.015         0.448        -0.196        -0.215
+ BYS20M        -0.180         0.646        -0.028         0.143
+ BYS20N        -0.185         0.554         0.058         0.396
+ BYS21A         0.192        -0.344         0.369         0.219
+ BYS21C         0.296        -0.178         0.559         0.170
+ BYS21D         0.158        -0.044         0.494         0.006
+ BYS21E         0.077        -0.068         0.636         0.229
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 5 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       81
+
+Loglikelihood
+
+          H0 Value                       -4557.590
+          H0 Scaling Correction Factor      1.3126
+            for MLR
+          H1 Value                       -4548.044
+          H1 Scaling Correction Factor      1.1605
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    9277.180
+          Bayesian (BIC)                  9591.729
+          Sample-Size Adjusted BIC        9334.757
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             30.555*
+          Degrees of Freedom                    23
+          P-Value                           0.1341
+          Scaling Correction Factor         0.6248
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.030
+          90 Percent C.I.                    0.000  0.056
+          Probability RMSEA <= .05           0.884
+
+CFI/TLI
+
+          CFI                                0.987
+          TLI                                0.957
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            669.135
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.016
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.40740
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+ BYS20A         0.397*       -0.215*        0.027        -0.102         0.026
+ BYS20B         0.041        -0.004         0.492        -0.163        -0.034
+ BYS20E         0.833*        0.065        -0.018        -0.022        -0.084
+ BYS20F         0.557*       -0.044         0.274         0.025         0.239
+ BYS20G         0.460*       -0.005         0.185         0.095         0.011
+ BYS20J        -0.117         0.475*       -0.034         0.027         0.210
+ BYS20K         0.107         0.365*       -0.062        -0.017         0.391
+ BYS20M        -0.045         0.703*        0.152        -0.062         0.001
+ BYS20N         0.052         0.674*       -0.015         0.044        -0.201
+ BYS21A         0.162        -0.221        -0.023         0.246        -0.177
+ BYS21C         0.051         0.002         0.530*        0.054        -0.200
+ BYS21D        -0.032         0.013         0.397         0.156         0.026
+ BYS21E        -0.001         0.010         0.045         0.900        -0.004
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1         1.000
+      2        -0.275*        1.000
+      3         0.470*       -0.235         1.000
+      4         0.159        -0.016         0.439*        1.000
+      5        -0.134         0.050        -0.153        -0.217         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.743         0.778         0.325         0.441         0.636
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.659         0.702         0.521         0.525         0.780
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.584         0.782         0.153
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+ BYS20A         0.150         0.089         0.136         0.180         0.105
+ BYS20B         0.090         0.057         0.354         0.284         0.190
+ BYS20E         0.156         0.154         0.079         0.149         0.230
+ BYS20F         0.268         0.066         0.460         0.113         0.195
+ BYS20G         0.178         0.063         0.280         0.135         0.190
+ BYS20J         0.288         0.148         0.120         0.171         0.201
+ BYS20K         0.246         0.176         0.347         0.052         0.253
+ BYS20M         0.101         0.107         0.124         0.071         0.072
+ BYS20N         0.083         0.138         0.076         0.205         0.329
+ BYS21A         0.228         0.116         0.237         0.411         0.202
+ BYS21C         0.176         0.055         0.195         0.220         0.246
+ BYS21D         0.216         0.115         0.462         0.535         0.267
+ BYS21E         0.044         0.063         0.310         1.141         0.048
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1         0.000
+      2         0.094         0.000
+      3         0.127         0.241         0.000
+      4         0.283         0.103         0.144         0.000
+      5         0.431         0.269         0.575         0.201         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.065         0.220         0.201         0.092         0.052
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.089         0.155         0.101         0.198         0.155
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.113         0.082         1.829
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+ BYS20A         2.647        -2.422         0.195        -0.567         0.251
+ BYS20B         0.453        -0.075         1.389        -0.576        -0.181
+ BYS20E         5.331         0.423        -0.223        -0.145        -0.364
+ BYS20F         2.074        -0.669         0.597         0.219         1.226
+ BYS20G         2.584        -0.073         0.662         0.703         0.056
+ BYS20J        -0.404         3.207        -0.286         0.160         1.044
+ BYS20K         0.434         2.077        -0.179        -0.328         1.542
+ BYS20M        -0.445         6.601         1.230        -0.867         0.010
+ BYS20N         0.622         4.874        -0.196         0.214        -0.610
+ BYS21A         0.713        -1.901        -0.099         0.599        -0.874
+ BYS21C         0.287         0.041         2.717         0.244        -0.811
+ BYS21D        -0.148         0.115         0.858         0.293         0.099
+ BYS21E        -0.028         0.155         0.144         0.788        -0.072
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1         0.000
+      2        -2.927         0.000
+      3         3.710        -0.974         0.000
+      4         0.563        -0.160         3.058         0.000
+      5        -0.311         0.187        -0.266        -1.081         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               11.511         3.532         1.617         4.798        12.295
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                7.422         4.518         5.148         2.646         5.041
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                5.188         9.503         0.084
+
+
+           FACTOR STRUCTURE
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+ BYS20A         0.449        -0.327         0.215        -0.029        -0.020
+ BYS20B         0.252        -0.130         0.446         0.067        -0.080
+ BYS20E         0.815        -0.164         0.362         0.121        -0.185
+ BYS20F         0.670        -0.250         0.521         0.183         0.114
+ BYS20G         0.563        -0.176         0.443         0.248        -0.101
+ BYS20J        -0.287         0.525        -0.221        -0.060         0.249
+ BYS20K        -0.078         0.370        -0.165        -0.118         0.408
+ BYS20M        -0.177         0.681        -0.061        -0.014         0.032
+ BYS20N        -0.106         0.652        -0.099         0.078        -0.181
+ BYS21A         0.275        -0.274         0.240         0.304        -0.259
+ BYS21C         0.335        -0.147         0.607         0.338        -0.299
+ BYS21D         0.172        -0.072         0.443         0.320        -0.063
+ BYS21E         0.161        -0.015         0.437         0.920        -0.205
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values)
+  Scatterplots (sample values)
+  Eigenvalues for exploratory factor analysis
+
+     Beginning Time:  19:17:30
+        Ending Time:  19:17:31
+       Elapsed Time:  00:00:01
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

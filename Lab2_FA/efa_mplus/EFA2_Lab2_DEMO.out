@@ -1,0 +1,3645 @@
+Mplus VERSION 8.3 (Mac)
+MUTHEN & MUTHEN
+01/14/2020  12:42 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  FACTOR ANALYSIS EFA - REDUCED SET - LAB 2 DEMO
+  DATA:
+  FILE = "/Users/agarber/Desktop/FA_W20/Lab2_FA/efa_mplus/EFA2_Lab2_DEMO.dat";
+
+  VARIABLE:
+  NAMES = BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G BYS20H BYS20I BYS20J BYS20K
+       BYS20L BYS20M BYS20N BYS21A BYS21B BYS21C BYS21D BYS21E BYSEX BYRACE BYSTLANG;
+   MISSING=.;
+   usevar =
+       BYS20A BYS20B BYS20E BYS20F BYS20G
+       ! removed: BYS20C BYS20D
+       BYS20J BYS20K BYS20M BYS20N
+       ! removed:BYS20H BYS20I BYS20L
+       BYS21A BYS21C BYS21D BYS21E
+       ! removed: BYS21B
+       ;
+  ANALYSIS:
+  type = efa 1 5;    ! run efa of 1 through 5 factor models
+       estimator = MLR;   ! using the ROBUST ML Estimator
+       parallel=50;       ! run the parallel analysis for viewing in elbow plot
+
+  OUTPUT:
+  sampstat standardized residual modindices (3.84);
+  PLOT:
+  type = plot3;
+
+
+
+*** WARNING in OUTPUT command
+  STANDARDIZED (STD, STDY, STDYX) options are not available for TYPE=EFA.
+  Request for STANDARDIZED options will be ignored.  Note that STANDARDIZED options
+  are available with the use of EFA factors (ESEM) declared in the MODEL command.
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  74
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+FACTOR ANALYSIS EFA - REDUCED SET - LAB 2 DEMO
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         720
+
+Number of dependent variables                                   13
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   BYS20A      BYS20B      BYS20E      BYS20F      BYS20G      BYS20J
+   BYS20K      BYS20M      BYS20N      BYS21A      BYS21C      BYS21D
+   BYS21E
+
+
+Estimator                                                      MLR
+Rotation                                                    GEOMIN
+Row standardization                                    CORRELATION
+Type of rotation                                           OBLIQUE
+Epsilon value                                               Varies
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization Specifications for the Exploratory Factor Analysis
+Rotation Algorithm
+  Number of random starts                                       30
+  Maximum number of iterations                               10000
+  Derivative convergence criterion                       0.100D-04
+
+Input data file(s)
+  /Users/agarber/Desktop/FA_W20/Lab2_FA/efa_mplus/EFA2_Lab2_DEMO.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            27
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.997
+ BYS20B         0.993         0.996
+ BYS20E         0.982         0.981         0.985
+ BYS20F         0.983         0.982         0.972         0.986
+ BYS20G         0.985         0.983         0.976         0.975         0.988
+ BYS20J         0.985         0.985         0.974         0.975         0.978
+ BYS20K         0.989         0.986         0.975         0.976         0.981
+ BYS20M         0.976         0.976         0.965         0.968         0.968
+ BYS20N         0.992         0.990         0.981         0.982         0.986
+ BYS21A         0.993         0.993         0.981         0.982         0.983
+ BYS21C         0.990         0.989         0.979         0.981         0.982
+ BYS21D         0.989         0.988         0.976         0.979         0.979
+ BYS21E         0.990         0.989         0.978         0.979         0.981
+
+
+           Covariance Coverage
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.988
+ BYS20K         0.981         0.990
+ BYS20M         0.971         0.972         0.979
+ BYS20N         0.986         0.989         0.976         0.994
+ BYS21A         0.985         0.986         0.976         0.990         0.996
+ BYS21C         0.982         0.983         0.972         0.989         0.990
+ BYS21D         0.979         0.983         0.971         0.986         0.989
+ BYS21E         0.981         0.985         0.974         0.988         0.992
+
+
+           Covariance Coverage
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.993
+ BYS21D         0.988         0.992
+ BYS21E         0.988         0.989         0.993
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.820         2.821         2.942         2.861         2.747
+
+
+           Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.277         2.562         2.997         3.044         2.992
+
+
+           Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.629         2.742         2.771
+
+
+           Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.345
+ BYS20B         0.104         0.588
+ BYS20E         0.143         0.144         0.421
+ BYS20F         0.154         0.178         0.261         0.498
+ BYS20G         0.099         0.158         0.216         0.261         0.575
+ BYS20J         0.101         0.104         0.123         0.117         0.107
+ BYS20K         0.040         0.064         0.051         0.060         0.062
+ BYS20M         0.095         0.088         0.099         0.111         0.073
+ BYS20N         0.073         0.068         0.047         0.086         0.034
+ BYS21A         0.069         0.092         0.099         0.115         0.100
+ BYS21C         0.088         0.189         0.174         0.203         0.205
+ BYS21D         0.051         0.104         0.107         0.132         0.122
+ BYS21E         0.025         0.082         0.094         0.113         0.134
+
+
+           Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.512
+ BYS20K         0.189         0.740
+ BYS20M         0.208         0.162         0.757
+ BYS20N         0.194         0.139         0.329         0.689
+ BYS21A         0.067         0.055         0.095         0.064         0.413
+ BYS21C         0.106         0.088         0.058         0.078         0.180
+ BYS21D         0.062         0.022         0.046         0.038         0.105
+ BYS21E         0.034         0.042         0.030        -0.001         0.176
+
+
+           Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.840
+ BYS21D         0.190         0.494
+ BYS21E         0.244         0.162         0.490
+
+
+           Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.231         1.000
+ BYS20E         0.375         0.290         1.000
+ BYS20F         0.370         0.329         0.571         1.000
+ BYS20G         0.222         0.272         0.439         0.488         1.000
+ BYS20J         0.240         0.190         0.264         0.232         0.197
+ BYS20K         0.079         0.097         0.091         0.098         0.095
+ BYS20M         0.187         0.132         0.175         0.180         0.111
+ BYS20N         0.149         0.107         0.087         0.147         0.055
+ BYS21A         0.184         0.187         0.236         0.253         0.204
+ BYS21C         0.163         0.269         0.293         0.315         0.294
+ BYS21D         0.123         0.192         0.235         0.267         0.230
+ BYS21E         0.062         0.153         0.208         0.230         0.253
+
+
+           Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.307         1.000
+ BYS20M         0.333         0.216         1.000
+ BYS20N         0.327         0.195         0.455         1.000
+ BYS21A         0.146         0.100         0.170         0.119         1.000
+ BYS21C         0.162         0.112         0.072         0.103         0.306
+ BYS21D         0.124         0.036         0.075         0.066         0.233
+ BYS21E         0.067         0.070         0.050        -0.001         0.391
+
+
+           Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.295         1.000
+ BYS21E         0.380         0.330         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -9462.431
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     BYS20A                2.820      -0.970       1.000    3.48%       2.000      3.000      3.000
+             718.000       0.345       1.919       4.000    6.41%       3.000      3.000
+     BYS20B                2.820      -0.350       1.000    5.02%       2.000      3.000      3.000
+             717.000       0.588      -0.127       4.000   17.02%       3.000      3.000
+     BYS20E                2.939      -0.694       1.000    3.39%       3.000      3.000      3.000
+             709.000       0.418       1.424       4.000   14.67%       3.000      3.000
+     BYS20F                2.866      -0.435       1.000    3.66%       2.000      3.000      3.000
+             710.000       0.496       0.325       4.000   15.35%       3.000      3.000
+     BYS20G                2.748      -0.225       1.000    4.92%       2.000      3.000      3.000
+             711.000       0.574      -0.244       4.000   14.35%       3.000      3.000
+     BYS20J                3.277      -0.901       1.000    2.67%       3.000      3.000      3.000
+             711.000       0.513       0.938       4.000   40.65%       4.000      4.000
+     BYS20K                2.561      -0.150       1.000   11.92%       2.000      2.000      3.000
+             713.000       0.740      -0.620       4.000   12.76%       3.000      3.000
+     BYS20M                2.999      -0.602       1.000    6.67%       2.000      3.000      3.000
+             705.000       0.759      -0.297       4.000   31.21%       3.000      4.000
+     BYS20N                3.043      -0.623       1.000    5.17%       2.000      3.000      3.000
+             716.000       0.689      -0.128       4.000   31.56%       3.000      4.000
+     BYS21A                2.992      -0.340       1.000    1.53%       3.000      3.000      3.000
+             717.000       0.413       0.485       4.000   18.69%       3.000      3.000
+     BYS21C                2.631      -0.220       1.000   13.01%       2.000      2.000      3.000
+             715.000       0.840      -0.758       4.000   17.34%       3.000      3.000
+     BYS21D                2.742      -0.344       1.000    4.34%       2.000      3.000      3.000
+             714.000       0.494       0.105       4.000   10.78%       3.000      3.000
+     BYS21E                2.771      -0.360       1.000    4.06%       2.000      3.000      3.000
+             715.000       0.490       0.159       4.000   11.61%       3.000      3.000
+
+
+     NO CONVERGENCE.  NUMBER OF ITERATIONS EXCEEDED.
+     PROBLEM OCCURRED IN EXPLORATORY FACTOR ANALYSIS WITH 5 FACTOR(S).
+
+
+
+
+SUMMARY OF MODEL FIT INFORMATION
+
+
+                   Number of                   Degrees of
+     Model        Parameters      Chi-Square    Freedom     P-Value
+
+     1-factor          39            433.488        65       0.0000
+     2-factor          51            206.299        53       0.0000
+     3-factor          62             49.877        42       0.1887
+     4-factor          72             35.664        32       0.3001
+     5-factor         N/A
+
+                                               Degrees of
+     Models Compared              Chi-Square    Freedom     P-Value
+
+     1-factor against 2-factor       203.421        12       0.0000
+     2-factor against 3-factor       157.199        11       0.0000
+     3-factor against 4-factor        12.937        10       0.2272
+
+
+
+RESULTS FOR EXPLORATORY FACTOR ANALYSIS
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                3.595         1.669         1.222         0.902         0.802
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                0.785         0.736         0.660         0.620         0.553
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                 11            12            13
+              ________      ________      ________
+                0.538         0.510         0.408
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                1.228         1.174         1.132         1.089         1.056
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                1.024         0.995         0.962         0.937         0.903
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                 11            12            13
+              ________      ________      ________
+                0.870         0.832         0.798
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                1.279         1.217         1.150         1.116         1.079
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                1.045         1.018         0.984         0.957         0.932
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                 11            12            13
+              ________      ________      ________
+                0.899         0.862         0.838
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 1 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       39
+
+Loglikelihood
+
+          H0 Value                       -9727.035
+          H0 Scaling Correction Factor      1.1646
+            for MLR
+          H1 Value                       -9462.431
+          H1 Scaling Correction Factor      1.1997
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   19532.071
+          Bayesian (BIC)                 19710.662
+          Sample-Size Adjusted BIC       19586.826
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            433.488*
+          Degrees of Freedom                    65
+          P-Value                           0.0000
+          Scaling Correction Factor         1.2208
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.089
+          90 Percent C.I.                    0.081  0.097
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.731
+          TLI                                0.678
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1449.723
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.077
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       2.86469
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1
+              ________
+ BYS20A         0.462*
+ BYS20B         0.454*
+ BYS20E         0.688*
+ BYS20F         0.730*
+ BYS20G         0.596*
+ BYS20J         0.395*
+ BYS20K         0.207*
+ BYS20M         0.304*
+ BYS20N         0.242*
+ BYS21A         0.423*
+ BYS21C         0.492*
+ BYS21D         0.399*
+ BYS21E         0.391*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1
+              ________
+      1         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.786         0.794         0.527         0.467         0.645
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.844         0.957         0.908         0.942         0.821
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.758         0.840         0.847
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ BYS20A         0.044
+ BYS20B         0.037
+ BYS20E         0.032
+ BYS20F         0.028
+ BYS20G         0.030
+ BYS20J         0.051
+ BYS20K         0.048
+ BYS20M         0.050
+ BYS20N         0.053
+ BYS21A         0.044
+ BYS21C         0.038
+ BYS21D         0.046
+ BYS21E         0.050
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.041         0.033         0.044         0.041         0.035
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.040         0.020         0.030         0.025         0.037
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.037         0.037         0.039
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ BYS20A        10.399
+ BYS20B        12.432
+ BYS20E        21.661
+ BYS20F        25.925
+ BYS20G        20.039
+ BYS20J         7.725
+ BYS20K         4.309
+ BYS20M         6.087
+ BYS20N         4.587
+ BYS21A         9.536
+ BYS21C        13.043
+ BYS21D         8.733
+ BYS21E         7.785
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               19.114        23.961        12.053        11.370        18.214
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               20.891        48.362        29.897        37.018        21.912
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               20.407        23.006        21.575
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.210         1.000
+ BYS20E         0.318         0.312         1.000
+ BYS20F         0.338         0.331         0.502         1.000
+ BYS20G         0.275         0.270         0.410         0.435         1.000
+ BYS20J         0.183         0.179         0.272         0.288         0.235
+ BYS20K         0.096         0.094         0.142         0.151         0.123
+ BYS20M         0.141         0.138         0.209         0.222         0.181
+ BYS20N         0.112         0.110         0.166         0.176         0.144
+ BYS21A         0.195         0.192         0.291         0.309         0.252
+ BYS21C         0.228         0.223         0.339         0.359         0.293
+ BYS21D         0.185         0.181         0.275         0.292         0.238
+ BYS21E         0.181         0.177         0.269         0.285         0.233
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.082         1.000
+ BYS20M         0.120         0.063         1.000
+ BYS20N         0.095         0.050         0.073         1.000
+ BYS21A         0.167         0.087         0.129         0.102         1.000
+ BYS21C         0.194         0.102         0.150         0.119         0.208
+ BYS21D         0.158         0.082         0.121         0.096         0.169
+ BYS21E         0.154         0.081         0.119         0.094         0.165
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.197         1.000
+ BYS21E         0.192         0.156         1.000
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.021         0.000
+ BYS20E         0.056        -0.022         0.000
+ BYS20F         0.033        -0.002         0.069         0.000
+ BYS20G        -0.053         0.002         0.029         0.053         0.000
+ BYS20J         0.057         0.010        -0.007        -0.057        -0.039
+ BYS20K        -0.017         0.004        -0.051        -0.052        -0.028
+ BYS20M         0.046        -0.006        -0.034        -0.042        -0.070
+ BYS20N         0.037        -0.003        -0.079        -0.029        -0.089
+ BYS21A        -0.012        -0.005        -0.054        -0.055        -0.047
+ BYS21C        -0.064         0.046        -0.045        -0.044         0.001
+ BYS21D        -0.061         0.011        -0.040        -0.024        -0.008
+ BYS21E        -0.119        -0.024        -0.061        -0.056         0.020
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.225         0.000
+ BYS20M         0.213         0.153         0.000
+ BYS20N         0.232         0.145         0.382         0.000
+ BYS21A        -0.021         0.013         0.042         0.017         0.000
+ BYS21C        -0.033         0.010        -0.077        -0.016         0.098
+ BYS21D        -0.034        -0.047        -0.047        -0.031         0.064
+ BYS21E        -0.087        -0.010        -0.069        -0.096         0.225
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.098         0.000
+ BYS21E         0.188         0.174         0.000
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 2 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       51
+
+Loglikelihood
+
+          H0 Value                       -9584.033
+          H0 Scaling Correction Factor      1.2214
+            for MLR
+          H1 Value                       -9462.431
+          H1 Scaling Correction Factor      1.1997
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   19270.066
+          Bayesian (BIC)                 19503.608
+          Sample-Size Adjusted BIC       19341.669
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            206.299*
+          Degrees of Freedom                    53
+          P-Value                           0.0000
+          Scaling Correction Factor         1.1789
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.063
+          90 Percent C.I.                    0.054  0.073
+          Probability RMSEA <= .05           0.008
+
+CFI/TLI
+
+          CFI                                0.888
+          TLI                                0.836
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1449.723
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.046
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.42728
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2
+              ________      ________
+ BYS20A         0.387*        0.155*
+ BYS20B         0.427*        0.060
+ BYS20E         0.691*        0.007
+ BYS20F         0.732*        0.013
+ BYS20G         0.639*       -0.066
+ BYS20J         0.177*        0.480*
+ BYS20K         0.046         0.338*
+ BYS20M         0.006         0.663*
+ BYS20N        -0.066         0.671*
+ BYS21A         0.397*        0.062
+ BYS21C         0.517*       -0.037
+ BYS21D         0.431*       -0.052
+ BYS21E         0.459*       -0.124
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2
+              ________      ________
+      1         1.000
+      2         0.350*        1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.784         0.796         0.520         0.458         0.617
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.678         0.873         0.558         0.577         0.821
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.745         0.827         0.814
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ BYS20A         0.056         0.058
+ BYS20B         0.044         0.055
+ BYS20E         0.035         0.016
+ BYS20F         0.038         0.033
+ BYS20G         0.036         0.047
+ BYS20J         0.065         0.064
+ BYS20K         0.054         0.058
+ BYS20M         0.006         0.045
+ BYS20N         0.055         0.049
+ BYS21A         0.059         0.076
+ BYS21C         0.060         0.079
+ BYS21D         0.058         0.070
+ BYS21E         0.073         0.089
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         0.074         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.039         0.033         0.047         0.048         0.037
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.045         0.034         0.060         0.058         0.038
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.045         0.041         0.054
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ BYS20A         6.971         2.686
+ BYS20B         9.751         1.083
+ BYS20E        19.685         0.402
+ BYS20F        19.225         0.387
+ BYS20G        17.691        -1.396
+ BYS20J         2.729         7.535
+ BYS20K         0.866         5.853
+ BYS20M         1.120        14.597
+ BYS20N        -1.189        13.604
+ BYS21A         6.752         0.817
+ BYS21C         8.658        -0.470
+ BYS21D         7.443        -0.731
+ BYS21E         6.286        -1.384
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         4.721         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               19.966        24.161        11.134         9.562        16.574
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               14.972        25.712         9.337         9.904        21.538
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               16.631        20.375        15.127
+
+
+           FACTOR STRUCTURE
+                  1             2
+              ________      ________
+ BYS20A         0.441         0.290
+ BYS20B         0.448         0.209
+ BYS20E         0.693         0.248
+ BYS20F         0.736         0.269
+ BYS20G         0.616         0.158
+ BYS20J         0.345         0.542
+ BYS20K         0.165         0.354
+ BYS20M         0.238         0.665
+ BYS20N         0.169         0.648
+ BYS21A         0.419         0.201
+ BYS21C         0.504         0.143
+ BYS21D         0.413         0.099
+ BYS21E         0.415         0.037
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.206         1.000
+ BYS20E         0.307         0.311         1.000
+ BYS20F         0.327         0.331         0.510         1.000
+ BYS20G         0.263         0.273         0.426         0.453         1.000
+ BYS20J         0.218         0.180         0.242         0.260         0.185
+ BYS20K         0.119         0.092         0.116         0.125         0.082
+ BYS20M         0.195         0.142         0.169         0.183         0.108
+ BYS20N         0.166         0.111         0.121         0.132         0.065
+ BYS21A         0.193         0.191         0.290         0.309         0.254
+ BYS21C         0.217         0.224         0.349         0.371         0.313
+ BYS21D         0.175         0.182         0.286         0.304         0.257
+ BYS21E         0.167         0.180         0.287         0.304         0.263
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.199         1.000
+ BYS20M         0.362         0.236         1.000
+ BYS20N         0.341         0.227         0.430         1.000
+ BYS21A         0.171         0.087         0.136         0.107         1.000
+ BYS21C         0.158         0.072         0.098         0.063         0.209
+ BYS21D         0.121         0.053         0.068         0.039         0.170
+ BYS21E         0.091         0.032         0.027        -0.003         0.167
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.210         1.000
+ BYS21E         0.214         0.177         1.000
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.025         0.000
+ BYS20E         0.068        -0.021         0.000
+ BYS20F         0.044        -0.002         0.061         0.000
+ BYS20G        -0.041        -0.001         0.013         0.036         0.000
+ BYS20J         0.022         0.010         0.022        -0.028         0.012
+ BYS20K        -0.040         0.006        -0.025        -0.027         0.013
+ BYS20M        -0.009        -0.009         0.006        -0.003         0.002
+ BYS20N        -0.017        -0.004        -0.034         0.015        -0.010
+ BYS21A        -0.009        -0.004        -0.054        -0.055        -0.050
+ BYS21C        -0.054         0.045        -0.056        -0.056        -0.018
+ BYS21D        -0.052         0.010        -0.051        -0.037        -0.028
+ BYS21E        -0.105        -0.026        -0.079        -0.075        -0.010
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.108         0.000
+ BYS20M        -0.028        -0.020         0.000
+ BYS20N        -0.014        -0.031         0.025         0.000
+ BYS21A        -0.025         0.013         0.034         0.012         0.000
+ BYS21C         0.003         0.040        -0.026         0.040         0.097
+ BYS21D         0.003        -0.017         0.006         0.027         0.063
+ BYS21E        -0.024         0.039         0.023         0.001         0.224
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.085         0.000
+ BYS21E         0.167         0.152         0.000
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 3 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       62
+
+Loglikelihood
+
+          H0 Value                       -9491.872
+          H0 Scaling Correction Factor      1.2127
+            for MLR
+          H1 Value                       -9462.431
+          H1 Scaling Correction Factor      1.1997
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   19107.745
+          Bayesian (BIC)                 19391.658
+          Sample-Size Adjusted BIC       19194.791
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             49.877*
+          Degrees of Freedom                    42
+          P-Value                           0.1887
+          Scaling Correction Factor         1.1806
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.016
+          90 Percent C.I.                    0.000  0.031
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.994
+          TLI                                0.989
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1449.723
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.019
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.23912
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+ BYS20A         0.472*        0.144*       -0.090
+ BYS20B         0.362*        0.077         0.100
+ BYS20E         0.744*       -0.006        -0.010
+ BYS20F         0.769*        0.005         0.015
+ BYS20G         0.570*       -0.053         0.120*
+ BYS20J         0.186*        0.479*        0.001
+ BYS20K        -0.004         0.348*        0.074
+ BYS20M         0.013         0.655*        0.011
+ BYS20N        -0.058         0.673*       -0.004
+ BYS21A         0.086         0.119         0.469*
+ BYS21C         0.219*        0.018         0.443*
+ BYS21D         0.177*       -0.007         0.377*
+ BYS21E        -0.015        -0.077         0.764*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+      1         1.000
+      2         0.317*        1.000
+      3         0.420*        0.158         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.746         0.803         0.456         0.397         0.622
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.679         0.867         0.563         0.569         0.700
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.669         0.773         0.437
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ BYS20A         0.056         0.055         0.056
+ BYS20B         0.056         0.051         0.062
+ BYS20E         0.038         0.028         0.031
+ BYS20F         0.050         0.026         0.048
+ BYS20G         0.049         0.044         0.056
+ BYS20J         0.063         0.059         0.042
+ BYS20K         0.045         0.056         0.059
+ BYS20M         0.042         0.049         0.052
+ BYS20N         0.073         0.050         0.043
+ BYS21A         0.065         0.069         0.056
+ BYS21C         0.066         0.035         0.063
+ BYS21D         0.066         0.029         0.063
+ BYS21E         0.020         0.085         0.049
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2         0.076         0.000
+      3         0.069         0.111         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.041         0.032         0.045         0.051         0.036
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.045         0.037         0.059         0.057         0.045
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.041         0.042         0.077
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ BYS20A         8.411         2.593        -1.607
+ BYS20B         6.410         1.493         1.609
+ BYS20E        19.684        -0.220        -0.311
+ BYS20F        15.387         0.200         0.300
+ BYS20G        11.633        -1.192         2.156
+ BYS20J         2.957         8.073         0.024
+ BYS20K        -0.080         6.196         1.248
+ BYS20M         0.319        13.337         0.210
+ BYS20N        -0.794        13.405        -0.095
+ BYS21A         1.332         1.729         8.340
+ BYS21C         3.339         0.509         7.006
+ BYS21D         2.664        -0.230         5.952
+ BYS21E        -0.738        -0.913        15.511
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2         4.179         0.000
+      3         6.098         1.427         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               18.260        25.011        10.208         7.735        17.366
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               15.090        23.139         9.570        10.013        15.564
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               16.166        18.544         5.683
+
+
+           FACTOR STRUCTURE
+                  1             2             3
+              ________      ________      ________
+ BYS20A         0.479         0.279         0.130
+ BYS20B         0.428         0.207         0.264
+ BYS20E         0.738         0.228         0.301
+ BYS20F         0.776         0.252         0.338
+ BYS20G         0.603         0.147         0.350
+ BYS20J         0.338         0.538         0.155
+ BYS20K         0.138         0.358         0.127
+ BYS20M         0.226         0.661         0.120
+ BYS20N         0.154         0.654         0.078
+ BYS21A         0.321         0.220         0.524
+ BYS21C         0.411         0.157         0.538
+ BYS21D         0.332         0.109         0.450
+ BYS21E         0.281         0.039         0.746
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.208         1.000
+ BYS20E         0.354         0.314         1.000
+ BYS20F         0.372         0.334         0.572         1.000
+ BYS20G         0.274         0.264         0.444         0.469         1.000
+ BYS20J         0.223         0.179         0.247         0.265         0.183
+ BYS20K         0.105         0.090         0.099         0.110         0.075
+ BYS20M         0.191         0.144         0.163         0.179         0.108
+ BYS20N         0.159         0.113         0.110         0.123         0.062
+ BYS21A         0.136         0.185         0.232         0.255         0.234
+ BYS21C         0.168         0.214         0.299         0.324         0.290
+ BYS21D         0.132         0.173         0.242         0.263         0.237
+ BYS21E         0.071         0.179         0.202         0.227         0.247
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.197         1.000
+ BYS20M         0.359         0.238         1.000
+ BYS20N         0.342         0.232         0.431         1.000
+ BYS21A         0.166         0.114         0.154         0.127         1.000
+ BYS21C         0.152         0.093         0.114         0.080         0.306
+ BYS21D         0.114         0.070         0.081         0.052         0.253
+ BYS21E         0.072         0.067         0.037         0.007         0.379
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.274         1.000
+ BYS21E         0.393         0.330         1.000
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.023         0.000
+ BYS20E         0.021        -0.024         0.000
+ BYS20F        -0.001        -0.005        -0.002         0.000
+ BYS20G        -0.052         0.008        -0.005         0.019         0.000
+ BYS20J         0.017         0.011         0.018        -0.034         0.014
+ BYS20K        -0.026         0.007        -0.008        -0.011         0.021
+ BYS20M        -0.004        -0.012         0.012         0.001         0.003
+ BYS20N        -0.010        -0.006        -0.022         0.024        -0.008
+ BYS21A         0.048         0.002         0.004        -0.002        -0.029
+ BYS21C        -0.004         0.055        -0.006        -0.009         0.005
+ BYS21D        -0.009         0.019        -0.007         0.004        -0.008
+ BYS21E        -0.009        -0.026         0.006         0.002         0.006
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.110         0.000
+ BYS20M        -0.025        -0.022         0.000
+ BYS20N        -0.015        -0.037         0.024         0.000
+ BYS21A        -0.020        -0.014         0.016        -0.008         0.000
+ BYS21C         0.009         0.019        -0.042         0.023         0.000
+ BYS21D         0.010        -0.034        -0.006         0.014        -0.019
+ BYS21E        -0.004         0.003         0.013        -0.008         0.012
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.021         0.000
+ BYS21E        -0.012        -0.001         0.000
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 4 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       72
+
+Loglikelihood
+
+          H0 Value                       -9478.795
+          H0 Scaling Correction Factor      1.3251
+            for MLR
+          H1 Value                       -9462.431
+          H1 Scaling Correction Factor      1.1997
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   19101.589
+          Bayesian (BIC)                 19431.295
+          Sample-Size Adjusted BIC       19202.675
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             35.664*
+          Degrees of Freedom                    32
+          P-Value                           0.3001
+          Scaling Correction Factor         0.9177
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.013
+          90 Percent C.I.                    0.000  0.031
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.997
+          TLI                                0.993
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1449.723
+          Degrees of Freedom                    78
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.014
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.38630
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         0.476*        0.040         0.105        -0.089
+ BYS20B         0.353*        0.032         0.051         0.105
+ BYS20E         0.731*        0.031        -0.036        -0.003
+ BYS20F         0.795*       -0.065         0.037         0.009
+ BYS20G         0.555*        0.022        -0.070         0.125*
+ BYS20J         0.014         0.939         0.005        -0.007
+ BYS20K        -0.036         0.235         0.184         0.078
+ BYS20M         0.041         0.006         0.666*        0.009
+ BYS20N        -0.027         0.027         0.663*       -0.009
+ BYS21A         0.067        -0.018         0.156         0.480*
+ BYS21C         0.188         0.030         0.013         0.455*
+ BYS21D         0.149         0.018         0.002         0.386*
+ BYS21E        -0.061*       -0.007        -0.029         0.774*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2             3             4
+              ________      ________      ________      ________
+      1         1.000
+      2         0.354         1.000
+      3         0.280*        0.491         1.000
+      4         0.453*        0.148         0.103         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.749         0.805         0.465         0.378         0.623
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.106         0.865         0.534         0.552         0.696
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.668         0.772         0.444
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         0.064         0.138         0.149         0.056
+ BYS20B         0.091         0.271         0.207         0.063
+ BYS20E         0.061         0.116         0.144         0.039
+ BYS20F         0.164         0.407         0.241         0.036
+ BYS20G         0.067         0.107         0.112         0.057
+ BYS20J         0.212         2.865         0.053         0.082
+ BYS20K         0.377         1.281         0.885         0.059
+ BYS20M         0.079         0.190         0.262         0.048
+ BYS20N         0.043         0.122         0.144         0.040
+ BYS21A         0.061         0.087         0.096         0.059
+ BYS21C         0.121         0.279         0.165         0.069
+ BYS21D         0.077         0.055         0.057         0.067
+ BYS21E         0.030         0.069         0.094         0.049
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3             4
+              ________      ________      ________      ________
+      1         0.000
+      2         0.940         0.000
+      3         0.106         1.311         0.000
+      4         0.062         0.415         0.153         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.042         0.032         0.044         0.082         0.036
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                5.211         0.313         0.195         0.194         0.046
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.043         0.042         0.077
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         7.486         0.291         0.703        -1.599
+ BYS20B         3.862         0.118         0.247         1.669
+ BYS20E        11.999         0.267        -0.251        -0.071
+ BYS20F         4.862        -0.159         0.154         0.262
+ BYS20G         8.333         0.205        -0.621         2.192
+ BYS20J         0.067         0.328         0.102        -0.080
+ BYS20K        -0.095         0.183         0.208         1.330
+ BYS20M         0.520         0.032         2.543         0.188
+ BYS20N        -0.623         0.224         4.596        -0.221
+ BYS21A         1.092        -0.208         1.620         8.103
+ BYS21C         1.548         0.106         0.081         6.617
+ BYS21D         1.936         0.327         0.040         5.782
+ BYS21E        -2.004        -0.095        -0.306        15.877
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3             4
+              ________      ________      ________      ________
+      1         0.000
+      2         0.377         0.000
+      3         2.644         0.374         0.000
+      4         7.258         0.356         0.671         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               17.992        25.135        10.492         4.597        17.403
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.020         2.768         2.733         2.851        15.135
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               15.565        18.529         5.792
+
+
+           FACTOR STRUCTURE
+                  1             2             3             4
+              ________      ________      ________      ________
+ BYS20A         0.479         0.247         0.249         0.143
+ BYS20B         0.426         0.197         0.176         0.275
+ BYS20E         0.731         0.271         0.184         0.330
+ BYS20F         0.787         0.236         0.229         0.364
+ BYS20G         0.600         0.203         0.109         0.373
+ BYS20J         0.345         0.945         0.469         0.139
+ BYS20K         0.134         0.324         0.297         0.116
+ BYS20M         0.234         0.349         0.681         0.097
+ BYS20N         0.164         0.342         0.668         0.051
+ BYS21A         0.322         0.153         0.215         0.524
+ BYS21C         0.408         0.170         0.127         0.546
+ BYS21D         0.331         0.129         0.093         0.456
+ BYS21E         0.279         0.072         0.031         0.742
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.205         1.000
+ BYS20E         0.349         0.311         1.000
+ BYS20F         0.376         0.335         0.574         1.000
+ BYS20G         0.272         0.263         0.440         0.472         1.000
+ BYS20J         0.239         0.191         0.264         0.232         0.197
+ BYS20K         0.098         0.085         0.097         0.098         0.075
+ BYS20M         0.188         0.139         0.157         0.189         0.102
+ BYS20N         0.157         0.108         0.107         0.134         0.059
+ BYS21A         0.135         0.185         0.231         0.259         0.233
+ BYS21C         0.166         0.213         0.298         0.323         0.290
+ BYS21D         0.132         0.174         0.241         0.263         0.237
+ BYS21E         0.073         0.181         0.203         0.226         0.247
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.307         1.000
+ BYS20M         0.334         0.206         1.000
+ BYS20N         0.327         0.201         0.454         1.000
+ BYS21A         0.146         0.105         0.162         0.134         1.000
+ BYS21C         0.162         0.091         0.107         0.073         0.306
+ BYS21D         0.123         0.071         0.080         0.052         0.253
+ BYS21E         0.067         0.071         0.039         0.008         0.379
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.275         1.000
+ BYS21E         0.393         0.329         1.000
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.026         0.000
+ BYS20E         0.026        -0.020         0.000
+ BYS20F        -0.005        -0.006        -0.003         0.000
+ BYS20G        -0.050         0.009        -0.001         0.016         0.000
+ BYS20J         0.001        -0.001         0.000         0.000         0.000
+ BYS20K        -0.019         0.012        -0.006         0.000         0.020
+ BYS20M        -0.001        -0.006         0.018        -0.009         0.009
+ BYS20N        -0.008        -0.001        -0.019         0.013        -0.004
+ BYS21A         0.049         0.002         0.005        -0.006        -0.028
+ BYS21C        -0.002         0.056        -0.004        -0.009         0.005
+ BYS21D        -0.008         0.019        -0.006         0.005        -0.008
+ BYS21E        -0.011        -0.027         0.004         0.004         0.006
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.000         0.000
+ BYS20M         0.000         0.010         0.000
+ BYS20N         0.000        -0.006         0.001         0.000
+ BYS21A         0.000        -0.005         0.008        -0.014         0.000
+ BYS21C        -0.001         0.020        -0.035         0.029         0.000
+ BYS21D         0.001        -0.035        -0.005         0.014        -0.020
+ BYS21E         0.000        -0.001         0.011        -0.009         0.012
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.020         0.000
+ BYS21E        -0.012         0.000         0.000
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Model Estimated Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Model Estimated Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.820         2.821         2.942         2.861         2.747
+
+
+           Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.277         2.562         2.997         3.044         2.992
+
+
+           Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.629         2.742         2.771
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+              999.000       999.000       999.000       999.000       999.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+              999.000       999.000       999.000       999.000       999.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+              999.000       999.000       999.000
+
+
+           Normalized Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+              999.000       999.000       999.000       999.000       999.000
+
+
+           Normalized Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+              999.000       999.000       999.000       999.000       999.000
+
+
+           Normalized Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+              999.000       999.000       999.000
+
+
+           Model Estimated Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.000         1.000
+ BYS20E         0.000         0.000         1.000
+ BYS20F         0.000         0.000         0.000         1.000
+ BYS20G         0.000         0.000         0.000         0.000         1.000
+ BYS20J         0.000         0.000         0.000         0.000         0.000
+ BYS20K         0.000         0.000         0.000         0.000         0.000
+ BYS20M         0.000         0.000         0.000         0.000         0.000
+ BYS20N         0.000         0.000         0.000         0.000         0.000
+ BYS21A         0.000         0.000         0.000         0.000         0.000
+ BYS21C         0.000         0.000         0.000         0.000         0.000
+ BYS21D         0.000         0.000         0.000         0.000         0.000
+ BYS21E         0.000         0.000         0.000         0.000         0.000
+
+
+           Model Estimated Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.000         1.000
+ BYS20M         0.000         0.000         1.000
+ BYS20N         0.000         0.000         0.000         1.000
+ BYS21A         0.000         0.000         0.000         0.000         1.000
+ BYS21C         0.000         0.000         0.000         0.000         0.000
+ BYS21D         0.000         0.000         0.000         0.000         0.000
+ BYS21E         0.000         0.000         0.000         0.000         0.000
+
+
+           Model Estimated Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.000         1.000
+ BYS21E         0.000         0.000         1.000
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.000         1.000
+ BYS20E         0.000         0.000         1.000
+ BYS20F         0.000         0.000         0.000         1.000
+ BYS20G         0.000         0.000         0.000         0.000         1.000
+ BYS20J         0.000         0.000         0.000         0.000         0.000
+ BYS20K         0.000         0.000         0.000         0.000         0.000
+ BYS20M         0.000         0.000         0.000         0.000         0.000
+ BYS20N         0.000         0.000         0.000         0.000         0.000
+ BYS21A         0.000         0.000         0.000         0.000         0.000
+ BYS21C         0.000         0.000         0.000         0.000         0.000
+ BYS21D         0.000         0.000         0.000         0.000         0.000
+ BYS21E         0.000         0.000         0.000         0.000         0.000
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.000         1.000
+ BYS20M         0.000         0.000         1.000
+ BYS20N         0.000         0.000         0.000         1.000
+ BYS21A         0.000         0.000         0.000         0.000         1.000
+ BYS21C         0.000         0.000         0.000         0.000         0.000
+ BYS21D         0.000         0.000         0.000         0.000         0.000
+ BYS21E         0.000         0.000         0.000         0.000         0.000
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.000         1.000
+ BYS21E         0.000         0.000         1.000
+
+
+           Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A        -0.655
+ BYS20B         0.104        -0.412
+ BYS20E         0.143         0.144        -0.579
+ BYS20F         0.154         0.178         0.261        -0.502
+ BYS20G         0.099         0.158         0.216         0.261        -0.425
+ BYS20J         0.101         0.104         0.123         0.117         0.107
+ BYS20K         0.040         0.064         0.051         0.060         0.062
+ BYS20M         0.095         0.088         0.099         0.111         0.073
+ BYS20N         0.073         0.068         0.047         0.086         0.034
+ BYS21A         0.069         0.092         0.099         0.115         0.100
+ BYS21C         0.088         0.189         0.174         0.203         0.205
+ BYS21D         0.051         0.104         0.107         0.132         0.122
+ BYS21E         0.025         0.082         0.094         0.113         0.134
+
+
+           Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        -0.488
+ BYS20K         0.189        -0.260
+ BYS20M         0.208         0.162        -0.243
+ BYS20N         0.194         0.139         0.329        -0.311
+ BYS21A         0.067         0.055         0.095         0.064        -0.587
+ BYS21C         0.106         0.088         0.058         0.078         0.180
+ BYS21D         0.062         0.022         0.046         0.038         0.105
+ BYS21E         0.034         0.042         0.030        -0.001         0.176
+
+
+           Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C        -0.160
+ BYS21D         0.190        -0.506
+ BYS21E         0.244         0.162        -0.510
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.231         0.000
+ BYS20E         0.375         0.290         0.000
+ BYS20F         0.370         0.329         0.571         0.000
+ BYS20G         0.222         0.272         0.439         0.488         0.000
+ BYS20J         0.240         0.190         0.264         0.232         0.197
+ BYS20K         0.079         0.097         0.091         0.098         0.095
+ BYS20M         0.187         0.132         0.175         0.180         0.111
+ BYS20N         0.149         0.107         0.087         0.147         0.055
+ BYS21A         0.184         0.187         0.236         0.253         0.204
+ BYS21C         0.163         0.269         0.293         0.315         0.294
+ BYS21D         0.123         0.192         0.235         0.267         0.230
+ BYS21E         0.062         0.153         0.208         0.230         0.253
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.307         0.000
+ BYS20M         0.333         0.216         0.000
+ BYS20N         0.327         0.195         0.455         0.000
+ BYS21A         0.146         0.100         0.170         0.119         0.000
+ BYS21C         0.162         0.112         0.072         0.103         0.306
+ BYS21D         0.124         0.036         0.075         0.066         0.233
+ BYS21E         0.067         0.070         0.050        -0.001         0.391
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.295         0.000
+ BYS21E         0.380         0.330         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A       999.000
+ BYS20B       999.000       999.000
+ BYS20E       999.000       999.000       999.000
+ BYS20F       999.000       999.000       999.000       999.000
+ BYS20G       999.000       999.000       999.000       999.000       999.000
+ BYS20J       999.000       999.000       999.000       999.000       999.000
+ BYS20K       999.000       999.000       999.000       999.000       999.000
+ BYS20M       999.000       999.000       999.000       999.000       999.000
+ BYS20N       999.000       999.000       999.000       999.000       999.000
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C       999.000       999.000       999.000       999.000       999.000
+ BYS21D       999.000       999.000       999.000       999.000       999.000
+ BYS21E         0.025         0.082         0.094         0.113         0.134
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J       999.000
+ BYS20K       999.000       999.000
+ BYS20M       999.000       999.000       999.000
+ BYS20N       999.000       999.000       999.000       999.000
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C       999.000       999.000       999.000       999.000       999.000
+ BYS21D       999.000       999.000       999.000       999.000       999.000
+ BYS21E         0.034         0.042         0.030        -0.001         0.176
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C       999.000
+ BYS21D       999.000       999.000
+ BYS21E         0.244         0.162        -0.510
+
+
+           Normalized Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A       999.000
+ BYS20B       999.000       999.000
+ BYS20E       999.000       999.000       999.000
+ BYS20F       999.000       999.000       999.000       999.000
+ BYS20G       999.000       999.000       999.000       999.000       999.000
+ BYS20J       999.000       999.000       999.000       999.000       999.000
+ BYS20K       999.000       999.000       999.000       999.000       999.000
+ BYS20M       999.000       999.000       999.000       999.000       999.000
+ BYS20N       999.000       999.000       999.000       999.000       999.000
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C       999.000       999.000       999.000       999.000       999.000
+ BYS21D       999.000       999.000       999.000       999.000       999.000
+ BYS21E       999.000       999.000       999.000       999.000       999.000
+
+
+           Normalized Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J       999.000
+ BYS20K       999.000       999.000
+ BYS20M       999.000       999.000       999.000
+ BYS20N       999.000       999.000       999.000       999.000
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C       999.000       999.000       999.000       999.000       999.000
+ BYS21D       999.000       999.000       999.000       999.000       999.000
+ BYS21E       999.000       999.000       999.000       999.000       999.000
+
+
+           Normalized Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C       999.000
+ BYS21D       999.000       999.000
+ BYS21E       999.000       999.000       999.000
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.820         2.820         2.941         2.862         2.748
+
+
+           Model Estimated Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.277         2.562         2.998         3.043         2.992
+
+
+           Model Estimated Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.631         2.742         2.771
+
+
+           Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000        -0.001
+
+
+           Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               -0.001         0.000        -0.001         0.000         0.000
+
+
+           Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               -0.001         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+              999.000         0.006       999.000        -0.008        -0.046
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+              999.000        -0.001        -0.055         0.019       999.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               -0.039        -0.011        -0.019
+
+
+           Normalized Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.002         0.005         0.014        -0.006        -0.034
+
+
+           Normalized Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               -0.030        -0.001        -0.042         0.012         0.007
+
+
+           Normalized Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               -0.034        -0.008        -0.011
+
+
+           Model Estimated Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.345
+ BYS20B         0.095         0.588
+ BYS20E         0.121         0.155         0.419
+ BYS20F         0.140         0.179         0.229         0.498
+ BYS20G         0.123         0.157         0.201         0.232         0.574
+ BYS20J         0.077         0.098         0.126         0.146         0.128
+ BYS20K         0.048         0.062         0.079         0.091         0.080
+ BYS20M         0.072         0.092         0.118         0.136         0.120
+ BYS20N         0.054         0.070         0.089         0.103         0.091
+ BYS21A         0.074         0.094         0.121         0.140         0.123
+ BYS21C         0.122         0.157         0.201         0.232         0.204
+ BYS21D         0.076         0.098         0.125         0.145         0.127
+ BYS21E         0.074         0.095         0.122         0.141         0.124
+
+
+           Model Estimated Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.512
+ BYS20K         0.050         0.740
+ BYS20M         0.075         0.047         0.759
+ BYS20N         0.057         0.036         0.053         0.689
+ BYS21A         0.077         0.048         0.072         0.054         0.413
+ BYS21C         0.127         0.080         0.119         0.090         0.122
+ BYS21D         0.079         0.050         0.074         0.056         0.076
+ BYS21E         0.077         0.049         0.072         0.055         0.074
+
+
+           Model Estimated Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.839
+ BYS21D         0.127         0.494
+ BYS21E         0.123         0.077         0.490
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.210         1.000
+ BYS20E         0.318         0.312         1.000
+ BYS20F         0.338         0.331         0.502         1.000
+ BYS20G         0.275         0.270         0.410         0.435         1.000
+ BYS20J         0.183         0.179         0.272         0.288         0.235
+ BYS20K         0.096         0.094         0.142         0.151         0.123
+ BYS20M         0.141         0.138         0.209         0.222         0.181
+ BYS20N         0.112         0.110         0.166         0.176         0.144
+ BYS21A         0.195         0.192         0.291         0.309         0.252
+ BYS21C         0.228         0.223         0.339         0.359         0.293
+ BYS21D         0.185         0.181         0.275         0.292         0.238
+ BYS21E         0.181         0.177         0.269         0.285         0.233
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.082         1.000
+ BYS20M         0.120         0.063         1.000
+ BYS20N         0.095         0.050         0.073         1.000
+ BYS21A         0.167         0.087         0.129         0.102         1.000
+ BYS21C         0.194         0.102         0.150         0.119         0.208
+ BYS21D         0.158         0.082         0.121         0.096         0.169
+ BYS21E         0.154         0.081         0.119         0.094         0.165
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.197         1.000
+ BYS21E         0.192         0.156         1.000
+
+
+           Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.009         0.000
+ BYS20E         0.022        -0.011         0.001
+ BYS20F         0.014        -0.001         0.032         0.000
+ BYS20G        -0.024         0.001         0.015         0.029         0.001
+ BYS20J         0.024         0.006        -0.003        -0.029        -0.021
+ BYS20K        -0.008         0.002        -0.028        -0.032        -0.018
+ BYS20M         0.023        -0.004        -0.019        -0.026        -0.046
+ BYS20N         0.018        -0.002        -0.042        -0.017        -0.056
+ BYS21A        -0.004        -0.002        -0.022        -0.025        -0.023
+ BYS21C        -0.035         0.032        -0.027        -0.029         0.001
+ BYS21D        -0.025         0.006        -0.018        -0.012        -0.004
+ BYS21E        -0.049        -0.013        -0.027        -0.027         0.011
+
+
+           Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.139         0.000
+ BYS20M         0.133         0.115        -0.002
+ BYS20N         0.138         0.104         0.276         0.000
+ BYS21A        -0.010         0.007         0.023         0.009         0.000
+ BYS21C        -0.022         0.008        -0.062        -0.012         0.058
+ BYS21D        -0.017        -0.028        -0.029        -0.018         0.029
+ BYS21E        -0.044        -0.006        -0.042        -0.056         0.101
+
+
+           Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.063         0.000
+ BYS21E         0.121         0.085         0.001
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.021         0.000
+ BYS20E         0.056        -0.022         0.000
+ BYS20F         0.033        -0.002         0.069         0.000
+ BYS20G        -0.053         0.002         0.029         0.053         0.000
+ BYS20J         0.057         0.010        -0.007        -0.057        -0.039
+ BYS20K        -0.017         0.004        -0.051        -0.052        -0.028
+ BYS20M         0.046        -0.006        -0.034        -0.042        -0.070
+ BYS20N         0.037        -0.003        -0.079        -0.029        -0.089
+ BYS21A        -0.012        -0.005        -0.054        -0.055        -0.047
+ BYS21C        -0.064         0.046        -0.045        -0.044         0.001
+ BYS21D        -0.061         0.011        -0.040        -0.024        -0.008
+ BYS21E        -0.119        -0.024        -0.061        -0.056         0.020
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.225         0.000
+ BYS20M         0.213         0.153         0.000
+ BYS20N         0.232         0.145         0.382         0.000
+ BYS21A        -0.021         0.013         0.042         0.017         0.000
+ BYS21C        -0.033         0.010        -0.077        -0.016         0.098
+ BYS21D        -0.034        -0.047        -0.047        -0.031         0.064
+ BYS21E        -0.087        -0.010        -0.069        -0.096         0.225
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.098         0.000
+ BYS21E         0.188         0.174         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A        -0.001
+ BYS20B       999.000         0.001
+ BYS20E         2.115        -1.281         0.060
+ BYS20F         1.485       999.000         1.533         0.000
+ BYS20G        -9.191         0.077         1.503         1.713       999.000
+ BYS20J         1.810         0.357        -0.553       999.000        -3.161
+ BYS20K        -0.599       999.000        -1.386        -1.888        -1.068
+ BYS20M         1.665        -0.158        -1.046       999.000        -1.778
+ BYS20N         1.304        -0.074        -2.122        -0.892        -2.564
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C        -2.471         1.577        -1.629        -1.315         0.043
+ BYS21D        -2.066         0.451        -1.829        -1.139        -0.237
+ BYS21E        -0.049        -0.013        -0.027        -0.027         0.011
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        -0.010
+ BYS20K        22.842         0.005
+ BYS20M         6.027         4.352        -0.053
+ BYS20N        14.473         4.737        11.517        -0.015
+ BYS21A        -4.561         0.717       999.000         0.525        -0.001
+ BYS21C        -0.954         0.278        -2.137        -0.550       999.000
+ BYS21D        -0.895        -1.392        -1.273        -0.943       999.000
+ BYS21E        -0.044        -0.006        -0.042        -0.056         0.101
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.003
+ BYS21D         2.881       999.000
+ BYS21E         0.121         0.085         0.001
+
+
+           Normalized Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.459         0.001
+ BYS20E         1.052        -0.492         0.040
+ BYS20F         0.640        -0.058         1.291         0.000
+ BYS20G        -1.196         0.038         0.670         1.223         0.022
+ BYS20J         1.138         0.229        -0.140        -1.206        -0.906
+ BYS20K        -0.391         0.089        -1.134        -1.338        -0.679
+ BYS20M         1.036        -0.139        -0.730        -1.022        -1.611
+ BYS20N         0.838        -0.063        -1.768        -0.696        -2.188
+ BYS21A        -0.253        -0.115        -1.215        -1.309        -1.079
+ BYS21C        -1.490         1.125        -1.066        -1.076         0.037
+ BYS21D        -1.268         0.264        -0.811        -0.544        -0.184
+ BYS21E        -2.518        -0.571        -1.331        -1.269         0.462
+
+
+           Normalized Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        -0.008
+ BYS20K         5.792         0.004
+ BYS20M         5.066         3.740        -0.047
+ BYS20N         5.276         3.689         8.635        -0.012
+ BYS21A        -0.449         0.308         0.944         0.415        -0.001
+ BYS21C        -0.774         0.249        -1.906        -0.389         2.280
+ BYS21D        -0.721        -1.092        -1.087        -0.701         1.385
+ BYS21E        -1.972        -0.239        -1.571        -2.265         5.003
+
+
+           Normalized Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.002
+ BYS21D         2.268         0.000
+ BYS21E         4.421         3.563         0.021
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.820         2.820         2.942         2.861         2.748
+
+
+           Model Estimated Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.277         2.561         2.997         3.043         2.992
+
+
+           Model Estimated Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.631         2.742         2.771
+
+
+           Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000        -0.001
+
+
+           Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               -0.001         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+              999.000         0.007       999.000         0.002        -0.035
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+              999.000         0.018        -0.001         0.023       999.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               -0.051        -0.023        -0.019
+
+
+           Normalized Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.003         0.006         0.009         0.001        -0.026
+
+
+           Normalized Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               -0.007         0.014        -0.001         0.011         0.007
+
+
+           Normalized Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+               -0.043        -0.015        -0.010
+
+
+           Model Estimated Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.345
+ BYS20B         0.093         0.588
+ BYS20E         0.117         0.154         0.420
+ BYS20F         0.135         0.179         0.233         0.498
+ BYS20G         0.117         0.158         0.209         0.242         0.574
+ BYS20J         0.091         0.099         0.112         0.131         0.100
+ BYS20K         0.060         0.060         0.065         0.076         0.053
+ BYS20M         0.100         0.095         0.095         0.112         0.072
+ BYS20N         0.081         0.071         0.065         0.077         0.041
+ BYS21A         0.073         0.094         0.121         0.140         0.124
+ BYS21C         0.117         0.157         0.207         0.240         0.217
+ BYS21D         0.072         0.098         0.130         0.151         0.137
+ BYS21E         0.068         0.096         0.130         0.150         0.139
+
+
+           Model Estimated Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.512
+ BYS20K         0.123         0.740
+ BYS20M         0.225         0.176         0.757
+ BYS20N         0.203         0.162         0.311         0.689
+ BYS21A         0.078         0.048         0.076         0.057         0.413
+ BYS21C         0.104         0.057         0.078         0.048         0.123
+ BYS21D         0.061         0.032         0.042         0.023         0.077
+ BYS21E         0.046         0.019         0.017        -0.002         0.075
+
+
+           Model Estimated Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.840
+ BYS21D         0.135         0.494
+ BYS21E         0.137         0.087         0.490
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.206         1.000
+ BYS20E         0.307         0.311         1.000
+ BYS20F         0.327         0.331         0.510         1.000
+ BYS20G         0.263         0.273         0.426         0.453         1.000
+ BYS20J         0.218         0.180         0.242         0.260         0.185
+ BYS20K         0.119         0.092         0.116         0.125         0.082
+ BYS20M         0.195         0.142         0.169         0.183         0.108
+ BYS20N         0.166         0.111         0.121         0.132         0.065
+ BYS21A         0.193         0.191         0.290         0.309         0.254
+ BYS21C         0.217         0.224         0.349         0.371         0.313
+ BYS21D         0.175         0.182         0.286         0.304         0.257
+ BYS21E         0.167         0.180         0.287         0.304         0.263
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.199         1.000
+ BYS20M         0.362         0.236         1.000
+ BYS20N         0.341         0.227         0.430         1.000
+ BYS21A         0.171         0.087         0.136         0.107         1.000
+ BYS21C         0.158         0.072         0.098         0.063         0.209
+ BYS21D         0.121         0.053         0.068         0.039         0.170
+ BYS21E         0.091         0.032         0.027        -0.003         0.167
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.210         1.000
+ BYS21E         0.214         0.177         1.000
+
+
+           Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.011         0.000
+ BYS20E         0.026        -0.010         0.001
+ BYS20F         0.018        -0.001         0.028         0.000
+ BYS20G        -0.018         0.000         0.007         0.019         0.001
+ BYS20J         0.009         0.005         0.011        -0.014         0.007
+ BYS20K        -0.020         0.004        -0.014        -0.016         0.009
+ BYS20M        -0.004        -0.006         0.004        -0.002         0.002
+ BYS20N        -0.008        -0.002        -0.018         0.009        -0.007
+ BYS21A        -0.004        -0.002        -0.022        -0.025        -0.024
+ BYS21C        -0.029         0.032        -0.033        -0.036        -0.013
+ BYS21D        -0.022         0.005        -0.023        -0.018        -0.015
+ BYS21E        -0.043        -0.014        -0.036        -0.037        -0.005
+
+
+           Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.066         0.000
+ BYS20M        -0.018        -0.015         0.000
+ BYS20N        -0.008        -0.022         0.018         0.000
+ BYS21A        -0.011         0.007         0.019         0.006         0.000
+ BYS21C         0.002         0.031        -0.021         0.030         0.057
+ BYS21D         0.002        -0.010         0.004         0.015         0.029
+ BYS21E        -0.012         0.023         0.014         0.001         0.101
+
+
+           Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.055         0.000
+ BYS21E         0.107         0.075         0.001
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.025         0.000
+ BYS20E         0.068        -0.021         0.000
+ BYS20F         0.044        -0.002         0.061         0.000
+ BYS20G        -0.041        -0.001         0.013         0.036         0.000
+ BYS20J         0.022         0.010         0.022        -0.028         0.012
+ BYS20K        -0.040         0.006        -0.025        -0.027         0.013
+ BYS20M        -0.009        -0.009         0.006        -0.003         0.002
+ BYS20N        -0.017        -0.004        -0.034         0.015        -0.010
+ BYS21A        -0.009        -0.004        -0.054        -0.055        -0.050
+ BYS21C        -0.054         0.045        -0.056        -0.056        -0.018
+ BYS21D        -0.052         0.010        -0.051        -0.037        -0.028
+ BYS21E        -0.105        -0.026        -0.079        -0.075        -0.010
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.108         0.000
+ BYS20M        -0.028        -0.020         0.000
+ BYS20N        -0.014        -0.031         0.025         0.000
+ BYS21A        -0.025         0.013         0.034         0.012         0.000
+ BYS21C         0.003         0.040        -0.026         0.040         0.097
+ BYS21D         0.003        -0.017         0.006         0.027         0.063
+ BYS21E        -0.024         0.039         0.023         0.001         0.224
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.085         0.000
+ BYS21E         0.167         0.152         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A        -0.002
+ BYS20B       999.000         0.001
+ BYS20E         3.582        -1.528         0.059
+ BYS20F       999.000       999.000         1.414        -0.009
+ BYS20G       999.000        -0.027         1.398         7.942       999.000
+ BYS20J       999.000       999.000       999.000       999.000       999.000
+ BYS20K       999.000       999.000        -0.950        -2.088         0.636
+ BYS20M       999.000        -0.489       999.000       999.000         0.063
+ BYS20N        -0.645        -0.121        -0.976         1.710        -0.520
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C        -2.125         1.560        -2.225        -1.961        -0.562
+ BYS21D        -2.053         0.418        -2.588        -6.358        -1.291
+ BYS21E        -0.043        -0.014        -0.036        -0.037        -0.005
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        -0.003
+ BYS20K       999.000         0.005
+ BYS20M        -0.799        -0.563        -0.010
+ BYS20N        -0.880        -1.053         0.780         0.001
+ BYS21A       999.000         1.632       999.000         0.378        -0.001
+ BYS21C         0.188         1.435        -0.733         1.646       999.000
+ BYS21D         0.110       999.000       999.000         0.926       999.000
+ BYS21E        -0.012         0.023         0.014         0.001         0.101
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C        -0.007
+ BYS21D         3.058         0.000
+ BYS21E         0.107         0.075         0.001
+
+
+           Normalized Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.545         0.001
+ BYS20E         1.261        -0.463         0.038
+ BYS20F         0.850        -0.043         1.137        -0.007
+ BYS20G        -0.914        -0.012         0.300         0.813         0.018
+ BYS20J         0.439         0.215         0.451        -0.594         0.283
+ BYS20K        -0.933         0.144        -0.550        -0.680         0.330
+ BYS20M        -0.196        -0.222         0.141        -0.070         0.057
+ BYS20N        -0.371        -0.094        -0.751         0.362        -0.256
+ BYS21A        -0.203        -0.090        -1.207        -1.316        -1.133
+ BYS21C        -1.256         1.108        -1.321        -1.358        -0.446
+ BYS21D        -1.076         0.235        -1.044        -0.814        -0.627
+ BYS21E        -2.216        -0.624        -1.731        -1.705        -0.214
+
+
+           Normalized Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        -0.002
+ BYS20K         2.769         0.003
+ BYS20M        -0.669        -0.480        -0.009
+ BYS20N        -0.321        -0.798         0.564         0.000
+ BYS21A        -0.526         0.309         0.780         0.292        -0.001
+ BYS21C         0.079         0.978        -0.640         0.944         2.257
+ BYS21D         0.068        -0.395         0.142         0.609         1.357
+ BYS21E        -0.540         0.883         0.517         0.033         4.962
+
+
+           Normalized Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C        -0.007
+ BYS21D         1.956         0.000
+ BYS21E         3.925         3.131         0.026
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.820         2.820         2.942         2.861         2.747
+
+
+           Model Estimated Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.277         2.561         2.997         3.044         2.992
+
+
+           Model Estimated Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.629         2.742         2.771
+
+
+           Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.001        -0.001
+
+
+           Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+              999.000         0.008       999.000         0.030        -0.025
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+              999.000         0.013        -0.017        -0.001       999.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.007        -0.002         0.002
+
+
+           Normalized Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               -0.001         0.007         0.002         0.021        -0.018
+
+
+           Normalized Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               -0.011         0.010        -0.013        -0.001         0.002
+
+
+           Normalized Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.006        -0.002         0.001
+
+
+           Model Estimated Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.345
+ BYS20B         0.094         0.588
+ BYS20E         0.135         0.156         0.420
+ BYS20F         0.154         0.181         0.262         0.499
+ BYS20G         0.122         0.154         0.218         0.251         0.575
+ BYS20J         0.094         0.098         0.115         0.134         0.099
+ BYS20K         0.053         0.059         0.055         0.067         0.049
+ BYS20M         0.097         0.096         0.092         0.110         0.071
+ BYS20N         0.078         0.072         0.059         0.072         0.039
+ BYS21A         0.051         0.091         0.097         0.116         0.114
+ BYS21C         0.090         0.151         0.178         0.210         0.201
+ BYS21D         0.054         0.093         0.110         0.130         0.127
+ BYS21E         0.029         0.096         0.092         0.112         0.131
+
+
+           Model Estimated Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.512
+ BYS20K         0.121         0.740
+ BYS20M         0.223         0.178         0.757
+ BYS20N         0.203         0.166         0.311         0.689
+ BYS21A         0.076         0.063         0.086         0.068         0.413
+ BYS21C         0.100         0.073         0.091         0.061         0.180
+ BYS21D         0.058         0.042         0.049         0.030         0.114
+ BYS21E         0.036         0.041         0.023         0.004         0.170
+
+
+           Model Estimated Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.840
+ BYS21D         0.176         0.494
+ BYS21E         0.252         0.163         0.490
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.208         1.000
+ BYS20E         0.354         0.314         1.000
+ BYS20F         0.372         0.334         0.572         1.000
+ BYS20G         0.274         0.264         0.444         0.469         1.000
+ BYS20J         0.223         0.179         0.247         0.265         0.183
+ BYS20K         0.105         0.090         0.099         0.110         0.075
+ BYS20M         0.191         0.144         0.163         0.179         0.108
+ BYS20N         0.159         0.113         0.110         0.123         0.062
+ BYS21A         0.136         0.185         0.232         0.255         0.234
+ BYS21C         0.168         0.214         0.299         0.324         0.290
+ BYS21D         0.132         0.173         0.242         0.263         0.237
+ BYS21E         0.071         0.179         0.202         0.227         0.247
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.197         1.000
+ BYS20M         0.359         0.238         1.000
+ BYS20N         0.342         0.232         0.431         1.000
+ BYS21A         0.166         0.114         0.154         0.127         1.000
+ BYS21C         0.152         0.093         0.114         0.080         0.306
+ BYS21D         0.114         0.070         0.081         0.052         0.253
+ BYS21E         0.072         0.067         0.037         0.007         0.379
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.274         1.000
+ BYS21E         0.393         0.330         1.000
+
+
+           Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.010         0.000
+ BYS20E         0.008        -0.012         0.000
+ BYS20F        -0.001        -0.003        -0.001        -0.001
+ BYS20G        -0.023         0.004        -0.002         0.010         0.000
+ BYS20J         0.007         0.006         0.008        -0.017         0.008
+ BYS20K        -0.013         0.005        -0.004        -0.007         0.013
+ BYS20M        -0.002        -0.008         0.007         0.001         0.002
+ BYS20N        -0.005        -0.004        -0.012         0.014        -0.005
+ BYS21A         0.018         0.001         0.002        -0.001        -0.014
+ BYS21C        -0.002         0.039        -0.004        -0.006         0.003
+ BYS21D        -0.004         0.010        -0.003         0.002        -0.004
+ BYS21E        -0.004        -0.014         0.003         0.001         0.003
+
+
+           Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.068         0.000
+ BYS20M        -0.016        -0.016         0.000
+ BYS20N        -0.009        -0.027         0.017         0.000
+ BYS21A        -0.009        -0.008         0.009        -0.004         0.000
+ BYS21C         0.006         0.015        -0.033         0.017         0.000
+ BYS21D         0.005        -0.021        -0.004         0.008        -0.009
+ BYS21E        -0.002         0.002         0.008        -0.005         0.005
+
+
+           Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.013         0.000
+ BYS21E        -0.008         0.000         0.000
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.023         0.000
+ BYS20E         0.021        -0.024         0.000
+ BYS20F        -0.001        -0.005        -0.002         0.000
+ BYS20G        -0.052         0.008        -0.005         0.019         0.000
+ BYS20J         0.017         0.011         0.018        -0.034         0.014
+ BYS20K        -0.026         0.007        -0.008        -0.011         0.021
+ BYS20M        -0.004        -0.012         0.012         0.001         0.003
+ BYS20N        -0.010        -0.006        -0.022         0.024        -0.008
+ BYS21A         0.048         0.002         0.004        -0.002        -0.029
+ BYS21C        -0.004         0.055        -0.006        -0.009         0.005
+ BYS21D        -0.009         0.019        -0.007         0.004        -0.008
+ BYS21E        -0.009        -0.026         0.006         0.002         0.006
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.110         0.000
+ BYS20M        -0.025        -0.022         0.000
+ BYS20N        -0.015        -0.037         0.024         0.000
+ BYS21A        -0.020        -0.014         0.016        -0.008         0.000
+ BYS21C         0.009         0.019        -0.042         0.023         0.000
+ BYS21D         0.010        -0.034        -0.006         0.014        -0.019
+ BYS21E        -0.004         0.003         0.013        -0.008         0.012
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.021         0.000
+ BYS21E        -0.012        -0.001         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B       999.000         0.002
+ BYS20E         1.104       999.000         0.014
+ BYS20F        -0.632       999.000        -0.045        -0.041
+ BYS20G       999.000         0.458        -0.382       999.000       999.000
+ BYS20J         2.012       999.000       999.000       999.000       999.000
+ BYS20K       999.000       999.000        -0.275        -0.977         0.937
+ BYS20M       999.000        -0.610       999.000       999.000         0.073
+ BYS20N        -0.382        -0.206        -0.741         1.332        -0.294
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C        -0.198         2.022        -0.235        -0.333         0.145
+ BYS21D       999.000         1.142        -0.604       999.000        -0.816
+ BYS21E        -0.004        -0.014         0.003         0.001         0.003
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        -0.004
+ BYS20K        34.920        -0.004
+ BYS20M        -0.747        -0.640        -0.010
+ BYS20N        -0.924        -1.363         0.769        -0.001
+ BYS21A       999.000        -1.177       999.000        -0.277        -0.001
+ BYS21C         0.436         0.639        -1.210         0.830       999.000
+ BYS21D       999.000       999.000        -0.365         0.592       999.000
+ BYS21E        -0.002         0.002         0.008        -0.005         0.005
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C        -0.012
+ BYS21D         0.910       999.000
+ BYS21E        -0.008         0.000         0.000
+
+
+           Normalized Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.505         0.001
+ BYS20E         0.391        -0.548         0.009
+ BYS20F        -0.033        -0.126        -0.036        -0.032
+ BYS20G        -1.163         0.175        -0.103         0.420         0.002
+ BYS20J         0.334         0.234         0.349        -0.719         0.328
+ BYS20K        -0.612         0.183        -0.171        -0.289         0.504
+ BYS20M        -0.092        -0.286         0.270         0.025         0.064
+ BYS20N        -0.229        -0.157        -0.503         0.575        -0.187
+ BYS21A         1.053         0.045         0.101        -0.049        -0.670
+ BYS21C        -0.100         1.347        -0.140        -0.239         0.112
+ BYS21D        -0.177         0.453        -0.147         0.092        -0.176
+ BYS21E        -0.188        -0.614         0.139         0.051         0.129
+
+
+           Normalized Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        -0.002
+ BYS20K         2.819        -0.002
+ BYS20M        -0.602        -0.537        -0.009
+ BYS20N        -0.337        -0.947         0.541        -0.001
+ BYS21A        -0.418        -0.338         0.362        -0.200         0.000
+ BYS21C         0.223         0.465        -1.032         0.547        -0.007
+ BYS21D         0.206        -0.796        -0.141         0.316        -0.414
+ BYS21E        -0.096         0.064         0.287        -0.187         0.265
+
+
+           Normalized Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C        -0.010
+ BYS21D         0.482        -0.004
+ BYS21E        -0.286        -0.011        -0.001
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.821         2.820         2.942         2.862         2.747
+
+
+           Model Estimated Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.277         2.561         2.997         3.044         2.992
+
+
+           Model Estimated Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.629         2.742         2.771
+
+
+           Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+              999.000         0.007       999.000        -0.007        -0.021
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+              999.000         0.009        -0.017        -0.001         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.007         0.000        -0.001
+
+
+           Normalized Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+               -0.001         0.006         0.008        -0.005        -0.016
+
+
+           Normalized Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+               -0.003         0.007        -0.012        -0.001         0.000
+
+
+           Normalized Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.006         0.000        -0.001
+
+
+           Model Estimated Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.345
+ BYS20B         0.092         0.588
+ BYS20E         0.133         0.154         0.420
+ BYS20F         0.156         0.181         0.262         0.498
+ BYS20G         0.121         0.153         0.216         0.252         0.575
+ BYS20J         0.100         0.105         0.122         0.117         0.107
+ BYS20K         0.049         0.056         0.054         0.059         0.049
+ BYS20M         0.096         0.092         0.088         0.116         0.067
+ BYS20N         0.077         0.069         0.057         0.078         0.037
+ BYS21A         0.051         0.091         0.096         0.117         0.113
+ BYS21C         0.089         0.150         0.177         0.209         0.201
+ BYS21D         0.054         0.094         0.110         0.130         0.126
+ BYS21E         0.030         0.097         0.092         0.111         0.131
+
+
+           Model Estimated Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.512
+ BYS20K         0.189         0.740
+ BYS20M         0.208         0.154         0.757
+ BYS20N         0.194         0.144         0.328         0.689
+ BYS21A         0.067         0.058         0.091         0.071         0.413
+ BYS21C         0.106         0.072         0.086         0.056         0.180
+ BYS21D         0.062         0.043         0.049         0.030         0.114
+ BYS21E         0.034         0.043         0.024         0.005         0.170
+
+
+           Model Estimated Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.840
+ BYS21D         0.177         0.494
+ BYS21E         0.252         0.162         0.490
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.205         1.000
+ BYS20E         0.349         0.311         1.000
+ BYS20F         0.376         0.335         0.574         1.000
+ BYS20G         0.272         0.263         0.440         0.472         1.000
+ BYS20J         0.239         0.191         0.264         0.232         0.197
+ BYS20K         0.098         0.085         0.097         0.098         0.075
+ BYS20M         0.188         0.139         0.157         0.189         0.102
+ BYS20N         0.157         0.108         0.107         0.134         0.059
+ BYS21A         0.135         0.185         0.231         0.259         0.233
+ BYS21C         0.166         0.213         0.298         0.323         0.290
+ BYS21D         0.132         0.174         0.241         0.263         0.237
+ BYS21E         0.073         0.181         0.203         0.226         0.247
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K         0.307         1.000
+ BYS20M         0.334         0.206         1.000
+ BYS20N         0.327         0.201         0.454         1.000
+ BYS21A         0.146         0.105         0.162         0.134         1.000
+ BYS21C         0.162         0.091         0.107         0.073         0.306
+ BYS21D         0.123         0.071         0.080         0.052         0.253
+ BYS21E         0.067         0.071         0.039         0.008         0.379
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.275         1.000
+ BYS21E         0.393         0.329         1.000
+
+
+           Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.012         0.000
+ BYS20E         0.010        -0.010         0.000
+ BYS20F        -0.002        -0.004        -0.001         0.000
+ BYS20G        -0.022         0.005         0.000         0.009         0.000
+ BYS20J         0.000         0.000         0.000         0.000         0.000
+ BYS20K        -0.010         0.008        -0.003         0.000         0.013
+ BYS20M        -0.001        -0.004         0.010        -0.006         0.006
+ BYS20N        -0.004        -0.001        -0.010         0.008        -0.003
+ BYS21A         0.018         0.001         0.002        -0.003        -0.014
+ BYS21C        -0.001         0.039        -0.003        -0.006         0.003
+ BYS21D        -0.003         0.010        -0.003         0.002        -0.004
+ BYS21E        -0.004        -0.015         0.002         0.002         0.003
+
+
+           Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.000         0.000
+ BYS20M         0.000         0.007         0.000
+ BYS20N         0.000        -0.004         0.001         0.000
+ BYS21A         0.000        -0.003         0.004        -0.008         0.000
+ BYS21C         0.000         0.016        -0.028         0.022         0.000
+ BYS21D         0.000        -0.021        -0.003         0.008        -0.009
+ BYS21E         0.000         0.000         0.007        -0.006         0.005
+
+
+           Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.013         0.000
+ BYS21E        -0.008         0.000         0.000
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.026         0.000
+ BYS20E         0.026        -0.020         0.000
+ BYS20F        -0.005        -0.006        -0.003         0.000
+ BYS20G        -0.050         0.009        -0.001         0.016         0.000
+ BYS20J         0.001        -0.001         0.000         0.000         0.000
+ BYS20K        -0.019         0.012        -0.006         0.000         0.020
+ BYS20M        -0.001        -0.006         0.018        -0.009         0.009
+ BYS20N        -0.008        -0.001        -0.019         0.013        -0.004
+ BYS21A         0.049         0.002         0.005        -0.006        -0.028
+ BYS21C        -0.002         0.056        -0.004        -0.009         0.005
+ BYS21D        -0.008         0.019        -0.006         0.005        -0.008
+ BYS21E        -0.011        -0.027         0.004         0.004         0.006
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.000         0.000
+ BYS20M         0.000         0.010         0.000
+ BYS20N         0.000        -0.006         0.001         0.000
+ BYS21A         0.000        -0.005         0.008        -0.014         0.000
+ BYS21C        -0.001         0.020        -0.035         0.029         0.000
+ BYS21D         0.001        -0.035        -0.005         0.014        -0.020
+ BYS21E         0.000        -0.001         0.011        -0.009         0.012
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.020         0.000
+ BYS21E        -0.012         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B       999.000         0.001
+ BYS20E       999.000       999.000         0.025
+ BYS20F       999.000       999.000       999.000       999.000
+ BYS20G       999.000       999.000       999.000       999.000       999.000
+ BYS20J       999.000       999.000       999.000       999.000       999.000
+ BYS20K       999.000       999.000        -0.254       999.000         1.392
+ BYS20M       999.000       999.000       999.000       999.000         0.230
+ BYS20N        -0.321        -0.063        -2.374       999.000        -0.171
+ BYS21A       999.000       999.000       999.000       999.000       999.000
+ BYS21C        -0.104         2.111        -0.170       999.000         0.163
+ BYS21D       999.000         1.106        -0.507       999.000       999.000
+ BYS21E        -0.004        -0.015         0.002         0.002         0.003
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.001
+ BYS20K       999.000         0.002
+ BYS20M        -0.009         0.285        -0.005
+ BYS20N         0.025        -0.220         0.029         0.000
+ BYS21A       999.000        -0.491       999.000        -0.496         0.000
+ BYS21C        -0.064         0.755        -1.017         1.070       999.000
+ BYS21D       999.000       999.000        -0.457         0.598       999.000
+ BYS21E         0.000         0.000         0.007        -0.006         0.005
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C        -0.010
+ BYS21D         0.892       999.000
+ BYS21E        -0.008         0.000         0.000
+
+
+           Normalized Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.573         0.001
+ BYS20E         0.484        -0.463         0.015
+ BYS20F        -0.098        -0.154        -0.045        -0.001
+ BYS20G        -1.120         0.203        -0.016         0.374         0.003
+ BYS20J         0.014        -0.020         0.009        -0.006        -0.002
+ BYS20K        -0.444         0.302        -0.131         0.009         0.485
+ BYS20M        -0.031        -0.151         0.400        -0.229         0.202
+ BYS20N        -0.187        -0.034        -0.435         0.311        -0.098
+ BYS21A         1.060         0.056         0.125        -0.134        -0.646
+ BYS21C        -0.053         1.368        -0.101        -0.209         0.119
+ BYS21D        -0.174         0.449        -0.130         0.100        -0.170
+ BYS21E        -0.232        -0.650         0.101         0.093         0.129
+
+
+           Normalized Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.004         0.001
+ BYS20M        -0.007         0.236        -0.004
+ BYS20N         0.009        -0.151         0.020         0.000
+ BYS21A        -0.002        -0.121         0.181        -0.353         0.000
+ BYS21C        -0.017         0.497        -0.864         0.701        -0.007
+ BYS21D         0.017        -0.829        -0.127         0.320        -0.432
+ BYS21E         0.007        -0.013         0.245        -0.224         0.263
+
+
+           Normalized Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C        -0.008
+ BYS21D         0.465        -0.004
+ BYS21E        -0.289         0.007        -0.001
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                2.821         2.821         2.942         2.861         2.747
+
+
+           Model Estimated Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                3.277         2.562         2.997         3.044         2.992
+
+
+           Model Estimated Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                2.629         2.742         2.771
+
+
+           Residuals for Means
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           Model Estimated Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.289
+ BYS20B         0.036         0.521
+ BYS20E         0.052         0.072         0.295
+ BYS20F         0.061         0.085         0.120         0.332
+ BYS20G         0.053         0.081         0.109         0.128         0.481
+ BYS20J         0.002        -0.010        -0.021        -0.030        -0.024
+ BYS20K         0.018         0.027         0.030         0.036         0.033
+ BYS20M         0.034         0.034         0.049         0.058         0.045
+ BYS20N         0.021         0.023         0.024         0.029         0.021
+ BYS21A         0.036         0.069         0.082         0.097         0.100
+ BYS21C         0.051         0.117         0.117         0.141         0.149
+ BYS21D         0.035         0.068         0.080         0.095         0.098
+ BYS21E         0.055         0.119         0.149         0.177         0.190
+
+
+           Model Estimated Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J       -15.638
+ BYS20K         0.084         0.690
+ BYS20M         0.155         0.044         0.459
+ BYS20N         0.125         0.033         0.078         0.472
+ BYS21A         0.035         0.037         0.048         0.026         0.411
+ BYS21C        -0.018         0.052         0.036         0.026         0.156
+ BYS21D         0.008         0.032         0.034         0.017         0.099
+ BYS21E         0.073         0.062         0.072         0.023         0.219
+
+
+           Model Estimated Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.706
+ BYS21D         0.155         0.486
+ BYS21E         0.298         0.202         0.567
+
+
+           Model Estimated Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.093         1.000
+ BYS20E         0.179         0.183         1.000
+ BYS20F         0.197         0.204         0.383         1.000
+ BYS20G         0.141         0.161         0.290         0.320         1.000
+ BYS20J    439680.014   ***********   ***********   ***********   ***********
+ BYS20K         0.040         0.046         0.066         0.076         0.058
+ BYS20M         0.094         0.069         0.132         0.149         0.097
+ BYS20N         0.057         0.045         0.064         0.074         0.044
+ BYS21A         0.104         0.148         0.235         0.264         0.224
+ BYS21C         0.112         0.193         0.257         0.291         0.256
+ BYS21D         0.092         0.136         0.212         0.237         0.202
+ BYS21E         0.137         0.219         0.365         0.407         0.365
+
+
+           Model Estimated Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         1.000
+ BYS20K   ***********         1.000
+ BYS20M   ***********         0.079         1.000
+ BYS20N   ***********         0.058         0.168         1.000
+ BYS21A   5394112.856         0.070         0.111         0.059         1.000
+ BYS21C   ***********         0.075         0.064         0.046         0.289
+ BYS21D   1136818.423         0.055         0.072         0.035         0.223
+ BYS21E   9695212.812         0.099         0.142         0.044         0.453
+
+
+           Model Estimated Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         1.000
+ BYS21D         0.264         1.000
+ BYS21E         0.470         0.386         1.000
+
+
+           Residuals for Covariances
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.056
+ BYS20B         0.068         0.067
+ BYS20E         0.090         0.073         0.125
+ BYS20F         0.092         0.093         0.141         0.166
+ BYS20G         0.046         0.077         0.107         0.133         0.094
+ BYS20J         0.098         0.114         0.144         0.147         0.131
+ BYS20K         0.022         0.037         0.021         0.023         0.029
+ BYS20M         0.061         0.054         0.050         0.052         0.028
+ BYS20N         0.052         0.046         0.023         0.057         0.014
+ BYS21A         0.034         0.024         0.017         0.018         0.000
+ BYS21C         0.037         0.072         0.057         0.062         0.056
+ BYS21D         0.016         0.035         0.027         0.037         0.025
+ BYS21E        -0.030        -0.037        -0.055        -0.063        -0.056
+
+
+           Residuals for Covariances
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J        16.150
+ BYS20K         0.105         0.050
+ BYS20M         0.053         0.117         0.298
+ BYS20N         0.069         0.106         0.251         0.217
+ BYS21A         0.033         0.018         0.047         0.038         0.002
+ BYS21C         0.124         0.036         0.021         0.052         0.025
+ BYS21D         0.054        -0.010         0.012         0.022         0.006
+ BYS21E        -0.039        -0.020        -0.042        -0.023        -0.043
+
+
+           Residuals for Covariances
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.133
+ BYS21D         0.035         0.008
+ BYS21E        -0.053        -0.040        -0.076
+
+
+           Residuals for Correlations
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.137         0.000
+ BYS20E         0.196         0.108         0.000
+ BYS20F         0.173         0.125         0.188         0.000
+ BYS20G         0.081         0.111         0.150         0.168         0.000
+ BYS20J   -439679.774   1389879.695   3900778.426   5172887.389   3430961.072
+ BYS20K         0.039         0.052         0.025         0.023         0.037
+ BYS20M         0.092         0.063         0.043         0.031         0.014
+ BYS20N         0.092         0.062         0.023         0.073         0.011
+ BYS21A         0.080         0.039         0.001        -0.010        -0.020
+ BYS21C         0.052         0.076         0.037         0.023         0.039
+ BYS21D         0.031         0.057         0.023         0.030         0.028
+ BYS21E        -0.075        -0.066        -0.157        -0.178        -0.112
+
+
+           Residuals for Correlations
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K   ***********         0.000
+ BYS20M   ***********         0.137         0.000
+ BYS20N   ***********         0.137         0.287         0.000
+ BYS21A   ***********         0.030         0.059         0.061         0.000
+ BYS21C   2094476.368         0.037         0.008         0.057         0.017
+ BYS21D   ***********        -0.020         0.002         0.031         0.011
+ BYS21E   ***********        -0.029        -0.092        -0.045        -0.062
+
+
+           Residuals for Correlations
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.031         0.000
+ BYS21E        -0.090        -0.056         0.000
+
+
+MODIFICATION INDICES
+
+
+     MODIFICATION INDICES FOR ANALYSIS WITH 1 FACTOR(S)
+
+
+
+     MODIFICATION INDICES
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.471         0.000
+ BYS20E         5.948         1.072         0.000
+ BYS20F         2.509         0.029        24.407         0.000
+ BYS20G         4.215         0.000         2.139        10.086         0.000
+ BYS20J         3.218         0.091         0.090         6.961         1.908
+ BYS20K         0.224         0.005         3.760         4.982         0.755
+ BYS20M         2.122         0.041         1.793         3.555         5.653
+ BYS20N         1.292         0.003         9.112         1.654         8.604
+ BYS21A         0.138         0.024         5.545         7.060         2.761
+ BYS21C         4.854         2.388         4.399         5.118         0.000
+ BYS21D         3.732         0.125         2.834         1.235         0.111
+ BYS21E        13.825         0.626         6.304         6.756         0.508
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K        38.687         0.000
+ BYS20M        38.344        16.751         0.000
+ BYS20N        42.068        13.869       102.995         0.000
+ BYS21A         0.398         0.098         1.489         0.216         0.000
+ BYS21C         1.099         0.096         5.828         0.227        10.393
+ BYS21D         1.044         1.745         1.962         0.708         3.777
+ BYS21E         6.587         0.059         3.675         7.114        46.445
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         9.938         0.000
+ BYS21E        35.735        27.260         0.000
+
+
+     EXPECTED PARAMETER CHANGE
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.011         0.000
+ BYS20E         0.030        -0.016         0.000
+ BYS20F         0.021        -0.003         0.070         0.000
+ BYS20G        -0.030         0.000         0.022         0.053         0.000
+ BYS20J         0.027         0.006        -0.005        -0.043        -0.025
+ BYS20K        -0.009         0.002        -0.036        -0.044        -0.020
+ BYS20M         0.027        -0.005        -0.025        -0.038        -0.055
+ BYS20N         0.021        -0.001        -0.054        -0.025        -0.064
+ BYS21A        -0.005        -0.003        -0.032        -0.038        -0.027
+ BYS21C        -0.041         0.038        -0.039        -0.046         0.000
+ BYS21D        -0.028         0.007        -0.025        -0.018        -0.006
+ BYS21E        -0.055        -0.015        -0.037        -0.041         0.013
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.147         0.000
+ BYS20M         0.146         0.121         0.000
+ BYS20N         0.147         0.106         0.288         0.000
+ BYS21A        -0.011         0.007         0.026         0.009         0.000
+ BYS21C        -0.024         0.009        -0.070        -0.013         0.066
+ BYS21D        -0.019        -0.031        -0.032        -0.019         0.032
+ BYS21E        -0.047        -0.006        -0.044        -0.059         0.111
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.072         0.000
+ BYS21E         0.136         0.094         0.000
+
+
+     MODIFICATION INDICES FOR ANALYSIS WITH 2 FACTOR(S)
+
+
+
+     MODIFICATION INDICES
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.681         0.000
+ BYS20E         8.816         1.025         0.000
+ BYS20F         4.727         0.020        22.273         0.000
+ BYS20G         2.823         0.002         0.469         5.956         0.000
+ BYS20J         0.688         0.141         1.341         2.445         0.298
+ BYS20K         1.619         0.027         1.153         1.600         0.280
+ BYS20M         0.171         0.171         0.157         0.059         0.041
+ BYS20N         0.650         0.035         4.488         1.031         0.319
+ BYS21A         0.091         0.015         5.980         7.758         3.634
+ BYS21C         3.635         2.525         7.252         9.147         0.636
+ BYS21D         2.879         0.099         5.034         3.093         1.211
+ BYS21E        11.972         0.833        12.610        14.311         0.184
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K        16.030         0.000
+ BYS20M         4.351         0.927         0.000
+ BYS20N         1.353         2.631        12.594         0.000
+ BYS21A         0.812         0.140         2.627         0.289         0.000
+ BYS21C         0.018         1.786         1.994         3.784        10.864
+ BYS21D         0.006         0.305         0.066         1.452         3.845
+ BYS21E         0.803         1.558         1.181         0.001        50.769
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         8.201         0.000
+ BYS21E        32.594        24.279         0.000
+
+
+     EXPECTED PARAMETER CHANGE
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.013         0.000
+ BYS20E         0.035        -0.016         0.000
+ BYS20F         0.028        -0.002         0.068         0.000
+ BYS20G        -0.024        -0.001         0.011         0.041         0.000
+ BYS20J         0.012         0.007         0.016        -0.023         0.009
+ BYS20K        -0.023         0.004        -0.019        -0.024         0.012
+ BYS20M        -0.008        -0.010         0.007        -0.005         0.004
+ BYS20N        -0.014        -0.004        -0.037         0.019        -0.012
+ BYS21A        -0.004        -0.002        -0.032        -0.039        -0.031
+ BYS21C        -0.035         0.038        -0.050        -0.061        -0.018
+ BYS21D        -0.024         0.006        -0.033        -0.028        -0.020
+ BYS21E        -0.050        -0.017        -0.052        -0.059        -0.008
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.091         0.000
+ BYS20M        -0.068        -0.030         0.000
+ BYS20N        -0.037        -0.049         0.207         0.000
+ BYS21A        -0.014         0.008         0.033         0.010         0.000
+ BYS21C         0.003         0.037        -0.039         0.053         0.067
+ BYS21D         0.001        -0.012         0.006         0.026         0.031
+ BYS21E        -0.016         0.028         0.024         0.001         0.114
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.064         0.000
+ BYS21E         0.128         0.087         0.000
+
+
+     MODIFICATION INDICES FOR ANALYSIS WITH 3 FACTOR(S)
+
+
+
+     MODIFICATION INDICES
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.634         0.000
+ BYS20E         1.538         1.657         0.000
+ BYS20F         0.025         0.069         0.012         0.000
+ BYS20G         4.780         0.079         0.155         2.997         0.000
+ BYS20J         0.428         0.164         1.099         4.423         0.394
+ BYS20K         0.774         0.051         0.156         0.415         0.613
+ BYS20M         0.041         0.288         0.981         0.028         0.053
+ BYS20N         0.286         0.096         2.811         4.062         0.162
+ BYS21A         3.692         0.006         0.061         0.022         1.558
+ BYS21C         0.036         4.168         0.166         0.423         0.031
+ BYS21D         0.106         0.373         0.106         0.067         0.088
+ BYS21E         0.473         3.410         0.567         0.067         0.241
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K        16.858         0.000
+ BYS20M         3.287         1.145         0.000
+ BYS20N         1.477         3.883        11.727         0.000
+ BYS21A         0.665         0.260         0.791         0.207         0.000
+ BYS21C         0.165         0.450         4.826         1.572         0.001
+ BYS21D         0.136         1.227         0.094         0.457         0.656
+ BYS21E         0.125         0.054         1.570         0.692         2.915
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.834         0.000
+ BYS21E         2.314         0.001         0.000
+
+
+     EXPECTED PARAMETER CHANGE
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.012         0.000
+ BYS20E         0.016        -0.021         0.000
+ BYS20F        -0.002        -0.005        -0.002         0.000
+ BYS20G        -0.032         0.005        -0.007         0.034         0.000
+ BYS20J         0.009         0.008         0.015        -0.032         0.011
+ BYS20K        -0.016         0.005        -0.007        -0.013         0.017
+ BYS20M        -0.004        -0.013         0.018         0.003         0.005
+ BYS20N        -0.009        -0.007        -0.030         0.038        -0.009
+ BYS21A         0.025         0.001         0.003        -0.002        -0.019
+ BYS21C        -0.003         0.048        -0.007        -0.013         0.004
+ BYS21D        -0.005         0.011        -0.005         0.004        -0.005
+ BYS21E        -0.012        -0.041         0.013         0.005         0.010
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.093         0.000
+ BYS20M        -0.058        -0.034         0.000
+ BYS20N        -0.038        -0.061         0.198         0.000
+ BYS21A        -0.013        -0.010         0.018        -0.009         0.000
+ BYS21C         0.009         0.018        -0.060         0.033         0.001
+ BYS21D         0.006        -0.024        -0.007         0.014        -0.014
+ BYS21E        -0.007         0.006         0.032        -0.021         0.055
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.021         0.000
+ BYS21E        -0.065        -0.001         0.000
+
+
+     MODIFICATION INDICES FOR ANALYSIS WITH 4 FACTOR(S)
+
+
+
+     MODIFICATION INDICES
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         1.040         0.000
+ BYS20E         2.817         1.493         0.000
+ BYS20F         0.209         0.236         0.275         0.000
+ BYS20G         5.647         0.141         0.012         3.144         0.000
+ BYS20J         0.480         0.862         0.193         0.008         0.016
+ BYS20K         0.561         0.186         0.140         0.002         0.750
+ BYS20M         0.015         0.156         2.771         1.215         0.470
+ BYS20N         0.325         0.007         3.158         2.240         0.065
+ BYS21A         4.836         0.012         0.108         0.219         1.903
+ BYS21C         0.015         5.556         0.114         0.551         0.046
+ BYS21D         0.131         0.469         0.103         0.085         0.108
+ BYS21E         0.886         4.665         0.387         0.245         0.303
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.047         0.000
+ BYS20M         0.493         0.464         0.000
+ BYS20N         0.544         0.177         0.648         0.000
+ BYS21A         0.002         0.052         0.502         1.407         0.000
+ BYS21C         2.095         0.689         5.761         3.972         0.002
+ BYS21D         1.049         1.668         0.113         0.720         0.933
+ BYS21E         0.538         0.000         2.118         1.656         3.549
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         1.007         0.000
+ BYS21E         2.982         0.005         0.000
+
+
+     EXPECTED PARAMETER CHANGE
+
+
+           THETA
+              BYS20A        BYS20B        BYS20E        BYS20F        BYS20G
+              ________      ________      ________      ________      ________
+ BYS20A         0.000
+ BYS20B         0.014         0.000
+ BYS20E         0.019        -0.017         0.000
+ BYS20F        -0.006        -0.008        -0.011         0.000
+ BYS20G        -0.030         0.006        -0.002         0.032         0.000
+ BYS20J         0.035        -0.059         0.024        -0.014        -0.007
+ BYS20K        -0.012         0.009        -0.006        -0.002         0.017
+ BYS20M        -0.002        -0.009         0.029        -0.021         0.015
+ BYS20N        -0.010        -0.002        -0.030         0.027        -0.005
+ BYS21A         0.025         0.002         0.004        -0.006        -0.019
+ BYS21C        -0.002         0.049        -0.005        -0.013         0.004
+ BYS21D        -0.005         0.011        -0.004         0.004        -0.005
+ BYS21E        -0.014        -0.042         0.009         0.008         0.010
+
+
+           THETA
+              BYS20J        BYS20K        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20J         0.000
+ BYS20K         0.157         0.000
+ BYS20M        -0.061         0.022         0.000
+ BYS20N         0.060        -0.013         0.156         0.000
+ BYS21A        -0.003        -0.004         0.016        -0.025         0.000
+ BYS21C        -0.106         0.020        -0.062         0.049         0.001
+ BYS21D         0.058        -0.025        -0.007         0.017        -0.015
+ BYS21E         0.050         0.000         0.038        -0.032         0.053
+
+
+           THETA
+              BYS21C        BYS21D        BYS21E
+              ________      ________      ________
+ BYS21C         0.000
+ BYS21D         0.021         0.000
+ BYS21E        -0.064         0.002         0.000
+
+
+     MODIFICATION INDICES FOR ANALYSIS WITH 5 FACTOR(S)
+
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values)
+  Scatterplots (sample values)
+  Eigenvalues for exploratory factor analysis
+
+     Beginning Time:  12:42:12
+        Ending Time:  12:42:14
+       Elapsed Time:  00:00:02
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

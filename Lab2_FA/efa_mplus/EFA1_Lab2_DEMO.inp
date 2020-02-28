@@ -1,0 +1,22 @@
+TITLE:
+FACTOR ANALYSIS EFA - LAB 2 DEMO
+DATA:
+FILE = "/Users/agarber/Desktop/FA_W20/Lab2_FA/efa_mplus/EFA1_Lab2_DEMO.dat";
+ 
+VARIABLE:
+NAMES = BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G BYS20H BYS20I BYS20J BYS20K
+     BYS20L BYS20M BYS20N BYS21A BYS21B BYS21C BYS21D BYS21E BYSEX BYRACE BYSTLANG; 
+ MISSING=.;
+ usevar =
+ BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G
+ BYS20H BYS20I BYS20J BYS20K BYS20L BYS20M BYS20N
+ BYS21A BYS21B BYS21C BYS21D BYS21E;
+ANALYSIS:
+type = efa 1 5;   ! run efa of 1 through 5 factor models
+  estimator = MLR;  ! using the ROBUST ML Estimator
+  parallel=50;      ! run the parallel analysis for viewing in elbow plotå
+  
+OUTPUT:
+sampstat standardized residual modindices (3.84);
+PLOT:
+type = plot3;

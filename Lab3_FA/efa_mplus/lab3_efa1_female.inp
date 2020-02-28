@@ -1,0 +1,24 @@
+TITLE:
+FACTOR ANALYSIS EFA - LAB 2 DEMO
+DATA:
+FILE = "/Users/agarber/Desktop/FA_W20/Lab3_FA/efa_mplus/lab3_efa1_female.dat";
+ 
+VARIABLE:
+NAMES = BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G BYS20H BYS20I BYS20J BYS20K
+     BYS20L BYS20M BYS20N BYS21A BYS21B BYS21C BYS21D BYS21E BYSEX; 
+ MISSING=.;
+ ! within mplus you can choose a number of sequential columns 
+    ! using (var1_name - var_last_name)
+     
+    usevar = BYS20A-BYS21E;
+  
+    useobs = BYSEX == 2;
+ANALYSIS:
+type = efa 1 4;   
+  estimator = mlr;  
+  parallel=50; ! run parallel analysis 
+  
+OUTPUT:
+sampstat;
+PLOT:
+type = plot3;

@@ -1,0 +1,327 @@
+---
+title: "Lab 3 -  MplusAutomation, what's missing?"
+author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
+date: "1/19/2020"
+output:
+  html_document: default
+  pdf_document: default
+subtitle: 'Adam Garber'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE, tidy = TRUE)
+```
+
+<style type="text/css">
+body{ font-size: 20px; max-width: 1600px; margin: auto; padding: 1em; }
+code.r{ font-size: 18px; }
+p { padding-top: 10px; padding-bottom: 10px; }
+pre { font-size: 16px; }
+</style>
+
+## ____________________________________
+
+## Getting started - following the routine...
+
+1. Create an R-Project
+2. Install packages ($\color{red}{\text{ONLY IF NEEDED}}$)
+3. Load packages
+
+### R-Project instructions:
+
+1. click "NEW PROJECT" (upper right corner of window)
+2. choose option "NEW DIRECTORY"
+3. choose location of project (on desktop OR in a designated class folder)
+
+Within R-studio under the files pane (bottom right):
+
+1. click "New Folder" and name folder "data"
+2. click "New Folder" and name folder "efa_mplus"
+3. click "New Folder" and name folder "figures"
+
+## ____________________________________
+
+## SKIP (return here if you recieve an $\color{red}{\text{error}}$ when loading packages)
+
+1. First check if the packages load 
+2. If an error is returned for package(s) 
+3. then run the following lines of code
+4. AFTER ANY INSTALLATION... MUST RE-LOAD PACKAGES! 
+
+###   ** $\color{red}{\text{NOTE:}}$ the following code ONLY needs to be run once per computer!
+
+```{r}
+# to install one package at a time "a_new_package"...
+install.packages("a_new_package")
+install.packages("apaTables")
+install.packages("reshape2")
+
+# to install multiple pacakages at once...
+install.packages(c("reshape2", "MplusAutomation", "tidyverse",
+                   "here", "kableExtra"))
+```
+
+## IF package rhdf5 does not load then run:
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE)) 
+  install.packages("BiocManager")
+
+BiocManager::install("rhdf5")
+```
+
+# ____________________________________
+
+## loading packages...
+
+```{r, eval=TRUE}
+library(apaTables)
+library(reshape2)
+library(MplusAutomation)
+library(rhdf5)
+library(tidyverse)
+library(here)
+library(kableExtra)
+```
+
+## Lab 3 - MplusAutomation, what's missing?
+
+**Learning goal:** The goal of this lab activity is to locate areas of the MplusAutomation code which will change depending on the particular data & modeling context.
+
+### Instructions:
+
+- fill in the missing code whenever you see (***)
+- speak to your neighbors
+- ask questions 
+- errors are ok & will give us insight into how to fix things
+- do this exercize *without refrencing previous labs*
+- repetition is key, this is a safe space to learn to see where code might be broken
+
+### Read csv data file into your R environment:
+
+```{r}
+
+lab_data <- read_***(***("***", "***")) # What's missing?
+
+```
+
+## make an apa style table of summary statistics:
+https://cran.r-project.org/web/packages/apaTables/vignettes/apaTables.html
+
+## I also like the package "stargazer" for this, see here:
+https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
+
+```{r}
+# correlation table with means & SD
+apa.cor.table(lab_data[,1:5], filename=here("figures", "Table_cor_lab3_APA.doc"), table.number=1)
+
+```
+
+
+## Subset data
+
+```{r}
+
+# make a subset, keep all columns except (BYRACE & BYSTLANG)
+
+schl_safe *** lab_data ***     # What's missing?
+  ***( )
+
+
+```
+
+# ____________________________________
+
+
+### Reverse indicators so scale has consistent meaning for factor interpretation
+
+```{r}
+# Reverse code the following columns 1-3, 5-7, 15-19 (by using collumn numbers)
+
+cols = c(***)       # What's missing?
+
+# Reverse coding requires taking the range + 1 ...
+
+schl_safe[,***] <-  *** - schl_safe[ ,***]        # What's missing?
+
+```
+
+# ____________________________________
+
+
+## Run an efa model
+
+1. with 1 through 4 factors
+2. the robust maximum likelihood estimator
+3. for **female** observations only (BYSEX = 2)
+
+```{r}
+## efa (indicators: school climate, safety, clear rules)
+
+# What's missing?
+
+m_efa_1  <- mplusObject(
+  TITLE = "FACTOR ANALYSIS EFA - LAB 2 DEMO", 
+  VARIABLE = 
+   "! within mplus you can choose a number of sequential columns 
+    ! using (var1_name - var_last_name)
+     
+    usevar = BYS20A-***;
+  
+    *** = *** == ***;", 
+  
+  ANALYSIS = 
+ "type = *** ***;   
+  estimator = ***;  
+  parallel=50; ! run the parallel analysis for viewing with the eigenvalue elbow 
+  ",
+ 
+  MODEL = "" ,
+  
+  PLOT = "type = plot3;",
+  OUTPUT = "sampstat;",
+  
+  usevariables = colnames(***), 
+  rdata = ***)
+
+m_efa_1_fit <- mplusModeler(***, 
+                            dataout=here("***", "***.dat"),
+                            modelout=here("***", "***.inp"),
+                            check=TRUE, run = TRUE, hashfilename = FALSE)
+
+## END: EXPLORATORY FACTOR ANALYSIS
+```
+
+# ____________________________________
+# ____________________________________
+
+## Run an efa with reduced set of items (see comments "!" below )
+
+### This time with...
+
+- reduced set of items (see comments "!" below about items to exclude)
+- 1 through 5 factors 
+- the robust maximum likelihood estimator
+- parallel analysis
+- again, use female observations in the analysis
+
+```{r}
+## efa reduced set - What's missing? 
+
+m_efa_1  <- *** (
+  TITLE = "FACTOR ANALYSIS EFA - REDUCED SET - LAB 2 DEMO", 
+  VARIABLE = 
+    "usevar =  
+     ***
+     ! remove: BYS20C BYS20D
+     ***
+     ! remove:BYS20H BYS20I BYS20L
+     ***
+     ! remove: BYS21B 
+     ;",
+  
+  ANALYSIS = 
+    " *** = *** ***   
+      *** = ***   
+      *** = ***        
+    ",
+  
+  MODEL = "" ,
+  
+    PLOT = "*** = ***;",
+  OUTPUT = "***;",
+  
+  usevariables = colnames(***), 
+  rdata = ***)
+
+m_efa_2_fit <- mplusModeler(***, 
+                            dataout=here("***", "***.dat"),
+                            modelout=here("***", "***.inp"),
+                            check=TRUE, run = TRUE, hashfilename = FALSE)
+
+## END: EXPLORATORY FACTOR ANALYSIS OF - REDUCED SET
+```
+
+## Make a tribble table of your factor loadings ...
+
+```{r, eval=TRUE}
+
+loading_table <- tribble(
+  ~"Items", ~"Factor 1", ~"Factor 2",  ~"Factor 3",
+ #----------|-------------|------------|-----------|,
+  "***"  ,  "***"  ,  "***"  ,  "***"  ,   
+  "***"  ,  "***"  ,  "***"  ,  "***"  ,    
+  "***"  ,  "***"  ,  "***"  ,  "***"  ,    
+  "***"  ,  "***"  ,  "***"  ,  "***"  ,    
+  "***"  ,  "***"  ,  "***"  ,  "***"  ,    
+  "***"  ,  "***"  ,  "***"  ,  "***"  ,
+)
+
+loading_table %>% 
+  kable() %>% 
+  kable_styling(latex_options = c("striped"), 
+                full_width = F,
+                position = "left")
+```
+
+# ____________________________________
+
+## Plot Parallel Analysis & Eigenvalues
+
+### read into R an Mplus output file
+
+```{r}
+efa_summary <- readModels(here("efa_mplus", "lab3_efa2_female.out"))
+```
+
+### extract relavent data & prepare dataframe for plot
+
+```{r}
+x <- list(EFA=efa_summary[["gh5"]][["efa"]][["eigenvalues"]], 
+          Parallel=efa_summary[["gh5"]][["efa"]][["parallel_average"]])
+
+plot_data <- as_data_frame(x)
+plot_data <- cbind(Factor = paste0(1:nrow(plot_data)), plot_data)
+
+plot_data <- plot_data %>% 
+  mutate(Factor = fct_inorder(Factor))
+```
+
+### pivot the dataframe to "long" format
+
+```{r}
+plot_data_long <- plot_data %>% 
+  pivot_longer(EFA:Parallel,               # The columns I'm gathering together
+               names_to = "Analysis",      # new column name for existing names
+               values_to = "Eigenvalues")  # new column name to store values
+```
+
+### plot using ggplot
+
+```{r}
+plot_data_long %>% 
+ggplot(aes(y=Eigenvalues,
+           x=Factor,
+           group=Analysis,
+           color=Analysis)) +
+  geom_point() + 
+  geom_line() + 
+  theme_minimal()
+```
+
+### save figure to the designated folder
+
+```{r}
+ggsave(here("figures", "eigenvalue_elbow_rplot.png"), dpi=300, height=5, width=7, units="in")
+```
+
+# ____________________________________
+
+## End of lab 3 exercise
+
+# ____________________________________
+
+## References: 
+
+Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+

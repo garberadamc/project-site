@@ -1,0 +1,27 @@
+TITLE:
+FACTOR ANALYSIS EFA - REDUCED SET - LAB 2 DEMO
+DATA:
+FILE = "/Users/agarber/Desktop/FA_W20/Lab3_FA/efa_mplus/lab3_efa2_female.dat";
+ 
+VARIABLE:
+NAMES = BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G BYS20H BYS20I BYS20J BYS20K
+     BYS20L BYS20M BYS20N BYS21A BYS21B BYS21C BYS21D BYS21E BYSEX; 
+ MISSING=.;
+ usevar =  
+     BYS20A BYS20B BYS20E BYS20F BYS20G 
+     ! remove: BYS20C BYS20D
+     BYS20J BYS20K BYS20M BYS20N
+     ! remove:BYS20H BYS20I BYS20L
+     BYS21A BYS21C BYS21D BYS21E;
+     ! remove: BYS21B 
+     
+     useobs = BYSEX == 2;
+ANALYSIS:
+ type = efa 1 5;   
+      estimator = MLR;  
+      parallel=50;      
+    
+OUTPUT:
+sampstat;
+PLOT:
+type = plot3;

@@ -1,0 +1,447 @@
+Mplus VERSION 8.3 (Mac)
+MUTHEN & MUTHEN
+01/13/2020   8:51 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  RUN TYPE = BASIC ANALYSIS - LAB 2 DEMO
+  DATA:
+  FILE = "/Users/agarber/Desktop/FA_W20/Lab2_FA/efa_mplus/basic_Lab2_DEMO.dat";
+
+  VARIABLE:
+  NAMES = BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G BYS20H BYS20I BYS20J BYS20K
+       BYS20L BYS20M BYS20N BYS21A BYS21B BYS21C BYS21D BYS21E BYSEX BYRACE BYSTLANG;
+   MISSING=.;
+    ! an mplusObject() will always need a 'usevar' statement
+        ! ONLY specify variables to use in analysis
+        ! lines of code in MPLUS ALWAYS end with a semicolon ';'
+      usevar =
+   BYS20A BYS20B BYS20C BYS20D BYS20E BYS20F BYS20G
+   BYS20H BYS20I BYS20J BYS20K BYS20L BYS20M BYS20N
+   BYS21A BYS21B BYS21C BYS21D BYS21E;
+  ANALYSIS:
+  type = basic
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  74
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+RUN TYPE = BASIC ANALYSIS - LAB 2 DEMO
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         720
+
+Number of dependent variables                                   19
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   BYS20A      BYS20B      BYS20C      BYS20D      BYS20E      BYS20F
+   BYS20G      BYS20H      BYS20I      BYS20J      BYS20K      BYS20L
+   BYS20M      BYS20N      BYS21A      BYS21B      BYS21C      BYS21D
+   BYS21E
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  /Users/agarber/Desktop/FA_W20/Lab2_FA/efa_mplus/basic_Lab2_DEMO.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            39
+
+
+SUMMARY OF MISSING DATA PATTERNS
+
+
+     MISSING DATA PATTERNS (x = not missing)
+
+           1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+ BYS20A    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20B    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20C    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20D    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20E    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20F    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20G    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20H    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x        x  x  x
+ BYS20I    x  x  x  x  x  x  x  x  x  x  x  x  x        x     x  x  x
+ BYS20J    x  x  x  x  x  x  x  x  x  x  x  x     x        x  x  x  x
+ BYS20K    x  x  x  x  x  x  x  x  x  x        x  x     x  x  x  x
+ BYS20L    x  x  x  x  x  x  x  x        x  x  x  x     x  x  x  x  x
+ BYS20M    x  x  x  x  x  x        x  x  x  x  x  x     x  x  x  x  x
+ BYS20N    x  x  x  x  x  x  x  x  x  x  x  x  x  x     x  x  x  x
+ BYS21A    x  x  x  x        x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS21B    x  x  x           x     x  x  x  x  x  x  x  x     x     x
+ BYS21C    x  x     x  x     x  x  x  x  x  x  x  x  x  x     x  x  x
+ BYS21D    x     x  x  x     x  x  x     x     x  x  x  x     x  x  x
+ BYS21E    x  x  x  x        x  x  x     x     x  x  x  x  x  x  x  x
+
+          21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+ BYS20A    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS20B    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x        x  x
+ BYS20C    x  x  x  x  x  x  x  x  x  x  x              x  x  x  x
+ BYS20D    x  x  x  x  x  x  x              x  x  x     x     x  x
+ BYS20E    x  x  x  x           x  x        x  x  x  x  x  x  x  x
+ BYS20F                x  x  x  x  x  x     x  x  x  x  x  x  x  x
+ BYS20G    x  x  x  x  x  x     x     x     x  x  x  x  x  x  x  x
+ BYS20H    x  x  x  x  x  x  x  x     x     x  x  x  x  x  x  x
+ BYS20I    x  x  x     x  x  x  x     x     x  x     x  x     x
+ BYS20J    x  x  x  x  x  x  x  x     x     x  x  x  x  x     x  x
+ BYS20K    x  x  x  x  x  x  x  x     x  x  x  x  x  x  x  x  x
+ BYS20L    x  x  x  x  x  x  x  x     x     x  x  x  x  x     x  x
+ BYS20M    x  x     x  x     x  x     x  x  x        x  x     x  x
+ BYS20N    x  x  x  x  x  x  x  x     x     x  x  x  x  x  x  x  x
+ BYS21A    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x     x  x
+ BYS21B    x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS21C    x  x  x  x  x  x  x  x  x  x     x  x  x  x  x  x  x  x
+ BYS21D    x     x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ BYS21E    x  x  x  x  x  x  x  x  x  x  x  x  x     x  x  x  x  x
+
+
+     MISSING DATA PATTERN FREQUENCIES
+
+    Pattern   Frequency     Pattern   Frequency     Pattern   Frequency
+          1         644          14           3          27           2
+          2           1          15           1          28           2
+          3           2          16           1          29           1
+          4           7          17           1          30           1
+          5           1          18           3          31           1
+          6           1          19           1          32           5
+          7           6          20           1          33           1
+          8           1          21           5          34           1
+          9           2          22           1          35           1
+         10           1          23           2          36           2
+         11           2          24           1          37           1
+         12           1          25           6          38           1
+         13           4          26           1          39           1
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              BYS20A        BYS20B        BYS20C        BYS20D        BYS20E
+              ________      ________      ________      ________      ________
+ BYS20A         0.997
+ BYS20B         0.993         0.996
+ BYS20C         0.986         0.985         0.989
+ BYS20D         0.988         0.988         0.981         0.990
+ BYS20E         0.982         0.981         0.974         0.978         0.985
+ BYS20F         0.983         0.982         0.975         0.978         0.972
+ BYS20G         0.985         0.983         0.976         0.981         0.976
+ BYS20H         0.992         0.989         0.982         0.986         0.979
+ BYS20I         0.983         0.982         0.975         0.979         0.971
+ BYS20J         0.985         0.985         0.976         0.982         0.974
+ BYS20K         0.989         0.986         0.979         0.982         0.975
+ BYS20L         0.988         0.988         0.979         0.985         0.976
+ BYS20M         0.976         0.976         0.971         0.972         0.965
+ BYS20N         0.992         0.990         0.983         0.988         0.981
+ BYS21A         0.993         0.993         0.985         0.988         0.981
+ BYS21B         0.981         0.979         0.972         0.974         0.968
+ BYS21C         0.990         0.989         0.982         0.985         0.979
+ BYS21D         0.989         0.988         0.981         0.982         0.976
+ BYS21E         0.990         0.989         0.983         0.983         0.978
+
+
+           Covariance Coverage
+              BYS20F        BYS20G        BYS20H        BYS20I        BYS20J
+              ________      ________      ________      ________      ________
+ BYS20F         0.986
+ BYS20G         0.975         0.988
+ BYS20H         0.981         0.983         0.993
+ BYS20I         0.974         0.975         0.983         0.985
+ BYS20J         0.975         0.978         0.985         0.978         0.988
+ BYS20K         0.976         0.981         0.986         0.979         0.981
+ BYS20L         0.978         0.981         0.986         0.981         0.983
+ BYS20M         0.968         0.968         0.974         0.969         0.971
+ BYS20N         0.982         0.986         0.990         0.983         0.986
+ BYS21A         0.982         0.983         0.989         0.982         0.985
+ BYS21B         0.969         0.972         0.978         0.969         0.971
+ BYS21C         0.981         0.982         0.989         0.981         0.982
+ BYS21D         0.979         0.979         0.986         0.978         0.979
+ BYS21E         0.979         0.981         0.986         0.979         0.981
+
+
+           Covariance Coverage
+              BYS20K        BYS20L        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20K         0.990
+ BYS20L         0.983         0.990
+ BYS20M         0.972         0.974         0.979
+ BYS20N         0.989         0.989         0.976         0.994
+ BYS21A         0.986         0.988         0.976         0.990         0.996
+ BYS21B         0.974         0.974         0.964         0.978         0.982
+ BYS21C         0.983         0.985         0.972         0.989         0.990
+ BYS21D         0.983         0.983         0.971         0.986         0.989
+ BYS21E         0.985         0.985         0.974         0.988         0.992
+
+
+           Covariance Coverage
+              BYS21B        BYS21C        BYS21D        BYS21E
+              ________      ________      ________      ________
+ BYS21B         0.983
+ BYS21C         0.979         0.993
+ BYS21D         0.978         0.988         0.992
+ BYS21E         0.979         0.988         0.989         0.993
+
+
+
+
+
+RESULTS FOR BASIC ANALYSIS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              BYS20A        BYS20B        BYS20C        BYS20D        BYS20E
+              ________      ________      ________      ________      ________
+                2.820         2.821         3.205         2.097         2.942
+
+
+           Means
+              BYS20F        BYS20G        BYS20H        BYS20I        BYS20J
+              ________      ________      ________      ________      ________
+                2.861         2.748         3.147         3.085         3.278
+
+
+           Means
+              BYS20K        BYS20L        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+                2.561         2.396         2.996         3.044         2.992
+
+
+           Means
+              BYS21B        BYS21C        BYS21D        BYS21E
+              ________      ________      ________      ________
+                2.496         2.631         2.743         2.771
+
+
+           Covariances
+              BYS20A        BYS20B        BYS20C        BYS20D        BYS20E
+              ________      ________      ________      ________      ________
+ BYS20A         0.345
+ BYS20B         0.104         0.588
+ BYS20C         0.049         0.090         0.427
+ BYS20D         0.078         0.041         0.024         0.510
+ BYS20E         0.143         0.144         0.076         0.067         0.421
+ BYS20F         0.154         0.178         0.077         0.095         0.262
+ BYS20G         0.099         0.157         0.077         0.070         0.216
+ BYS20H         0.086         0.120         0.068         0.080         0.147
+ BYS20I         0.023         0.061         0.060         0.083         0.041
+ BYS20J         0.100         0.103         0.115         0.084         0.123
+ BYS20K         0.040         0.064         0.047         0.156         0.052
+ BYS20L         0.082         0.139         0.100         0.163         0.147
+ BYS20M         0.095         0.088         0.026         0.114         0.099
+ BYS20N         0.073         0.068         0.096         0.136         0.047
+ BYS21A         0.069         0.092         0.072         0.075         0.099
+ BYS21B         0.139         0.177         0.083         0.079         0.184
+ BYS21C         0.088         0.189         0.119         0.086         0.175
+ BYS21D         0.051         0.103         0.072         0.051         0.106
+ BYS21E         0.025         0.082         0.037         0.024         0.094
+
+
+           Covariances
+              BYS20F        BYS20G        BYS20H        BYS20I        BYS20J
+              ________      ________      ________      ________      ________
+ BYS20F         0.498
+ BYS20G         0.261         0.575
+ BYS20H         0.171         0.141         0.452
+ BYS20I         0.056         0.063         0.188         0.485
+ BYS20J         0.117         0.107         0.186         0.141         0.512
+ BYS20K         0.059         0.062         0.108         0.153         0.188
+ BYS20L         0.117         0.136         0.094         0.159         0.147
+ BYS20M         0.111         0.073         0.097         0.045         0.209
+ BYS20N         0.086         0.035         0.137         0.088         0.194
+ BYS21A         0.115         0.100         0.083         0.029         0.067
+ BYS21B         0.186         0.186         0.141         0.066         0.133
+ BYS21C         0.204         0.205         0.178         0.098         0.106
+ BYS21D         0.132         0.121         0.043         0.034         0.061
+ BYS21E         0.113         0.134         0.074         0.051         0.033
+
+
+           Covariances
+              BYS20K        BYS20L        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20K         0.739
+ BYS20L         0.281         0.658
+ BYS20M         0.160         0.202         0.757
+ BYS20N         0.139         0.120         0.330         0.689
+ BYS21A         0.055         0.093         0.095         0.064         0.413
+ BYS21B        -0.016         0.135         0.111         0.080         0.164
+ BYS21C         0.088         0.205         0.057         0.078         0.180
+ BYS21D         0.021         0.148         0.045         0.038         0.105
+ BYS21E         0.042         0.146         0.030        -0.001         0.176
+
+
+           Covariances
+              BYS21B        BYS21C        BYS21D        BYS21E
+              ________      ________      ________      ________
+ BYS21B         0.633
+ BYS21C         0.290         0.839
+ BYS21D         0.053         0.188         0.494
+ BYS21E         0.127         0.243         0.162         0.490
+
+
+           Correlations
+              BYS20A        BYS20B        BYS20C        BYS20D        BYS20E
+              ________      ________      ________      ________      ________
+ BYS20A         1.000
+ BYS20B         0.231         1.000
+ BYS20C         0.128         0.180         1.000
+ BYS20D         0.187         0.076         0.052         1.000
+ BYS20E         0.376         0.290         0.180         0.145         1.000
+ BYS20F         0.371         0.330         0.167         0.189         0.571
+ BYS20G         0.222         0.271         0.155         0.129         0.439
+ BYS20H         0.218         0.233         0.156         0.167         0.336
+ BYS20I         0.055         0.113         0.133         0.167         0.090
+ BYS20J         0.238         0.188         0.246         0.164         0.265
+ BYS20K         0.078         0.097         0.084         0.254         0.093
+ BYS20L         0.172         0.223         0.188         0.282         0.280
+ BYS20M         0.187         0.131         0.046         0.184         0.175
+ BYS20N         0.149         0.107         0.177         0.230         0.087
+ BYS21A         0.183         0.187         0.171         0.163         0.238
+ BYS21B         0.298         0.291         0.161         0.139         0.357
+ BYS21C         0.163         0.268         0.199         0.131         0.294
+ BYS21D         0.123         0.192         0.156         0.103         0.233
+ BYS21E         0.062         0.153         0.082         0.049         0.208
+
+
+           Correlations
+              BYS20F        BYS20G        BYS20H        BYS20I        BYS20J
+              ________      ________      ________      ________      ________
+ BYS20F         1.000
+ BYS20G         0.488         1.000
+ BYS20H         0.360         0.277         1.000
+ BYS20I         0.113         0.120         0.401         1.000
+ BYS20J         0.231         0.197         0.387         0.282         1.000
+ BYS20K         0.098         0.095         0.187         0.255         0.306
+ BYS20L         0.205         0.222         0.172         0.282         0.253
+ BYS20M         0.181         0.110         0.165         0.075         0.336
+ BYS20N         0.147         0.056         0.245         0.152         0.326
+ BYS21A         0.254         0.206         0.191         0.065         0.146
+ BYS21B         0.332         0.309         0.264         0.118         0.234
+ BYS21C         0.315         0.295         0.290         0.154         0.162
+ BYS21D         0.266         0.227         0.091         0.070         0.121
+ BYS21E         0.229         0.253         0.158         0.105         0.066
+
+
+           Correlations
+              BYS20K        BYS20L        BYS20M        BYS20N        BYS21A
+              ________      ________      ________      ________      ________
+ BYS20K         1.000
+ BYS20L         0.403         1.000
+ BYS20M         0.214         0.286         1.000
+ BYS20N         0.195         0.178         0.457         1.000
+ BYS21A         0.099         0.178         0.171         0.119         1.000
+ BYS21B        -0.023         0.209         0.160         0.121         0.321
+ BYS21C         0.112         0.276         0.071         0.103         0.306
+ BYS21D         0.034         0.260         0.074         0.065         0.232
+ BYS21E         0.069         0.258         0.049        -0.002         0.391
+
+
+           Correlations
+              BYS21B        BYS21C        BYS21D        BYS21E
+              ________      ________      ________      ________
+ BYS21B         1.000
+ BYS21C         0.398         1.000
+ BYS21D         0.094         0.293         1.000
+ BYS21E         0.229         0.379         0.329         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -13507.765
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     BYS20A                2.820      -0.970       1.000    3.48%       2.000      3.000      3.000
+             718.000       0.345       1.919       4.000    6.41%       3.000      3.000
+     BYS20B                2.820      -0.350       1.000    5.02%       2.000      3.000      3.000
+             717.000       0.588      -0.127       4.000   17.02%       3.000      3.000
+     BYS20C                3.205      -0.600       1.000    1.69%       3.000      3.000      3.000
+             712.000       0.427       0.834       4.000   32.02%       3.000      4.000
+     BYS20D                2.095       0.252       1.000   18.79%       2.000      2.000      2.000
+             713.000       0.510      -0.145       4.000    2.38%       2.000      3.000
+     BYS20E                2.939      -0.694       1.000    3.39%       3.000      3.000      3.000
+             709.000       0.418       1.424       4.000   14.67%       3.000      3.000
+     BYS20F                2.866      -0.435       1.000    3.66%       2.000      3.000      3.000
+             710.000       0.496       0.325       4.000   15.35%       3.000      3.000
+     BYS20G                2.748      -0.225       1.000    4.92%       2.000      3.000      3.000
+             711.000       0.574      -0.244       4.000   14.35%       3.000      3.000
+     BYS20H                3.147      -0.652       1.000    2.38%       3.000      3.000      3.000
+             715.000       0.453       0.989       4.000   28.67%       3.000      4.000
+     BYS20I                3.085      -0.593       1.000    2.68%       3.000      3.000      3.000
+             709.000       0.484       0.672       4.000   26.09%       3.000      4.000
+     BYS20J                3.277      -0.901       1.000    2.67%       3.000      3.000      3.000
+             711.000       0.513       0.938       4.000   40.65%       4.000      4.000
+     BYS20K                2.561      -0.150       1.000   11.92%       2.000      2.000      3.000
+             713.000       0.740      -0.620       4.000   12.76%       3.000      3.000
+     BYS20L                2.394       0.020       1.000   13.32%       2.000      2.000      2.000
+             713.000       0.657      -0.525       4.000    7.57%       3.000      3.000
+     BYS20M                2.999      -0.602       1.000    6.67%       2.000      3.000      3.000
+             705.000       0.759      -0.297       4.000   31.21%       3.000      4.000
+     BYS20N                3.043      -0.623       1.000    5.17%       2.000      3.000      3.000
+             716.000       0.689      -0.128       4.000   31.56%       3.000      4.000
+     BYS21A                2.992      -0.340       1.000    1.53%       3.000      3.000      3.000
+             717.000       0.413       0.485       4.000   18.69%       3.000      3.000
+     BYS21B                2.494      -0.334       1.000   12.57%       2.000      2.000      3.000
+             708.000       0.634      -0.466       4.000    6.64%       3.000      3.000
+     BYS21C                2.631      -0.220       1.000   13.01%       2.000      2.000      3.000
+             715.000       0.840      -0.758       4.000   17.34%       3.000      3.000
+     BYS21D                2.742      -0.344       1.000    4.34%       2.000      3.000      3.000
+             714.000       0.494       0.105       4.000   10.78%       3.000      3.000
+     BYS21E                2.771      -0.360       1.000    4.06%       2.000      3.000      3.000
+             715.000       0.490       0.159       4.000   11.61%       3.000      3.000
+
+
+     Beginning Time:  20:51:14
+        Ending Time:  20:51:14
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

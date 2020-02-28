@@ -13,7 +13,14 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-![](figures/island_mark.png){ width=50% }
+<style type="text/css">
+body{ font-size: 20px; max-width: 1600px; margin: auto; padding: 1em; }
+code.r{ font-size: 18px; }
+p { padding-top: 10px; padding-bottom: 10px; }
+pre { font-size: 16px; }
+</style>
+
+![](figures/island_mark.png){ width=60% }
 
 ## __________________________________________________________
 
@@ -21,71 +28,73 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## __________________________________________________________
 
-### Introduction: 
+### About me: 
 
 
-# Analytic workflow strategy:
+## Analytic workflow strategy:
 
-### - The R package {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
-### - All models are estimated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
-### - R-Projects and the {`here`} package allow for reproducibility across operating systems.
-### - The {`tidyverse`}'s highly coherent functions are used whenever possible to increase accessibility for applied audiences (Wickham et al., 2019)
-
-## __________________________________________________________
-
-# Why use MplusAutomation?
-
-### a. Why not use a package in R to estimate S.E.M models? 
-
-#### - Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
-
-#### - Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
-
-### b. Why not do S.E.M. modeling  entirely in Mplus? 
-
-#### - Running complex models in Mplus is error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS). 
-#### - In practice, this results in organizational challenges and lots of copying and pasting.
-#### - Importantly, Mplus does not provide convenient methods for conducting fully reproducible research projects. 
-#### - In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).
+- The R package {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
+- All models are estimated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
+- R-Projects and the {`here`} package allow for reproducibility across operating systems.
+- The {`tidyverse`}'s highly coherent functions are used whenever possible to increase accessibility for applied audiences (Wickham et al., 2019)
 
 ## __________________________________________________________
 
-# Lab materials: Applied Mixture modeling (UCSB, ED 201F) 
+### Why MplusAutomation?
 
-- #### Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation](https://garberadamc.github.io/project-site/lca-enumeration)
-- #### Lab 2:
-- #### Lab 3:
-- #### Lab 4:
-- #### Lab 5:
+$\color{blue}{\text{Why not ...}}$
 
-# Lab materials: Factor Analysis  (UCSB, ED 216B) 
+a. do S.E.M. modeling using packages within R? 
 
-- #### Lab 1: Getting Started with MplusAutomation: [Explore - Prepare Data - Introduction to MplusAutomation](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto)
-- #### Lab 2:
-- #### Lab 3:
-- #### Lab 4:
-- #### Lab 6:
-- #### Lab 7:
-- #### Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC)
-- #### Lab 9: 
+- Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
+
+- Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
+
+b. do S.E.M. modeling entirely in Mplus? 
+
+- Running complex models in Mplus is error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS). 
+- In practice, this results in organizational challenges and lots of copying and pasting.
+- Importantly, Mplus does not provide convenient methods for conducting fully reproducible research projects. 
+- In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).
+
+## __________________________________________________________
+
+## Lab materials: Applied Mixture modeling (UCSB, ED 201F) 
+
+- Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation](https://garberadamc.github.io/project-site/lca-enumeration)
+- Lab 2:
+- Lab 3:
+- Lab 4:
+- Lab 5:
+
+## Lab materials: Factor Analysis  (UCSB, ED 216B) 
+
+- Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto)
+- Lab 2:
+- Lab 3:
+- Lab 4:
+- Lab 6:
+- Lab 7:
+- Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC)
+- Lab 9: 
 
 <br>
 
 ## __________________________________________________________
 
-# Replicating analyses using Tidy Workflow & MplusAutomation:
+## Replicating analyses using Tidy Workflow & MplusAutomation:
 
-- #### Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo)
-- #### Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size)
-- ####
-- ####
-- ####
+- Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo)
+- Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size)
+- 
+- 
+- 
 
 <br>
 
 ## __________________________________________________________
 
-# References
+## References
 
 Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
 
