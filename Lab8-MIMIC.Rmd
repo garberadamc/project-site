@@ -83,7 +83,7 @@ p_load(knitr, tidyverse, here, semPlot, DiagrammeR, MplusAutomation,
 ## read in data
 ```{r, eval=TRUE}
 
-lab_data <- read_csv(here("data", "lab7-8_els2002_data_subset.csv"))
+lab_data <- read_csv(here("Lab8_FA", "data", "lab7-8_els2002_data_subset.csv"))
 
 ```
 
@@ -191,7 +191,7 @@ cfa_m0_fit <- mplusModeler(cfa_m0,
 ```{r, eval=TRUE}
 
 # Read in the model to R within the "mimic_mplus" folder
-mimic_output1 <- readModels(here("mimic_mplus", "lab8_cfa_model0.out"))
+mimic_output1 <- readModels(here("Lab8_FA", "mimic_mplus", "lab8_cfa_model0.out"))
 
 # Plot model:
 semPaths(mimic_output1,
@@ -290,7 +290,7 @@ mimic_m1_fit <- mplusModeler(mimic_m1,
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "90%", out.height= "90%", fig.align = "left"}
 
-knitr::include_graphics(here("figures", "MIMIC2.png"))
+knitr::include_graphics(here("Lab8_FA", "figures", "MIMIC2.png"))
 ```
 
 ```{r}
@@ -327,7 +327,7 @@ mimic_m2_fit <- mplusModeler(mimic_m2,
 
 ```{r}
 
-mimic_output2 <- readModels(here("mimic_mplus", "lab8_mimic_model2.out"))
+mimic_output2 <- readModels(here("Lab8_FA", "mimic_mplus", "lab8_mimic_model2.out"))
 
 # Plot model:
 semPaths(mimic_output2,
@@ -413,7 +413,7 @@ mimic_m1_fit <- mplusModeler(mimic_m3,
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "90%", out.height= "90%", fig.align = "left"}
 
-knitr::include_graphics(here("figures", "MIMIC4.png"))
+knitr::include_graphics(here("Lab8_FA", "figures", "MIMIC4.png"))
 ```
 
 ```{r}
@@ -453,7 +453,7 @@ mimic_m4_fit <- mplusModeler(mimic_m4,
 ```{r}
 
 # Read in the model to R within the "cfa_mplus" folder
-mimic_output4 <- readModels(here("mimic_mplus", "lab8_mimic_model4.out"))
+mimic_output4 <- readModels(here("Lab8_FA", "mimic_mplus", "lab8_mimic_model4.out"))
 
 # Plot model:
 semPaths(mimic_output4,
@@ -465,7 +465,7 @@ semPaths(mimic_output4,
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "90%", out.height= "90%", fig.align = "left"}
 
-knitr::include_graphics(here("figures", "MIMIC5.png"))
+knitr::include_graphics(here("Lab8_FA", "figures", "MIMIC5.png"))
 ```
 
 ```{r}
@@ -501,7 +501,7 @@ mimic_m5_fit <- mplusModeler(mimic_m5,
 ```{r}
 
 # Read in the model to R 
-mimic_output5 <- readModels(here("mimic_mplus", "lab8_mimic_model5.out"))
+mimic_output5 <- readModels(here("Lab8_FA", "mimic_mplus", "lab8_mimic_model5.out"))
 ```
 
 ```{r}
@@ -532,7 +532,7 @@ semPaths(mimic_output5,
 
 ## read all models and create table 
 ```{r}
-all_models <- readModels(here("mimic_mplus"))
+all_models <- readModels(here("Lab8_FA", "mimic_mplus"))
 
 table <- LatexSummaryTable(all_models,
                            keepCols=c(

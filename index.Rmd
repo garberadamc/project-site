@@ -52,19 +52,22 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Lab materials: Applied Mixture modeling (UCSB, ED 201F) 
 
-#### - Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation](https://garberadamc.github.io/project-site/lca-enumeration)
-#### - Lab 2:
-#### - Lab 3:
-#### - Lab 4:
-#### - Lab 5:
+- #### Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation](https://garberadamc.github.io/project-site/lca-enumeration)
+- #### Lab 2:
+- #### Lab 3:
+- #### Lab 4:
+- #### Lab 5:
 
 # Lab materials: Factor Analysis  (UCSB, ED 216B) 
 
-#### - Lab 1: Getting Started with MplusAutomation: [Explore - Prepare Data - Introduction to MplusAutomation](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto)
-#### - Lab 2:
-#### - Lab 3:
-#### - Lab 4:
-#### - Lab 5:
+- #### Lab 1: Getting Started with MplusAutomation: [Explore - Prepare Data - Introduction to MplusAutomation](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto)
+- #### Lab 2:
+- #### Lab 3:
+- #### Lab 4:
+- #### Lab 6:
+- #### Lab 7:
+- #### Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC)
+- #### Lab 9: 
 
 <br>
 
@@ -72,11 +75,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Replicating analyses using Tidy Workflow & MplusAutomation:
 
-#### - Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo)
-#### - Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size)
-#### -
-#### -
-#### -
+- #### Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo)
+- #### Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size)
+- ####
+- ####
+- ####
 
 <br>
 

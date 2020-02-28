@@ -377,29 +377,32 @@ summary {
 </div>
 <div id="section-1" class="section level2">
 <h2>__________________________________________________________</h2>
+<div id="introduction" class="section level3">
+<h3>Introduction:</h3>
+</div>
 </div>
 <div id="analytic-workflow-strategy" class="section level1">
 <h1>Analytic workflow strategy:</h1>
-<div id="the-r-pacakge-mplusautomation-is-used-for-creating-organized-project-workflows-hallquist-wiley-2018" class="section level3">
-<h3>- The R pacakge {<code>MplusAutomation</code>} is used for creating organized project workflows (Hallquist &amp; Wiley, 2018)</h3>
+<div id="the-r-package-mplusautomation-is-used-for-creating-organized-project-workflows-hallquist-wiley-2018" class="section level3">
+<h3>- The R package {<code>MplusAutomation</code>} is used for creating organized project workflows (Hallquist &amp; Wiley, 2018)</h3>
 </div>
-<div id="all-models-are-esitated-in-mplus-allowing-for-highly-flexible-sem-model-specification-muthén-muthén-1998-2017" class="section level3">
-<h3>- All models are esitated in Mplus allowing for highly flexible SEM model specification (Muthén &amp; Muthén, 1998-2017)</h3>
+<div id="all-models-are-estimated-in-mplus-allowing-for-highly-flexible-sem-model-specification-muthén-muthén-1998-2017" class="section level3">
+<h3>- All models are estimated in Mplus allowing for highly flexible SEM model specification (Muthén &amp; Muthén, 1998-2017)</h3>
 </div>
-<div id="r-projects-and-the-here-package-allow-for-reproducability-across-operating-systems." class="section level3">
-<h3>- R-Projects and the {<code>here</code>} package allow for reproducability across operating systems.</h3>
+<div id="r-projects-and-the-here-package-allow-for-reproducibility-across-operating-systems." class="section level3">
+<h3>- R-Projects and the {<code>here</code>} package allow for reproducibility across operating systems.</h3>
 </div>
-<div id="the-tidyverses-highly-coherent-functions-are-used-whenever-possible-to-increase-accessibilty-for-applied-audiences-wickham-et-al.-2019" class="section level3">
-<h3>- The {<code>tidyverse</code>}’s highly coherent functions are used whenever possible to increase accessibilty for applied audiences (Wickham et al., 2019)</h3>
+<div id="the-tidyverses-highly-coherent-functions-are-used-whenever-possible-to-increase-accessibility-for-applied-audiences-wickham-et-al.-2019" class="section level3">
+<h3>- The {<code>tidyverse</code>}’s highly coherent functions are used whenever possible to increase accessibility for applied audiences (Wickham et al., 2019)</h3>
 </div>
 <div id="section-2" class="section level2">
 <h2>__________________________________________________________</h2>
 </div>
 </div>
-<div id="implementation-strategy-rationale" class="section level1">
-<h1>Implementation strategy rationale:</h1>
-<div id="why-not-use-a-package-in-r-to-estimate-s.e.m-models" class="section level3">
-<h3>1. Why not use a package in R to estimate S.E.M models?</h3>
+<div id="why-use-mplusautomation" class="section level1">
+<h1>Why use MplusAutomation?</h1>
+<div id="a.-why-not-use-a-package-in-r-to-estimate-s.e.m-models" class="section level3">
+<h3>a. Why not use a package in R to estimate S.E.M models?</h3>
 <div id="currently-most-s.e.m.-packages-in-r-such-as-lavaan-have-significant-limitations-in-their-capacity-for-flexibly-specifying-the-full-range-modeling-approaches-available-in-s.e.m.-this-includes-the-ability-to-specify-categorical-latent-variables-lcalpalta-multi-level-models-mlm-non-normal-outcomes-glm-and-their-combinations-i.e.-multi-level-lta-with-covariates-distals." class="section level4">
 <h4>- Currently, most S.E.M. packages in R such as {<code>lavaan</code>} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates &amp; distals).</h4>
 </div>
@@ -407,16 +410,16 @@ summary {
 <h4>- Other packages, although highly flexible {<code>OpenMX</code>} are less accessible to applied researchers.</h4>
 </div>
 </div>
-<div id="why-not-do-s.e.m.-modeling-entirely-in-mplus" class="section level3">
-<h3>2. Why not do S.E.M. modeling entirely in Mplus?</h3>
+<div id="b.-why-not-do-s.e.m.-modeling-entirely-in-mplus" class="section level3">
+<h3>b. Why not do S.E.M. modeling entirely in Mplus?</h3>
 <div id="running-complex-models-in-mplus-is-error-prone-due-to-the-workflow-involving-a-proliferation-of-files-and-reliance-on-other-software-excel-spss." class="section level4">
 <h4>- Running complex models in Mplus is error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS).</h4>
 </div>
 <div id="in-practice-this-results-in-organizational-challenges-and-lots-of-copying-and-pasting." class="section level4">
 <h4>- In practice, this results in organizational challenges and lots of copying and pasting.</h4>
 </div>
-<div id="importantly-mplus-does-not-provide-convenient-methods-for-conducting-fully-reproducable-research-projects." class="section level4">
-<h4>- Importantly, Mplus does not provide convenient methods for conducting fully reproducable research projects.</h4>
+<div id="importantly-mplus-does-not-provide-convenient-methods-for-conducting-fully-reproducible-research-projects." class="section level4">
+<h4>- Importantly, Mplus does not provide convenient methods for conducting fully reproducible research projects.</h4>
 </div>
 <div id="in-r-documenting-all-research-decisions-and-data-presentation-is-straightforward-from-start-to-finish-e.g.-data-cleaning-transformation-re-coding-plotting-and-table-construction." class="section level4">
 <h4>- In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).</h4>
@@ -428,62 +431,41 @@ summary {
 </div>
 <div id="lab-materials-applied-mixture-modeling-ucsb-ed-201f" class="section level1">
 <h1>Lab materials: Applied Mixture modeling (UCSB, ED 201F)</h1>
-<div id="lab-1-tidy-enumeration-latent-class-analysis-lca-enumeration-with-mplusautomation" class="section level4">
-<h4>- Lab 1: Tidy Enumeration: <a href="https://garberadamc.github.io/project-site/lca-enumeration">Latent Class Analysis (LCA) Enumeration with MplusAutomation</a></h4>
-</div>
-<div id="lab-2" class="section level4">
-<h4>- Lab 2:</h4>
-</div>
-<div id="lab-3" class="section level4">
-<h4>- Lab 3:</h4>
-</div>
-<div id="lab-4" class="section level4">
-<h4>- Lab 4:</h4>
-</div>
-<div id="lab-5" class="section level4">
-<h4>- Lab 5:</h4>
-</div>
+<ul>
+<li><h4 id="lab-1-tidy-enumeration-latent-class-analysis-lca-enumeration-with-mplusautomation">Lab 1: Tidy Enumeration: <a href="https://garberadamc.github.io/project-site/lca-enumeration">Latent Class Analysis (LCA) Enumeration with MplusAutomation</a></h4></li>
+<li><h4 id="lab-2">Lab 2:</h4></li>
+<li><h4 id="lab-3">Lab 3:</h4></li>
+<li><h4 id="lab-4">Lab 4:</h4></li>
+<li><h4 id="lab-5">Lab 5:</h4></li>
+</ul>
 </div>
 <div id="lab-materials-factor-analysis-ucsb-ed-216b" class="section level1">
 <h1>Lab materials: Factor Analysis (UCSB, ED 216B)</h1>
-<div id="lab-1-getting-started-with-mplusautomation-explore---prepare-data---introduction-to-mplusautomation" class="section level4">
-<h4>- Lab 1: Getting Started with MplusAutomation: <a href="https://garberadamc.github.io/project-site/explore-prepare-mplus-auto">Explore - Prepare Data - Introduction to MplusAutomation</a></h4>
-</div>
-<div id="lab-2-1" class="section level4">
-<h4>- Lab 2:</h4>
-</div>
-<div id="lab-3-1" class="section level4">
-<h4>- Lab 3:</h4>
-</div>
-<div id="lab-4-1" class="section level4">
-<h4>- Lab 4:</h4>
-</div>
-<div id="lab-5-1" class="section level4">
-<h4>- Lab 5:</h4>
+<ul>
+<li><h4 id="lab-1-getting-started-with-mplusautomation-explore---prepare-data---introduction-to-mplusautomation">Lab 1: Getting Started with MplusAutomation: <a href="https://garberadamc.github.io/project-site/explore-prepare-mplus-auto">Explore - Prepare Data - Introduction to MplusAutomation</a></h4></li>
+<li><h4 id="lab-2-1">Lab 2:</h4></li>
+<li><h4 id="lab-3-1">Lab 3:</h4></li>
+<li><h4 id="lab-4-1">Lab 4:</h4></li>
+<li><h4 id="lab-6">Lab 6:</h4></li>
+<li><h4 id="lab-7">Lab 7:</h4></li>
+<li><h4 id="lab-8-multiple-indicator-multiple-causes-mimic-models">Lab 8: <a href="https://garberadamc.github.io/project-site/Lab8-MIMIC">Multiple Indicator, Multiple Causes, MIMIC Models</a></h4></li>
+<li><h4 id="lab-9">Lab 9:</h4></li>
+</ul>
 <p><br></p>
-</div>
 <div id="section-4" class="section level2">
 <h2>__________________________________________________________</h2>
 </div>
 </div>
 <div id="replicating-analyses-using-tidy-workflow-mplusautomation" class="section level1">
 <h1>Replicating analyses using Tidy Workflow &amp; MplusAutomation:</h1>
-<div id="multi-level-latent-class-analysis-mlca-replication-of-examples-provided-in-henry-muthén-2010" class="section level4">
-<h4>- Multi-level Latent Class Analysis (MLCA) : <a href="https://garberadamc.github.io/project-site/mlca-demo">Replication of examples provided in Henry, &amp; Muthén, (2010)</a></h4>
-</div>
-<div id="monte-carlo-simulation-of-power-sample-size-replication-adaptation-of-examples-provided-in-muthén-muthén-2002" class="section level4">
-<h4>- Monte Carlo Simulation of Power &amp; Sample Size: <a href="https://garberadamc.github.io/project-site/sim-power-size">Replication &amp; adaptation of examples provided in Muthén, &amp; Muthén, (2002)</a></h4>
-</div>
-<div id="section-5" class="section level4">
-<h4>-</h4>
-</div>
-<div id="section-6" class="section level4">
-<h4>-</h4>
-</div>
-<div id="section-7" class="section level4">
-<h4>-</h4>
+<ul>
+<li><h4 id="multi-level-latent-class-analysis-mlca-replication-of-examples-provided-in-henry-muthén-2010">Multi-level Latent Class Analysis (MLCA) : <a href="https://garberadamc.github.io/project-site/mlca-demo">Replication of examples provided in Henry, &amp; Muthén, (2010)</a></h4></li>
+<li><h4 id="monte-carlo-simulation-of-power-sample-size-replication-adaptation-of-examples-provided-in-muthén-muthén-2002">Monte Carlo Simulation of Power &amp; Sample Size: <a href="https://garberadamc.github.io/project-site/sim-power-size">Replication &amp; adaptation of examples provided in Muthén, &amp; Muthén, (2002)</a></h4></li>
+<li><h4 id="section-5"></h4></li>
+<li><h4 id="section-6"></h4></li>
+<li><h4 id="section-7"></h4></li>
+</ul>
 <p><br></p>
-</div>
 <div id="section-8" class="section level2">
 <h2>__________________________________________________________</h2>
 </div>
