@@ -61,7 +61,7 @@ b. do S.E.M. modeling entirely in Mplus?
 
 ## Lab materials: Applied Mixture modeling (UCSB, ED 201F) 
 
-- Lab 1: Tidy Enumeration: [Latent Class Analysis (LCA) Enumeration with MplusAutomation](https://garberadamc.github.io/project-site/lca-enumeration)
+- Lab 1: [Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)](https://garberadamc.github.io/project-site/lca-enumeration)
 - Lab 2:
 - Lab 3:
 - Lab 4:
