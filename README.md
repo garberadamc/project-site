@@ -5,7 +5,6 @@ Projects &amp; teaching materials.
 
 
 
-
 ## Modeling examples and labs for Mixture Models & Structural Equation Models
 
 ### Analytic workflow strategy:

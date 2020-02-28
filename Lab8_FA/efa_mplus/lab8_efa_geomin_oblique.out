@@ -1,0 +1,830 @@
+Mplus VERSION 8.3 (Mac)
+MUTHEN & MUTHEN
+02/21/2020   4:27 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  Geomin Oblique EFA - LAB 5 DEMO
+  DATA:
+  FILE = "/Users/agarber/Desktop/FA_W20/Lab8_FA/efa_mplus/lab8_efa_geomin_oblique.dat";
+
+  VARIABLE:
+  NAMES = bystlang freelnch byincome stolen t_hurt p_fight hit damaged bullied safe
+       disrupt gangs rac_fght late skipped mth_read mth_test rd_test;
+   MISSING=.;
+   usevar = stolen-rac_fght;
+  ANALYSIS:
+  type = efa 1 4;
+       estimator = mlr;
+       rotation = geomin; ! this is the default (added to be explicit)
+       parallel=50; ! run parallel analysis
+  OUTPUT:
+  sampstat;
+  PLOT:
+  type = plot3;
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  74
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Geomin Oblique EFA - LAB 5 DEMO
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         720
+
+Number of dependent variables                                   10
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   STOLEN      T_HURT      P_FIGHT     HIT         DAMAGED     BULLIED
+   SAFE        DISRUPT     GANGS       RAC_FGHT
+
+
+Estimator                                                      MLR
+Rotation                                                    GEOMIN
+Row standardization                                    CORRELATION
+Type of rotation                                           OBLIQUE
+Epsilon value                                               Varies
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization Specifications for the Exploratory Factor Analysis
+Rotation Algorithm
+  Number of random starts                                       30
+  Maximum number of iterations                               10000
+  Derivative convergence criterion                       0.100D-04
+
+Input data file(s)
+  /Users/agarber/Desktop/FA_W20/Lab8_FA/efa_mplus/lab8_efa_geomin_oblique.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            21
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+ STOLEN         0.997
+ T_HURT         0.990         0.992
+ P_FIGHT        0.992         0.988         0.993
+ HIT            0.986         0.982         0.983         0.988
+ DAMAGED        0.993         0.989         0.990         0.988         0.994
+ BULLIED        0.989         0.986         0.988         0.983         0.990
+ SAFE           0.985         0.979         0.981         0.975         0.982
+ DISRUPT        0.988         0.982         0.983         0.979         0.985
+ GANGS          0.976         0.972         0.972         0.968         0.974
+ RAC_FGHT       0.992         0.986         0.988         0.982         0.989
+
+
+           Covariance Coverage
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+ BULLIED        0.990
+ SAFE           0.978         0.988
+ DISRUPT        0.981         0.981         0.990
+ GANGS          0.969         0.971         0.972         0.979
+ RAC_FGHT       0.985         0.986         0.989         0.976         0.994
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+                1.489         1.264         1.153         1.254         1.173
+
+
+           Means
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+                1.288         3.277         2.561         2.998         3.044
+
+
+           Covariances
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+ STOLEN         0.387
+ T_HURT         0.108         0.306
+ P_FIGHT        0.071         0.079         0.191
+ HIT            0.102         0.131         0.104         0.304
+ DAMAGED        0.104         0.094         0.060         0.102         0.188
+ BULLIED        0.065         0.142         0.024         0.106         0.080
+ SAFE          -0.043        -0.056        -0.048        -0.077        -0.049
+ DISRUPT       -0.058        -0.041        -0.018        -0.008        -0.008
+ GANGS         -0.105        -0.055        -0.057        -0.052        -0.054
+ RAC_FGHT      -0.057        -0.090        -0.052        -0.051        -0.043
+
+
+           Covariances
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+ BULLIED        0.342
+ SAFE          -0.038         0.512
+ DISRUPT       -0.073         0.189         0.740
+ GANGS         -0.019         0.207         0.161         0.757
+ RAC_FGHT      -0.043         0.194         0.139         0.329         0.689
+
+
+           Correlations
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+ STOLEN         1.000
+ T_HURT         0.313         1.000
+ P_FIGHT        0.261         0.326         1.000
+ HIT            0.297         0.430         0.432         1.000
+ DAMAGED        0.384         0.391         0.314         0.426         1.000
+ BULLIED        0.179         0.438         0.093         0.328         0.314
+ SAFE          -0.096        -0.143        -0.154        -0.196        -0.159
+ DISRUPT       -0.109        -0.087        -0.048        -0.016        -0.021
+ GANGS         -0.194        -0.115        -0.150        -0.108        -0.144
+ RAC_FGHT      -0.110        -0.197        -0.143        -0.110        -0.119
+
+
+           Correlations
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+ BULLIED        1.000
+ SAFE          -0.091         1.000
+ DISRUPT       -0.146         0.308         1.000
+ GANGS         -0.037         0.332         0.215         1.000
+ RAC_FGHT      -0.089         0.326         0.195         0.456         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -6115.233
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     STOLEN                1.489       0.895       1.000   57.94%       1.000      1.000      1.000
+             718.000       0.386      -0.233       3.000    6.82%       2.000      2.000
+     T_HURT                1.263       2.005       1.000   79.27%       1.000      1.000      1.000
+             714.000       0.306       2.958       3.000    5.60%       1.000      2.000
+     P_FIGHT               1.152       2.956       1.000   87.83%       1.000      1.000      1.000
+             715.000       0.191       8.156       3.000    3.08%       1.000      1.000
+     HIT                   1.255       2.083       1.000   80.31%       1.000      1.000      1.000
+             711.000       0.305       3.248       3.000    5.77%       1.000      1.000
+     DAMAGED               1.173       2.510       1.000   84.92%       1.000      1.000      1.000
+             716.000       0.188       5.773       3.000    2.23%       1.000      1.000
+     BULLIED               1.288       1.902       1.000   78.12%       1.000      1.000      1.000
+             713.000       0.342       2.420       3.000    6.87%       1.000      2.000
+     SAFE                  3.277      -0.901       1.000    2.67%       3.000      3.000      3.000
+             711.000       0.513       0.938       4.000   40.65%       4.000      4.000
+     DISRUPT               2.561      -0.150       1.000   11.92%       2.000      2.000      3.000
+             713.000       0.740      -0.620       4.000   12.76%       3.000      3.000
+     GANGS                 2.999      -0.602       1.000    6.67%       2.000      3.000      3.000
+             705.000       0.759      -0.297       4.000   31.21%       3.000      4.000
+     RAC_FGHT              3.043      -0.623       1.000    5.17%       2.000      3.000      3.000
+             716.000       0.689      -0.128       4.000   31.56%       3.000      4.000
+
+
+     NO CONVERGENCE.  NUMBER OF ITERATIONS EXCEEDED.
+     PROBLEM OCCURRED IN EXPLORATORY FACTOR ANALYSIS WITH 4 FACTOR(S).
+
+
+
+
+SUMMARY OF MODEL FIT INFORMATION
+
+
+                   Number of                   Degrees of
+     Model        Parameters      Chi-Square    Freedom     P-Value
+
+     1-factor          30            318.689        35       0.0000
+     2-factor          39            115.238        26       0.0000
+     3-factor          47             60.001        18       0.0000
+     4-factor         N/A
+
+                                               Degrees of
+     Models Compared              Chi-Square    Freedom     P-Value
+
+     1-factor against 2-factor       194.729         9       0.0000
+     2-factor against 3-factor        49.503         8       0.0000
+
+
+
+RESULTS FOR EXPLORATORY FACTOR ANALYSIS
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                2.988         1.622         1.021         0.832         0.825
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                0.681         0.552         0.535         0.488         0.456
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                1.187         1.131         1.088         1.046         1.017
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                0.975         0.946         0.911         0.873         0.825
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                1.234         1.164         1.117         1.070         1.043
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                0.995         0.971         0.941         0.894         0.869
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 1 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       30
+
+Loglikelihood
+
+          H0 Value                       -6331.901
+          H0 Scaling Correction Factor      1.6833
+            for MLR
+          H1 Value                       -6115.233
+          H1 Scaling Correction Factor      1.5091
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   12723.803
+          Bayesian (BIC)                 12861.180
+          Sample-Size Adjusted BIC       12765.922
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            318.689*
+          Degrees of Freedom                    35
+          P-Value                           0.0000
+          Scaling Correction Factor         1.3598
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.106
+          90 Percent C.I.                    0.096  0.117
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.668
+          TLI                                0.574
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            900.345
+          Degrees of Freedom                    45
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.088
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       2.27333
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1
+              ________
+ STOLEN         0.492*
+ T_HURT         0.654*
+ P_FIGHT        0.510*
+ HIT            0.659*
+ DAMAGED        0.622*
+ BULLIED        0.470*
+ SAFE          -0.315*
+ DISRUPT       -0.167*
+ GANGS         -0.289*
+ RAC_FGHT      -0.298*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1
+              ________
+      1         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+                0.758         0.572         0.739         0.566         0.613
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+                0.779         0.901         0.972         0.916         0.911
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ STOLEN         0.041
+ T_HURT         0.045
+ P_FIGHT        0.058
+ HIT            0.043
+ DAMAGED        0.046
+ BULLIED        0.054
+ SAFE           0.059
+ DISRUPT        0.055
+ GANGS          0.057
+ RAC_FGHT       0.060
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+                0.040         0.059         0.059         0.056         0.057
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+                0.051         0.037         0.018         0.033         0.036
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ STOLEN        12.016
+ T_HURT        14.587
+ P_FIGHT        8.790
+ HIT           15.499
+ DAMAGED       13.472
+ BULLIED        8.713
+ SAFE          -5.338
+ DISRUPT       -3.064
+ GANGS         -5.032
+ RAC_FGHT      -4.991
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+               18.791         9.755        12.470        10.105        10.658
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+               15.382        24.173        53.247        27.572        25.661
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 2 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       39
+
+Loglikelihood
+
+          H0 Value                       -6192.053
+          H0 Scaling Correction Factor      1.6263
+            for MLR
+          H1 Value                       -6115.233
+          H1 Scaling Correction Factor      1.5091
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   12462.105
+          Bayesian (BIC)                 12640.696
+          Sample-Size Adjusted BIC       12516.860
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            115.238*
+          Degrees of Freedom                    26
+          P-Value                           0.0000
+          Scaling Correction Factor         1.3332
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.069
+          90 Percent C.I.                    0.056  0.082
+          Probability RMSEA <= .05           0.007
+
+CFI/TLI
+
+          CFI                                0.896
+          TLI                                0.819
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            900.345
+          Degrees of Freedom                    45
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.040
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.21429
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2
+              ________      ________
+ STOLEN         0.456*       -0.080
+ T_HURT         0.658*       -0.015
+ P_FIGHT        0.486*       -0.064
+ HIT            0.700*        0.041
+ DAMAGED        0.633*        0.000
+ BULLIED        0.501*        0.048
+ SAFE          -0.086         0.499*
+ DISRUPT        0.012         0.367*
+ GANGS          0.018         0.687*
+ RAC_FGHT      -0.014         0.633*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2
+              ________      ________
+      1         1.000
+      2        -0.315*        1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+                0.763         0.560         0.740         0.526         0.599
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+                0.762         0.716         0.868         0.535         0.593
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ STOLEN         0.049         0.053
+ T_HURT         0.055         0.063
+ P_FIGHT        0.070         0.071
+ HIT            0.052         0.057
+ DAMAGED        0.047         0.014
+ BULLIED        0.064         0.063
+ SAFE           0.055         0.056
+ DISRUPT        0.052         0.058
+ GANGS          0.033         0.054
+ RAC_FGHT       0.032         0.048
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         0.077         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+                0.040         0.063         0.060         0.063         0.059
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+                0.056         0.053         0.039         0.070         0.055
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ STOLEN         9.326        -1.495
+ T_HURT        11.983        -0.231
+ P_FIGHT        6.934        -0.908
+ HIT           13.384         0.723
+ DAMAGED       13.374         0.032
+ BULLIED        7.851         0.752
+ SAFE          -1.581         8.881
+ DISRUPT        0.241         6.314
+ GANGS          0.534        12.667
+ RAC_FGHT      -0.431        13.200
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2        -4.079         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+               18.862         8.933        12.292         8.310        10.174
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+               13.626        13.473        22.465         7.604        10.756
+
+
+           FACTOR STRUCTURE
+                  1             2
+              ________      ________
+ STOLEN         0.481        -0.223
+ T_HURT         0.663        -0.222
+ P_FIGHT        0.506        -0.218
+ HIT            0.687        -0.180
+ DAMAGED        0.633        -0.199
+ BULLIED        0.486        -0.110
+ SAFE          -0.243         0.526
+ DISRUPT       -0.103         0.363
+ GANGS         -0.199         0.682
+ RAC_FGHT      -0.213         0.638
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 3 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       47
+
+Loglikelihood
+
+          H0 Value                       -6150.767
+          H0 Scaling Correction Factor      1.6334
+            for MLR
+          H1 Value                       -6115.233
+          H1 Scaling Correction Factor      1.5091
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   12395.534
+          Bayesian (BIC)                 12610.759
+          Sample-Size Adjusted BIC       12461.520
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             60.001*
+          Degrees of Freedom                    18
+          P-Value                           0.0000
+          Scaling Correction Factor         1.1844
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.057
+          90 Percent C.I.                    0.041  0.073
+          Probability RMSEA <= .05           0.218
+
+CFI/TLI
+
+          CFI                                0.951
+          TLI                                0.877
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            900.345
+          Degrees of Freedom                    45
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.027
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.14888
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+ STOLEN         0.491*       -0.045        -0.048
+ T_HURT         0.566*        0.134        -0.012
+ P_FIGHT        0.612*       -0.144        -0.005
+ HIT            0.728*        0.006         0.088
+ DAMAGED        0.631*        0.022         0.032
+ BULLIED        0.004         1.303         0.000
+ SAFE          -0.092         0.006         0.498*
+ DISRUPT        0.086        -0.113         0.396*
+ GANGS         -0.009         0.020         0.670*
+ RAC_FGHT      -0.005        -0.017         0.637*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+      1         1.000
+      2         0.348         1.000
+      3        -0.358*       -0.074         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+                0.754         0.604         0.664         0.504         0.605
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+               -0.703         0.712         0.848         0.548         0.590
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ STOLEN         0.064         0.042         0.064
+ T_HURT         0.130         0.215         0.042
+ P_FIGHT        0.146         0.194         0.032
+ HIT            0.056         0.012         0.056
+ DAMAGED        0.077         0.063         0.069
+ BULLIED        0.017         1.424         0.011
+ SAFE           0.070         0.022         0.059
+ DISRUPT        0.118         0.155         0.060
+ GANGS          0.042         0.070         0.051
+ RAC_FGHT       0.036         0.038         0.047
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2         0.347         0.000
+      3         0.076         0.102         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+                0.046         0.077         0.086         0.071         0.064
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+                3.698         0.053         0.048         0.065         0.055
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ STOLEN         7.662        -1.066        -0.756
+ T_HURT         4.341         0.622        -0.286
+ P_FIGHT        4.182        -0.741        -0.167
+ HIT           12.971         0.514         1.571
+ DAMAGED        8.237         0.344         0.461
+ BULLIED        0.249         0.915        -0.009
+ SAFE          -1.309         0.277         8.504
+ DISRUPT        0.727        -0.731         6.639
+ GANGS         -0.216         0.285        13.181
+ RAC_FGHT      -0.134        -0.441        13.505
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2         1.003         0.000
+      3        -4.674        -0.729         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              STOLEN        T_HURT        P_FIGHT       HIT           DAMAGED
+              ________      ________      ________      ________      ________
+               16.418         7.818         7.732         7.060         9.516
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              BULLIED       SAFE          DISRUPT       GANGS         RAC_FGHT
+              ________      ________      ________      ________      ________
+               -0.190        13.412        17.789         8.479        10.663
+
+
+           FACTOR STRUCTURE
+                  1             2             3
+              ________      ________      ________
+ STOLEN         0.492         0.130        -0.220
+ T_HURT         0.617         0.332        -0.224
+ P_FIGHT        0.564         0.070        -0.213
+ HIT            0.699         0.253        -0.173
+ DAMAGED        0.627         0.239        -0.196
+ BULLIED        0.458         1.305        -0.099
+ SAFE          -0.268        -0.063         0.530
+ DISRUPT       -0.095        -0.113         0.374
+ GANGS         -0.242        -0.033         0.672
+ RAC_FGHT      -0.238        -0.066         0.640
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values)
+  Scatterplots (sample values)
+  Eigenvalues for exploratory factor analysis
+
+     Beginning Time:  16:27:05
+        Ending Time:  16:27:06
+       Elapsed Time:  00:00:01
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

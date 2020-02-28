@@ -21,30 +21,31 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## __________________________________________________________
 
+### Introduction: 
 
 
 # Analytic workflow strategy:
 
-### - The R pacakge {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
-### - All models are esitated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
-### - R-Projects and the {`here`} package allow for reproducability across operating systems.
-### - The {`tidyverse`}'s highly coherent functions are used whenever possible to increase accessibilty for applied audiences (Wickham et al., 2019)
+### - The R package {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
+### - All models are estimated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
+### - R-Projects and the {`here`} package allow for reproducibility across operating systems.
+### - The {`tidyverse`}'s highly coherent functions are used whenever possible to increase accessibility for applied audiences (Wickham et al., 2019)
 
 ## __________________________________________________________
 
-# Implementation strategy rationale:
+# Why use MplusAutomation?
 
-### 1. Why not use a package in R to estimate S.E.M models? 
+### a. Why not use a package in R to estimate S.E.M models? 
 
 #### - Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
 
 #### - Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
 
-### 2. Why not do S.E.M. modeling  entirely in Mplus? 
+### b. Why not do S.E.M. modeling  entirely in Mplus? 
 
 #### - Running complex models in Mplus is error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS). 
 #### - In practice, this results in organizational challenges and lots of copying and pasting.
-#### - Importantly, Mplus does not provide convenient methods for conducting fully reproducable research projects. 
+#### - Importantly, Mplus does not provide convenient methods for conducting fully reproducible research projects. 
 #### - In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).
 
 ## __________________________________________________________

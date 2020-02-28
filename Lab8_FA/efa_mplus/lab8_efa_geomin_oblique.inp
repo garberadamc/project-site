@@ -1,0 +1,19 @@
+TITLE:
+Geomin Oblique EFA - LAB 5 DEMO
+DATA:
+FILE = "/Users/agarber/Desktop/FA_W20/Lab8_FA/efa_mplus/lab8_efa_geomin_oblique.dat";
+ 
+VARIABLE:
+NAMES = bystlang freelnch byincome stolen t_hurt p_fight hit damaged bullied safe
+     disrupt gangs rac_fght late skipped mth_read mth_test rd_test; 
+ MISSING=.;
+ usevar = stolen-rac_fght;
+ANALYSIS:
+type = efa 1 4;   
+     estimator = mlr;
+     rotation = geomin; ! this is the default (added to be explicit)
+     parallel=50; ! run parallel analysis
+OUTPUT:
+sampstat;
+PLOT:
+type = plot3;

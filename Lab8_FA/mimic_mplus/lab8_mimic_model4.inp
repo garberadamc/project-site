@@ -1,0 +1,26 @@
+TITLE:
+MIMIC model4 - LAB 8
+DATA:
+FILE = "/Users/agarber/Desktop/FA_W20/Lab8_FA/mimic_mplus/lab8_mimic_data.dat";
+ 
+VARIABLE:
+NAMES = bystlang freelnch byincome stolen t_hurt p_fight hit damaged bullied safe
+     disrupt gangs rac_fght late skipped mth_read mth_test rd_test; 
+ MISSING=.;
+ usevar = freelnch stolen-rac_fght eng_2nd int;
+DEFINE:
+if bystlang == 1 THEN eng_2nd=0;
+   if bystlang == 0 THEN eng_2nd=1;
+  int = eng_2nd*freelnch;
+ANALYSIS:
+estimator = mlr;
+MODEL:
+FACTOR_1 by stolen t_hurt p_fight hit damaged bullied;
+  
+     FACTOR_2 by safe disrupt gangs rac_fght;
+  
+     FACTOR_1 FACTOR_2 on freelnch eng_2nd int; 
+OUTPUT:
+sampstat standardized residual modindices (3.84);
+PLOT:
+type = plot3;
