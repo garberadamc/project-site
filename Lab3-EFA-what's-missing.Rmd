@@ -1,11 +1,11 @@
 ---
 title: "Lab 3 -  MplusAutomation, what's missing?"
 author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
-date: "1/19/2020"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document: default
   pdf_document: default
-subtitle: 'Adam Garber'
+subtitle: '**Adam Garber**'
 ---
 
 ```{r setup, include=FALSE}

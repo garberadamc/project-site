@@ -1,6 +1,7 @@
 ---
 title: "Explore, prepare data, & an introduction to MplusAutomation"
-author: "Adam Garber"
+author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
+subtitle: '**Adam Garber**'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document: default

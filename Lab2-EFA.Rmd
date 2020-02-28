@@ -1,11 +1,10 @@
 ---
 title: "Lab 2 - Exploratory Factor Analysis"
 author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
-date: "1/12/2020"
+subtitle: '**Adam Garber**'
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document: default
-  pdf_document: default
-subtitle: '**Adam Garber**'
 ---
 
 ```{r setup, include=FALSE}
@@ -166,7 +165,7 @@ result$newData
 
 ```
 
-### [$\color{blue}{\text{LINK: RUN SHINY MVC}}$](http://www.biosoft.hacettepe.edu.tr/MVN/)
+#### [$\color{blue}{\text{LINK: Run Multivariate Diagnostics using the Shiny MVC App.}}$](http://www.biosoft.hacettepe.edu.tr/MVN/)
 
 # ____________________________________
 

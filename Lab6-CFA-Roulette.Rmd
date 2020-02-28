@@ -214,6 +214,8 @@ stargazer(as.data.frame(roulette_2), type="text", digits=1)
 knitr::include_graphics(here("figures", "unit_id.png"))
 ```
 
+#### *Figure*: Picture adapted from slide by Dr. Karen Nylund-Gibson
+
 ## ____________________________________
 
 ### CFA *Roulette*
@@ -563,6 +565,44 @@ best_table %>%
 
 beep(1)
 praise("${EXCLAMATION}!")
+```
+
+### Calculate Satora-Bentler scaled Chi-square difference test (use with MLR estimator) 
+
+#### [$\color{blue}{\text{See website: stats.idre.ucla.edu-mplus-faq-how-can-i-compute-a-chi-square-test-for-nested-models-with-the-mlr}}$](https://stats.idre.ucla.edu/mplus/faq/how-can-i-compute-a-chi-square-test-for-nested-models-with-the-mlr-or-mlm-estimators/)
+
+
+- SB0 = null model Chi-square value
+- SB1 = alternate model Chi-square value
+- c0  = null model scaling correction factor
+- c1  = alternate model scaling correction factor
+- d0  = null model degrees of freedom
+- d1  = alternate model degrees of freedom
+- df  = Chi-square test degrees of freedom
+
+```{r}
+
+# Identifying all the necessary variables 
+cfa_models <-readModels(here("cfa_mplus"))
+
+SB0 <- cfa_models[["lab6_cfa_UVI.out"]][["summaries"]][["ChiSqM_Value"]]
+SB1 <- cfa_models[["lab6_cfa_mod1.out"]][["summaries"]][["ChiSqM_Value"]]
+c0  <- cfa_models[["lab6_cfa_UVI.out"]][["summaries"]][["ChiSqM_ScalingCorrection"]]
+c1  <- cfa_models[["lab6_cfa_mod1.out"]][["summaries"]][["ChiSqM_ScalingCorrection"]]
+d0  <- cfa_models[["lab6_cfa_UVI.out"]][["summaries"]][["ChiSqM_DF"]]
+d1  <- cfa_models[["lab6_cfa_mod1.out"]][["summaries"]][["ChiSqM_DF"]]
+df  <- d0-d1
+
+# Satora-Bentler scaled Difference test equations
+cd <- (((d0*c0)-(d1*c1))/(d0-d1))
+t  <- (((SB0*c0)-(SB1*c1))/(cd))
+
+# Chi-square and degrees of freedom
+t
+df
+
+# Significance test
+pchisq(t, df, lower.tail=FALSE)
 ```
 
 ## ____________________________________

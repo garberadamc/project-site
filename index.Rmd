@@ -5,6 +5,7 @@ date: ""
 subtitle: "*Adam Garber*" 
 output: 
   html_document:
+    theme: cerulean
  #   toc: true  
  #   toc_float: true 
  #   toc_depth: 1
@@ -14,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 <style type="text/css">
-body{ font-size: 20px; max-width: 1600px; margin: auto; padding: 1em; }
+body{ font-size: 18px; max-width: 1600px; margin: auto; padding: 1em; }
 code.r{ font-size: 18px; }
 p { padding-top: 10px; padding-bottom: 10px; }
 pre { font-size: 16px; }
@@ -22,7 +23,7 @@ pre { font-size: 16px; }
 
 ![](figures/island_mark.png){ width=60% }
 
-#### *Channel Islands, Santa Barbara*
+#### *Channel Islands State Reserve, Santa Barbara*
 
 ## __________________________________________________________
 
@@ -32,9 +33,9 @@ pre { font-size: 16px; }
 
 ### About me: 
 
-I am a Ph.D student at the University of California, Santa Barbara. My work focuses on applied quantitative methods and finite mixture models in-line with my advisor Dr. Karen Nylund-Gibson's research. I participate in UCSB's Latent Variable Group. https://lvgucsb.weebly.com/ 
+My name is Adam Garber and I am Ph.D student at the University of California, Santa Barbara.The purpose of this website is to make SEM modeling accesible for applied researchers and students. My work focuses on finite mixture modeling in-line with my advisor Dr. Karen Nylund-Gibson's research. I participate in [UCSB's Latent Variable Group](https://lvgucsb.weebly.com/){target="_blank"}.
 
-## Workflow focus on reproducibility:
+### Workflow focus on reproducibility:
 
 - The R package {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
 - All models are estimated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
@@ -43,17 +44,17 @@ I am a Ph.D student at the University of California, Santa Barbara. My work focu
 
 ## __________________________________________________________
 
-### Why MplusAutomation?
+### Why do I use MplusAutomation?
 
-$\color{blue}{\text{Why not ...}}$
+$\color{red}{\text{Why  not ...}}$
 
-a. do S.E.M. modeling using packages within R? 
+Just do S.E.M. modeling using packages within R? 
 
 - Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
 
 - Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
 
-b. do S.E.M. modeling entirely in Mplus? 
+Just do S.E.M. modeling entirely in Mplus? 
 
 - Running complex models in Mplus is error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS). 
 - In practice, this results in organizational challenges and lots of copying and pasting.
@@ -64,7 +65,7 @@ b. do S.E.M. modeling entirely in Mplus?
 
 ## Lab materials: Applied Mixture modeling (UCSB, ED 201F) 
 
-- Lab 1: [Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)](https://garberadamc.github.io/project-site/lca-enumeration)
+- Lab 1: [Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)](https://garberadamc.github.io/project-site/lca-enumeration){target="_blank"}
 - Lab 2:
 - Lab 3:
 - Lab 4:
@@ -72,14 +73,14 @@ b. do S.E.M. modeling entirely in Mplus?
 
 ## Lab materials: Factor Analysis  (UCSB, ED 216B) 
 
-- Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto)
-- Lab 2: [Exploratory Factor Analysis (EFA) - Univariate and Multivariate Diagnostics.](https://garberadamc.github.io/project-site/Lab2-EFA)
-- Lab 3: [EFA - R coding excercise: What's Missing?](https://garberadamc.github.io/project-site/Lab3-EFA-what-s-missing)
-- Lab 4: [Splitting samples, Iterators, and Dealing with Large Datasets](https://garberadamc.github.io/project-site/Lab4-school-trouble)
-- Lab 5: [EFA Rotation - Confirmatory Factor Analysis (CFA) - Path Diagrams](https://garberadamc.github.io/project-site/Lab5-rotation-efa)
-- Lab 6: [CFA *Roulette* - A Game of Chance](https://garberadamc.github.io/project-site/Lab6-CFA-Roulette)
+- Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto){target="_blank"}
+- Lab 2: [Exploratory Factor Analysis (EFA) - Univariate and Multivariate Diagnostics.](https://garberadamc.github.io/project-site/Lab2-EFA){target="_blank"}
+- Lab 3: [EFA - R coding excercise: What's Missing?](https://garberadamc.github.io/project-site/Lab3-EFA-what-s-missing){target="_blank"}
+- Lab 4: [Splitting samples, Iterators, and Dealing with Large Datasets](https://garberadamc.github.io/project-site/Lab4-school-trouble){target="_blank"}
+- Lab 5: [EFA Rotation - Confirmatory Factor Analysis (CFA) - Path Diagrams](https://garberadamc.github.io/project-site/Lab5-rotation-efa){target="_blank"}
+- Lab 6: [CFA *Roulette* - A Game of Chance](https://garberadamc.github.io/project-site/Lab6-CFA-Roulette){target="_blank"}
 - Lab 7: 
-- Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC)
+- Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC){target="_blank"}
 - Lab 9: 
 
 <br>
@@ -88,11 +89,9 @@ b. do S.E.M. modeling entirely in Mplus?
 
 ## Replicating analyses using Tidy Workflow & MplusAutomation:
 
-- Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo)
-- Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size)
-- 
-- 
-- 
+- Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo){target="_blank"}
+- Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size){target="_blank"}
+
 
 <br>
 
