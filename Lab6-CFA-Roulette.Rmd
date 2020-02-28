@@ -1,0 +1,582 @@
+---
+title: "Lab 6 -  CFA *Roulette*"
+author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
+date: "2/8/2020"
+output:
+  html_document: default
+  pdf_document: default
+subtitle: '**Adam Garber**'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE, tidy = TRUE)
+library(here)
+```
+
+
+```{r, echo=FALSE, eval=TRUE, out.width = "70%", out.height= "70%", fig.align = "center"}
+knitr::include_graphics(here("figures", "wheel.png"))
+```
+
+## ____________________________________
+
+### Outline lab 6 - Factor Analysis Content
+
+1. Unit loading identification (ULI)
+2. Unit Variance identification (UVI)
+3. Interpreting Residuals
+4. Modification Indices
+
+## ____________________________________
+
+### CFA *Roulette* - rules of the game:
+
+- Create a pool of items ordered based on similarity of relationship (correlation) using the hclust algorithm
+- Split into 2 pools or clusters of items
+- Spin the wheel: randomly choose 5 items from each pool (each of our CFA's will be different!)
+- Use these 2 sets of items as the indicators in a 2 factor CFA
+- Choose between 1 - 2 modifications from the mod indices to "improve" your model
+- Upload your **final** model output file (.out) to GS portal. Use the following naming convention: 
+
+#### **firstname_lastinitial_cfa.out** e.g., **adam_g_cfa.out**
+
+- Lastly, we will upload all models into a table and see who had the "best" model 
+- Let the best BIC wins!
+
+## ____________________________________
+
+### A visual way to understand the variance / covariance matrix
+```{r, echo=FALSE, eval=TRUE, out.width = "60%", out.height= "60%", fig.align = "left"}
+knitr::include_graphics(here("figures", "unrestrict_model.png"))
+```
+
+#### *Figure.* Picture adapted from {`OpenMx`} documentation.
+
+
+```{r, echo=FALSE, eval=TRUE, out.width = "50%", out.height= "50%", fig.align = "left"}
+knitr::include_graphics(here("figures", "tip_of_the_iceberg.jpg"))
+```
+
+#### *Figure.* Seeing the forest from the trees.
+
+
+## ____________________________________
+
+## Getting started - following the routine...
+
+1. Create an R-Project
+2. Install packages 
+3. Load packages
+
+### R-Project instructions:
+
+1. click "NEW PROJECT" (upper right corner of window)
+2. choose option "NEW DIRECTORY"
+3. choose location of project (on desktop OR in a designated class folder)
+
+Within R-studio under the files pane (bottom right):
+
+1. click "New Folder" and name folder "data"
+2. click "New Folder" and name folder "class_mplus"
+3. click "New Folder" and name folder "cfa_mplus"
+
+# ____________________________________
+
+## Lab 5 - Begin 
+
+# ____________________________________
+
+### loading packages...
+
+```{r, eval=TRUE}
+library(tidyverse)
+library(MplusAutomation)
+library(rhdf5)
+library(here)
+library(semPlot)
+library(stargazer)
+library(corrplot)
+library(glue)
+library(kableExtra)
+library(beepr)
+library(praise)
+beep(2)
+```
+
+#### read in data
+```{r}
+
+lab_data <- read_csv(here("data", "lab_efa_cfa_data.csv"))
+
+beep(1)
+praise("You are totally ${adjective}! Super ${EXCLAMATION}!")
+
+# praise(0) # picks a random sound
+```
+
+#### Subsetting all Ordinal type variables
+```{r}
+ordinal_data <- lab_data %>% 
+  select(21:145)
+
+beep(1)
+praise()
+```
+
+### Order variables based on correlations & create 2 cluster item pools to pull from
+```{r}
+
+big_matrix <- cor(ordinal_data, use = "pairwise.complete.obs")
+
+corrplot(big_matrix,
+     method = "color",
+     type = "upper", 
+     order = "hclust",
+     addrect = 2,
+     tl.cex = .5, tl.col = "black")
+
+order <- corrMatOrder(big_matrix, order="hclust")
+
+order_data <- ordinal_data %>% 
+  select(order)
+
+clust1 <- order_data %>% 
+  select(BYS89G:BYS86D)
+
+clust2 <- order_data %>% 
+  select(BYS87E:BYS38B)
+
+cor_c1 <- cor(clust1, use = "pairwise.complete.obs")
+
+corrplot(cor_c1,
+     method = "color",
+     type = "upper", 
+     tl.col = "black")
+
+cor_c2 <- cor(clust2, use = "pairwise.complete.obs")
+
+corrplot(cor_c2,
+     method = "color",
+     type = "upper", 
+     tl.col = "black")
+
+beep(1)
+praise()
+```
+
+# ____________________________________
+
+### Try your luck! (select columns at random)
+
+# ____________________________________
+
+```{r}
+# select 5 columns at random for factor1
+
+# set.seed(*******) # setting a seed is optional, use to replicate same solution
+
+roulette_1 <- clust1 %>% 
+  select(sample(ncol(clust1), 5))
+
+f1_vars <- colnames(roulette_1)
+
+beep(1)
+praise()
+```
+
+```{r}
+# select 5 columns at random for factor2
+roulette_2 <- clust2 %>% 
+  select(sample(ncol(clust2), 5))
+
+f2_vars <- colnames(roulette_2)
+
+beep(1)
+praise()
+```
+
+#### take a look at the items in roulette 1
+```{r}
+
+stargazer(as.data.frame(roulette_1), type="text", digits=1)
+
+```
+
+#### take a look at the items in roulette 2
+```{r}
+
+stargazer(as.data.frame(roulette_2), type="text", digits=1)
+
+```
+
+
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+knitr::include_graphics(here("figures", "unit_id.png"))
+```
+
+## ____________________________________
+
+### CFA *Roulette*
+
+## ____________________________________
+
+```{r}
+# DEFAULT: Unit Loading Identification (ULI)
+cfa_ULI  <- mplusObject(
+  TITLE = "CFA - ULI - LAB 6 DEMO", 
+  VARIABLE =
+    glue(
+    "usevar = 
+    {noquote(f1_vars[1])}
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])}
+    {noquote(f2_vars[1])}
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])}
+    ;"), 
+  
+  ANALYSIS = 
+    "estimator = mlr;",
+  
+  MODEL = 
+    glue(
+    "FACTOR_1 by 
+    {noquote(f1_vars[1])}
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])};
+  
+     FACTOR_2 by 
+    {noquote(f2_vars[1])}
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])};") ,
+  
+  PLOT = "type = plot3;",
+  OUTPUT = "sampstat standardized residual modindices (3.84);",
+  
+  usevariables = colnames(order_data), 
+  rdata = order_data)
+
+cfa_ULI_fit <- mplusModeler(cfa_ULI, 
+                            dataout=here("cfa_mplus", "lab6_cfa_ULI.dat"),
+                            modelout=here("cfa_mplus", "lab6_cfa_ULI.inp"),
+                            check=TRUE, run = TRUE, hashfilename = FALSE)
+
+beep(1)
+praise()
+```
+
+
+```{r}
+# OVERRIDE DEFAULT: Unit Varianvce Identification
+cfa_UVI  <- mplusObject(
+  TITLE = "CFA - UVI - LAB 6 DEMO", 
+  VARIABLE =
+    glue(
+    "usevar = 
+    {noquote(f1_vars[1])}
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])}
+    {noquote(f2_vars[1])}
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])};" ), 
+  
+  ANALYSIS = 
+    "estimator = mlr;",
+  
+  MODEL = 
+    glue(
+    "FACTOR_1 by 
+    {noquote(f1_vars[1])}* !estimate first variable loading
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])};
+    
+    FACTOR_1@1; !fix variance of factor to 1
+  
+     FACTOR_2 by
+    {noquote(f2_vars[1])}* 
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])};
+    
+    FACTOR_2@1;" ) ,
+  
+  PLOT = "type = plot3;",
+  OUTPUT = "sampstat standardized residual modindices (3.84);",
+  
+  usevariables = colnames(order_data), 
+  rdata = order_data)
+
+cfa_UVI_fit <- mplusModeler(cfa_UVI, 
+                            dataout=here("cfa_mplus", "lab6_cfa_UVI.dat"),
+                            modelout=here("cfa_mplus", "lab6_cfa_UVI.inp"),
+                            check=TRUE, run = TRUE, hashfilename = FALSE)
+
+beep(1)
+praise()
+```
+
+## ____________________________________
+
+### Residual Output:
+
+## ____________________________________
+
+- The "output = residual;" option is used to request residuals for the observed variables in the analysis.
+- Residuals are computed for the model estimated means/intercepts/thresholds and the model estimated covariances/correlations/residual correlations. 
+- Residuals are computed as the difference between the value of the observed sample statistic and its model estimated value. 
+- Standardized and normalized residuals are available for continuous outcomes with TYPE=GENERAL and maximum likelihood estimation. 
+- Standardized residuals are computed as the difference between the value of the observed sample statistic and its model estimated value divided by the standard deviation of the difference between the value of the observed sample statistic and its model estimated value. Standardized residuals are approximate z-scores.
+- Normalized residuals are computed as the difference between the value of the observed sample statistic and its model estimated value divided by the standard deviation of the value of the observed sample statistic (Mplus 6 User’s Guide, p. 644).
+
+
+```{r}
+#           Standardized Residuals (z-scores) for Covariances
+#
+#              BYS86D        BYS89M        BYS89B        BYS89H        BYS90A
+#              ________      ________      ________      ________      ________
+# BYS86D       999.000
+# BYS89M         3.191       999.000
+# BYS89B        -2.207         0.157       999.000
+# BYS89H         0.462        21.983        -0.213       999.000
+# BYS90A         1.244         0.520        -1.780        -1.448         0.315
+# BYS87E        -2.402        -8.142         3.679        -4.084        -2.417
+# BYS87C         2.602         6.951       999.000       999.000         0.143
+# BYS21D        -1.319         2.332         1.374         0.811        -0.302
+# BYS20B        -0.440         2.480         1.689         1.533        -1.888
+# BYS20F         1.784         1.677         0.370         1.931        -1.238
+# 
+#               BYS87E        BYS87C        BYS21D        BYS20B        BYS20F
+#              ________      ________      ________      ________      ________
+# BYS87E         0.320
+# BYS87C         3.282       999.000
+# BYS21D        -1.831        -1.951         0.043
+# BYS20B        -3.563        -1.255         2.936       999.000
+# BYS20F        -1.944        -1.790       999.000       999.000         0.365
+ 
+```
+
+
+Each value can be mapped to a z-score distribution in which they can be interpreted as standard deviations from an ideal zero residual that signifying perfect reproduction of the variance-covariance matrix. Values above 1.96 or 2.00 indicates statistically significantly over- or under- estimation at a p<.05 level. 
+
+## ____________________________________
+
+### Modification Indices:
+
+## ____________________________________
+
+```{r}
+#                                    M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+# 
+# BY Statements
+# 
+# FACTOR_1 BY BYS87E                18.781    -2.612     -0.546       -0.603
+# FACTOR_1 BY BYS87C                10.943    -1.988     -0.416       -0.500
+# FACTOR_1 BY BYS20B                 5.174     1.199      0.251        0.327
+# FACTOR_1 BY BYS20F                 7.830     1.676      0.351        0.497
+# FACTOR_2 BY BYS89M                11.748     1.582      0.463        0.518
+# FACTOR_2 BY BYS89B                 7.505    -1.359     -0.398       -0.419
+# FACTOR_2 BY BYS90A                 4.788    -0.650     -0.190       -0.315
+# 
+# WITH Statements
+# 
+# BYS89M   WITH BYS86D               4.507     0.050      0.050        0.115
+# BYS89B   WITH BYS86D               4.497    -0.053     -0.053       -0.115
+# BYS87E   WITH BYS89M              26.032    -0.169     -0.169       -0.261
+# BYS87E   WITH BYS89B               7.894     0.096      0.096        0.143
+# BYS87C   WITH BYS86D               6.548     0.053      0.053        0.124
+# BYS87C   WITH BYS89M              13.201     0.108      0.108        0.196
+# BYS87C   WITH BYS89B              60.860    -0.242     -0.242       -0.419
+# BYS21D   WITH BYS89M               4.395     0.053      0.053        0.107
+# BYS21D   WITH BYS87E               4.022    -0.054     -0.054       -0.095
+# BYS21D   WITH BYS87C               5.370    -0.057     -0.057       -0.117
+# BYS20B   WITH BYS89M               4.366     0.058      0.058        0.110
+# BYS20B   WITH BYS87E              11.120    -0.097     -0.097       -0.163
+# BYS20F   WITH BYS87E               4.211    -0.057     -0.057       -0.117
+# BYS20F   WITH BYS21D              10.269     0.066      0.066        0.175
+# BYS20F   WITH BYS20B              15.315     0.093      0.093        0.235
+
+```
+## ____________________________________
+
+### Add a modification indice 
+
+#### Note: alter the modification following modification statement for your model
+```{r}
+
+cfa_mod1  <- mplusObject(
+  TITLE = "CFA - mod1 - LAB 6 DEMO", 
+  VARIABLE =
+    glue(
+    "usevar = 
+    {noquote(f1_vars[1])}
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])}
+    {noquote(f2_vars[1])}
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])};" ), 
+  
+  ANALYSIS = 
+    "estimator = mlr;",
+  
+  MODEL = 
+    glue(
+    "FACTOR_1 by 
+    {noquote(f1_vars[1])}* !estimate first variable loading
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])};
+    
+    FACTOR_1@1; !fix variance of factor to 1
+  
+     FACTOR_2 by
+    {noquote(f2_vars[1])}* 
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])};
+    
+    FACTOR_2@1;
+    
+    ! ****CHANGE TO REFLECT YOUR MODS****
+    BYS87C WITH BYS89B; !estimate residual correlation mod indice" ) ,
+  
+  PLOT = "type = plot3;",
+  OUTPUT = "sampstat standardized residual modindices (3.84);",
+  
+  usevariables = colnames(order_data), 
+  rdata = order_data)
+
+cfa_mod1_fit <- mplusModeler(cfa_mod1, 
+                            dataout=here("cfa_mplus", "lab6_cfa_mod1.dat"),
+                            modelout=here("cfa_mplus", "lab6_cfa_mod1.inp"),
+                            check=TRUE, run = TRUE, hashfilename = FALSE)
+
+beep(1)
+praise()
+```
+
+#### Add a second modification from the mod indices statements
+```{r}
+
+cfa_mod2  <- mplusObject(
+  TITLE = "CFA - mod1 - LAB 6 DEMO", 
+  VARIABLE =
+    glue(
+    "usevar = 
+    {noquote(f1_vars[1])}
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])}
+    {noquote(f2_vars[1])}
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])};" ), 
+  
+  ANALYSIS = 
+    "estimator = mlr;",
+  
+  MODEL = 
+    glue(
+    "FACTOR_1 by 
+    {noquote(f1_vars[1])}* !estimate first variable loading
+    {noquote(f1_vars[2])}
+    {noquote(f1_vars[3])}
+    {noquote(f1_vars[4])}
+    {noquote(f1_vars[5])};
+    
+    FACTOR_1@1; !fix variance of factor to 1
+  
+     FACTOR_2 by
+    {noquote(f2_vars[1])}* 
+    {noquote(f2_vars[2])}
+    {noquote(f2_vars[3])}
+    {noquote(f2_vars[4])}
+    {noquote(f2_vars[5])};
+    
+    FACTOR_2@1;
+    
+    ! ****CHANGE TO REFLECT YOUR MODS****
+    BYS87E WITH BYS89M; !estimate residual correlation mod indice
+    BYS87C WITH BYS89B; ") ,
+  
+  PLOT = "type = plot3;",
+  OUTPUT = "sampstat standardized residual modindices (3.84);",
+  
+  usevariables = colnames(order_data), 
+  rdata = order_data)
+
+cfa_mod2_fit <- mplusModeler(cfa_mod2, 
+                            dataout=here("cfa_mplus", "lab6_cfa_mod2.dat"),
+                            modelout=here("cfa_mplus", "lab6_cfa_mod2.inp"),
+                            check=TRUE, run = TRUE, hashfilename = FALSE)
+
+beep(1)
+praise()
+```
+## ____________________________________
+
+### Collect class output files - upload to GauchoSpace portal
+
+- Download 1 class .out file per person using the naming convention
+- Read in all files & create a table
+- The best BIC wins!
+
+## ____________________________________
+
+```{r}
+
+best_models <- readModels(here("class_mplus"), recursive = TRUE)
+
+
+best_table <- LatexSummaryTable(best_models, 
+                keepCols=c("Filename", 
+                           "BIC"), 
+                                   sortBy = "BIC")
+
+best_table %>% 
+  kable(booktabs = T, linesep = "") %>% 
+  kable_styling(c("striped"), 
+                full_width = F,
+                position = "left")
+
+beep(1)
+praise("${EXCLAMATION}!")
+```
+
+## ____________________________________
+
+### End of Lab 6
+
+## ____________________________________
+
+```{r, echo=FALSE, eval=TRUE, out.width = "30%", out.height= "30%", fig.align = "center"}
+knitr::include_graphics(here("figures", "dice.jpg"))
+```
+
+
+
+
+
+

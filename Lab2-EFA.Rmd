@@ -5,7 +5,7 @@ date: "1/12/2020"
 output:
   html_document: default
   pdf_document: default
-subtitle: 'Adam Garber'
+subtitle: '**Adam Garber**'
 ---
 
 ```{r setup, include=FALSE}
@@ -13,14 +13,17 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 library(here)
 ```
 
+# ____________________________________
 
-```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+# ____________________________________
+
+```{r, echo=FALSE, eval=TRUE, out.width = "65%", out.height= "65%", fig.pos="h"}
 knitr::include_graphics(here("Lab2_FA", "hex_package.png"))
 ```
 
-## EXERCISE 00: MAKE A NEW R PROJECT
+## Lab preparation
 
-### INSTRUCTIONS:
+### R-Project Instructions:
 
 1. click "NEW PROJECT" (upper right corner of window)
 2. choose option "NEW DIRECTORY"
@@ -33,25 +36,16 @@ Within R-studio under the Files pane (bottom right):
 
 # ____________________________________
 
-## IGNORE/SKIP (return here if you recieve an $\color{red}{\text{*error*}}$ when loading packages)
-
-###   1. First check if the packages load 
-###   2. If an error is returned for package(s) 
-###   3. then run the following lines of code
-###   4. AFTER ANY INSTALLATION... MUST RE-LOAD PACKAGES! (run lines 32-39 again)
-
-###   ** $\color{red}{\text{NOTE:}}$ the following code ONLY needs to be run once per computer!
+### Install packages
 
 ```{r}
-# to install just the new package "MVN"
-install.packages("MVN")
 
 # to install all packages
 install.packages(c("MVN", "MplusAutomation", "haven", "tidyverse",
                    "here", "corrplot", "kableExtra"))
 ```
 
-## IF package rhdf5 does not load then run:
+### To install package {`rhdf5`}
 
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE)) 
@@ -63,7 +57,7 @@ BiocManager::install("rhdf5")
 
 # ____________________________________
 
-## EXERCISE 00: loading packages 
+### Loading packages 
 
 ```{r, eval=TRUE}
 library(MVN)
@@ -76,7 +70,7 @@ library(corrplot)
 library(kableExtra)
 ```
 
-## EXERCISE 1: READ IN DATA TO R ENVIRONMENT
+### EXERCISE 1: READ IN DATA TO R ENVIRONMENT
 
 ```{r}
 
@@ -85,7 +79,7 @@ lab_data <- read_spss(here("Lab2_FA", "data", "lab_efa_cfa_data.sav"))
 ```
 
 
-## EXERCISE 2: SUBSET
+### EXERCISE 2: SUBSET
 
 ```{r}
 
@@ -106,7 +100,8 @@ schl_safe <- lab_data %>%
 
 # subset the first six indicators
 inds_6 <- schl_safe %>%
-  select(BYS20A:BYS20F)
+  select(BYS20A:BYS20F) %>%
+  drop_na() # drop cases with missing for the "mvn" function
 
 # subset of the indicators only using the (-) symbol
 indicators <- schl_safe %>%
@@ -119,12 +114,13 @@ indicators %>%
 
 ```
 
-## EXERCISE 3: UNIVARIATE & MULTIVARIATE DIAGNOSTICS
+### EXERCISE 3: UNIVARIATE & MULTIVARIATE DIAGNOSTICS
 
 #### create univariate histograms
 
 ```{r}
-# data_obeject[rows,columns] for example schl_safe[,1:6] is the first 6 columns
+# data_obeject[rows,columns] 
+# In the following example, schl_safe[,1:6] is the first 6 columns
 
 mvn(data = schl_safe[,1:6], univariatePlot = "histogram")
 
@@ -142,16 +138,16 @@ mvn(data = as.matrix(inds_6), univariatePlot = "qqplot")
 #### create multivariate qq-plots
 
 ```{r}
-# doesn't work
-mvn(data = indicators, multivariatePlot = "qq")
+
+mvn(data = inds_6, multivariatePlot = "qq")
+
 ```
 
 #### run diagnostics all at once
 
 ```{r}
 
-result = mvn(data = iris[-4],
-             subset = "Species",
+result = mvn(data = inds_6,
              univariatePlot = "histogram",
              multivariatePlot = "qq",
              multivariateOutlierMethod = "adj",
@@ -170,11 +166,11 @@ result$newData
 
 ```
 
-## [$\color{blue}{\text{LINK: RUN SHINY MVC}}$](http://www.biosoft.hacettepe.edu.tr/MVN/)
+### [$\color{blue}{\text{LINK: RUN SHINY MVC}}$](http://www.biosoft.hacettepe.edu.tr/MVN/)
 
 # ____________________________________
 
-## EXERCISE 4: REVERSE CODE
+### EXERCISE 4: REVERSE CODE
 
 ### reverse indicators so scale has consistent meaning for factor interpretation
 
@@ -197,7 +193,7 @@ schl_safe[ ,cols] <-  5 - schl_safe[ ,cols]
 
 ```
 
-## EXERCISE 5: CHECK CORRELATIONS
+### EXERCISE 5: CHECK CORRELATIONS
 
 ### check correlations to see if coding was correct (all blue, no red)
 
@@ -228,7 +224,7 @@ corrplot(f3_cor,
 
 ```
 
-## EXERCISE 6: PREPARE DATASETS
+### EXERCISE 6: PREPARE DATASETS
 
 ```{r}
 ### prepare datasets, remove SPSS labeling 
@@ -249,10 +245,10 @@ prepareMplusData(fa_data, here("data", "lab_fa_hsls_subset.dat"))
 # ____________________________________
 # ____________________________________
 
-## EXERCISE 7: MPLUS AUTOMATION - GET DESCRIPTIVES
+### EXERCISE 7: MPLUS AUTOMATION - GET DESCRIPTIVES
 
 ```{r}
-## RUN TYPE = BASIC ANALYSIS (indicators: school climate, safety, clear rules )
+## TYPE = BASIC ANALYSIS (indicators: school climate, safety, clear rules )
 
 m_basic  <- mplusObject(
   TITLE = "RUN TYPE = BASIC ANALYSIS - LAB 2 DEMO", 
@@ -289,7 +285,7 @@ m_basic_fit <- mplusModeler(m_basic,
 # ____________________________________
 
 
-## EXERCISE 8: EXPLORATORY FACTOR ANALYSIS (EFA)
+### EXERCISE 8: EXPLORATORY FACTOR ANALYSIS (EFA)
 
 ```{r}
 ## EXPLORATORY FACTOR ANALYSIS: (indicators: school climate, safety, clear rules)
@@ -327,7 +323,7 @@ m_efa_1_fit <- mplusModeler(m_efa_1,
 # ____________________________________
 # ____________________________________
 
-## EXERCISE 9: EFA REDUCED INDICATOR SET
+### EXERCISE 9: EFA REDUCED INDICATOR SET
 
 ### Removed items:  (loadings <.5 and/or cross-loadings)
 

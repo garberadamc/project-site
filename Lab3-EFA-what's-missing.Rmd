@@ -41,25 +41,6 @@ Within R-studio under the files pane (bottom right):
 
 ## ____________________________________
 
-## SKIP (return here if you recieve an $\color{red}{\text{error}}$ when loading packages)
-
-1. First check if the packages load 
-2. If an error is returned for package(s) 
-3. then run the following lines of code
-4. AFTER ANY INSTALLATION... MUST RE-LOAD PACKAGES! 
-
-###   ** $\color{red}{\text{NOTE:}}$ the following code ONLY needs to be run once per computer!
-
-```{r}
-# to install one package at a time "a_new_package"...
-install.packages("a_new_package")
-install.packages("apaTables")
-install.packages("reshape2")
-
-# to install multiple pacakages at once...
-install.packages(c("reshape2", "MplusAutomation", "tidyverse",
-                   "here", "kableExtra"))
-```
 
 ## IF package rhdf5 does not load then run:
 
