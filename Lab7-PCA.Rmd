@@ -3,8 +3,8 @@ title: "Lab 7 - Principle Component Analysis (PCA) "
 author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 subtitle: '**Adam Garber**'
 ---
 
@@ -14,25 +14,13 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 
 ## ____________________________________
 
-### Outline lab 7 - 3 examples of Principle Component Analysis:
+### Outline lab 7 - three examples of Principle Component Analysis:
 
 1. 10th grade student demographics & school safety (ELS, 2002 unrestricted data)
 2. California pollution burden example (from: OEHHA)
 3. Combine pollution data from above with California county demographic data (from: CA census 2010)
 
 ## ____________________________________
-
-### install new packages for this weeks lab
-```{r}
-
-# new packages
-install.packages(c("FactoMineR",         
-                   "factoextra",               
-                   "skimr",     
-                   "naniar",    
-                   "ggfortify"))
-
-```
 
 ### load packages
 ```{r, eval=TRUE}
@@ -158,7 +146,7 @@ PCA(pca1, scale.unit = TRUE, ncp = 20, graph = TRUE)
 
 ## ____________________________________
 
-## This section of lab is adapted from "Lab 2" of UCSB's ESM 206 course
+### Examples and code for following section of lab are adapted from "Lab 2" of UCSB's ESM 206 course:
 ## taught by Allison Horst
 
 ### These course materials are openly available @ https://allisonhorst.github.io/
@@ -363,7 +351,19 @@ dev.off()
 ## ____________________________________
 
 
+## References
 
+Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+
+Horst, A. (2020). Course & Workshop Materials. GitHub Repositories, https://https://allisonhorst.github.io/
+
+Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
+
+R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/
+
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+![](figures/UCSB_Navy_mark.png){ width=75% }
 
 
 

@@ -17,7 +17,7 @@ library(here)
 # ____________________________________
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "65%", out.height= "65%", fig.pos="h"}
-knitr::include_graphics(here("Lab2_FA", "hex_package.png"))
+knitr::include_graphics(here("figures", "hex_package.png"))
 ```
 
 ## Lab preparation
@@ -73,7 +73,7 @@ library(kableExtra)
 
 ```{r}
 
-lab_data <- read_spss(here("Lab2_FA", "data", "lab_efa_cfa_data.sav"))
+lab_data <- read_spss(here("data", "lab_efa_cfa_data.sav"))
 
 ```
 
@@ -390,7 +390,17 @@ m.step1.fit <- mplusModeler(m.step1,
 # ____________________________________
 # ____________________________________
 
-## References: 
+## References
 
-Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in M plus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+
+Horst, A. (2020). Course & Workshop Materials. GitHub Repositories, https://https://allisonhorst.github.io/
+
+Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
+
+R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/
+
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+![](figures/UCSB_Navy_mark.png){ width=75% }
 

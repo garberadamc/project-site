@@ -46,24 +46,22 @@ My name is Adam Garber and I am Ph.D student at the University of California, Sa
 
 ### Why do I use MplusAutomation?
 
-$\color{red}{\text{Why  not ...}}$
+Rather than doing SEM modeling using packages within R? 
 
-Just do S.E.M. modeling using packages within R? 
-
-- Currently, most S.E.M. packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
+- Currently, most SEM packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in SEM software (i.e., Mplus). This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
 
 - Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
 
-Just do S.E.M. modeling entirely in Mplus? 
+Rather than doing SEM modeling entirely in Mplus? 
 
-- Running complex models in Mplus is error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS). 
+- Running complex models in Mplus can be error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS). 
 - In practice, this results in organizational challenges and lots of copying and pasting.
-- Importantly, Mplus does not provide convenient methods for conducting fully reproducible research projects. 
+- Importantly, R provides convenient methods for conducting fully reproducible research projects. 
 - In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).
 
 ## __________________________________________________________
 
-## Lab materials: Applied Mixture modeling (UCSB, ED 201F) 
+## Lab materials: Applied Mixture modeling (UCSB, ED 216G) 
 
 - Lab 1: [Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)](https://garberadamc.github.io/project-site/lca-enumeration){target="_blank"}
 - Lab 2:
@@ -102,6 +100,8 @@ Just do S.E.M. modeling entirely in Mplus?
 Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
 
 Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An application of adolescent smoking typologies with individual and contextual predictors. Structural Equation Modeling, 17(2), 193-215.
+
+Horst, A. (2020). Course & Workshop Materials. GitHub Repositories, https://https://allisonhorst.github.io/
 
 Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
 

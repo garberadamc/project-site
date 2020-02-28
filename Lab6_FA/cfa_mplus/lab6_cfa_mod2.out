@@ -1,0 +1,854 @@
+Mplus VERSION 8.3 (Mac)
+MUTHEN & MUTHEN
+02/28/2020   1:11 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  CFA - mod1 - LAB 6 DEMO
+  DATA:
+  FILE = "/Users/agarber/Desktop/FA_W20/Lab6_FA/cfa_mplus/lab6_cfa_mod2.dat";
+
+  VARIABLE:
+  NAMES = BYS44E BYS44A BYS44D BYS24C BYS24A BYS24B BYS91 BYS22B BYS24D BYS24E BYS90K
+       BYS90Q BYS90L BYS90M BYS90E BYS90G BYS22D BYS22E BYS22A BYS22G BYS22F BYS22C
+       BYS22H BYS87E BYS87B BYS87D BYS27D BYS27G BYS27H BYS27A BYS27B BYS88A BYS87A
+       BYS87C BYS87F BYS21D BYS21A BYS21E BYS20C BYS20B BYS20G BYS20E BYS20F BYS21B
+       BYS21C BYS38C BYS38A BYS38B BYS24F BYS24G BYS48A BYS48B BY10FLP BYS20A BYS43
+       BYS44B BYS34A BYS35A BYS36A BYS36B BYS34B BYS35B BYS27C BYS88B BYS27I BYS27E
+       BYS27F BYS89G BYS89C BYS89F BYS89M BYS89I BYS89K BYS89P BYS89D BYS89H BYS89J
+       BYS89V BYS89O BYS89S BYS89A BYS89B BYS89L BYS89R BYS89U BYS89E BYS89Q BYS89N
+       BYS89T BYS28 BYS37 BYS90F BYS90H BYS90B BYS90A BYS90D BYS86I BYS86D BYS86C
+       BYS86A BYS86B BYS42 BYS90C BYS44C BYS90J BYS85F BYS85G BYS85A BYS85B BYS85C
+       BYS85D BYS44H BYS45A BYS47A BYS45B BYS45C BYS20H BYS20I BYS20D BYS20K BYS20L
+       BYS47B BYS20J BYS20M BYS20N;
+   MISSING=.;
+   usevar =
+  BYS89H
+  BYS89J
+  BYS89N
+  BYS89V
+  BYS89D
+  BYS87E
+  BYS21A
+  BYS21E
+  BYS20C
+  BYS27G;
+  ANALYSIS:
+  estimator = mlr;
+  MODEL:
+  FACTOR_1 by
+  BYS89H* !estimate first variable loading
+  BYS89J
+  BYS89N
+  BYS89V
+  BYS89D;
+
+      FACTOR_1@1; !fix variance of factor to 1
+      FACTOR_2 by
+  BYS87E*
+  BYS21A
+  BYS21E
+  BYS20C
+  BYS27G;
+
+      FACTOR_2@1;
+
+      ! ****CHANGE TO REFLECT YOUR MODS****
+  BYS89V WITH BYS89J; !estimate residual correlation mod indice
+  BYS89D WITH BYS89H ;
+  OUTPUT:
+  sampstat standardized residual modindices (3.84);
+  PLOT:
+  type = plot3;
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  73
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+CFA - mod1 - LAB 6 DEMO
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         721
+
+Number of dependent variables                                   10
+Number of independent variables                                  0
+Number of continuous latent variables                            2
+
+Observed dependent variables
+
+  Continuous
+   BYS89H      BYS89J      BYS89N      BYS89V      BYS89D      BYS87E
+   BYS21A      BYS21E      BYS20C      BYS27G
+
+Continuous latent variables
+   FACTOR_1    FACTOR_2
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  /Users/agarber/Desktop/FA_W20/Lab6_FA/cfa_mplus/lab6_cfa_mod2.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            42
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H         0.736
+ BYS89J         0.720         0.732
+ BYS89N         0.720         0.716         0.732
+ BYS89V         0.696         0.698         0.698         0.706
+ BYS89D         0.728         0.720         0.718         0.700         0.749
+ BYS87E         0.723         0.717         0.718         0.695         0.731
+ BYS21A         0.732         0.730         0.728         0.702         0.745
+ BYS21E         0.731         0.728         0.727         0.702         0.745
+ BYS20C         0.727         0.723         0.724         0.696         0.739
+ BYS27G         0.734         0.730         0.730         0.703         0.745
+
+
+           Covariance Coverage
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E         0.781
+ BYS21A         0.777         0.994
+ BYS21E         0.775         0.990         0.992
+ BYS20C         0.773         0.983         0.982         0.988
+ BYS27G         0.777         0.986         0.983         0.979         0.990
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+                2.642         2.693         2.955         2.722         2.696
+
+
+           Means
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+                2.314         2.008         2.229         1.795         1.800
+
+
+           Covariances
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H         0.949
+ BYS89J         0.482         0.793
+ BYS89N         0.361         0.312         0.908
+ BYS89V         0.425         0.547         0.341         0.813
+ BYS89D         0.645         0.401         0.336         0.333         0.844
+ BYS87E        -0.185        -0.125        -0.184        -0.214        -0.180
+ BYS21A        -0.046        -0.073        -0.074        -0.062        -0.077
+ BYS21E        -0.098        -0.099        -0.049        -0.065        -0.072
+ BYS20C        -0.082        -0.046        -0.082        -0.070        -0.065
+ BYS27G        -0.263        -0.129        -0.098        -0.140        -0.184
+
+
+           Covariances
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E         0.820
+ BYS21A         0.036         0.413
+ BYS21E         0.045         0.176         0.490
+ BYS20C         0.079         0.073         0.038         0.427
+ BYS27G         0.128         0.114         0.123         0.123         0.614
+
+
+           Correlations
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H         1.000
+ BYS89J         0.555         1.000
+ BYS89N         0.389         0.368         1.000
+ BYS89V         0.484         0.681         0.397         1.000
+ BYS89D         0.721         0.490         0.383         0.402         1.000
+ BYS87E        -0.209        -0.156        -0.213        -0.262        -0.216
+ BYS21A        -0.074        -0.128        -0.120        -0.107        -0.130
+ BYS21E        -0.143        -0.159        -0.073        -0.103        -0.112
+ BYS20C        -0.128        -0.080        -0.132        -0.119        -0.108
+ BYS27G        -0.345        -0.185        -0.132        -0.198        -0.255
+
+
+           Correlations
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E         1.000
+ BYS21A         0.062         1.000
+ BYS21E         0.071         0.390         1.000
+ BYS20C         0.133         0.174         0.083         1.000
+ BYS27G         0.180         0.226         0.223         0.240         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -6569.435
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     BYS89H                2.629      -0.066       1.000   13.37%       2.000      2.000      3.000
+             531.000       0.953      -1.020       4.000   22.60%       3.000      4.000
+     BYS89J                2.697      -0.032       1.000    7.77%       2.000      2.000      3.000
+             528.000       0.791      -0.852       4.000   21.21%       3.000      4.000
+     BYS89N                2.958      -0.456       1.000    7.77%       2.000      3.000      3.000
+             528.000       0.907      -0.855       4.000   35.61%       3.000      4.000
+     BYS89V                2.731       0.000       1.000    6.68%       2.000      2.000      3.000
+             509.000       0.806      -0.960       4.000   23.77%       3.000      4.000
+     BYS89D                2.700      -0.133       1.000    9.81%       2.000      2.000      3.000
+             540.000       0.843      -0.857       4.000   21.85%       3.000      4.000
+     BYS87E                2.318       0.292       1.000   18.29%       2.000      2.000      2.000
+             563.000       0.821      -0.675       4.000   11.90%       2.000      3.000
+     BYS21A                2.008       0.340       1.000   18.69%       2.000      2.000      2.000
+             717.000       0.413       0.485       4.000    1.53%       2.000      2.000
+     BYS21E                2.229       0.360       1.000   11.61%       2.000      2.000      2.000
+             715.000       0.490       0.159       4.000    4.06%       2.000      3.000
+     BYS20C                1.795       0.600       1.000   32.02%       1.000      2.000      2.000
+             712.000       0.427       0.834       4.000    1.69%       2.000      2.000
+     BYS27G                1.800       0.751       1.000   39.64%       1.000      2.000      2.000
+             714.000       0.614       0.088       4.000    3.08%       2.000      2.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       33
+
+Loglikelihood
+
+          H0 Value                       -6636.112
+          H0 Scaling Correction Factor      1.2035
+            for MLR
+          H1 Value                       -6569.435
+          H1 Scaling Correction Factor      1.1188
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   13338.225
+          Bayesian (BIC)                 13489.386
+          Sample-Size Adjusted BIC       13384.601
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            129.272*
+          Degrees of Freedom                    32
+          P-Value                           0.0000
+          Scaling Correction Factor         1.0316
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.065
+          90 Percent C.I.                    0.053  0.077
+          Probability RMSEA <= .05           0.017
+
+CFI/TLI
+
+          CFI                                0.915
+          TLI                                0.880
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1185.755
+          Degrees of Freedom                    45
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.054
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FACTOR_1 BY
+    BYS89H             0.756      0.048     15.793      0.000
+    BYS89J             0.629      0.046     13.557      0.000
+    BYS89N             0.509      0.048     10.590      0.000
+    BYS89V             0.576      0.051     11.345      0.000
+    BYS89D             0.631      0.047     13.417      0.000
+
+ FACTOR_2 BY
+    BYS87E             0.268      0.069      3.884      0.000
+    BYS21A             0.329      0.059      5.566      0.000
+    BYS21E             0.341      0.058      5.853      0.000
+    BYS20C             0.221      0.041      5.329      0.000
+    BYS27G             0.418      0.063      6.651      0.000
+
+ FACTOR_2 WITH
+    FACTOR_1          -0.507      0.083     -6.096      0.000
+
+ BYS89V   WITH
+    BYS89J             0.183      0.046      3.993      0.000
+
+ BYS89D   WITH
+    BYS89H             0.172      0.056      3.057      0.002
+
+ Intercepts
+    BYS89H             2.630      0.042     63.188      0.000
+    BYS89J             2.692      0.038     69.971      0.000
+    BYS89N             2.960      0.041     71.945      0.000
+    BYS89V             2.722      0.039     69.331      0.000
+    BYS89D             2.695      0.039     68.764      0.000
+    BYS87E             2.315      0.038     60.645      0.000
+    BYS21A             2.008      0.024     83.723      0.000
+    BYS21E             2.229      0.026     85.196      0.000
+    BYS20C             1.795      0.024     73.288      0.000
+    BYS27G             1.800      0.029     61.348      0.000
+
+ Variances
+    FACTOR_1           1.000      0.000    999.000    999.000
+    FACTOR_2           1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BYS89H             0.384      0.068      5.611      0.000
+    BYS89J             0.397      0.052      7.674      0.000
+    BYS89N             0.648      0.054     11.964      0.000
+    BYS89V             0.479      0.055      8.662      0.000
+    BYS89D             0.447      0.057      7.801      0.000
+    BYS87E             0.750      0.050     15.036      0.000
+    BYS21A             0.304      0.036      8.454      0.000
+    BYS21E             0.374      0.040      9.322      0.000
+    BYS20C             0.379      0.027     13.780      0.000
+    BYS27G             0.440      0.049      9.023      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FACTOR_1 BY
+    BYS89H             0.773      0.045     17.036      0.000
+    BYS89J             0.706      0.046     15.219      0.000
+    BYS89N             0.535      0.048     11.086      0.000
+    BYS89V             0.640      0.052     12.203      0.000
+    BYS89D             0.686      0.047     14.452      0.000
+
+ FACTOR_2 BY
+    BYS87E             0.296      0.075      3.925      0.000
+    BYS21A             0.512      0.087      5.910      0.000
+    BYS21E             0.487      0.080      6.095      0.000
+    BYS20C             0.338      0.061      5.545      0.000
+    BYS27G             0.533      0.075      7.092      0.000
+
+ FACTOR_2 WITH
+    FACTOR_1          -0.507      0.083     -6.096      0.000
+
+ BYS89V   WITH
+    BYS89J             0.420      0.069      6.083      0.000
+
+ BYS89D   WITH
+    BYS89H             0.415      0.087      4.794      0.000
+
+ Intercepts
+    BYS89H             2.692      0.075     36.021      0.000
+    BYS89J             3.024      0.085     35.678      0.000
+    BYS89N             3.109      0.099     31.525      0.000
+    BYS89V             3.022      0.080     37.567      0.000
+    BYS89D             2.932      0.084     34.959      0.000
+    BYS87E             2.554      0.066     38.959      0.000
+    BYS21A             3.126      0.092     34.140      0.000
+    BYS21E             3.185      0.086     36.898      0.000
+    BYS20C             2.746      0.081     33.808      0.000
+    BYS27G             2.296      0.053     43.063      0.000
+
+ Variances
+    FACTOR_1           1.000      0.000    999.000    999.000
+    FACTOR_2           1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BYS89H             0.402      0.070      5.723      0.000
+    BYS89J             0.501      0.066      7.650      0.000
+    BYS89N             0.714      0.052     13.843      0.000
+    BYS89V             0.591      0.067      8.815      0.000
+    BYS89D             0.529      0.065      8.113      0.000
+    BYS87E             0.913      0.045     20.483      0.000
+    BYS21A             0.738      0.089      8.309      0.000
+    BYS21E             0.763      0.078      9.820      0.000
+    BYS20C             0.886      0.041     21.505      0.000
+    BYS27G             0.716      0.080      8.939      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FACTOR_1 BY
+    BYS89H             0.773      0.045     17.036      0.000
+    BYS89J             0.706      0.046     15.219      0.000
+    BYS89N             0.535      0.048     11.086      0.000
+    BYS89V             0.640      0.052     12.203      0.000
+    BYS89D             0.686      0.047     14.452      0.000
+
+ FACTOR_2 BY
+    BYS87E             0.296      0.075      3.925      0.000
+    BYS21A             0.512      0.087      5.910      0.000
+    BYS21E             0.487      0.080      6.095      0.000
+    BYS20C             0.338      0.061      5.545      0.000
+    BYS27G             0.533      0.075      7.092      0.000
+
+ FACTOR_2 WITH
+    FACTOR_1          -0.507      0.083     -6.096      0.000
+
+ BYS89V   WITH
+    BYS89J             0.420      0.069      6.083      0.000
+
+ BYS89D   WITH
+    BYS89H             0.415      0.087      4.794      0.000
+
+ Intercepts
+    BYS89H             2.692      0.075     36.021      0.000
+    BYS89J             3.024      0.085     35.678      0.000
+    BYS89N             3.109      0.099     31.525      0.000
+    BYS89V             3.022      0.080     37.567      0.000
+    BYS89D             2.932      0.084     34.959      0.000
+    BYS87E             2.554      0.066     38.959      0.000
+    BYS21A             3.126      0.092     34.140      0.000
+    BYS21E             3.185      0.086     36.898      0.000
+    BYS20C             2.746      0.081     33.808      0.000
+    BYS27G             2.296      0.053     43.063      0.000
+
+ Variances
+    FACTOR_1           1.000      0.000    999.000    999.000
+    FACTOR_2           1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BYS89H             0.402      0.070      5.723      0.000
+    BYS89J             0.501      0.066      7.650      0.000
+    BYS89N             0.714      0.052     13.843      0.000
+    BYS89V             0.591      0.067      8.815      0.000
+    BYS89D             0.529      0.065      8.113      0.000
+    BYS87E             0.913      0.045     20.483      0.000
+    BYS21A             0.738      0.089      8.309      0.000
+    BYS21E             0.763      0.078      9.820      0.000
+    BYS20C             0.886      0.041     21.505      0.000
+    BYS27G             0.716      0.080      8.939      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FACTOR_1 BY
+    BYS89H             0.756      0.048     15.793      0.000
+    BYS89J             0.629      0.046     13.557      0.000
+    BYS89N             0.509      0.048     10.590      0.000
+    BYS89V             0.576      0.051     11.345      0.000
+    BYS89D             0.631      0.047     13.417      0.000
+
+ FACTOR_2 BY
+    BYS87E             0.268      0.069      3.884      0.000
+    BYS21A             0.329      0.059      5.566      0.000
+    BYS21E             0.341      0.058      5.853      0.000
+    BYS20C             0.221      0.041      5.329      0.000
+    BYS27G             0.418      0.063      6.651      0.000
+
+ FACTOR_2 WITH
+    FACTOR_1          -0.507      0.083     -6.096      0.000
+
+ BYS89V   WITH
+    BYS89J             0.183      0.046      3.993      0.000
+
+ BYS89D   WITH
+    BYS89H             0.172      0.056      3.057      0.002
+
+ Intercepts
+    BYS89H             2.630      0.042     63.188      0.000
+    BYS89J             2.692      0.038     69.971      0.000
+    BYS89N             2.960      0.041     71.945      0.000
+    BYS89V             2.722      0.039     69.331      0.000
+    BYS89D             2.695      0.039     68.764      0.000
+    BYS87E             2.315      0.038     60.645      0.000
+    BYS21A             2.008      0.024     83.723      0.000
+    BYS21E             2.229      0.026     85.196      0.000
+    BYS20C             1.795      0.024     73.288      0.000
+    BYS27G             1.800      0.029     61.348      0.000
+
+ Variances
+    FACTOR_1           1.000      0.000    999.000    999.000
+    FACTOR_2           1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BYS89H             0.384      0.068      5.611      0.000
+    BYS89J             0.397      0.052      7.674      0.000
+    BYS89N             0.648      0.054     11.964      0.000
+    BYS89V             0.479      0.055      8.662      0.000
+    BYS89D             0.447      0.057      7.801      0.000
+    BYS87E             0.750      0.050     15.036      0.000
+    BYS21A             0.304      0.036      8.454      0.000
+    BYS21E             0.374      0.040      9.322      0.000
+    BYS20C             0.379      0.027     13.780      0.000
+    BYS27G             0.440      0.049      9.023      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    BYS89H             0.598      0.070      8.518      0.000
+    BYS89J             0.499      0.066      7.609      0.000
+    BYS89N             0.286      0.052      5.543      0.000
+    BYS89V             0.409      0.067      6.101      0.000
+    BYS89D             0.471      0.065      7.226      0.000
+    BYS87E             0.087      0.045      1.963      0.050
+    BYS21A             0.262      0.089      2.955      0.003
+    BYS21E             0.237      0.078      3.047      0.002
+    BYS20C             0.114      0.041      2.773      0.006
+    BYS27G             0.284      0.080      3.546      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.156E-01
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+                2.630         2.692         2.960         2.722         2.695
+
+
+           Model Estimated Means
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+                2.315         2.008         2.229         1.795         1.800
+
+
+           Residuals for Means
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+                0.011         0.001        -0.005         0.000         0.001
+
+
+           Residuals for Means
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+               -0.001         0.000         0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+              999.000       999.000        -2.444       999.000         0.577
+
+
+           Standardized Residuals (z-scores) for Means
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+              999.000       999.000         0.000        -2.212       999.000
+
+
+           Normalized Residuals for Means
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+                0.277         0.027        -0.129        -0.009         0.036
+
+
+           Normalized Residuals for Means
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+               -0.022        -0.015         0.000        -0.019         0.000
+
+
+           Model Estimated Covariances
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H         0.954
+ BYS89J         0.475         0.793
+ BYS89N         0.385         0.320         0.907
+ BYS89V         0.435         0.545         0.293         0.811
+ BYS89D         0.649         0.397         0.321         0.363         0.845
+ BYS87E        -0.103        -0.085        -0.069        -0.078        -0.086
+ BYS21A        -0.126        -0.105        -0.085        -0.096        -0.105
+ BYS21E        -0.130        -0.109        -0.088        -0.099        -0.109
+ BYS20C        -0.085        -0.070        -0.057        -0.065        -0.071
+ BYS27G        -0.160        -0.133        -0.108        -0.122        -0.134
+
+
+           Model Estimated Covariances
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E         0.822
+ BYS21A         0.088         0.413
+ BYS21E         0.091         0.112         0.490
+ BYS20C         0.059         0.073         0.075         0.427
+ BYS27G         0.112         0.137         0.142         0.092         0.614
+
+
+           Model Estimated Correlations
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H         1.000
+ BYS89J         0.546         1.000
+ BYS89N         0.414         0.378         1.000
+ BYS89V         0.495         0.680         0.342         1.000
+ BYS89D         0.722         0.485         0.367         0.439         1.000
+ BYS87E        -0.116        -0.106        -0.080        -0.096        -0.103
+ BYS21A        -0.201        -0.183        -0.139        -0.166        -0.178
+ BYS21E        -0.191        -0.174        -0.132        -0.158        -0.169
+ BYS20C        -0.133        -0.121        -0.092        -0.110        -0.118
+ BYS27G        -0.209        -0.191        -0.144        -0.173        -0.185
+
+
+           Model Estimated Correlations
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E         1.000
+ BYS21A         0.151         1.000
+ BYS21E         0.144         0.249         1.000
+ BYS20C         0.100         0.173         0.164         1.000
+ BYS27G         0.158         0.273         0.259         0.180         1.000
+
+
+           Residuals for Covariances
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H        -0.006
+ BYS89J         0.007         0.000
+ BYS89N        -0.023        -0.008         0.002
+ BYS89V        -0.010         0.001         0.048         0.002
+ BYS89D        -0.003         0.004         0.014        -0.031        -0.001
+ BYS87E        -0.082        -0.040        -0.114        -0.136        -0.094
+ BYS21A         0.080         0.031         0.011         0.034         0.028
+ BYS21E         0.033         0.010         0.039         0.034         0.037
+ BYS20C         0.003         0.024        -0.025        -0.006         0.006
+ BYS27G        -0.103         0.004         0.010        -0.018        -0.050
+
+
+           Residuals for Covariances
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E        -0.002
+ BYS21A        -0.052         0.000
+ BYS21E        -0.046         0.064         0.000
+ BYS20C         0.019         0.000        -0.037         0.000
+ BYS27G         0.016        -0.024        -0.020         0.031         0.000
+
+
+           Residuals for Correlations
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H         0.000
+ BYS89J         0.009         0.000
+ BYS89N        -0.024        -0.009         0.000
+ BYS89V        -0.011         0.001         0.055         0.000
+ BYS89D        -0.001         0.006         0.016        -0.037         0.000
+ BYS87E        -0.094        -0.050        -0.133        -0.166        -0.113
+ BYS21A         0.127         0.055         0.019         0.059         0.048
+ BYS21E         0.047         0.016         0.059         0.054         0.058
+ BYS20C         0.004         0.041        -0.040        -0.009         0.010
+ BYS27G        -0.136         0.006         0.013        -0.025        -0.069
+
+
+           Residuals for Correlations
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E         0.000
+ BYS21A        -0.089         0.000
+ BYS21E        -0.073         0.141         0.000
+ BYS20C         0.033         0.001        -0.081         0.000
+ BYS27G         0.022        -0.047        -0.036         0.060         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H       999.000
+ BYS89J       999.000       999.000
+ BYS89N        -1.556        -1.361         0.641
+ BYS89V        -1.158       999.000       999.000         0.323
+ BYS89D       999.000         1.206         1.127        -1.697        -0.901
+ BYS87E       999.000        -1.847        -3.955        -6.200        -6.071
+ BYS21A         3.873         1.572         0.455         1.599         1.308
+ BYS21E         1.598         0.452         1.473         1.474         1.680
+ BYS20C         0.251         1.361        -1.115        -0.275         0.364
+ BYS27G       999.000       999.000         0.589       999.000       999.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E       999.000
+ BYS21A        -2.813         0.167
+ BYS21E        -2.114       999.000         0.369
+ BYS20C         1.215         0.040        -2.851         0.040
+ BYS27G       999.000        -2.110        -1.755       999.000       999.000
+
+
+           Normalized Residuals for Covariances
+              BYS89H        BYS89J        BYS89N        BYS89V        BYS89D
+              ________      ________      ________      ________      ________
+ BYS89H        -0.142
+ BYS89J         0.173         0.004
+ BYS89N        -0.533        -0.186         0.040
+ BYS89V        -0.254         0.030         1.169         0.042
+ BYS89D        -0.079         0.117         0.358        -0.782        -0.033
+ BYS87E        -1.991        -1.043        -2.870        -3.598        -2.490
+ BYS21A         2.872         1.208         0.391         1.269         1.043
+ BYS21E         1.118         0.347         1.288         1.179         1.307
+ BYS20C         0.103         0.938        -0.894        -0.206         0.223
+ BYS27G        -3.154         0.141         0.275        -0.555        -1.574
+
+
+           Normalized Residuals for Covariances
+              BYS87E        BYS21A        BYS21E        BYS20C        BYS27G
+              ________      ________      ________      ________      ________
+ BYS87E        -0.062
+ BYS21A        -1.987         0.005
+ BYS21E        -1.573         3.130         0.018
+ BYS20C         0.724         0.021        -1.891         0.001
+ BYS27G         0.497        -1.030        -0.867         1.298        -0.003
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index     3.840
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+BY Statements
+
+FACTOR_1 BY BYS87E                16.150    -0.243     -0.243       -0.268
+FACTOR_1 BY BYS21A                10.581     0.147      0.147        0.229
+FACTOR_1 BY BYS27G                 7.762    -0.157     -0.157       -0.200
+
+WITH Statements
+
+BYS89V   WITH BYS89N               6.621     0.070      0.070        0.125
+BYS87E   WITH BYS89J               4.832     0.053      0.053        0.098
+BYS87E   WITH BYS89N               5.087    -0.075     -0.075       -0.108
+BYS87E   WITH BYS89V              14.107    -0.097     -0.097       -0.162
+BYS21A   WITH BYS89H              12.702     0.060      0.060        0.176
+BYS21A   WITH BYS87E               8.038    -0.071     -0.071       -0.149
+BYS21E   WITH BYS87E               5.477    -0.063     -0.063       -0.120
+BYS21E   WITH BYS21A              59.418     0.155      0.155        0.460
+BYS20C   WITH BYS21E              10.586    -0.058     -0.058       -0.155
+BYS27G   WITH BYS89H              19.593    -0.091     -0.091       -0.221
+BYS27G   WITH BYS21A               8.859    -0.071     -0.071       -0.195
+BYS27G   WITH BYS21E               4.585    -0.054     -0.054       -0.133
+BYS27G   WITH BYS20C               6.933     0.054      0.054        0.133
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              FACTOR_1      FACTOR_1      FACTOR_2      FACTOR_2
+              ________      ________      ________      ________
+                0.000         0.586         0.000         0.641
+
+
+           Covariances
+              FACTOR_1      FACTOR_1      FACTOR_2      FACTOR_2
+              ________      ________      ________      ________
+ FACTOR_1       0.620
+ FACTOR_1       0.000         0.037
+ FACTOR_2      -0.406        -0.004         0.588
+ FACTOR_2       0.000         0.004         0.000         0.001
+
+
+           Correlations
+              FACTOR_1      FACTOR_1      FACTOR_2      FACTOR_2
+              ________      ________      ________      ________
+ FACTOR_1       1.000
+ FACTOR_1       0.002         1.000
+ FACTOR_2      -0.672        -0.026         1.000
+ FACTOR_2       0.014         0.831        -0.021         1.000
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values, estimated factor scores, estimated values, residuals)
+  Scatterplots (sample values, estimated factor scores, estimated values, residuals)
+  Latent variable distribution plots
+
+     Beginning Time:  13:11:51
+        Ending Time:  13:11:51
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen
