@@ -71,9 +71,9 @@ b. do S.E.M. modeling entirely in Mplus?
 
 - Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto)
 - Lab 2: [Exploratory Factor Analysis (EFA) - Univariate and Multivariate Diagnostics.](https://garberadamc.github.io/project-site/Lab2-EFA)
-- Lab 3: [Exploratory Factor Analysis (EFA) - R coding excercise: What's Missing?](https://garberadamc.github.io/project-site/Lab3-EFA-what-s-missing)
+- Lab 3: [EFA - R coding excercise: What's Missing?](https://garberadamc.github.io/project-site/Lab3-EFA-what-s-missing)
 - Lab 4: [Splitting samples, Iterators, and Dealing with Large Datasets](https://garberadamc.github.io/project-site/Lab4-school-trouble)
-- Lab 5: [EFA Rotation, Introduction to Confirmatory Factor Analysis (CFA), and Path Diagrams](https://garberadamc.github.io/project-site/Lab5-rotation-efa)
+- Lab 5: [EFA Rotation - Confirmatory Factor Analysis (CFA) - Path Diagrams](https://garberadamc.github.io/project-site/Lab5-rotation-efa)
 - Lab 6: [CFA *Roulette* - A Game of Chance](https://garberadamc.github.io/project-site/Lab6-CFA-Roulette)
 - Lab 7: 
 - Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC)
