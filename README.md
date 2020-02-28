@@ -7,7 +7,7 @@ Projects &amp; teaching materials.
 
 ## Modeling examples and labs for Mixture Models & Structural Equation Models
 
-### Analytic workflow strategy:
+### Reproducible workflows:
 
 - The R pacakge MplusAutomation is used for creating organized project workflows (Hallquist & Wiley, 2018)
 - All models are esitated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)

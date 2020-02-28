@@ -1,8 +1,8 @@
 ---
 title: "Tidy Workflow with MplusAutomation"
-author: "Adam Garber"
+author: ""
 date: ""
-subtitle: "" 
+subtitle: "*Adam Garber*" 
 output: 
   html_document:
  #   toc: true  
@@ -22,6 +22,8 @@ pre { font-size: 16px; }
 
 ![](figures/island_mark.png){ width=60% }
 
+#### *Channel Islands, Santa Barbara*
+
 ## __________________________________________________________
 
 ## Finite Mixture, Latent Variable, & Structural Equation Modeling 
@@ -30,8 +32,9 @@ pre { font-size: 16px; }
 
 ### About me: 
 
+I am a Ph.D student at the University of California, Santa Barbara. My work focuses on applied quantitative methods and finite mixture models in-line with my advisor Dr. Karen Nylund-Gibson's research. I participate in UCSB's Latent Variable Group. https://lvgucsb.weebly.com/ 
 
-## Analytic workflow strategy:
+## Workflow focus on reproducibility:
 
 - The R package {`MplusAutomation`} is used for creating organized project workflows (Hallquist & Wiley, 2018)
 - All models are estimated in Mplus allowing for highly flexible SEM model specification (Muthén & Muthén, 1998-2017)
