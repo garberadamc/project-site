@@ -1,6 +1,6 @@
 
 ---
-title: "Factor Analysis - Measurement Invariance"
+title: "Lab9 Factor Analysis - Measurement Invariance"
 author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
 subtitle: '**Adam Garber**'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
@@ -260,6 +260,8 @@ Number of parameters = 62
 - 20 residual variances
 - 02 factor co-variances (1 for each group)
 
+____________________________________
+
 ```{r}
 
 cfa_m3  <- mplusObject(
@@ -328,6 +330,7 @@ Number of parameters = 54
 - 02 factor variances 
 - 02 factor co-variances 
 
+____________________________________
 
 ```{r}
 
@@ -396,6 +399,8 @@ Number of parameters = 46
 - 02 factor co-variances 
 - 02 factor means
 
+____________________________________
+
 ```{r}
 
 cfa_m5  <- mplusObject(
@@ -459,6 +464,7 @@ Number of parameters = 36
 - 02 factor co-variances 
 - 02 factor means
 
+____________________________________
 
 ```{r}
 
@@ -530,6 +536,7 @@ Number of parameters = 44
 - 02 factor co-variances 
 - 02 factor means
 
+____________________________________
 
 ```{r}
 # fixed factor variances
@@ -595,6 +602,7 @@ Number of parameters = 43
 - 01 factor co-variances 
 - 02 factor means
 
+____________________________________
 
 ```{r}
 
@@ -641,6 +649,8 @@ cfa_m8_fit <- mplusModeler(cfa_m8,
 
 ```
 
+____________________________________
+
 ## Latent Factor Means differences: 
 
 (model: Step_07_STRUCTURAL)
@@ -653,7 +663,7 @@ Mean differences: Students in sub-sample `freelnch_1` have...
 
 ____________________________________
 
-# **Comparing Fit Across Models:** 
+# Comparing Fit Across Models
 
 ____________________________________
 
@@ -666,12 +676,16 @@ ____________________________________
 -  **SRMR:** < .08 indicates "good" fit Hu and Bentler (1999)
 - **Invariance:** Changes in **CFI** less than or equal to **-0.01** are acceptable
 
+____________________________________
+
 Read into R summary of all 10 invariance models
 ```{r}
 
 # read all of the output files 
 all_models <- readModels(here("invar_mplus"))
 ```
+
+____________________________________
 
 Create table, extract fit statistics, sort by `Filename`
 ```{r}
@@ -697,6 +711,8 @@ invar_summary %>%
                 position = "left")
 ```
 
+____________________________________
+
 ## Calculate Satora-Bentler scaled Chi-square difference test (use with MLR estimator) 
 
 [$\color{blue}{\text{See website: stats.idre.ucla.edu}}$](https://stats.idre.ucla.edu/mplus/faq/how-can-i-compute-a-chi-square-test-for-nested-models-with-the-mlr-or-mlm-estimators/)
@@ -709,8 +725,11 @@ invar_summary %>%
 - d1  = alternate model degrees of freedom
 - df  = Chi-square test degrees of freedom
 
+____________________________________
+
+compare configural to metric
 ```{r}
-# compare configural to metric
+
 
 SB0 <- all_models[["M4_metric.out"]][["summaries"]][["ChiSqM_Value"]]
 SB1 <- all_models[["M3_configural.out"]][["summaries"]][["ChiSqM_Value"]]
@@ -732,8 +751,11 @@ df
 pchisq(t, df, lower.tail=FALSE)
 ```
 
+____________________________________
+
+compare metric to scalar
 ```{r}
-# compare metric to scalar
+
 
 SB0 <- all_models[["M5_scalar.out"]][["summaries"]][["ChiSqM_Value"]]
 SB1 <- all_models[["M4_metric.out"]][["summaries"]][["ChiSqM_Value"]]
@@ -755,6 +777,7 @@ df
 pchisq(t, df, lower.tail=FALSE)
 ```
 
+____________________________________
 
 ## Invariance short-cut 
 ```{r}
@@ -790,6 +813,7 @@ mx_fit <- mplusModeler(mx,
 
 ```
 
+____________________________________
 
 ## Invariance Testing (Chi-square values - Chi-Square difference p-values are biased)
 
@@ -829,6 +853,8 @@ Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edit
 R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+____________________________________
 
 ![](figures/UCSB_Navy_mark.png){ width=75% }
 
