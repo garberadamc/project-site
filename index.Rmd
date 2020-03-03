@@ -23,7 +23,7 @@ pre { font-size: 16px; }
 
 ![](figures/island_mark.png){ width=60% }
 
-#### *Channel Islands State Reserve, Santa Barbara*
+##### *Channel Islands, Santa Barbara*
 
 ## __________________________________________________________
 
@@ -46,13 +46,12 @@ My name is Adam Garber and I am Ph.D student at the University of California, Sa
 
 ### Why do I use MplusAutomation?
 
-Rather than doing SEM modeling using packages within R? 
+... instead of using SEM modeling packages within R? 
 
 - Currently, most SEM packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in SEM software (i.e., Mplus). This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
-
 - Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
 
-Rather than doing SEM modeling entirely in Mplus? 
+... instead of doing all modeling entirely in Mplus? 
 
 - Running complex models in Mplus can be error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS). 
 - In practice, this results in organizational challenges and lots of copying and pasting.
