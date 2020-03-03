@@ -76,7 +76,7 @@ Rather than doing SEM modeling entirely in Mplus?
 - Lab 6: [CFA *Roulette* - A Game of Chance](https://garberadamc.github.io/project-site/Lab6-CFA-Roulette){target="_blank"}
 - Lab 7: 
 - Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC){target="_blank"}
-- Lab 9: 
+- Lab 9: [Measurement Invariance](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"}
 
 <br>
 
