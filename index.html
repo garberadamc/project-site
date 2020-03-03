@@ -404,17 +404,16 @@ pre { font-size: 16px; }
 <h2>__________________________________________________________</h2>
 <div id="why-do-i-use-mplusautomation" class="section level3">
 <h3>Why do I use MplusAutomation?</h3>
-<p><span class="math inline">\(\color{red}{\text{Why  not ...}}\)</span></p>
-<p>Just do S.E.M. modeling using packages within R?</p>
+<p>Rather than doing SEM modeling using packages within R?</p>
 <ul>
-<li><p>Currently, most S.E.M. packages in R such as {<code>lavaan</code>} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in S.E.M. This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates &amp; distals).</p></li>
+<li><p>Currently, most SEM packages in R such as {<code>lavaan</code>} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in SEM software (i.e., Mplus). This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates &amp; distals).</p></li>
 <li><p>Other packages, although highly flexible {<code>OpenMX</code>} are less accessible to applied researchers.</p></li>
 </ul>
-<p>Just do S.E.M. modeling entirely in Mplus?</p>
+<p>Rather than doing SEM modeling entirely in Mplus?</p>
 <ul>
-<li>Running complex models in Mplus is error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS).</li>
+<li>Running complex models in Mplus can be error prone due to the workflow involving a proliferation of files and reliance on other software (Excel, SPSS).</li>
 <li>In practice, this results in organizational challenges and lots of copying and pasting.</li>
-<li>Importantly, Mplus does not provide convenient methods for conducting fully reproducible research projects.</li>
+<li>Importantly, R provides convenient methods for conducting fully reproducible research projects.</li>
 <li>In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).</li>
 </ul>
 </div>
@@ -422,8 +421,8 @@ pre { font-size: 16px; }
 <div id="section-3" class="section level2">
 <h2>__________________________________________________________</h2>
 </div>
-<div id="lab-materials-applied-mixture-modeling-ucsb-ed-201f" class="section level2">
-<h2>Lab materials: Applied Mixture modeling (UCSB, ED 201F)</h2>
+<div id="lab-materials-applied-mixture-modeling-ucsb-ed-216g" class="section level2">
+<h2>Lab materials: Applied Mixture modeling (UCSB, ED 216G)</h2>
 <ul>
 <li>Lab 1: <a href="https://garberadamc.github.io/project-site/lca-enumeration" target="_blank">Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)</a></li>
 <li>Lab 2:</li>
@@ -443,7 +442,7 @@ pre { font-size: 16px; }
 <li>Lab 6: <a href="https://garberadamc.github.io/project-site/Lab6-CFA-Roulette" target="_blank">CFA <em>Roulette</em> - A Game of Chance</a></li>
 <li>Lab 7:</li>
 <li>Lab 8: <a href="https://garberadamc.github.io/project-site/Lab8-MIMIC" target="_blank">Multiple Indicator, Multiple Causes, MIMIC Models</a></li>
-<li>Lab 9:</li>
+<li>Lab 9: <a href="https://garberadamc.github.io/project-site/Lab9-invariance" target="_blank">Measurement Invariance</a></li>
 </ul>
 <p><br></p>
 </div>
@@ -465,6 +464,7 @@ pre { font-size: 16px; }
 <h2>References</h2>
 <p>Hallquist, M. N., &amp; Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.</p>
 <p>Henry, K. L., &amp; Muthén, B. (2010). Multilevel latent class analysis: An application of adolescent smoking typologies with individual and contextual predictors. Structural Equation Modeling, 17(2), 193-215.</p>
+<p>Horst, A. (2020). Course &amp; Workshop Materials. GitHub Repositories, <a href="https://https://allisonhorst.github.io/" class="uri">https://https://allisonhorst.github.io/</a></p>
 <p>Muthén, L.K. and Muthén, B.O. (1998-2017). Mplus User’s Guide. Eighth Edition. Los Angeles, CA: Muthén &amp; Muthén</p>
 <p>R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL <a href="http://www.R-project.org/" class="uri">http://www.R-project.org/</a></p>
 <p>Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, <a href="https://doi.org/10.21105/joss.01686" class="uri">https://doi.org/10.21105/joss.01686</a></p>
