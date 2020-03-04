@@ -106,6 +106,7 @@ Factor names and interpretation:
 - VICTIM: student reports being a victim of injury to self or property
     - scale range: Never, Once or twice, More than twice
     - higher values indicate greater frequency of victimization events
+
 - NEG_CLIM: Student reports on negative school climate attributes 
     - scale range: Strongly Disagree - Strongly Agree
     - higher values indicate a more negative climate
@@ -129,7 +130,7 @@ ____________________________________
 
 Number of parameters = 31
 
-- 10 item loadings (10items*2groups)
+- 10 item loadings
 - 10 intercepts
 - 10 residual variances
 - 01 factor co-variances 
@@ -250,6 +251,7 @@ ____________________________________
 
 - free item loadings, intercepts, and residuals
 - factor means fixed to zero
+- factor variances fixed to 1
 
 ____________________________________
 
@@ -385,8 +387,7 @@ ____________________________________
 - item loadings (set to equal)
 - intercepts (set to equal)
 - free residuals
-- factor means fixed to zero
-- free factor variances in group 2
+- free factor variances and means in group 2
 
 ____________________________________
 
@@ -450,8 +451,7 @@ ____________________________________
 - item loadings (set to equal)
 - intercepts (set to equal)
 - residuals (set to equal)
-- factor means fixed to zero
-- free factor variances in group 2
+- free factor variances and means in group 2
 
 ____________________________________
 
@@ -678,10 +678,8 @@ ____________________________________
 
 ____________________________________
 
-Read into R summary of all 10 invariance models
+Read into R summary of all models
 ```{r}
-
-# read all of the output files 
 all_models <- readModels(here("invar_mplus"))
 ```
 

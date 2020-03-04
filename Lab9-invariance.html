@@ -11,7 +11,7 @@
 
 <meta name="author" content="Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson" />
 
-<meta name="date" content="2020-03-03" />
+<meta name="date" content="2020-03-04" />
 
 <title>Lab9 Factor Analysis - Measurement Invariance</title>
 
@@ -461,7 +461,7 @@ summary {
 <h1 class="title toc-ignore">Lab9 Factor Analysis - Measurement Invariance</h1>
 <h3 class="subtitle"><strong>Adam Garber</strong></h3>
 <h4 class="author">Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson</h4>
-<h4 class="date">March 03, 2020</h4>
+<h4 class="date">March 04, 2020</h4>
 
 </div>
 
@@ -565,7 +565,7 @@ corrplot(cor_matrix,
 <hr />
 <p>Number of parameters = 31</p>
 <ul>
-<li>10 item loadings (10items*2groups)</li>
+<li>10 item loadings</li>
 <li>10 intercepts</li>
 <li>10 residual variances</li>
 <li>01 factor co-variances</li>
@@ -673,6 +673,7 @@ cfa_m2_fit &lt;- mplusModeler(cfa_m2,
 <ul>
 <li>free item loadings, intercepts, and residuals</li>
 <li>factor means fixed to zero</li>
+<li>factor variances fixed to 1</li>
 </ul>
 <hr />
 <p>Number of parameters = 62</p>
@@ -795,8 +796,7 @@ cfa_m4_fit &lt;- mplusModeler(cfa_m4,
 <li>item loadings (set to equal)</li>
 <li>intercepts (set to equal)</li>
 <li>free residuals</li>
-<li>factor means fixed to zero</li>
-<li>free factor variances in group 2</li>
+<li>free factor variances and means in group 2</li>
 </ul>
 <hr />
 <p>Number of parameters = 46</p>
@@ -854,8 +854,7 @@ cfa_m5_fit &lt;- mplusModeler(cfa_m5,
 <li>item loadings (set to equal)</li>
 <li>intercepts (set to equal)</li>
 <li>residuals (set to equal)</li>
-<li>factor means fixed to zero</li>
-<li>free factor variances in group 2</li>
+<li>free factor variances and means in group 2</li>
 </ul>
 <hr />
 <p>Number of parameters = 36</p>
@@ -1057,9 +1056,8 @@ NEG_CLIM    0.632      0.104      6.104      0.000  (higher scores for &quot;NEG
 <li><strong>Invariance:</strong> Changes in <strong>CFI</strong> less than or equal to <strong>-0.01</strong> are acceptable</li>
 </ul>
 <hr />
-<p>Read into R summary of all 10 invariance models</p>
-<pre class="r"><code># read all of the output files 
-all_models &lt;- readModels(here(&quot;invar_mplus&quot;))</code></pre>
+<p>Read into R summary of all models</p>
+<pre class="r"><code>all_models &lt;- readModels(here(&quot;invar_mplus&quot;))</code></pre>
 <hr />
 <p>Create table, extract fit statistics, sort by <code>Filename</code></p>
 <pre class="r"><code>invar_summary &lt;- LatexSummaryTable(all_models, 
