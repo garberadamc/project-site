@@ -79,6 +79,9 @@ My name is Adam Garber and I am Ph.D student at the University of California, Sa
 - Lab 7: 
 - Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC){target="_blank"}
 - Lab 9: [Measurement Invariance](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"}
+- Lab 10.1: [Weighted Least Squares Estimator](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"}
+- Lab 10.2: [Higher Order Factor Models](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"}
+
 
 <br>
 
