@@ -46,7 +46,7 @@ My name is Adam Garber and I am Ph.D student at the University of California, Sa
 
 ### Why do I use MplusAutomation?
 
-... instead of using SEM modeling packages within R? 
+... instead of estimating SEM models with R packages? 
 
 - Currently, most SEM packages in R such as {`lavaan`} have significant limitations in their capacity for flexibly specifying the full range modeling approaches available in SEM software (i.e., Mplus). This includes the ability to specify categorical latent variables (LCA/LPA/LTA), multi-level models (MLM), non-normal outcomes (GLM), and their combinations (i.e., multi-level LTA with covariates & distals). 
 - Other packages, although highly flexible {`OpenMX`} are less accessible to applied researchers. 
