@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 <style type="text/css">
-body{ font-size: 18px; max-width: 1600px; margin: auto; padding: 1em; }
+body{ font-size: 16px; max-width: 1600px; margin: auto; padding: 1em; }
 code.r{ font-size: 18px; }
 p { padding-top: 10px; padding-bottom: 10px; }
 pre { font-size: 16px; }
@@ -81,12 +81,12 @@ My name is Adam Garber and I am Ph.D student at the University of California, Sa
 - Lab 9: [Measurement Invariance](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"}
 - Lab 10.1: [Weighted Least Squares Estimator](https://garberadamc.github.io/project-site/Lab10.1-WLS-efa-cfa-invariance){target="_blank"}
         
-- [Lab10.1 as PDF](/Lab10.1-WLS-efa-cfa-invariance.pdf)
+  - [$\color{darkred}{\text{Lab10.1 - PDF version}}$](/Lab10.1-WLS-efa-cfa-invariance.pdf)
 
 - Lab 10.2: [Higher Order Factor Models](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors){target="_blank"} 
         
-- [Lab10.2 as PDF](/Lab10.2-Higher-Order-Factors.pdf)
-  
+  - [$\color{darkred}{\text{Lab10.2 - PDF version}}$](/Lab10.2-Higher-Order-Factors.pdf)
+  s
 <br>
 
 ## __________________________________________________________
