@@ -63,6 +63,8 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 
 DATA SOURCE: This lab exercise utilizes a subset of the HSLS public-use dataset: High School Longitudinal Study of 2009 (Ingels et al., 2011) [$\color{blue}{\text{See website: nces.ed.gov}}$](https://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2018142)
 
+FURTHER READING: A description of the models run in this lab exercise can be found in  chapter 16 (page 411) in Kline, 2016. All specifications for invariance with the WLS estimator follow the recomendations found in this book. [$\color{blue}{\text{Example Mplus Syntax}}$](https://www.guilford.com/companion-site/Principles-and-Practice-of-Structural-Equation-Modeling-Fourth-Edition/9781462523344)
+
 ---------------------------------------------------
 
 ## When to use the Weighted Least Squared (WSL) method?

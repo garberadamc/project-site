@@ -267,7 +267,8 @@ m.cfa1.fit <- mplusModeler(m.cfa1,
 
 
 ```{r, eval=TRUE}
-order2_model <- readModels(here("2nd_order_FA"))
+order2_model <- readModels(here("2nd_order_FA",
+                                "cfa_2nd_order.out"))
 
 # plot model:
 semPaths(order2_model,
@@ -292,9 +293,11 @@ models_2 <- readModels(here("2nd_order_FA"))
 ```{r, eval=TRUE}
 
 order2_table <- LatexSummaryTable(models_2, 
-                 keepCols=c("Filename", "Parameters","ChiSqM_Value", "CFI","TLI",
-                            "SRMR", "RMSEA_Estimate", "RMSEA_90CI_LB", "RMSEA_90CI_UB"), 
-                 sortBy = "Filename")
+  keepCols=c("Filename", "Parameters",
+             "ChiSqM_Value", "CFI","TLI",
+             "SRMR", "RMSEA_Estimate",
+             "RMSEA_90CI_LB", "RMSEA_90CI_UB"), 
+  sortBy = "Filename")
 
 order2_table %>%
   kable(booktabs = T, linesep = "",
