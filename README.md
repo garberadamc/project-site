@@ -1,36 +1,26 @@
----
-title: "Tidy Workflow with MplusAutomation"
-author: ""
-date: ""
-subtitle: "*Adam Garber*" 
-output: 
-  html_document:
-    theme: cerulean
- #   toc: true  
- #   toc_float: true 
- #   toc_depth: 1
----
 
-<style type="text/css">
-body{ font-size: 18px; max-width: 1600px; margin: auto; padding: 1em; }
-code.r{ font-size: 18px; }
-p { padding-top: 10px; padding-bottom: 10px; }
-pre { font-size: 16px; }
-</style>
+# Tidy Workflow with MplusAutomation
 
-![](figures/island_mark.png){ width=60% }
+## *Adam Garber* 
+
+### https://garberadamc.github.io/project-site/
+
+
+![](figures/island_mark.png)
 
 #### *Channel Islands State Reserve, Santa Barbara*
 
-## __________________________________________________________
+-------------------------------------------------------------
 
 ## Finite Mixture, Latent Variable, & Structural Equation Modeling 
 
-## __________________________________________________________
+-------------------------------------------------------------
 
 ### About me: 
 
 My name is Adam Garber and I am Ph.D student at the University of California, Santa Barbara.The purpose of this website is to make SEM modeling accesible for applied researchers and students. My work focuses on finite mixture modeling in-line with my advisor Dr. Karen Nylund-Gibson's research. I participate in [UCSB's Latent Variable Group](https://lvgucsb.weebly.com/){target="_blank"}.
+
+-------------------------------------------------------------
 
 ### Workflow focus on reproducibility:
 
@@ -39,7 +29,7 @@ My name is Adam Garber and I am Ph.D student at the University of California, Sa
 - R-Projects and the {`here`} package allow for reproducibility across operating systems.
 - The {`tidyverse`}'s highly coherent functions are used whenever possible to increase accessibility for applied audiences (Wickham et al., 2019)
 
-## __________________________________________________________
+-------------------------------------------------------------
 
 ### Why do I use MplusAutomation?
 
@@ -56,7 +46,7 @@ Rather than doing SEM modeling entirely in Mplus?
 - Importantly, R provides convenient methods for conducting fully reproducible research projects. 
 - In R documenting all research decisions and data presentation is straightforward from start to finish (e.g., data cleaning, transformation, re-coding, plotting, and table construction).
 
-## __________________________________________________________
+-------------------------------------------------------------
 
 ## Lab materials: Applied Mixture modeling (UCSB, ED 216G) 
 
@@ -65,6 +55,8 @@ Rather than doing SEM modeling entirely in Mplus?
 - Lab 3:
 - Lab 4:
 - Lab 5:
+
+-------------------------------------------------------------
 
 ## Lab materials: Factor Analysis  (UCSB, ED 216B) 
 
@@ -80,7 +72,7 @@ Rather than doing SEM modeling entirely in Mplus?
 
 <br>
 
-## __________________________________________________________
+-------------------------------------------------------------
 
 ## Replicating analyses using Tidy Workflow & MplusAutomation:
 
@@ -90,7 +82,7 @@ Rather than doing SEM modeling entirely in Mplus?
 
 <br>
 
-## __________________________________________________________
+-------------------------------------------------------------
 
 ## References
 
@@ -106,4 +98,4 @@ R Core Team (2017). R: A language and environment for statistical computing. R F
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
 
-![](figures/UCSB_Navy_mark.png){ width=75% }
+![](figures/UCSB_Navy_mark.png)

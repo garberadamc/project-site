@@ -86,6 +86,10 @@ Within R-studio under the files pane (bottom right):
 
 # ____________________________________
 
+DATA SOURCE: This lab exercise utilizes the NCES public-use dataset: Education Longitudinal Study of 2002 (Lauff & Ingels, 2014) [$\color{blue}{\text{See website: nces.ed.gov}}$](https://nces.ed.gov/surveys/els2002/avail_data.asp)
+
+# ____________________________________
+
 ### loading packages...
 
 ```{r, eval=TRUE}

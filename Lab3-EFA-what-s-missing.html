@@ -11,7 +11,7 @@
 
 <meta name="author" content="Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson" />
 
-<meta name="date" content="2020-02-28" />
+<meta name="date" content="2020-03-10" />
 
 <title>Lab 3 - MplusAutomation, what’s missing?</title>
 
@@ -375,7 +375,7 @@ summary {
 <h1 class="title toc-ignore">Lab 3 - MplusAutomation, what’s missing?</h1>
 <h3 class="subtitle"><strong>Adam Garber</strong></h3>
 <h4 class="author">Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson</h4>
-<h4 class="date">February 28, 2020</h4>
+<h4 class="date">March 10, 2020</h4>
 
 </div>
 
@@ -422,6 +422,10 @@ pre { font-size: 16px; }
 BiocManager::install(&quot;rhdf5&quot;)</code></pre>
 </div>
 <div id="section-2" class="section level1">
+<h1>____________________________________</h1>
+<p>DATA SOURCE: This lab exercise utilizes the NCES public-use dataset: Education Longitudinal Study of 2002 (Lauff &amp; Ingels, 2014) <a href="https://nces.ed.gov/surveys/els2002/avail_data.asp"><span class="math inline">\(\color{blue}{\text{See website: nces.ed.gov}}\)</span></a></p>
+</div>
+<div id="section-3" class="section level1">
 <h1>____________________________________</h1>
 <div id="loading-packages" class="section level2">
 <h2>loading packages…</h2>
@@ -472,7 +476,7 @@ schl_safe *** lab_data ***     # What's missing?
   ***( )</code></pre>
 </div>
 </div>
-<div id="section-3" class="section level1">
+<div id="section-4" class="section level1">
 <h1>____________________________________</h1>
 <div id="reverse-indicators-so-scale-has-consistent-meaning-for-factor-interpretation" class="section level3">
 <h3>Reverse indicators so scale has consistent meaning for factor interpretation</h3>
@@ -485,7 +489,7 @@ cols = c(***)       # What's missing?
 schl_safe[,***] &lt;-  *** - schl_safe[ ,***]        # What's missing?</code></pre>
 </div>
 </div>
-<div id="section-4" class="section level1">
+<div id="section-5" class="section level1">
 <h1>____________________________________</h1>
 <div id="run-an-efa-model" class="section level2">
 <h2>Run an efa model</h2>
@@ -530,10 +534,10 @@ m_efa_1_fit &lt;- mplusModeler(***,
 ## END: EXPLORATORY FACTOR ANALYSIS</code></pre>
 </div>
 </div>
-<div id="section-5" class="section level1">
+<div id="section-6" class="section level1">
 <h1>____________________________________</h1>
 </div>
-<div id="section-6" class="section level1">
+<div id="section-7" class="section level1">
 <h1>____________________________________</h1>
 <div id="run-an-efa-with-reduced-set-of-items-see-comments-below" class="section level2">
 <h2>Run an efa with reduced set of items (see comments “!” below )</h2>
@@ -706,7 +710,7 @@ Factor 3
 </table>
 </div>
 </div>
-<div id="section-7" class="section level1">
+<div id="section-8" class="section level1">
 <h1>____________________________________</h1>
 <div id="plot-parallel-analysis-eigenvalues" class="section level2">
 <h2>Plot Parallel Analysis &amp; Eigenvalues</h2>
@@ -749,13 +753,13 @@ ggplot(aes(y=Eigenvalues,
 </div>
 </div>
 </div>
-<div id="section-8" class="section level1">
+<div id="section-9" class="section level1">
 <h1>____________________________________</h1>
 <div id="end-of-lab-3-exercise" class="section level2">
 <h2>End of lab 3 exercise</h2>
 </div>
 </div>
-<div id="section-9" class="section level1">
+<div id="section-10" class="section level1">
 <h1>____________________________________</h1>
 <div id="references" class="section level2">
 <h2>References</h2>

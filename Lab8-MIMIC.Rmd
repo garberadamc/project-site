@@ -32,6 +32,7 @@ p { padding-top: 10px; padding-bottom: 10px; }
 pre { font-size: 16px; }
 </style>
 
+-----------------------------------------------
 
 # Lab 8 outline
 
@@ -45,6 +46,7 @@ h. Specify a MIMIC model with three continuous covariates
 e. Experiment with path diagram notation & formatting
 i. $\color{red}{\text{We will keep close track of parameters and their status throughout lab}}$
 
+-----------------------------------------------
 
 ## Getting started - following the routine:
 
@@ -63,6 +65,8 @@ a. click "New Folder" and name folder "data"
 b. click "New Folder" and name folder "mimic_mplus"
 c. click "New Folder" and name folder "figures"
 
+-----------------------------------------------
+
 ## loading (and installing when needed) packages:
 
 $\color{red}{\text{We are testing an alternative method for this procedure today (simply run the code below)}}$
@@ -76,6 +80,9 @@ p_load(knitr, tidyverse, here, semPlot, DiagrammeR, MplusAutomation,
 
 ```
 
+-----------------------------------------------
+
+DATA SOURCE: This lab exercise utilizes the NCES public-use dataset: Education Longitudinal Study of 2002 (Lauff & Ingels, 2014) [$\color{blue}{\text{See website: nces.ed.gov}}$](https://nces.ed.gov/surveys/els2002/avail_data.asp)
 
 # ~~~~~~~~~~~~~~~~ Lab 8 - Begin ~~~~~~~~~~~~~~~~
 
@@ -126,6 +133,7 @@ mimic_data <-  lab_data %>%
 
 ```
 
+-----------------------------------------------
 
 # Estimate the Unconditional Confirmatory Factor Analysis (CFA) model
 
@@ -140,6 +148,8 @@ Number of parameters for the Unconditional CFA model:
 - **??** residual variances
 - **??** factor variances
 - **??** factor co-variance
+
+-----------------------------------------------
 
 ## Make a simple CFA path diagram using package {`DiagrammeR`} 
 
@@ -202,6 +212,8 @@ semPaths(mimic_output1,
 # ** comment out the arguments "intercepts" & "fixedStyle" to make all parameters explicit
 ```
 
+-----------------------------------------------
+
 ## $\color{red}{\text{Lab exercise: Count model parameters from the path diagram }}$
 
 **(i.e., count number of arrows)**
@@ -218,6 +230,8 @@ Number of parameters for the MIMIC model 1 = 33
 - 1 factor co-variance
 - 1 covariate mean
 - 1 covariate variance
+
+-----------------------------------------------
 
 ```{r, eval=TRUE}
 
@@ -252,8 +266,7 @@ graph [overlap = true, fontsize = 10,   # this is the 'graph' statement
 
 ```
 
-
-
+-----------------------------------------------
 
 ```{r}
 mimic_m1  <- mplusObject(
@@ -285,8 +298,11 @@ mimic_m1_fit <- mplusModeler(mimic_m1,
                             check=TRUE, run = TRUE, hashfilename = FALSE)
 ```
 
+-----------------------------------------------
 
 # MIMIC model 2 - probe for covariate -> indicator DIFF 
+
+-----------------------------------------------
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "90%", out.height= "90%", fig.align = "left"}
 
@@ -337,6 +353,8 @@ semPaths(mimic_output2,
 
 ```
 
+-----------------------------------------------
+
 # MIMIC model 3 - specify covariate -> indicator DIFF 
 
 Number of parameters for MIMIC model 3 = 34
@@ -349,6 +367,8 @@ Number of parameters for MIMIC model 3 = 34
 - 1 covariate mean
 - 1 covariate variance
 - 1 DIF (covariate -> indicator)
+
+-----------------------------------------------
 
 ```{r, eval=TRUE}
 
@@ -377,6 +397,7 @@ graph [overlap = true, fontsize = 12, fontname = Times]
 
 ```
 
+-----------------------------------------------
 
 ```{r}
 mimic_m3  <- mplusObject(
@@ -408,8 +429,11 @@ mimic_m1_fit <- mplusModeler(mimic_m3,
                             check=TRUE, run = TRUE, hashfilename = FALSE)
 ```
 
+-----------------------------------------------
 
 # MIMIC model 4 - two covariates & an interaction term
+
+-----------------------------------------------
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "90%", out.height= "90%", fig.align = "left"}
 
@@ -449,6 +473,8 @@ mimic_m4_fit <- mplusModeler(mimic_m4,
                             check=TRUE, run = TRUE, hashfilename = FALSE)
 ```
 
+-----------------------------------------------
+
 ## create a path diagram of MIMIC model 4
 ```{r}
 
@@ -461,12 +487,16 @@ semPaths(mimic_output4,
          fixedStyle = c(1))
 ```
 
+-----------------------------------------------
+
 # MIMIC model 5 - three continuous covariates
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "90%", out.height= "90%", fig.align = "left"}
 
 knitr::include_graphics(here("figures", "MIMIC5.png"))
 ```
+
+-----------------------------------------------
 
 ```{r}
 mimic_m5  <- mplusObject(
@@ -496,6 +526,8 @@ mimic_m5_fit <- mplusModeler(mimic_m5,
                             check=TRUE, run = TRUE, hashfilename = FALSE)
 ```
 
+-----------------------------------------------
+
 ## create a path diagram of MIMIC model 5
 
 ```{r}
@@ -514,6 +546,7 @@ semPaths(mimic_output5,
 # ** Lab exercise: comment out the "intercepts" & "fixedStyle" arguments and then count model parameters
 ```
 
+-----------------------------------------------
 
 ## practice some formatting with `semPlot::semPaths()`
 ```{r}
@@ -529,6 +562,7 @@ semPaths(mimic_output5,
          )
 ```
 
+-----------------------------------------------
 
 ## read all models and create table 
 ```{r}
@@ -552,7 +586,11 @@ table %>%
 
 ```
 
+-----------------------------------------------
+
 # End of Lab 8
+
+-----------------------------------------------
 
 <br>
 

@@ -627,12 +627,6 @@ efa_demo_fit <- mplusModeler(efa_demo,
 
 ## ______________________________________________
 
-```{r}
-
-
-
-```
-
 
 ```{r, include=FALSE}
 

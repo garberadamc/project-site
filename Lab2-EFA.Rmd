@@ -14,13 +14,20 @@ library(here)
 
 # ____________________________________
 
-# ____________________________________
 
 ```{r, echo=FALSE, eval=TRUE, out.width = "65%", out.height= "65%", fig.pos="h"}
 knitr::include_graphics(here("figures", "hex_package.png"))
 ```
 
+# ____________________________________
+
+DATA SOURCE: This lab exercise utilizes the NCES public-use dataset: Education Longitudinal Study of 2002 (Lauff & Ingels, 2014) [$\color{blue}{\text{See website: nces.ed.gov}}$](https://nces.ed.gov/surveys/els2002/avail_data.asp)
+
+# ____________________________________
+
 ## Lab preparation
+
+# ____________________________________
 
 ### R-Project Instructions:
 
