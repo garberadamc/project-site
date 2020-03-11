@@ -85,7 +85,7 @@ My name is Adam Garber and I am Ph.D student at the University of California, Sa
 
 - Lab 10.2: [Higher Order Factor Models](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors){target="_blank"} 
 
-[Lab10.2 - PDF version](/Lab10.2-Higher-Order-Factors.pdf){target="_blank"}
+[Lab10.2 - PDF version](Lab10.2-Higher-Order-Factors.pdf){target="_blank"}
 
 
 <br>
