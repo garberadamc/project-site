@@ -33,7 +33,7 @@ pre { font-size: 16px; }
 
 ### About: 
 
-My name is Adam Garber and I am a PhD student in Education at the University of California, Santa Barbara.The purpose of this website is to make SEM modeling accesible for applied researchers and students. My work focuses on finite mixture modeling in-line with my advisor Dr. Karen Nylund-Gibson's research. I participate in [UCSB's Latent Variable Group](https://lvgucsb.weebly.com/){target="_blank"}. My other interests are Autism and Special Education Research. Particulary, the benifits of physical activity for children with disabilities.
+My name is Adam Garber and I am a PhD student in Education at the University of California, Santa Barbara.The purpose of this website is to make SEM modeling accesible for applied researchers and students. My work focuses on finite mixture modeling in-line with my advisor Dr. Karen Nylund-Gibson's research ([Latent_Variable_Group](https://lvgucsb.weebly.com/){target="_blank"}). My other interests are Autism and Special Education Research. In particular, the benifits of physical activity for children with disabilities.
 
 ### Workflow focus on reproducibility:
 
