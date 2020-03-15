@@ -4,11 +4,6 @@ author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
 subtitle: '**Adam Garber**'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    df_print: kable
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
   html_document:
     code_folding: show
     df_print: kable
@@ -18,6 +13,11 @@ output:
     toc: yes
     fig_width: 9 
     fig_height: 6 
+  pdf_document:
+    df_print: kable
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
 ---
 
 <style type="text/css">
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 
 ______________________________________________
 
-# ~~~~~ Lab outline
+# - Lab outline
    
 0.  guideline for MplusAutomation workflow
 1.  create an R project in a dedicated project folder (on the desktop or in a class folder)
@@ -51,7 +51,7 @@ ______________________________________________
 
 ______________________________________________   
 
-# ~~~~~ Preparing to work with MplusAutomation 
+# - Preparing to work with MplusAutomation 
 
 1. R PROJECTS: We will use R Projects for **ALL** labs & assignments. 
 - This is because `MplusAutomation` involves specifying many filepaths.
@@ -94,7 +94,7 @@ lab_tools %>%
 
 ______________________________________________
 
-# ~~~~~ Creating an R-Project
+# - Creating an R-Project
 
 1. create a **project folder** (that will enclose all files associated with a given lab or assignment)
 - the project folder should be located on the desktop or within a designated class folder
@@ -104,7 +104,7 @@ ______________________________________________
 
 ______________________________________________
 
-# ~~~~~ Installing & loading packages
+# - Installing & loading packages
 
 1. Copy the packages below into your R-script
 2. Save your R-script in your main project folder
@@ -147,7 +147,7 @@ library(corrgram)
 
 ______________________________________________
 
-# ~~~~~ Read in data
+# - Read in data
 
 ______________________________________________
 
@@ -163,7 +163,7 @@ $\color{white}{\text{.}}$
 
 ______________________________________________
 
-# ~~~~~ A couple ways to explore & view data in R 
+# - A couple ways to explore & view data in R 
 
 ______________________________________________
 
@@ -191,7 +191,7 @@ glimpse(exp_data)
 
 ______________________________________________
 
-# ~~~~~ View dataframe with labels & response scale meta-data 
+# - View dataframe with labels & response scale meta-data 
 
 ## Note: Use the "print" option to save a PDF as a codebook of metadata.
 
@@ -218,7 +218,7 @@ NOTE: Mplus also accepts TXT formatted data (e.g., mplus_data.txt)
 
 ______________________________________________
 
-# ~~~~~ Writing, reading, and converting data between 3 formats 
+# - Writing, reading, and converting data between 3 formats 
 
 ______________________________________________
 
@@ -247,7 +247,7 @@ prepareMplusData(nolabel_data, here("data", "exp_lab1_data.dat"))
 
 ______________________________________________
 
-# ~~~~~ Preparing column-names to be `MplusAutomation` ready 
+# - Preparing column-names to be `MplusAutomation` ready 
 
 ## Task: Make all variable names fit within the 8-character name limit (Mplus) while avoiding duplicates.
 
@@ -299,7 +299,7 @@ anyDuplicated(colnames(new_names))
 
 ______________________________________________
 
-# ~~~~~ Filtering rows (observations) & selecting columns (variables). 
+# - Filtering rows (observations) & selecting columns (variables). 
 
 ______________________________________________
 
@@ -336,7 +336,7 @@ ______________________________________________
 
 ______________________________________________
 
-# ~~~~~ Changing variable class types 
+# - Changing variable class types 
 
 e.g., change class `numeric` to `factor` 
 
@@ -367,7 +367,7 @@ var_class %>%
 
 ______________________________________________
 
-# ~~~~~ visualizing data using `ggplot()` 
+# - visualizing data using `ggplot()` 
 
 ______________________________________________
 
@@ -425,7 +425,7 @@ ggplot(aes(sample = item3)) +
 
 ```
 
-# ~~~~~ Visualizing & exploring sets of variables
+# - Visualizing & exploring sets of variables
 
 In factor analysis you often want to look at a set of variables at once rather than one at a time...
 ```{r}
@@ -469,7 +469,7 @@ melt(nolabel_data[,1:9]) %>%
 
 ______________________________________________
 
-# ~~~~~ correlations - there are many ways to visualize bi-variate relations in R
+# - correlations - there are many ways to visualize bi-variate relations in R
 
 ______________________________________________
 
@@ -513,7 +513,7 @@ ggpairs(
 
 ______________________________________________
 
-# ~~~~~ Simple introduction to `MplusAutomation` (writing, running, & reading models)
+# - Simple introduction to `MplusAutomation` (writing, running, & reading models)
 
 ______________________________________________
 

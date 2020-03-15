@@ -476,52 +476,52 @@ summary {
 
 <div id="TOC">
 <ul>
-<li><a href="#lab-outline"><span class="toc-section-number">1</span> ~~~~~ Lab outline</a></li>
-<li><a href="#preparing-to-work-with-mplusautomation"><span class="toc-section-number">2</span> ~~~~~ Preparing to work with MplusAutomation</a><ul>
+<li><a href="#lab-outline"><span class="toc-section-number">1</span> - Lab outline</a></li>
+<li><a href="#preparing-to-work-with-mplusautomation"><span class="toc-section-number">2</span> - Preparing to work with MplusAutomation</a><ul>
 <li><a href="#tools-we-will-use-in-lab"><span class="toc-section-number">2.1</span> Tools we will use in lab</a></li>
 </ul></li>
-<li><a href="#creating-an-r-project"><span class="toc-section-number">3</span> ~~~~~ Creating an R-Project</a></li>
-<li><a href="#installing-loading-packages"><span class="toc-section-number">4</span> ~~~~~ Installing &amp; loading packages</a><ul>
+<li><a href="#creating-an-r-project"><span class="toc-section-number">3</span> - Creating an R-Project</a></li>
+<li><a href="#installing-loading-packages"><span class="toc-section-number">4</span> - Installing &amp; loading packages</a><ul>
 <li><a href="#install-the-rhdf5-package-to-read-gh5-files"><span class="toc-section-number">4.1</span> install the “rhdf5” package to read gh5 files</a></li>
 <li><a href="#load-packages"><span class="toc-section-number">4.2</span> load packages</a></li>
 <li><a href="#keyboard-shortcuts"><span class="toc-section-number">4.3</span> Keyboard shortcuts</a></li>
 </ul></li>
-<li><a href="#read-in-data"><span class="toc-section-number">5</span> ~~~~~ Read in data</a></li>
-<li><a href="#a-couple-ways-to-explore-view-data-in-r"><span class="toc-section-number">6</span> ~~~~~ A couple ways to explore &amp; view data in R</a></li>
-<li><a href="#view-dataframe-with-labels-response-scale-meta-data"><span class="toc-section-number">7</span> ~~~~~ View dataframe with labels &amp; response scale meta-data</a><ul>
+<li><a href="#read-in-data"><span class="toc-section-number">5</span> - Read in data</a></li>
+<li><a href="#a-couple-ways-to-explore-view-data-in-r"><span class="toc-section-number">6</span> - A couple ways to explore &amp; view data in R</a></li>
+<li><a href="#view-dataframe-with-labels-response-scale-meta-data"><span class="toc-section-number">7</span> - View dataframe with labels &amp; response scale meta-data</a><ul>
 <li><a href="#note-use-the-print-option-to-save-a-pdf-as-a-codebook-of-metadata."><span class="toc-section-number">7.1</span> Note: Use the “print” option to save a PDF as a codebook of metadata.</a></li>
 <li><a href="#types-of-data-for-different-tasks"><span class="toc-section-number">7.2</span> Types of data for different tasks</a></li>
 </ul></li>
-<li><a href="#writing-reading-and-converting-data-between-3-formats"><span class="toc-section-number">8</span> ~~~~~ Writing, reading, and converting data between 3 formats</a><ul>
+<li><a href="#writing-reading-and-converting-data-between-3-formats"><span class="toc-section-number">8</span> - Writing, reading, and converting data between 3 formats</a><ul>
 <li><a href="#prepare-datasets-remove-spss-labeling"><span class="toc-section-number">8.1</span> prepare datasets, <strong>remove SPSS labeling</strong></a></li>
 </ul></li>
-<li><a href="#preparing-column-names-to-be-mplusautomation-ready"><span class="toc-section-number">9</span> ~~~~~ Preparing column-names to be <code>MplusAutomation</code> ready</a><ul>
+<li><a href="#preparing-column-names-to-be-mplusautomation-ready"><span class="toc-section-number">9</span> - Preparing column-names to be <code>MplusAutomation</code> ready</a><ul>
 <li><a href="#task-make-all-variable-names-fit-within-the-8-character-name-limit-mplus-while-avoiding-duplicates."><span class="toc-section-number">9.1</span> Task: Make all variable names fit within the 8-character name limit (Mplus) while avoiding duplicates.</a></li>
 <li><a href="#renaming-columns-manually"><span class="toc-section-number">9.2</span> Renaming columns manually…</a></li>
 <li><a href="#what-do-you-do-if-you-have-a-large-dataset-with-many-column-names-that-are-8-characters"><span class="toc-section-number">9.3</span> What do you do if you have a large dataset with many column names that are &gt; 8 characters?</a></li>
 </ul></li>
-<li><a href="#filtering-rows-observations-selecting-columns-variables."><span class="toc-section-number">10</span> ~~~~~ Filtering rows (observations) &amp; selecting columns (variables).</a><ul>
+<li><a href="#filtering-rows-observations-selecting-columns-variables."><span class="toc-section-number">10</span> - Filtering rows (observations) &amp; selecting columns (variables).</a><ul>
 <li><a href="#when-to-use-create-new-dataframe-subsets-for-particular-analyses-or-purposes"><span class="toc-section-number">10.1</span> When to use?… create new dataframe subsets for particular analyses or purposes</a></li>
 <li><a href="#a-note-on-coding-style"><span class="toc-section-number">10.2</span> A note on coding style:</a></li>
 </ul></li>
-<li><a href="#changing-variable-class-types"><span class="toc-section-number">11</span> ~~~~~ Changing variable class types</a></li>
-<li><a href="#visualizing-data-using-ggplot"><span class="toc-section-number">12</span> ~~~~~ visualizing data using <code>ggplot()</code></a><ul>
+<li><a href="#changing-variable-class-types"><span class="toc-section-number">11</span> - Changing variable class types</a></li>
+<li><a href="#visualizing-data-using-ggplot"><span class="toc-section-number">12</span> - visualizing data using <code>ggplot()</code></a><ul>
 <li><a href="#boxplot"><span class="toc-section-number">12.1</span> boxplot</a></li>
 <li><a href="#histogram"><span class="toc-section-number">12.2</span> histogram</a></li>
 <li><a href="#density-plot"><span class="toc-section-number">12.3</span> density plot</a></li>
 <li><a href="#jitter-plot"><span class="toc-section-number">12.4</span> jitter plot</a></li>
 <li><a href="#qq-plot"><span class="toc-section-number">12.5</span> qq-plot</a></li>
 </ul></li>
-<li><a href="#visualizing-exploring-sets-of-variables"><span class="toc-section-number">13</span> ~~~~~ Visualizing &amp; exploring sets of variables</a><ul>
+<li><a href="#visualizing-exploring-sets-of-variables"><span class="toc-section-number">13</span> - Visualizing &amp; exploring sets of variables</a><ul>
 <li><a href="#faceted-scatterplot"><span class="toc-section-number">13.1</span> faceted scatterplot</a></li>
 <li><a href="#violin-plot"><span class="toc-section-number">13.2</span> violin plot</a></li>
 </ul></li>
-<li><a href="#correlations---there-are-many-ways-to-visualize-bi-variate-relations-in-r"><span class="toc-section-number">14</span> ~~~~~ correlations - there are many ways to visualize bi-variate relations in R</a><ul>
+<li><a href="#correlations---there-are-many-ways-to-visualize-bi-variate-relations-in-r"><span class="toc-section-number">14</span> - correlations - there are many ways to visualize bi-variate relations in R</a><ul>
 <li><a href="#package-corrplot"><span class="toc-section-number">14.1</span> package {<code>corrplot</code>}</a></li>
 <li><a href="#package-corrgram"><span class="toc-section-number">14.2</span> package {<code>corrgram</code>}</a></li>
 <li><a href="#package-ggpairs"><span class="toc-section-number">14.3</span> package {<code>ggpairs</code>}</a></li>
 </ul></li>
-<li><a href="#simple-introduction-to-mplusautomation-writing-running-reading-models"><span class="toc-section-number">15</span> ~~~~~ Simple introduction to <code>MplusAutomation</code> (writing, running, &amp; reading models)</a><ul>
+<li><a href="#simple-introduction-to-mplusautomation-writing-running-reading-models"><span class="toc-section-number">15</span> - Simple introduction to <code>MplusAutomation</code> (writing, running, &amp; reading models)</a><ul>
 <li><a href="#what-does-the-mplusobject-function-do"><span class="toc-section-number">15.1</span> What does the <code>mplusObject()</code> function do:</a></li>
 </ul></li>
 <li><a href="#practice-using-mplusobject-method-type-basic"><span class="toc-section-number">16</span> PRACTICE: Using MplusObject() method (type = BASIC;)</a></li>
@@ -540,7 +540,7 @@ pre { font-size: 16px; }
 </style>
 <hr />
 <div id="lab-outline" class="section level1">
-<h1><span class="header-section-number">1</span> ~~~~~ Lab outline</h1>
+<h1><span class="header-section-number">1</span> - Lab outline</h1>
 <ol start="0" style="list-style-type: decimal">
 <li>guideline for MplusAutomation workflow</li>
 <li>create an R project in a dedicated project folder (on the desktop or in a class folder)</li>
@@ -558,7 +558,7 @@ pre { font-size: 16px; }
 <hr />
 </div>
 <div id="preparing-to-work-with-mplusautomation" class="section level1">
-<h1><span class="header-section-number">2</span> ~~~~~ Preparing to work with MplusAutomation</h1>
+<h1><span class="header-section-number">2</span> - Preparing to work with MplusAutomation</h1>
 <ol style="list-style-type: decimal">
 <li>R PROJECTS: We will use R Projects for <strong>ALL</strong> labs &amp; assignments.</li>
 </ol>
@@ -685,7 +685,7 @@ e.g., first() %&gt;% and_then() %&gt;% and_finally()
 </div>
 </div>
 <div id="creating-an-r-project" class="section level1">
-<h1><span class="header-section-number">3</span> ~~~~~ Creating an R-Project</h1>
+<h1><span class="header-section-number">3</span> - Creating an R-Project</h1>
 <ol style="list-style-type: decimal">
 <li>create a <strong>project folder</strong> (that will enclose all files associated with a given lab or assignment)</li>
 </ol>
@@ -700,7 +700,7 @@ e.g., first() %&gt;% and_then() %&gt;% and_finally()
 <hr />
 </div>
 <div id="installing-loading-packages" class="section level1">
-<h1><span class="header-section-number">4</span> ~~~~~ Installing &amp; loading packages</h1>
+<h1><span class="header-section-number">4</span> - Installing &amp; loading packages</h1>
 <ol style="list-style-type: decimal">
 <li>Copy the packages below into your R-script</li>
 <li>Save your R-script in your main project folder</li>
@@ -737,7 +737,7 @@ library(corrgram)</code></pre>
 </div>
 </div>
 <div id="read-in-data" class="section level1">
-<h1><span class="header-section-number">5</span> ~~~~~ Read in data</h1>
+<h1><span class="header-section-number">5</span> - Read in data</h1>
 <hr />
 <pre class="r"><code># object_name &lt;- function1(nested_function2(&quot;dataset_name.sav&quot;))
 
@@ -746,7 +746,7 @@ exp_data &lt;- read_spss(here(&quot;data&quot;, &quot;explore_lab_data.sav&quot;
 <hr />
 </div>
 <div id="a-couple-ways-to-explore-view-data-in-r" class="section level1">
-<h1><span class="header-section-number">6</span> ~~~~~ A couple ways to explore &amp; view data in R</h1>
+<h1><span class="header-section-number">6</span> - A couple ways to explore &amp; view data in R</h1>
 <hr />
 <pre class="r"><code># 1. click on the data in your Global Environment (upper right pane) or use...
 View(exp_data)
@@ -769,7 +769,7 @@ glimpse(exp_data)</code></pre>
 <hr />
 </div>
 <div id="view-dataframe-with-labels-response-scale-meta-data" class="section level1">
-<h1><span class="header-section-number">7</span> ~~~~~ View dataframe with labels &amp; response scale meta-data</h1>
+<h1><span class="header-section-number">7</span> - View dataframe with labels &amp; response scale meta-data</h1>
 <div id="note-use-the-print-option-to-save-a-pdf-as-a-codebook-of-metadata." class="section level2">
 <h2><span class="header-section-number">7.1</span> Note: Use the “print” option to save a PDF as a codebook of metadata.</h2>
 <hr />
@@ -792,7 +792,7 @@ sjPlot::view_df(exp_data)</code></pre>
 </div>
 </div>
 <div id="writing-reading-and-converting-data-between-3-formats" class="section level1">
-<h1><span class="header-section-number">8</span> ~~~~~ Writing, reading, and converting data between 3 formats</h1>
+<h1><span class="header-section-number">8</span> - Writing, reading, and converting data between 3 formats</h1>
 <hr />
 <div id="prepare-datasets-remove-spss-labeling" class="section level2">
 <h2><span class="header-section-number">8.1</span> prepare datasets, <strong>remove SPSS labeling</strong></h2>
@@ -809,7 +809,7 @@ prepareMplusData(nolabel_data, here(&quot;data&quot;, &quot;exp_lab1_data.dat&qu
 </div>
 </div>
 <div id="preparing-column-names-to-be-mplusautomation-ready" class="section level1">
-<h1><span class="header-section-number">9</span> ~~~~~ Preparing column-names to be <code>MplusAutomation</code> ready</h1>
+<h1><span class="header-section-number">9</span> - Preparing column-names to be <code>MplusAutomation</code> ready</h1>
 <div id="task-make-all-variable-names-fit-within-the-8-character-name-limit-mplus-while-avoiding-duplicates." class="section level2">
 <h2><span class="header-section-number">9.1</span> Task: Make all variable names fit within the 8-character name limit (Mplus) while avoiding duplicates.</h2>
 <hr />
@@ -856,7 +856,7 @@ anyDuplicated(colnames(new_names))</code></pre>
 </div>
 </div>
 <div id="filtering-rows-observations-selecting-columns-variables." class="section level1">
-<h1><span class="header-section-number">10</span> ~~~~~ Filtering rows (observations) &amp; selecting columns (variables).</h1>
+<h1><span class="header-section-number">10</span> - Filtering rows (observations) &amp; selecting columns (variables).</h1>
 <hr />
 <div id="when-to-use-create-new-dataframe-subsets-for-particular-analyses-or-purposes" class="section level2">
 <h2><span class="header-section-number">10.1</span> When to use?… create new dataframe subsets for particular analyses or purposes</h2>
@@ -889,7 +889,7 @@ males &lt;- nolabel_data %&gt;%
 </div>
 </div>
 <div id="changing-variable-class-types" class="section level1">
-<h1><span class="header-section-number">11</span> ~~~~~ Changing variable class types</h1>
+<h1><span class="header-section-number">11</span> - Changing variable class types</h1>
 <p>e.g., change class <code>numeric</code> to <code>factor</code></p>
 <hr />
 <pre class="r"><code>str(var_class)
@@ -911,7 +911,7 @@ var_class %&gt;%
 <hr />
 </div>
 <div id="visualizing-data-using-ggplot" class="section level1">
-<h1><span class="header-section-number">12</span> ~~~~~ visualizing data using <code>ggplot()</code></h1>
+<h1><span class="header-section-number">12</span> - visualizing data using <code>ggplot()</code></h1>
 <hr />
 <div id="boxplot" class="section level2">
 <h2><span class="header-section-number">12.1</span> boxplot</h2>
@@ -957,7 +957,7 @@ ggplot(aes(sample = item3)) +
 </div>
 </div>
 <div id="visualizing-exploring-sets-of-variables" class="section level1">
-<h1><span class="header-section-number">13</span> ~~~~~ Visualizing &amp; exploring sets of variables</h1>
+<h1><span class="header-section-number">13</span> - Visualizing &amp; exploring sets of variables</h1>
 <p>In factor analysis you often want to look at a set of variables at once rather than one at a time…</p>
 <pre class="r"><code># loops, use purrr::map() to make histograms for a series of items
 
@@ -992,7 +992,7 @@ melt(nolabel_data[,1:9]) %&gt;%
 </div>
 </div>
 <div id="correlations---there-are-many-ways-to-visualize-bi-variate-relations-in-r" class="section level1">
-<h1><span class="header-section-number">14</span> ~~~~~ correlations - there are many ways to visualize bi-variate relations in R</h1>
+<h1><span class="header-section-number">14</span> - correlations - there are many ways to visualize bi-variate relations in R</h1>
 <hr />
 <div id="package-corrplot" class="section level2">
 <h2><span class="header-section-number">14.1</span> package {<code>corrplot</code>}</h2>
@@ -1026,7 +1026,7 @@ corrplot(f_cor,
 </div>
 </div>
 <div id="simple-introduction-to-mplusautomation-writing-running-reading-models" class="section level1">
-<h1><span class="header-section-number">15</span> ~~~~~ Simple introduction to <code>MplusAutomation</code> (writing, running, &amp; reading models)</h1>
+<h1><span class="header-section-number">15</span> - Simple introduction to <code>MplusAutomation</code> (writing, running, &amp; reading models)</h1>
 <hr />
 <div id="what-does-the-mplusobject-function-do" class="section level2">
 <h2><span class="header-section-number">15.1</span> What does the <code>mplusObject()</code> function do:</h2>
