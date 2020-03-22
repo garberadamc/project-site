@@ -62,6 +62,18 @@ My name is Adam Garber and I am a PhD student in Education at the University of 
 
 ## Lab materials: Factor Analysis  (UCSB, ED 216B) 
 
+**Data subsets for lab exercises (public use data):**
+
+- [Lab1: explore_lab_data.sav](https://garberadamc.github.io/project-site/data/explore_lab_data.sav)
+- [Lab2 & 4: els_sub1_spss.sav](https://garberadamc.github.io/project-site/data/els_sub1_spss.sav)
+- [Lab3: els_fa_ready_sub2.csv](https://garberadamc.github.io/project-site/data/els_fa_ready_sub2.csv)
+- [Lab5: els_sub3_school_trouble.csv](https://garberadamc.github.io/project-site/data/els_sub3_school_trouble.csv)
+- [Lab6 & 7: els_sub4.csv](https://garberadamc.github.io/project-site/data/els_sub4.csv)
+- [Lab8 & 9: els_sub5_data.csv](https://garberadamc.github.io/project-site/data/els_sub5_data.csv)
+- [Lab10: hsls_fa_data_subset.csv](https://garberadamc.github.io/project-site/data/hsls_fa_data_subset.csv)
+
+__________________________________________________________
+
 - Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto.pdf){target="_blank"}
 - Lab 2: [Exploratory Factor Analysis (EFA) - Univariate and Multivariate Diagnostics.](https://garberadamc.github.io/project-site/Lab2-EFA){target="_blank"}
 - Lab 3: [EFA - R coding excercise: What's Missing?](https://garberadamc.github.io/project-site/Lab3-EFA-what-s-missing){target="_blank"}

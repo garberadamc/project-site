@@ -41,7 +41,7 @@ library(here)
 ### read in ELS-2002 lab data:
 ```{r}
 
-lab_data <- read_csv(here("data", "lab_efa_cfa_data.csv"))
+lab_data <- read_csv(here("data", "els_sub4.csv"))
 
 ```
 

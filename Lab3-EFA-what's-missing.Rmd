@@ -86,7 +86,7 @@ library(kableExtra)
 
 ```{r}
 
-# use data subset: "lab_fa_data_subset.csv"
+# use data subset: "els_fa_ready_sub2.csv"
 
 lab_data <- read_***(***("***", "***")) # What's missing?
 

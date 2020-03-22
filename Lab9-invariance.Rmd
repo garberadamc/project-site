@@ -60,7 +60,7 @@ ____________________________________
 Read in data
 ```{r}
 
-lab_data <- read_csv(here("data", "els2002_data_subset3.csv"))
+lab_data <- read_csv(here("data", "els_sub5_data.csv"))
 
 ```
 

@@ -80,7 +80,7 @@ library(kableExtra)
 
 ```{r}
 
-lab_data <- read_spss(here("data", "lab_efa_cfa_data.sav"))
+lab_data <- read_spss(here("data", "els_sub1_spss.sav"))
 
 ```
 
@@ -236,16 +236,16 @@ corrplot(f3_cor,
 ### prepare datasets, remove SPSS labeling 
 
 # write a CSV datafile (preferable format for reading into R, without labels)
-write_csv(schl_safe, here("data", "lab_fa_hsls_subset.csv"))
+write_csv(schl_safe, here("data", "els_fa_ready_sub2.csv"))
 
 # write a SPSS datafile (preferable format for reading into SPSS, labels are preserved)
-write_sav(schl_safe, here("data", "lab_fa_hsls_subset.sav"))
+write_sav(schl_safe, here("data", "els_fa_ready_sub2.sav"))
 
 # read the unlabeled data back into R
-fa_data <- read_csv(here("data", "lab_fa_hsls_subset.csv"))
+fa_data <- read_csv(here("data", "els_fa_ready_sub2.csv"))
 
 # write an Mplus DAT datafile
-prepareMplusData(fa_data, here("data", "lab_fa_hsls_subset.dat"))
+prepareMplusData(fa_data, here("data", "els_fa_ready_sub2.dat"))
 ```
 
 # ____________________________________

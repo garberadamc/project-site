@@ -81,7 +81,7 @@ library(stargazer)
 read in data
 ```{r, eval=TRUE}
 
-trouble_data <- read_csv(here("data", "school_trouble_data.csv"))
+trouble_data <- read_csv(here("data", "els_sub3_school_trouble.csv"))
 
 ```
 

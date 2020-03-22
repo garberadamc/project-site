@@ -110,7 +110,7 @@ beep(2)
 #### read in data
 ```{r}
 
-lab_data <- read_csv(here("data", "lab_efa_cfa_data.csv"))
+lab_data <- read_csv(here("data", "els_sub4.csv"))
 
 beep(1)
 praise("You are totally ${adjective}! Super ${EXCLAMATION}!")

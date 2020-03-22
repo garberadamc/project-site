@@ -79,7 +79,7 @@ library(corrplot)
 ### read in the raw dataset 
 
 ```{r}
-lab_data <- read_spss(here("data", "lab_efa_cfa_data.sav"))
+lab_data <- read_spss(here("data", "els_sub1_spss.sav"))
 ```
 
 ## create a subset of the dataset called "school_trouble"

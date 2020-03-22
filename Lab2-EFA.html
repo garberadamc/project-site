@@ -11,7 +11,7 @@
 
 <meta name="author" content="Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson" />
 
-<meta name="date" content="2020-03-10" />
+<meta name="date" content="2020-03-21" />
 
 <title>Lab 2 - Exploratory Factor Analysis</title>
 
@@ -375,7 +375,7 @@ summary {
 <h1 class="title toc-ignore">Lab 2 - Exploratory Factor Analysis</h1>
 <h3 class="subtitle"><strong>Adam Garber</strong></h3>
 <h4 class="author">Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson</h4>
-<h4 class="date">March 10, 2020</h4>
+<h4 class="date">March 21, 2020</h4>
 
 </div>
 
@@ -441,7 +441,7 @@ library(kableExtra)</code></pre>
 </div>
 <div id="exercise-1-read-in-data-to-r-environment" class="section level3">
 <h3>EXERCISE 1: READ IN DATA TO R ENVIRONMENT</h3>
-<pre class="r"><code>lab_data &lt;- read_spss(here(&quot;data&quot;, &quot;lab_efa_cfa_data.sav&quot;))</code></pre>
+<pre class="r"><code>lab_data &lt;- read_spss(here(&quot;data&quot;, &quot;els_sub1_spss.sav&quot;))</code></pre>
 </div>
 <div id="exercise-2-subset" class="section level3">
 <h3>EXERCISE 2: SUBSET</h3>
@@ -572,16 +572,16 @@ corrplot(f3_cor,
 <pre class="r"><code>### prepare datasets, remove SPSS labeling 
 
 # write a CSV datafile (preferable format for reading into R, without labels)
-write_csv(schl_safe, here(&quot;data&quot;, &quot;lab_fa_hsls_subset.csv&quot;))
+write_csv(schl_safe, here(&quot;data&quot;, &quot;els_fa_ready_sub2.csv&quot;))
 
 # write a SPSS datafile (preferable format for reading into SPSS, labels are preserved)
-write_sav(schl_safe, here(&quot;data&quot;, &quot;lab_fa_hsls_subset.sav&quot;))
+write_sav(schl_safe, here(&quot;data&quot;, &quot;els_fa_ready_sub2.sav&quot;))
 
 # read the unlabeled data back into R
-fa_data &lt;- read_csv(here(&quot;data&quot;, &quot;lab_fa_hsls_subset.csv&quot;))
+fa_data &lt;- read_csv(here(&quot;data&quot;, &quot;els_fa_ready_sub2.csv&quot;))
 
 # write an Mplus DAT datafile
-prepareMplusData(fa_data, here(&quot;data&quot;, &quot;lab_fa_hsls_subset.dat&quot;))</code></pre>
+prepareMplusData(fa_data, here(&quot;data&quot;, &quot;els_fa_ready_sub2.dat&quot;))</code></pre>
 </div>
 </div>
 <div id="section-7" class="section level1">

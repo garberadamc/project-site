@@ -90,7 +90,7 @@ DATA SOURCE: This lab exercise utilizes the NCES public-use dataset: Education L
 ## read in data
 ```{r, eval=TRUE}
 
-lab_data <- read_csv(here("data", "lab7-8_els2002_data_subset.csv"))
+lab_data <- read_csv(here("data", "els_sub5_data.csv"))
 
 ```
 

@@ -11,7 +11,7 @@
 
 <meta name="author" content="Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson" />
 
-<meta name="date" content="2020-03-04" />
+<meta name="date" content="2020-03-21" />
 
 <title>Lab9 Factor Analysis - Measurement Invariance</title>
 
@@ -461,7 +461,7 @@ summary {
 <h1 class="title toc-ignore">Lab9 Factor Analysis - Measurement Invariance</h1>
 <h3 class="subtitle"><strong>Adam Garber</strong></h3>
 <h4 class="author">Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson</h4>
-<h4 class="date">March 04, 2020</h4>
+<h4 class="date">March 21, 2020</h4>
 
 </div>
 
@@ -516,7 +516,7 @@ library(semPlot)</code></pre>
 <h1><span class="header-section-number">1</span> Lab 9 - Begin</h1>
 <hr />
 <p>Read in data</p>
-<pre class="r"><code>lab_data &lt;- read_csv(here(&quot;data&quot;, &quot;els2002_data_subset3.csv&quot;))</code></pre>
+<pre class="r"><code>lab_data &lt;- read_csv(here(&quot;data&quot;, &quot;els_sub5_data.csv&quot;))</code></pre>
 <p>Preparations: subset,reorder, rename, and recode data</p>
 <pre class="r"><code>invar_data &lt;-  lab_data %&gt;% 
   select(bystlang, freelnch, byincome,                    # covariates 
