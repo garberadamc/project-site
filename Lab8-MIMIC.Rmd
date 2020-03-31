@@ -4,8 +4,13 @@ author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 subtitle: 'Adam Garber'
 output:
+  pdf_document:
+    df_print: kable
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
   html_document:
-    code_folding: hide
+    code_folding: show
     df_print: kable
     mathjax: default
     number_sections: yes
@@ -13,12 +18,6 @@ output:
     toc: yes
     fig_width: 9 
     fig_height: 6 
-  pdf_document:
-    code_folding: hide
-    df_print: kable
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.2)  15 MAR 2020 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.2)  30 MAR 2020 18:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**explore-prepare-mplus-auto.tex
-(./explore-prepare-mplus-auto.tex
+**Lab10.1-WLS-efa-cfa-invariance.tex
+(./Lab10.1-WLS-efa-cfa-invariance.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-02-25> (/Users/agarber/Library/TinyTeX/texmf-dist/te
 x/latex/base/article.cls
@@ -514,8 +514,8 @@ e.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count294
 \l__pdf_internal_box=\box66
-) (./explore-prepare-mplus-auto.aux)
-\openout1 = `explore-prepare-mplus-auto.aux'.
+) (./Lab10.1-WLS-efa-cfa-invariance.aux)
+\openout1 = `Lab10.1-WLS-efa-cfa-invariance.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
 LaTeX Font Info:    ... okay on input line 133.
@@ -566,9 +566,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 133.
 LaTeX Info: Redefining \pageref on input line 133.
 LaTeX Info: Redefining \nameref on input line 133.
-(./explore-prepare-mplus-auto.out) (./explore-prepare-mplus-auto.out)
+(./Lab10.1-WLS-efa-cfa-invariance.out) (./Lab10.1-WLS-efa-cfa-invariance.out)
 \@outlinefile=\write4
-\openout4 = `explore-prepare-mplus-auto.out'.
+\openout4 = `Lab10.1-WLS-efa-cfa-invariance.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -655,34 +655,61 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 135
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/agarber/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./explore-prepare-mplus-auto.toc
+) (./Lab10.1-WLS-efa-cfa-invariance.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 3.
+(Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 3.
+(Font)              <5> on input line 4.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-6.
+7.
 (/Users/agarber/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+) [1
+
+{/Users/agarber/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 16.
-[1
-
-{/Users/agarber/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 23.
+)
 \tf@toc=\write5
-\openout5 = `explore-prepare-mplus-auto.toc'.
+\openout5 = `Lab10.1-WLS-efa-cfa-invariance.toc'.
 
-[2]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-93.
+49.
 (/Users/agarber/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [3]
+) [2]
 
-Package xcolor Warning: Incompatible color definition on input line 325.
+Package xcolor Warning: Incompatible color definition on input line 269.
+
+
+Package xcolor Warning: Incompatible color definition on input line 283.
+
+
+Package xcolor Warning: Incompatible color definition on input line 283.
+
+
+Package xcolor Warning: Incompatible color definition on input line 295.
+
+[3]
+
+Package xcolor Warning: Incompatible color definition on input line 299.
+
+
+Package xcolor Warning: Incompatible color definition on input line 299.
+
+
+Package xcolor Warning: Incompatible color definition on input line 305.
+
+
+Package xcolor Warning: Incompatible color definition on input line 316.
+
+
+Package xcolor Warning: Incompatible color definition on input line 316.
+
+
+Package xcolor Warning: Incompatible color definition on input line 322.
 
 
 Package xcolor Warning: Incompatible color definition on input line 331.
@@ -690,334 +717,377 @@ Package xcolor Warning: Incompatible color definition on input line 331.
 
 Package xcolor Warning: Incompatible color definition on input line 331.
 
+<Lab10.1-WLS-efa-cfa-invariance_files/figure-latex/unnamed-chunk-4-1.pdf, id=19
+9, 351.3125pt x 321.2pt>
+File: Lab10.1-WLS-efa-cfa-invariance_files/figure-latex/unnamed-chunk-4-1.pdf G
+raphic file (type pdf)
+<use Lab10.1-WLS-efa-cfa-invariance_files/figure-latex/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: Lab10.1-WLS-efa-cfa-invariance_files/figure-latex/unna
+med-chunk-4-1.pdf  used on input line 333.
+(pdftex.def)             Requested size: 351.32234pt x 321.20901pt.
 
-Package xcolor Warning: Incompatible color definition on input line 333.
-
-
-Package xcolor Warning: Incompatible color definition on input line 338.
-
-
-Package xcolor Warning: Incompatible color definition on input line 338.
-
-
-Package xcolor Warning: Incompatible color definition on input line 343.
-
-
-Package xcolor Warning: Incompatible color definition on input line 355.
-
-
-Package xcolor Warning: Incompatible color definition on input line 355.
+Package xcolor Warning: Incompatible color definition on input line 335.
 
 [4]
 
-Package xcolor Warning: Incompatible color definition on input line 375.
+Package xcolor Warning: Incompatible color definition on input line 340.
 
 
-Package xcolor Warning: Incompatible color definition on input line 381.
+Package xcolor Warning: Incompatible color definition on input line 340.
 
 
-Package xcolor Warning: Incompatible color definition on input line 381.
+Package xcolor Warning: Incompatible color definition on input line 350.
 
 
-Package xcolor Warning: Incompatible color definition on input line 393.
-
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-405.
-(/Users/agarber/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-Package xcolor Warning: Incompatible color definition on input line 414.
+Package xcolor Warning: Incompatible color definition on input line 383.
 
 
-Package xcolor Warning: Incompatible color definition on input line 414.
+Package xcolor Warning: Incompatible color definition on input line 383.
 
 
-Package xcolor Warning: Incompatible color definition on input line 429.
+Package xcolor Warning: Incompatible color definition on input line 383.
+
+[5 <./Lab10.1-WLS-efa-cfa-invariance_files/figure-latex/unnamed-chunk-4-1.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 383.
 
 
-Package xcolor Warning: Incompatible color definition on input line 437.
+Package xcolor Warning: Incompatible color definition on input line 383.
 
 
-Package xcolor Warning: Incompatible color definition on input line 437.
-
-[5]
-
-Package xcolor Warning: Incompatible color definition on input line 472.
+Package xcolor Warning: Incompatible color definition on input line 399.
 
 
-Package xcolor Warning: Incompatible color definition on input line 480.
+Package xcolor Warning: Incompatible color definition on input line 444.
 
 
-Package xcolor Warning: Incompatible color definition on input line 480.
+Package xcolor Warning: Incompatible color definition on input line 444.
 
 
-Package xcolor Warning: Incompatible color definition on input line 482.
-
-
-Package xcolor Warning: Incompatible color definition on input line 487.
-
-
-Package xcolor Warning: Incompatible color definition on input line 487.
-
-
-Package xcolor Warning: Incompatible color definition on input line 489.
-
-
-Package xcolor Warning: Incompatible color definition on input line 494.
-
-
-Package xcolor Warning: Incompatible color definition on input line 494.
-
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 501.
-
-Package xcolor Warning: Incompatible color definition on input line 514.
-
-
-Package xcolor Warning: Incompatible color definition on input line 528.
-
-
-Package xcolor Warning: Incompatible color definition on input line 528.
-
-
-Package xcolor Warning: Incompatible color definition on input line 528.
+Package xcolor Warning: Incompatible color definition on input line 444.
 
 [6]
 
-Package xcolor Warning: Incompatible color definition on input line 528.
+Package xcolor Warning: Incompatible color definition on input line 444.
 
 
-Package xcolor Warning: Incompatible color definition on input line 528.
+Package xcolor Warning: Incompatible color definition on input line 444.
 
 
-Package xcolor Warning: Incompatible color definition on input line 545.
+Package xcolor Warning: Incompatible color definition on input line 454.
 
 
-Package xcolor Warning: Incompatible color definition on input line 565.
+Package xcolor Warning: Incompatible color definition on input line 499.
 
 
-Package xcolor Warning: Incompatible color definition on input line 565.
+Package xcolor Warning: Incompatible color definition on input line 499.
 
 
-Package xcolor Warning: Incompatible color definition on input line 580.
-
-
-Package xcolor Warning: Incompatible color definition on input line 598.
-
-
-Package xcolor Warning: Incompatible color definition on input line 598.
-
-
-Package xcolor Warning: Incompatible color definition on input line 598.
+Package xcolor Warning: Incompatible color definition on input line 499.
 
 [7]
 
-Package xcolor Warning: Incompatible color definition on input line 598.
+Package xcolor Warning: Incompatible color definition on input line 499.
 
 
-Package xcolor Warning: Incompatible color definition on input line 598.
+Package xcolor Warning: Incompatible color definition on input line 499.
 
 
-Package xcolor Warning: Incompatible color definition on input line 628.
+Package xcolor Warning: Incompatible color definition on input line 509.
 
 
-Package xcolor Warning: Incompatible color definition on input line 647.
+Package xcolor Warning: Incompatible color definition on input line 553.
 
 
-Package xcolor Warning: Incompatible color definition on input line 647.
+Package xcolor Warning: Incompatible color definition on input line 553.
 
 
-Package xcolor Warning: Incompatible color definition on input line 660.
+Package xcolor Warning: Incompatible color definition on input line 553.
 
 [8]
 
-Package xcolor Warning: Incompatible color definition on input line 671.
+Package xcolor Warning: Incompatible color definition on input line 553.
 
 
-Package xcolor Warning: Incompatible color definition on input line 671.
-
-
-Package xcolor Warning: Incompatible color definition on input line 676.
-
-
-Package xcolor Warning: Incompatible color definition on input line 682.
-
-
-Package xcolor Warning: Incompatible color definition on input line 682.
-
-
-Package xcolor Warning: Incompatible color definition on input line 687.
-
-
-Package xcolor Warning: Incompatible color definition on input line 695.
-
-
-Package xcolor Warning: Incompatible color definition on input line 695.
-
-
-Package xcolor Warning: Incompatible color definition on input line 700.
-
-
-Package xcolor Warning: Incompatible color definition on input line 706.
-
-
-Package xcolor Warning: Incompatible color definition on input line 706.
-
-
-Package xcolor Warning: Incompatible color definition on input line 711.
-
-
-Package xcolor Warning: Incompatible color definition on input line 722.
-
-
-Package xcolor Warning: Incompatible color definition on input line 722.
-
-
-Package xcolor Warning: Incompatible color definition on input line 731.
-
-[9]
-
-Package xcolor Warning: Incompatible color definition on input line 748.
-
-
-Package xcolor Warning: Incompatible color definition on input line 748.
-
-
-Package xcolor Warning: Incompatible color definition on input line 753.
-
-
-Package xcolor Warning: Incompatible color definition on input line 761.
-
-
-Package xcolor Warning: Incompatible color definition on input line 761.
-
-
-Package xcolor Warning: Incompatible color definition on input line 766.
-
-
-Package xcolor Warning: Incompatible color definition on input line 774.
-
-
-Package xcolor Warning: Incompatible color definition on input line 774.
+Package xcolor Warning: Incompatible color definition on input line 553.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 787.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 565.
+[9]
 
-Package xcolor Warning: Incompatible color definition on input line 789.
+Package xcolor Warning: Incompatible color definition on input line 624.
+
+
+Package xcolor Warning: Incompatible color definition on input line 702.
+
+
+Package xcolor Warning: Incompatible color definition on input line 702.
+
+
+Package xcolor Warning: Incompatible color definition on input line 702.
 
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 797.
+Package xcolor Warning: Incompatible color definition on input line 702.
 
 
-Package xcolor Warning: Incompatible color definition on input line 797.
+Package xcolor Warning: Incompatible color definition on input line 702.
 
 
-Package xcolor Warning: Incompatible color definition on input line 799.
-
-
-Package xcolor Warning: Incompatible color definition on input line 807.
-
-
-Package xcolor Warning: Incompatible color definition on input line 807.
-
-
-Package xcolor Warning: Incompatible color definition on input line 813.
-
-
-Package xcolor Warning: Incompatible color definition on input line 822.
-
-
-Package xcolor Warning: Incompatible color definition on input line 822.
-
-
-Package xcolor Warning: Incompatible color definition on input line 828.
-
-
-Package xcolor Warning: Incompatible color definition on input line 835.
-
-
-Package xcolor Warning: Incompatible color definition on input line 835.
-
-
-Package xcolor Warning: Incompatible color definition on input line 870.
+Package xcolor Warning: Incompatible color definition on input line 742.
 
 [11]
 
-Package xcolor Warning: Incompatible color definition on input line 894.
+Package xcolor Warning: Incompatible color definition on input line 821.
 
 
-Package xcolor Warning: Incompatible color definition on input line 894.
+Package xcolor Warning: Incompatible color definition on input line 821.
 
 
-Package xcolor Warning: Incompatible color definition on input line 907.
+Underfull \vbox (badness 10000) detected at line 821
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 929.
+Underfull \vbox (badness 10000) detected at line 821
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 929.
-
-
-Package xcolor Warning: Incompatible color definition on input line 929.
+Package xcolor Warning: Incompatible color definition on input line 821.
 
 [12]
 
-Package xcolor Warning: Incompatible color definition on input line 929.
+Package xcolor Warning: Incompatible color definition on input line 821.
 
 
-Package xcolor Warning: Incompatible color definition on input line 929.
+Package xcolor Warning: Incompatible color definition on input line 821.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 848--850
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 861.
 
 
 Package xcolor Warning: Incompatible color definition on input line 939.
 
 
-Package xcolor Warning: Incompatible color definition on input line 971.
+Package xcolor Warning: Incompatible color definition on input line 939.
 
 
-Package xcolor Warning: Incompatible color definition on input line 971.
+Package xcolor Warning: Incompatible color definition on input line 939.
 
 [13]
-<figures/UCSB_Navy_mark.png, id=359, 580.1675pt x 43.49583pt>
+
+Package xcolor Warning: Incompatible color definition on input line 939.
+
+
+Package xcolor Warning: Incompatible color definition on input line 939.
+
+
+Underfull \vbox (badness 10000) detected at line 939
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 939
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 939.
+
+[14]
+
+Package xcolor Warning: Incompatible color definition on input line 939.
+
+
+Package xcolor Warning: Incompatible color definition on input line 939.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 966--968
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 979.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+[15]
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+
+Underfull \vbox (badness 10000) detected at line 1056
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1056
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+[16]
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1056.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1089
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+[17]
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+
+Underfull \vbox (badness 10000) detected at line 1181
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1181
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+[18]
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1181.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1199.
+
+Package xcolor Warning: Incompatible color definition on input line 1207.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1219.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1258.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1258.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1258.
+
+[19]
+
+Package xcolor Warning: Incompatible color definition on input line 1258.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1258.
+
+</Users/agarber/github/project-site/figures/model_fit_table_wls.png, id=293, 15
+86.92876pt x 803.0pt>
+File: /Users/agarber/github/project-site/figures/model_fit_table_wls.png Graphi
+c file (type png)
+<use /Users/agarber/github/project-site/figures/model_fit_table_wls.png>
+Package pdftex.def Info: /Users/agarber/github/project-site/figures/model_fit_t
+able_wls.png  used on input line 1260.
+(pdftex.def)             Requested size: 328.8094pt x 166.38046pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1267.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1271.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1271.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
+[]$\T1/lmr/m/n/10 (+20) https : / / stats . idre . ucla . edu / mplus / faq / h
+ow -[] can -[] i -[] compute -[] a -[] chi -[] squared -[] test -[] for -[] nes
+ted -[] models -[] with -[] the -[]
+ []
+
+[20 </Users/agarber/github/project-site/figures/model_fit_table_wls.png>]
+<figures/UCSB_Navy_mark.png, id=306, 580.1675pt x 43.49583pt>
 File: figures/UCSB_Navy_mark.png Graphic file (type png)
 <use figures/UCSB_Navy_mark.png>
-Package pdftex.def Info: figures/UCSB_Navy_mark.png  used on input line 1001.
+Package pdftex.def Info: figures/UCSB_Navy_mark.png  used on input line 1316.
 (pdftex.def)             Requested size: 352.31702pt x 26.4136pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1003.
-[14 <./figures/UCSB_Navy_mark.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1003.
-(./explore-prepare-mplus-auto.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1003.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1003.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1318.
+[21 <./figures/UCSB_Navy_mark.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1318.
+(./Lab10.1-WLS-efa-cfa-invariance.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1318.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1318.
 
-Package rerunfilecheck Info: File `explore-prepare-mplus-auto.out' has not chan
-ged.
-(rerunfilecheck)             Checksum: 387056C535537711FFFE291ACD8896A0;10850.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1003.
+Package rerunfilecheck Info: File `Lab10.1-WLS-efa-cfa-invariance.out' has not 
+changed.
+(rerunfilecheck)             Checksum: EA4F3890473C68C8BCA13143EB92BFB5;7197.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1318.
  ) 
 Here is how much of TeX's memory you used:
- 14595 strings out of 482913
- 217251 string characters out of 5958408
- 509976 words of memory out of 5000000
- 29413 multiletter control sequences out of 15000+600000
- 587231 words of font info for 87 fonts, out of 8000000 for 9000
+ 14511 strings out of 482913
+ 216286 string characters out of 5958408
+ 511840 words of memory out of 5000000
+ 29365 multiletter control sequences out of 15000+600000
+ 591281 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,42p,920b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/agarber/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Us
-ers/agarber/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/aga
-rber/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/agarbe
-r/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/agarber/L
-ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/agarber/Libra
-ry/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/agarber/Library/T
-inyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/agarber/Library/TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/agarber/Library/TinyTeX/
-texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/agarber/Library/TinyTeX/tex
-mf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on explore-prepare-mplus-auto.pdf (14 pages, 285323 bytes).
+ 34i,7n,42p,924b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/agarber/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Use
+rs/agarber/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/agar
+ber/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/agarber
+/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/agarber/Libra
+ry/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/agarber/Library/
+TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/agarber/Library/Tin
+yTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/agarber/Library/TinyTe
+X/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/agarber/Library/TinyTeX/t
+exmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/agarber/Library/TinyTeX/texmf
+-dist/fonts/type1/public/lm/lmr12.pfb></Users/agarber/Library/TinyTeX/texmf-dis
+t/fonts/type1/public/lm/lmr17.pfb></Users/agarber/Library/TinyTeX/texmf-dist/fo
+nts/type1/public/lm/lmr7.pfb></Users/agarber/Library/TinyTeX/texmf-dist/fonts/t
+ype1/public/lm/lmr8.pfb></Users/agarber/Library/TinyTeX/texmf-dist/fonts/type1/
+public/lm/lmri10.pfb></Users/agarber/Library/TinyTeX/texmf-dist/fonts/type1/pub
+lic/lm/lmtk10.pfb></Users/agarber/Library/TinyTeX/texmf-dist/fonts/type1/public
+/lm/lmtt10.pfb></Users/agarber/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
+/lmtti10.pfb>
+Output written on Lab10.1-WLS-efa-cfa-invariance.pdf (21 pages, 459230 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
- 398 compressed objects within 4 object streams
- 127 named destinations out of 1000 (max. 500000)
- 10590 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 385 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 12536 words of extra memory for PDF output out of 14400 (max. 10000000)
 

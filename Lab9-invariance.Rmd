@@ -1,12 +1,12 @@
 
 ---
-title: "Lab9 Factor Analysis - Measurement Invariance"
+title: "Lab9 - Measurement Invariance"
 author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
 subtitle: '**Adam Garber**'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
-    code_folding: hide
+    code_folding: show
     df_print: kable
     mathjax: default
     number_sections: yes
@@ -15,7 +15,6 @@ output:
     fig_width: 9 
     fig_height: 6 
   pdf_document:
-    code_folding: hide
     df_print: kable
     number_sections: yes
     toc: yes

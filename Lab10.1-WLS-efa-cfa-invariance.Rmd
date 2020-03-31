@@ -1,11 +1,11 @@
 ---
-title: "Lab10.1 Factor Analysis - Weighted Least Squares (WLS) "
+title: "Lab10.1 - Weighted Least Squares (WLS) "
 author: "Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson"
 subtitle: '**Adam Garber**'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
-    code_folding: hide
+    code_folding: show
     df_print: kable
     mathjax: default
     number_sections: yes
@@ -35,8 +35,8 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 
 # Getting started: Rprojects, Rmarkdown, Git-Github
 
-- [$\color{blue}{\text{R-studio, Projects, Scripts: Go here}}$](https://github.com/allisonhorst/esm-206-labs-2019/tree/master/lab_2_materials)
-- [$\color{blue}{\text{Rmarkdown basics tutorial: Go here here}}$](https://docs.google.com/presentation/d/1vtDVWs4GUwjwUgr8q0V6c1a6MUzMfDPsHfQha66shxE/edit#slide=id.g645929aad8_0_84)
+- [$\color{blue}{\text{R-studio, R-Projects, Scripts: Go here}}$](https://rstudio-conf-2020.github.io/r-for-excel/rstudio.html)
+- [$\color{blue}{\text{Rmarkdown basics tutorial: Go here (also chapters 3 and 4 from above link) here}}$](https://rmarkdown.rstudio.com/lesson-1.html)
 - [$\color{blue}{\text{Connect Git-Hithub with R-studio and download Repositories: Go here}}$](https://docs.google.com/document/d/1zx2upJJqFZe94O3BQSMI56Z76s3haLXC0otKSpcZaJQ/edit)
 
 ---------------------------------------------------
@@ -886,7 +886,7 @@ Mean differences: Females are...
 ---------------------------------------------------
 
 ## Read into R summary of all models
-```{r, eval=TRUE}
+```{r}
 all_models <- readModels(here("wls_invar"))
 ```
 
@@ -894,7 +894,7 @@ all_models <- readModels(here("wls_invar"))
 
 ## Extract relevant data and generate table
 
-```{r, eval=TRUE}
+```{r}
 
 invar_summary <- LatexSummaryTable(all_models, 
                  keepCols=c("Filename", "Parameters","ChiSqM_Value", "CFI","TLI",
@@ -935,12 +935,19 @@ model_table
 
 ```
 
+
+```{r, echo=FALSE, eval=TRUE, out.width = "70%", out.height= "70%", fig.align = "center"}
+knitr::include_graphics(here("figures", "model_fit_table_wls.png"))
+```
+
+
 ---------------------------------------------------
 
 ## Save table  
 ```{r}
       
 model_table %>% gtsave("model_fit_table_wls.png", path = here("figures"))
+
 ```
 
 ---------------------------------------------------

@@ -11,7 +11,7 @@
 
 <meta name="author" content="Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson" />
 
-<meta name="date" content="2020-03-21" />
+<meta name="date" content="2020-03-30" />
 
 <title>Lab 7 - Principle Component Analysis (PCA)</title>
 
@@ -366,7 +366,7 @@ summary {
 <h1 class="title toc-ignore">Lab 7 - Principle Component Analysis (PCA)</h1>
 <h3 class="subtitle"><strong>Adam Garber</strong></h3>
 <h4 class="author">Factor Analysis ED 216B - Instructor: Karen Nylund-Gibson</h4>
-<h4 class="date">March 21, 2020</h4>
+<h4 class="date">March 30, 2020</h4>
 
 </div>
 
@@ -376,9 +376,12 @@ summary {
 <div id="outline-lab-7---three-examples-of-principle-component-analysis" class="section level3">
 <h3>Outline lab 7 - three examples of Principle Component Analysis:</h3>
 <ol style="list-style-type: decimal">
-<li>10th grade student demographics &amp; school safety (ELS, 2002 unrestricted data)</li>
+<li>10th grade student demographics &amp; school safety (ELS, 2002 public-use data)</li>
+</ol>
+<p>Next two PCA examples included are adapted from Allison Horst’s ESM-206 course at UCSB (Horst, 2020):</p>
+<ol start="2" style="list-style-type: decimal">
 <li>California pollution burden example (from: OEHHA)</li>
-<li>Combine pollution data from above with California county demographic data (from: CA census 2010)</li>
+<li>Combined pollution data &amp; California county demographic data (from: CA census 2010)</li>
 </ol>
 </div>
 </div>
@@ -454,8 +457,8 @@ lab_sub2 &lt;- lab_sub1 %&gt;%
 # write a CSV datafile of the new subset with renamed columns (will use for lab 8)
 write_csv(lab_sub2, here(&quot;data&quot;, &quot;lab7-8_els2002_data_subset.csv&quot;))</code></pre>
 </div>
-<div id="investigate-missingness-naniar-data-summary-with-skimr" class="section level3">
-<h3>Investigate missingness {<code>naniar</code>} &amp; data summary with {<code>skimr</code>}</h3>
+<div id="investigate-missingness-naniar-make-data-summary-with-skimr" class="section level3">
+<h3>Investigate missingness {<code>naniar</code>} &amp; make data summary with {<code>skimr</code>}</h3>
 <pre class="r"><code># Plot number of missings by variable
 gg_miss_var(lab_sub2)
 

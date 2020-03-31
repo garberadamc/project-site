@@ -16,9 +16,12 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 
 ### Outline lab 7 - three examples of Principle Component Analysis:
 
-1. 10th grade student demographics & school safety (ELS, 2002 unrestricted data)
+1. 10th grade student demographics & school safety (ELS, 2002 public-use data)
+
+Next two PCA examples included are adapted from Allison Horst's ESM-206 course at UCSB (Horst, 2020): 
+
 2. California pollution burden example (from: OEHHA)
-3. Combine pollution data from above with California county demographic data (from: CA census 2010)
+3. Combined pollution data & California county demographic data (from: CA census 2010)
 
 ## ____________________________________
 
@@ -100,7 +103,7 @@ write_csv(lab_sub2, here("data", "lab7-8_els2002_data_subset.csv"))
 
 ```
 
-### Investigate missingness {`naniar`} & data summary with {`skimr`}
+### Investigate missingness {`naniar`} & make data summary with {`skimr`}
 ```{r}
 # Plot number of missings by variable
 gg_miss_var(lab_sub2)
