@@ -57,7 +57,7 @@ ______________________________________________
 - This is because `MplusAutomation` involves specifying many filepaths.
 2. THE {`here`} package: To make filepaths unbreakable (reproducible) 
 - The same code will work across operating systems
-3. PROJECT SUB-FOLDERS: Thoughfully organize files in sub-folders. 
+3. PROJECT SUB-FOLDERS: Thoughtfully organize files in sub-folders. 
 - This is **critical**, by the end of the quarter the number of Mplus files for an assignment will multiply rapidly
 4. LOCATION OF PROJECT FOLDERS: on **desktop** or within a **single enclosing folder**. 
 - There is a limitation with the "mplusObject" function due to the fact that Mplus only reads the first 90 columns in each line. 
@@ -78,10 +78,10 @@ lab_tools <- tribble(
  #---------------|-------------------|----------------|,
  "{MplusAutomation} package" ,  "Current capabilities supporting full SEM modeling" , "Flexibility (approaching infinite) ",
  "R Project" ,  "Unbreakable file paths & neatness" , "Reproducibility (kindness to your future self)",
- "{tidyverse} package" ,  "Intuitive/descriptive function names" , "Accesability to new users",
+ "{tidyverse} package" ,  "Intuitive/descriptive function names" , "Accessibility to new users",
  "{here} package" , "Unbreakable/consistent file paths across OS" , "Reproducibility (for Science's sake!)",
- "{haven} package" ,  "Viewable metadata in R from SPSS datafiles" , "Getting to know your measures",
- "{ggplot2} package" ,  "Beautiful, customizable, reporoducible figures" , "Publication quality data vizualizations",
+ "{haven} package" ,  "View-able metadata in R from SPSS datafiles" , "Getting to know your measures",
+ "{ggplot2} package" ,  "Beautiful, customizable, reproducible figures" , "Publication quality data visualizations",
  "pipe operator (%>%) notation", "Ease of reading/writing scripts", "e.g., first() %>% and_then() %>% and_finally()"
 )
 
@@ -332,7 +332,7 @@ ______________________________________________
 - Naming conventions: **Be consistent!** 
 - I use the style lower snake case (e.g., this_is_lower_snake_case)
 - Annotate code generously
-- Let your code breath: use return often to spread code chuncks out vertically (dense paragraphs of code are a headache to look at)
+- Let your code breath: use return often to spread code chunks out vertically (dense paragraphs of code are a headache to look at)
 
 ______________________________________________
 
