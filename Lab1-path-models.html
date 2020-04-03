@@ -11,7 +11,7 @@
 
 <meta name="author" content="Adam Garber" />
 
-<meta name="date" content="2020-04-02" />
+<meta name="date" content="2020-04-03" />
 
 <title>Lab 1 - Path Models, Indirect Effects, and Single Indicator Factors</title>
 
@@ -366,7 +366,7 @@ summary {
 <h1 class="title toc-ignore">Lab 1 - Path Models, Indirect Effects, and Single Indicator Factors</h1>
 <h3 class="subtitle">Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson</h3>
 <h4 class="author"><em>Adam Garber</em></h4>
-<h4 class="date">April 02, 2020</h4>
+<h4 class="date">April 03, 2020</h4>
 
 </div>
 
@@ -419,7 +419,8 @@ library(reshape2)
 library(janitor)
 library(ggridges)
 library(DiagrammeR)
-library(semPlot)</code></pre>
+library(semPlot)
+library(sjPlot)</code></pre>
 <hr />
 <p>Keyboard shortcuts</p>
 <ul>
@@ -721,9 +722,10 @@ semPaths(order2_model,
 <p>create a mean score variable called <code>mean_score</code></p>
 <pre class="r"><code>tidy_data2 &lt;- tidy_data %&gt;%
   mutate(mean_scr = rowSums(select(., late:skipped))/2)</code></pre>
-<p>Reliability = .8 (set to) Variance = 0.770 (mean_score)</p>
+<pre><code>- Reliability = .8 (set to)
+- Variance = .77 (mean_score)</code></pre>
 <p>Function to fix the residual variance</p>
-<pre class="r"><code># SD = 0.770^(1/2) = 0.877
+<pre class="r"><code># r = reliability, v = variance
 
 resid_var &lt;- function(r,v) {  
   
@@ -731,10 +733,10 @@ resid_var &lt;- function(r,v) {
     return(y)
 }
 
-y01 &lt;- resid_var(.8,.877)
+y01 &lt;- resid_var(.8,.77)
 
 print(y01)</code></pre>
-<pre><code>## [1] 0.1754</code></pre>
+<pre><code>## [1] 0.154</code></pre>
 <hr />
 <p>Run model with single indicator factor</p>
 <pre class="r"><code>m2_sif  &lt;- mplusObject(
@@ -754,7 +756,7 @@ print(y01)</code></pre>
     
     SIF by mean_scr@1; ! fix factor loading to 1
 
-    mean_scr@.175;     ! fix residual variance
+    mean_scr@.154;     ! fix residual variance
     
     ! structural model
     mth_test on factor1 SIF;

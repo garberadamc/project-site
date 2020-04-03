@@ -4,8 +4,8 @@ author: "*Adam Garber*"
 subtitle: 'Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -97,6 +97,7 @@ library(janitor)
 library(ggridges)
 library(DiagrammeR)
 library(semPlot)
+library(sjPlot)
 ```
 
 ______________________________________________
@@ -506,12 +507,12 @@ tidy_data2 <- tidy_data %>%
 
 ```
 
-Reliability = .8 (set to)
-Variance = 0.770 (mean_score)
+    - Reliability = .8 (set to)
+    - Variance = .77 (mean_score)
 
 Function to fix the residual variance 
 ```{r}
-# SD = 0.770^(1/2) = 0.877
+# r = reliability, v = variance
 
 resid_var <- function(r,v) {  
   
@@ -519,7 +520,7 @@ resid_var <- function(r,v) {
     return(y)
 }
 
-y01 <- resid_var(.8,.877)
+y01 <- resid_var(.8,.77)
 
 print(y01)
 ```
@@ -546,7 +547,7 @@ m2_sif  <- mplusObject(
     
     SIF by mean_scr@1; ! fix factor loading to 1
 
-    mean_scr@.175;     ! fix residual variance
+    mean_scr@.154;     ! fix residual variance
     
     ! structural model
     mth_test on factor1 SIF;
