@@ -4,8 +4,8 @@ author: "*Adam Garber*"
 subtitle: 'Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +33,9 @@ ______________________________________________
 
 ______________________________________________
 
-```{r, eval=TRUE, echo=FALSE, results='asis'}
+#### $\color{purple}{\text{Tools for reproducibility:}}$
+
+```{r, eval=TRUE, echo=FALSE}
 
 library(kableExtra);library(tidyverse)
 
@@ -50,21 +52,28 @@ lab_tools <- tribble(
 )
 
 lab_tools %>% 
-  kable("latex", booktabs = T) %>% 
+  kable(booktabs = T) %>% 
   kable_styling(latex_options = c("striped", "scale_down", linesep = ""), 
                 full_width = F,
                 position = "left")
 ```
 
-### $\color{purple}{\text{Creating an R-Project}}$
+______________________________________________
 
-Create a **project folder** (that will enclose all files associated with a given lab or assignment)
+
+### $\color{purple}{\text{Creating a version-controlled R-Project by downloading repository from Github}}$
+
+Download ropository here: $\color{blue}{\text{https://github.com/garberadamc/SEM-Lab1}}$
+
+#### Create a class folder (to save labs and assignments)
 
 a. click "NEW PROJECT" (upper right corner of window)
-b. choose option "NEW DIRECTORY"
-c. choose location of project ($\color{red}{\text{too many nested folders will result in filepath error}}$)
+b. choose option **Version Control**
+c. choose option **Git**
+d. paste the repository web URL path coppied from the `clone or download` button on the repo page
+c. choose location of the R-Project ($\color{red}{\text{too many nested folders will result in filepath error}}$)
 
-Within R-studio under the files pane (bottom right)
+#### Create sub-folders within the project folder. In R-studio under the files pane ...
 
 a. click "New Folder" and name folder "data"
 b. click "New Folder" and name folder "mplus_files"
