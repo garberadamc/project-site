@@ -4,6 +4,11 @@ author: "*Adam Garber*"
 subtitle: 'Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
+  pdf_document:
+    df_print: kable
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
   html_document:
     code_folding: show
     df_print: kable
@@ -13,11 +18,6 @@ output:
     toc: yes
     fig_width: 9 
     fig_height: 6 
-  pdf_document:
-    df_print: kable
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -424,7 +424,116 @@ knitr::include_graphics(here("figures", "m3_path.png"))
 
 ______________________________________________
 
+## Estimate model 4
+
+______________________________________________
+
+```{r, eval=FALSE}
+
+m4_path  <- mplusObject(
+  TITLE = "m4 model indirect - Lab 1", 
+  VARIABLE = 
+   "usevar =
+    str               ! covariate
+    elpct             ! mediator
+    mealpct           ! mediator
+    mathscr           ! outcome", 
+  
+  DEFINE = 
+    "int_ab = compstu*mealpct;  ! create interaction term" ,
+  
+  ANALYSIS = 
+    "estimator = MLR" ,
+  
+  MODEL = 
+   "mathscr on str;             ! direct path (c')
+    mathscr on elpct mealpct;   ! b paths
+    elpct mealpct on str;       ! a paths
+    
+    Model indirect:
+    mathscr ind str;" ,
+  
+  OUTPUT = "sampstat standardized modindices (ALL)",
+  
+  usevariables = colnames(path_vars),   
+  rdata = path_vars)                    
+
+m4_path_fit <- mplusModeler(m4_path,
+                     dataout=here("mplus_files", "Lab2.dat"),       
+                    modelout=here("mplus_files", "m4_path_Lab2.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+View path diagram for model 4 with standardized estimates (using the Diagrammer in Mplus)
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "m4_path.png"))
+
+```
+
+______________________________________________
+
+## Estimate model 5
+
+______________________________________________
+
+add modification statement - correlate mediators `mealpct with elpct`
+```{r, eval=FALSE}
+
+m5_path  <- mplusObject(
+  TITLE = "m5 model indirect - Lab 1", 
+  VARIABLE = 
+   "usevar =
+    str               ! covariate
+    elpct             ! mediator
+    mealpct           ! mediator
+    mathscr           ! outcome", 
+  
+  DEFINE = 
+    "int_ab = compstu*mealpct;  ! create interaction term" ,
+  
+  ANALYSIS = 
+    "estimator = MLR" ,
+  
+  MODEL = 
+   "mathscr on str;             ! direct path (c')
+    mathscr on elpct mealpct;   ! b paths
+    elpct mealpct on str;       ! a paths
+    
+    mealpct with elpct          ! modification statement 
+    
+    Model indirect:
+    mathscr ind str; " ,
+  
+  OUTPUT = "sampstat standardized modindices (ALL)",
+  
+  usevariables = colnames(path_vars),   
+  rdata = path_vars)                    
+
+m5_path_fit <- mplusModeler(m5_path,
+                     dataout=here("mplus_files", "Lab2.dat"),       
+                    modelout=here("mplus_files", "m5_path_Lab2.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+View path diagram for model 5 with standardized estimates (using the Diagrammer in Mplus)
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "m5_path.png"))
+
+```
+
+______________________________________________
+
 # Compare model fit 
+
+______________________________________________
 
 Read into R summary of all models
 ```{r, eval=FALSE}
