@@ -1,0 +1,493 @@
+---
+title: "Lab 2 - Competing Path Models"
+author: "*Adam Garber*"
+subtitle: 'Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson'
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    code_folding: show
+    df_print: kable
+    mathjax: default
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+    fig_width: 9 
+    fig_height: 6 
+  pdf_document:
+    df_print: kable
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, tidy = TRUE)
+
+```
+
+<style type="text/css">
+body{ font-size: 20px; max-width: 1600px; margin: auto; padding: 1em; }
+code.r{ font-size: 18px; }
+p { padding-top: 10px; padding-bottom: 10px; }
+pre { font-size: 16px; }
+</style>
+
+______________________________________________
+
+# Lab preparation
+
+______________________________________________
+
+## $\color{purple}{\text{Creating a version-controlled R-Project by downloading repository from Github}}$
+
+Download ropository here: $\color{blue}{\text{https://github.com/garberadamc/SEM-Lab2}}$
+
+On the Github repository webpage:
+
+a. `fork` your own `branch` of the lab repository 
+b. copy the repository web URL address from the `clone or download` menu
+
+Within R-Studio:
+
+c. click "NEW PROJECT" (upper right corner of window)
+d. choose option `Version Control`
+e. choose option `Git`
+f. paste the repository web URL path coppied from the `clone or download` menu on Github page
+g. choose location of the R-Project ($\color{red}{\text{too many nested folders will result in filepath error}}$)
+
+______________________________________________
+
+Example of competing path models study from [$\color{blue}{\text{Nishina, Juvonen, Witkow (2005)}}$](https://www.tandfonline.com/doi/pdf/10.1207/s15374424jccp3401_4)
+
+```{r, echo=FALSE, eval=TRUE, out.width = "100%", out.height= "100%", fig.pos="h"}
+library(here)
+knitr::include_graphics(here("figures", "fig1_Nishina.png"))
+```
+
+*figure*. Picture adapted from Nishina, Juvonen, Witkow (2005)
+
+______________________________________________
+
+## Data source: 
+
+This lab exercise utilizes the *California Test Score Data Set 1998-1999* from the California Department of Education (Stock, James, and Watson, 2003) [$\color{blue}{\text{See documentation here}}$](https://vincentarelbundock.github.io/Rdatasets/doc/Ecdat/Caschool.html)
+
+This dataset is available via the R-package {`Ecdat`} and can be directly loaded into the R environment. 
+
+______________________________________________
+
+## List of over 1000 datasets available in R packages
+
+This list was compiled by Vincent Arel-Bundock and can be found here:
+
+[$\color{blue}{\text{https://vincentarelbundock.github.io/Rdatasets/datasets.html}}$](https://vincentarelbundock.github.io/Rdatasets/datasets.html)
+
+______________________________________________
+
+Install the “rhdf5” package to read gh5 files
+```{r, eval=FALSE}
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+ BiocManager::install("rhdf5")
+ 
+```
+
+______________________________________________
+
+Load packages
+```{r, eval=TRUE}
+
+library(MplusAutomation)
+library(haven)
+library(rhdf5)
+library(tidyverse)
+library(here)
+library(corrplot)
+library(kableExtra)
+library(reshape2)
+library(janitor)
+library(ggridges)
+library(DiagrammeR)
+library(semPlot)
+library(sjPlot)
+library(Ecdat)
+library(gt)
+library(gtsummary)
+```
+
+______________________________________________
+
+# Begin lab 2 exercise
+
+______________________________________________
+
+Read the dataframe into your R-environment from package {`Ecdat`}
+```{r}
+
+data(Caschool)
+
+ca_schools <- as.data.frame(Caschool)
+
+
+
+```
+
+Look at the data with `glimpse`
+
+```{r, eval=FALSE}
+
+glimpse(ca_schools)
+
+```
+
+______________________________________________
+
+Subset variables to use in path model analyses with `select`
+```{r}
+
+path_vars <- ca_schools %>% 
+  select(str, expnstu, compstu, elpct, mealpct,
+         readscr, mathscr, testscr)
+
+```
+
+______________________________________________
+
+# Explore the data
+
+K through 8th grade schools in California ($N = 420$)
+
+Take a look at focal variables, make a `tribble` table
+```{r, eval=TRUE}
+
+var_table <- tribble(
+   ~"Name",    ~"Labels",                                     
+ #-----------|----------------------------------------------|,
+  "str"       , "student teacher ratio"                      ,
+  "expnstu"   , "expenditure per student"                    ,
+  "compstu"   , "computer per student"                       ,
+  "elpct"     , "percent of English learners"                ,
+ "mealpct"    , "percent qualifying for reduced-price lunch" ,
+  "readscr"   , "average reading score"                      ,
+  "mathscr"   , "average math score"                         ,
+  "testscr"   , "average test score (read.scr+math.scr)/2"   )
+
+var_table %>% 
+  kable(booktabs = T, linesep = "") %>% 
+  kable_styling(latex_options = c("striped"), 
+                full_width = F,
+                position = "left")
+```
+
+______________________________________________
+
+check some basic descriptives with the {`gtsummary`} package
+```{r}
+
+table1 <- tbl_summary(path_vars,
+                      statistic = list(all_continuous() ~ "{mean} ({sd})"),
+                      missing = "no" ) %>%
+  bold_labels() 
+
+table1
+```
+
+______________________________________________
+
+look at shape of variable distributions
+```{r}
+melt(path_vars) %>%                  
+  ggplot(., aes(x=value, label=variable)) +   
+  geom_density(aes(fill = variable),
+               alpha = .5, show.legend = FALSE) + 
+  facet_wrap(~variable, scales = "free")  +
+  theme_minimal()
+```
+
+______________________________________________
+
+look at correlation matrix with {`corrplot`}
+
+```{r}
+
+p_cor <- cor(path_vars, use = "pairwise.complete.obs")
+
+corrplot(p_cor, 
+         method = "color",
+         type = "upper", 
+         tl.col="black", 
+         tl.srt=45)
+
+```
+
+______________________________________________
+
+# Specifying path models using {`MplusAutomation`}
+
+recall what the unrestricted variance-covariance matrix **looks** like 
+
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "unrestrict_model.png"))
+```
+
+*figure*. Unrestricted variance covariance matrix picture from {`openMX`} video tutorial. 
+
+______________________________________________
+
+## Estimate model 1 
+
+Indirect path model:
+
+1. covariate: ratio of computers to students (`compstu`)
+2.  mediator: percent qualifying for reduced-price lunch (`mealpct`)
+3.   outcome: average math score (`mathscr`)
+
+______________________________________________
+
+Path diagram model 1
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "model1_indirect.png"))
+```
+
+______________________________________________
+
+```{r, eval=FALSE}
+
+m1_path  <- mplusObject(
+  TITLE = "m1 model indirect - Lab 1", 
+  VARIABLE = 
+   "usevar =
+    compstu         ! covariate
+    mealpct         ! mediator 
+    mathscr;        ! outcome",            
+  
+  ANALYSIS = 
+    "estimator = MLR" ,
+  
+  MODEL = 
+   "mathscr on compstu;         ! direct path (c')
+    mathscr on mealpct;         ! b path
+    mealpct on compstu;         ! a path
+    
+    Model indirect:
+    mathscr ind compstu;" ,
+  
+  OUTPUT = "sampstat standardized modindices (ALL)",
+  
+  usevariables = colnames(path_vars),   
+  rdata = path_vars)                    
+
+m1_path_fit <- mplusModeler(m1_path,
+                     dataout=here("mplus_files", "Lab2.dat"),       
+                    modelout=here("mplus_files", "m1_path_Lab2.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+View path diagram for model 1 with standardized estimates (using Diagrammer in Mplus)
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "m1_path.png"))
+
+```
+
+______________________________________________
+
+## Estimate model 2
+
+change variable status (**switch mediator and covariate variables**)
+
+Indirect path model:
+
+1. covariate: percent qualifying for reduced-price lunch (`mealpct`)
+2.  mediator: ratio of computers to students (`compstu`)
+3.   outcome: average math score (`mathscr`)
+
+______________________________________________
+
+Path diagram model 2
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "model2_indirect.png"))
+```
+
+______________________________________________
+
+
+```{r, eval=FALSE}
+
+m2_path  <- mplusObject(
+  TITLE = "m1 model indirect - Lab 1", 
+  VARIABLE = 
+   "usevar =
+    mealpct           ! covariate
+    compstu           ! mediator 
+    mathscr;          ! outcome",            
+  
+  ANALYSIS = 
+    "estimator = MLR" ,
+  
+  MODEL = 
+   "mathscr on compstu;         ! direct path (c')
+    mathscr on mealpct;         ! b path
+    mealpct on compstu;         ! a path
+    
+    Model indirect:
+    mathscr ind compstu;" ,
+  
+  OUTPUT = "sampstat standardized modindices (ALL)",
+  
+  usevariables = colnames(path_vars),   
+  rdata = path_vars)                    
+
+m2_path_fit <- mplusModeler(m2_path,
+                     dataout=here("mplus_files", "Lab2.dat"),       
+                    modelout=here("mplus_files", "m2_path_Lab2.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+View path diagram for model 2 with standardized estimates (using the Diagrammer in Mplus)
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "m2_path.png"))
+
+```
+
+______________________________________________
+
+## Estimate model 3 
+
+Path model with interaction (moderation):
+
+1. covariate-moderator: percent qualifying for reduced-price lunch (`mealpct`)
+2. covariate-moderator: ratio of computers to students (`compstu`)
+3. outcome: average math score (`mathscr`)
+
+______________________________________________
+
+Path diagram model 3
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "model3_interact.png"))
+```
+
+______________________________________________
+
+```{r, eval=FALSE}
+
+m3_path  <- mplusObject(
+  TITLE = "m1 model indirect - Lab 1", 
+  VARIABLE = 
+   "usevar =
+    compstu           ! covariate-moderator
+    mealpct           ! covariate-moderator
+    mathscr           ! outcome
+    int_ab;           ! interaction term ", 
+  
+  DEFINE = 
+    "int_ab = compstu*mealpct;  ! create interaction term" ,
+  
+  ANALYSIS = 
+    "estimator = MLR" ,
+  
+  MODEL = 
+   "mathscr on compstu mealpct int_ab; ",
+  
+  OUTPUT = "sampstat standardized modindices (ALL)",
+  
+  usevariables = colnames(path_vars),   
+  rdata = path_vars)                    
+
+m3_path_fit <- mplusModeler(m3_path,
+                     dataout=here("mplus_files", "Lab2.dat"),       
+                    modelout=here("mplus_files", "m3_path_Lab2.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+View path diagram for model 3 with standardized estimates (using the Diagrammer in Mplus)
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "m3_path.png"))
+
+```
+
+______________________________________________
+
+# Compare model fit 
+
+Read into R summary of all models
+```{r, eval=FALSE}
+all_models <- readModels(here("mplus_files"))
+```
+
+Extract fit indice data from output files
+```{r, eval=FALSE}
+
+summary_fit <- LatexSummaryTable(all_models, 
+                 keepCols=c("Filename", "Parameters","ChiSqM_Value", "CFI","TLI",
+                            "SRMR", "RMSEA_Estimate", "RMSEA_90CI_LB", "RMSEA_90CI_UB"), 
+                 sortBy = "Filename")
+```
+
+Create a customizable table using the {`gt`} package
+```{r, eval=FALSE}
+
+model_table <- summary_fit %>% 
+  gt() %>% 
+  tab_header(
+    title = "Fit Indices",  # Add a title
+    subtitle = ""           # And a subtitle
+  ) %>%
+  tab_options(
+    table.width = pct(80)
+  ) %>%
+  tab_footnote(
+    footnote = "California Test Score Data Set 1998-1999",
+    location = cells_title()
+  ) %>%
+  cols_label(
+    Filename = "Model",
+    Parameters =  "Par",
+    ChiSqM_Value = "ChiSq",
+    RMSEA_Estimate = "RMSEA",
+    RMSEA_90CI_LB = "Lower CI",
+    RMSEA_90CI_UB = "Upper CI")
+    
+model_table
+
+```
+
+---------------------------------------------------
+
+# End of Lab 2
+
+---------------------------------------------------
+
+# References
+
+Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+
+Horst, A. (2020). Course & Workshop Materials. GitHub Repositories, https://https://allisonhorst.github.io/
+
+Ingels, S. J., Pratt, D. J., Herget, D. R., Burns, L. J., Dever, J. A., Ottem, R., ... & Leinwand, S. (2011). High School Longitudinal Study of 2009 (HSLS: 09): Base-Year Data File Documentation. NCES 2011-328. National Center for Education Statistics.
+
+Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
+
+R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/
+
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+---------------------------------------------------
+
+![](figures/UCSB_Navy_mark.png){ width=75% }
