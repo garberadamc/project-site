@@ -103,8 +103,6 @@ __________________________________________________________
 
 <br>
 
-## __________________________________________________________
-
 ## Lab materials: Applied Mixture Modeling (UCSB, ED 216G) 
 
 - Lab 1: [Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)](https://garberadamc.github.io/project-site/lca-enumeration){target="_blank"}

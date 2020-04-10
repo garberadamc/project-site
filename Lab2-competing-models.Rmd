@@ -4,11 +4,6 @@ author: "*Adam Garber*"
 subtitle: 'Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    df_print: kable
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
   html_document:
     code_folding: show
     df_print: kable
@@ -18,6 +13,11 @@ output:
     toc: yes
     fig_width: 9 
     fig_height: 6 
+  pdf_document:
+    df_print: kable
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -74,6 +74,7 @@ This lab exercise utilizes the *California Test Score Data Set 1998-1999* from t
 
 This dataset is available via the R-package {`Ecdat`} and can be directly loaded into the R environment. 
 
+**Note:** All models specified in the following exercise are for demonstation only and are **not** theoretically justified or valid. 
 ______________________________________________
 
 ## List of over 1000 datasets available in R packages
