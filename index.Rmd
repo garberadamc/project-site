@@ -95,7 +95,7 @@ __________________________________________________________
 
 - Lab 1: [Path Analysis - Multiple Indirect Path Model - Single Indicator Factor Model](https://garberadamc.github.io/project-site/Lab1-path-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab1-path-models.pdf){target="_blank"}
 - Lab 2: [Competing Path Models](https://garberadamc.github.io/project-site/Lab2-competing-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab2-competing-models.pdf){target="_blank"}
-- Lab 3:
+- Lab 3: [Moderation](https://garberadamc.github.io/project-site/Lab3-moderation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab3-moderation.pdf){target="_blank"}
 - Lab 4:
 - Lab 5:
 
