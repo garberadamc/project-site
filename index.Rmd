@@ -62,7 +62,7 @@ My name is Adam Garber and I am a PhD student in Education at the University of 
 
 ## Lab materials: Factor Analysis  (UCSB, ED 216B) 
 
-**Data subsets for lab exercises (public use data):**
+**Data subsets for lab exercises using public use data:**
 
 - [Lab1: explore_lab_data.sav](https://garberadamc.github.io/project-site/data/explore_lab_data.sav)
 - [Lab2 & 4: els_sub1_spss.sav](https://garberadamc.github.io/project-site/data/els_sub1_spss.sav)
@@ -75,16 +75,25 @@ My name is Adam Garber and I am a PhD student in Education at the University of 
 __________________________________________________________
 
 - Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto.pdf){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/explore_lab_data.sav)
 - Lab 2: [Exploratory Factor Analysis (EFA) - Univariate and Multivariate Diagnostics.](https://garberadamc.github.io/project-site/Lab2-EFA){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_sub1_spss.sav)
 - Lab 3: [EFA - R coding excercise: What's Missing?](https://garberadamc.github.io/project-site/Lab3-EFA-what-s-missing){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_fa_ready_sub2.csv)
 - Lab 4: [Splitting samples, Iterators, and Dealing with Large Datasets](https://garberadamc.github.io/project-site/Lab4-school-trouble){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_sub1_spss.sav)
 - Lab 5: [EFA Rotation - Confirmatory Factor Analysis (CFA) - Path Diagrams](https://garberadamc.github.io/project-site/Lab5-rotation-efa){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_sub3_school_trouble.csv)
 - Lab 6: [CFA *Roulette* - A Game of Chance](https://garberadamc.github.io/project-site/Lab6-CFA-Roulette){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_sub4.csv)
 - Lab 7: [Principle Component Analysis - PCA](https://garberadamc.github.io/project-site/Lab7-PCA){target="_blank"}
-- Lab 9: [Measurement Invariance](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"}
-- Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC){target="_blank"}[$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab8-MIMIC.pdf){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_sub4.csv)
+- Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab8-MIMIC.pdf){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_sub5_data.csv)
 - Lab 9: [Measurement Invariance](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab9-invariance.pdf){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/els_sub5_data.csv)
 - Lab 10.1: [Weighted Least Squares Estimator - EFA, CFA, Invariance](https://garberadamc.github.io/project-site/Lab10.1-WLS-efa-cfa-invariance){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab10.1-WLS-efa-cfa-invariance.pdf){target="_blank"}
+  - [data](https://garberadamc.github.io/project-site/data/hsls_fa_data_subset.csv)
 - Lab 10.2: [Higher Order Factor Models](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors.pdf){target="_blank"}
 
 <br>
