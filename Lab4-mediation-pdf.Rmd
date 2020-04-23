@@ -1,0 +1,480 @@
+---
+title: "Lab 4 - Mediation"
+author: "*Adam Garber*"
+subtitle: 'Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson'
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: 
+  pdf_document:
+    df_print: kable
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    code_folding: show
+    df_print: kable
+    mathjax: default
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+    fig_width: 9 
+    fig_height: 6 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, tidy = TRUE)
+
+```
+
+<style type="text/css">
+body{ font-size: 20px; max-width: 1600px; margin: auto; padding: 1em; }
+code.r{ font-size: 18px; }
+p { padding-top: 10px; padding-bottom: 10px; }
+pre { font-size: 16px; }
+</style>
+
+______________________________________________
+
+# Lab preparation
+
+______________________________________________
+
+## Creating a version-controlled R-Project with Github
+
+Download repository here: https://github.com/garberadamc/SEM-Lab4
+
+On the Github repository webpage:
+
+a. `fork` your own `branch` of the lab repository 
+b. copy the repository web URL address from the `clone or download` menu
+
+Within R-Studio:
+
+c. click "NEW PROJECT" (upper right corner of window)
+d. choose option `Version Control`
+e. choose option `Git`
+f. paste the repository web URL path copied from the `clone or download` menu on Github page
+g. choose location of the R-Project (too many nested folders will result in filepath error)
+
+## Load packages 
+```{r}
+
+library(datapasta)
+library(mediation)
+library(tidyverse)
+library(MplusAutomation)
+library(rhdf5)
+library(here)
+library(kableExtra)
+library(gtsummary)
+
+```
+
+______________________________________________
+
+# Lab outline
+
+1. Estimate a mediation model using the {`mediation`} package
+2. Estimate the same model using the Structural Equation Modeling (SEM) framework with {`MplusAutomation`}
+3. For the second empirical example, estimate parallel models using the `mediation` and `SEM` methods
+
+______________________________________________
+
+## A quick detour - Equivalent models 
+
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "equiv_models.png"))
+```
+
+*Figure*. Picture adapted from SEM slides by Sacha Epskamp http://sachaepskamp.com/files/SEM22019/SEM2_2019_Week2_slides.pdf
+
+______________________________________________
+
+## Have you ever seen the perfect table and want to adapt it for your own research purposes? 
+
+Use {`datapasta`} by copying tables and pasting them automatically as `tribbles` or `dfs`
+
+1. copy a table or data matrix
+2. run the fuction `tribble_paste()` or `df_paste()` 
+
+```{r, eval=FALSE}
+
+tribble_paste()
+
+
+pasta_table %>% 
+  kable(booktabs = T, linesep = "") %>% 
+  kable_styling(latex_options = c("striped"), 
+                full_width = F,
+                position = "left")
+
+```
+
+______________________________________________
+
+## The empirical examples of mediation used in this exercise are from the following article
+
+Tingley, D., Yamamoto, T., Hirose, K., Keele, L., & Imai, K. (2014). Mediation: R package for causal mediation analysis.
+
+https://cran.r-project.org/web/packages/mediation/vignettes/mediation.pdf
+
+______________________________________________
+
+## Data source for example 1
+
+Brader T, Valentino NA, Suhat E (2008). **What Triggers Public Opposition to Immigration?
+Anxiety, Group Cues, and Immigration.** American Journal of Political Science, 52(4),
+959–978.
+
+https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1540-5907.2008.00353.x
+
+To see metadata run - `?framing` 
+
+______________________________________________
+
+Read in the `framing` dataset 
+```{r}
+
+set.seed(4212020)
+
+data("framing", package = "mediation")
+
+framing <- droplevels(framing) %>%  # drop factor levels with frequency zero
+  mutate(emo = emo - 2)
+
+
+```
+
+______________________________________________
+
+Take a look at variables used in the mediation model 
+```{r, eval=TRUE, echo=FALSE, results='asis'}
+
+var_table <- tribble(
+   ~"Name",      ~"Labels",  ~"Variable status",                                   
+ #--------------|--------------------------------|--------------------------------|,
+  "emo"     , "Measure of subjects' negative feeling during the experiment (1-10). 1 indicates the most negative feeling." , "Mediator (Z)"   , 
+  "treat"   , "Framing codition interaction term. News story with conditions tone (Negative/Positive) and ethnic identity cue (Latino/European)", "Treatment (X)", 
+  "cong_mesg", "Whether subjects requested sending an anti-immigration message to Congress on their behalf." , "Outcome (Y)", 
+  "age"  , "Age of subject (18-85)"        , "pre-treatment covariate"          ,            
+  "educ"  , "Education (1-4)"        , "pre-treatment covariate"         ,
+  "gender"  , "Gender (Male/Female)"      , "pre-treatment covariate"       ,
+  "income"  , "Subjects' income, measured as a 19-point scale."        , "pre-treatment covariate"       )
+
+var_table %>% 
+  kable(booktabs = T, linesep = "") %>% 
+  kable_styling(latex_options = c("striped"), 
+                full_width = F,
+                position = "left")
+```
+
+______________________________________________
+
+Look at descriptives table for the framing dataset using {`gtsummary`} 
+```{r}
+
+table_data <- framing %>% 
+  select(emo, treat, cong_mesg, age, educ, gender, income)
+
+table1 <- tbl_summary(table_data,
+                      statistic = list(all_continuous() ~ "{mean} ({sd})"),
+                      missing = "no") %>%
+  bold_labels() 
+
+table1
+```
+
+______________________________________________
+
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "m1_framing_med.png"))
+```
+
+______________________________________________
+
+## Estimate a mediation model in R using {`mediation`} 
+
+step 1: fit a linear model of the mediator (`emo`) regressed on treatment (`treat`) and pre-treatment covariates
+```{r}
+
+med_fit <- lm(emo ~ treat + age + educ + gender + income, 
+              data = framing)
+
+```
+
+______________________________________________
+
+step 2: fit a general linear model (`glm`) with the binary outcome variable `cong_mesg` regressed on treatment (`treat`), mediator, and pre-treatment covariates
+```{r}
+
+out_fit <- glm(cong_mesg ~ emo + treat + age + educ + gender + income,
+               data = framing,
+               family = binomial("probit"))
+```
+
+______________________________________________
+
+step 3: estimate the mediation effects with bias corrected bootstrapped confidence intervals
+```{r}
+
+med_out <- mediate(med_fit, out_fit, treat = "treat", mediator = "emo",
+                   boot = TRUE, boot.ci.type ="bca", sims = 100)
+
+summary(med_out)
+
+```
+
+______________________________________________
+
+## Run mediation model 1 using the Structural Equation Modeling framework with {`MplusAutomation`}
+
+______________________________________________
+
+```{r, eval=FALSE}
+
+m1_mediate  <- mplusObject(
+  TITLE = "m1 mediate Lab4", 
+  VARIABLE = 
+   "usevar =
+    cong_mesg emo treat age
+    educ gender income;
+  
+    categorical = cong_mesg; ! outcome is binary",            
+  
+  ANALYSIS =  "bootstrap = 500; ! set number of bootstrap samples (500 for example purposes)" , 
+  
+  MODEL = 
+   "emo on treat age educ gender income;            ! mediator linear regression 
+    cong_mesg on emo treat age educ gender income;  ! outcome GLM regression
+    
+    Model indirect:
+    cong_mesg ind treat;" ,
+  
+  OUTPUT = 
+    "sampstat standardized cinterval (bcbootstrap); ! bias-corrected bootstrap", 
+  
+  PLOT = "type=plot2;",
+  
+  usevariables = colnames(framing),   
+  rdata = framing)                    
+
+m1_mediate_fit <- mplusModeler(m1_mediate,
+                     dataout=here("mplus_files", "Lab4.dat"),       
+                    modelout=here("mplus_files", "m1_mediate_Lab4.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+## Data source for example 2
+
+Vinokur AD, Price RH, Schul Y (1995). **Impact of the JOBS Intervention on Unemployed Workers Varying in Risk for  Depression.** American Journal of Community Psychology, 23(1), 39–74.
+
+https://link.springer.com/content/pdf/10.1007/BF02506922.pdf
+
+To see metadata run - `?jobs` 
+
+______________________________________________
+
+*Note:* For this example we will ignore the issue of non-compliance addressed in Tingley et al. (2014) as this causal inference topic is beyond the scope of this course. 
+
+Read in the data from the job search intervention study (`jobs`)
+```{r}
+
+data("jobs", package = "mediation")
+
+```
+
+Take a look at variables used in the mediation model 
+```{r, echo=FALSE}
+jobs_vars <- tibble::tribble(
+     ~Name, ~Label, 
+"depress2 (Y)","Measure of depressive symptoms post-treatment.",
+"treat (X)","Indicator variable for whether participant was randomly selected for the JOBS II training program. 1 = assignment to participation.", 
+"job_dich (Z)","The job_seek measure recoded into two categories of high and low. 1 = high job search self-efficacy.",
+"sex", "Indicator variable for sex. 1 = female",                                                                  "age","Age in years.",
+"marital","Factor with five categories for marital status.",                                                      "nonwhite", "Indicator variable for race. 1 = nonwhite.",
+"educ","Factor with five categories for educational attainment.",
+"income","Factor with five categories for level of income.",
+  )
+
+jobs_vars %>% 
+  kable(booktabs = T, linesep = "") %>% 
+  kable_styling(latex_options = c("striped"), 
+                full_width = F,
+                position = "left")
+```
+
+______________________________________________
+
+Look at descriptives of the framing dataset using {`gtsummary`} 
+```{r}
+
+jobs_desc <- jobs %>% 
+  select(depress2, job_dich, treat, sex, age, marital, nonwhite, educ, income)
+
+tablej <- tbl_summary(jobs_desc,
+                      statistic = list(all_continuous() ~ "{mean} ({sd})"),
+                      missing = "no" ) %>%
+  bold_labels() 
+
+tablej
+```
+
+
+______________________________________________
+
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "m2_jobs_med.png"))
+```
+
+______________________________________________
+
+step 1: fit a binomial logist model using `glm` with the binary mediator (`job_dich`) regressed on treatment (`treat`) and pre-treatment covariates
+```{r}
+
+jmed_fit <- glm(job_dich ~ treat + sex + age + marital +
+                   nonwhite + educ + income,
+                 data = jobs, family = binomial)
+```
+
+______________________________________________
+
+step 2: fit a linear model with depression score (`depress2`) regressed on treatment, mediator, and pre-treatment covariates
+```{r}
+jout_fit <- lm(depress2 ~ job_dich + treat +
+                 sex + age + marital + nonwhite + educ + income,
+               data = jobs)
+
+```
+
+______________________________________________
+
+step 3: Estimate the mediation effects with bias corrected bootstrapped confidence intervals.
+```{r}
+
+jmed_out <- mediate(jmed_fit, jout_fit, treat = "treat", mediator = "job_dich",
+                   boot = TRUE, boot.ci.type ="bca", sims = 100)
+
+summary(jmed_out)
+
+```
+
+______________________________________________
+
+## Run mediation model 2 as a SEM model with {`MplusAutomation`}
+
+______________________________________________
+
+
+```{r, eval=FALSE}
+
+m2_jmediate  <- mplusObject(
+  
+  TITLE = "m2 jobs mediate Lab4", 
+  
+  VARIABLE = 
+   "usevar = treat sex
+    age marital nonwhite
+    educ income depress2 job_dich;
+                 
+    categorical = job_dich; ! moderator is binary",            
+  
+  ANALYSIS =  
+   "bootstrap = 500; ! set number of bootstrap draws (500 for example purposes)" , 
+  
+  MODEL = 
+   "job_dich on treat sex age marital nonwhite educ income;
+   
+    depress2 on job_dich treat sex age marital nonwhite educ income;  
+    
+    Model indirect:
+    depress2 ind treat;" ,
+  
+  OUTPUT = 
+    "sampstat standardized cinterval (bcbootstrap); ! bias-corrected bootstrap", 
+  
+  PLOT = "type=plot2;",
+  
+  usevariables = colnames(jobs),   
+  rdata = jobs)                    
+
+m2_jmediate_fit <- mplusModeler(m2_jmediate,
+                     dataout=here("mplus_files", "Lab4_jobs.dat"),       
+                    modelout=here("mplus_files", "m2_jmediate_Lab4.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+## Run model 3 including the mediator*treatement interaction (potential outcomes framework)
+
+______________________________________________
+
+```{r, eval=FALSE}
+
+m3_jmed  <- mplusObject(
+  
+  TITLE = "m3 MX jobs mediate Lab4", 
+  
+  VARIABLE = 
+   "usevar =
+    treat sex age marital nonwhite
+    educ income depress2 job_dich mx; ", 
+  
+  DEFINE = "mx = job_dich*treat;",
+  
+  ANALYSIS =  "bootstrap = 500; ", 
+  
+  MODEL = 
+   "job_dich on treat sex age marital nonwhite educ income;           
+    depress2 on job_dich treat mx sex age marital nonwhite educ income;  
+    
+    Model indirect:
+    depress2 MOD job_dich mx treat; ",
+  
+  OUTPUT = 
+    "sampstat cinterval(bootstrap); ", 
+  
+  usevariables = colnames(jobs),   
+  rdata = jobs)                    
+
+m3_jmed_fit <- mplusModeler(m3_jmed,
+                     dataout=here("mplus_files", "Lab4_jobs.dat"),       
+                    modelout=here("mplus_files", "m3_jmediate_Lab4.inp"),
+                    check=TRUE, run = TRUE, hashfilename = FALSE)
+
+```
+
+______________________________________________
+
+# References
+
+Brader T, Valentino NA, Suhat E (2008). What Triggers Public Opposition to Immigration?
+Anxiety, Group Cues, and Immigration. American Journal of Political Science, 52(4),
+959–978.
+
+Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
+
+Ingels, S. J., Pratt, D. J., Herget, D. R., Burns, L. J., Dever, J. A., Ottem, R., ... & Leinwand, S. (2011). High School Longitudinal Study of 2009 (HSLS: 09): Base-Year Data File Documentation. NCES 2011-328. National Center for Education Statistics.
+
+Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
+
+R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/
+
+Tingley, D., Yamamoto, T., Hirose, K., Keele, L., & Imai, K. (2014). Mediation: R package for causal mediation analysis.
+
+Vinokur AD, Price RH, Schul Y (1995). Impact of the JOBS Intervention on Unemployed Workers Varying in Risk for  Depression. American Journal of Community Psychology, 23(1), 39–74.
+
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+---------------------------------------------------
+
+![](figures/UCSB_Navy_mark.png){ width=75% }
+
+
+
