@@ -250,6 +250,28 @@ m1_mediate_fit <- mplusModeler(m1_mediate,
 
 ______________________________________________
 
+**Model 1 Mplus output**
+
+    STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+                        Estimate       S.E.  Est./S.E.    P-Value
+
+    Effects from TREAT to CONG_MES
+    
+      Total                0.109      0.075      1.453      0.146
+      Total indirect       0.101      0.031      3.253      0.001
+    
+      Specific indirect 1
+        CONG_MES
+        EMO
+        TREAT              0.101      0.031      3.253      0.001
+    
+      Direct
+        CONG_MES
+        TREAT              0.008      0.071      0.119      0.905
+    
+______________________________________________
+
 ## Data source for example 2
 
 Vinokur AD, Price RH, Schul Y (1995). **Impact of the JOBS Intervention on Unemployed Workers Varying in Risk for  Depression.** American Journal of Community Psychology, 23(1), 39–74.
@@ -292,7 +314,7 @@ jobs_vars %>%
 ______________________________________________
 
 Look at descriptives of the framing dataset using {`gtsummary`} 
-```{r}
+```{r, eval=FALSE}
 
 jobs_desc <- jobs %>% 
   select(depress2, job_dich, treat, sex, age, marital, nonwhite, educ, income)
@@ -393,7 +415,36 @@ m2_jmediate_fit <- mplusModeler(m2_jmediate,
 
 ______________________________________________
 
+**Model 2 Mplus output**
+
+STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+                        Estimate       S.E.  Est./S.E.    P-Value
+
+    Effects from TREAT to DEPRESS2
+    
+      Total               -0.043      0.033     -1.306      0.192
+      Total indirect      -0.029      0.012     -2.385      0.017
+    
+      Specific indirect 1
+        DEPRESS2
+        JOB_DICH
+        TREAT             -0.029      0.012     -2.385      0.017
+    
+      Direct
+        DEPRESS2
+        TREAT             -0.015      0.033     -0.440      0.660
+
+______________________________________________
+
 ## Run model 3 including the mediator*treatement interaction (potential outcomes framework)
+
+For further reading on this topic see chapter 3 of *Regression and mediation analysis using Mplus* (Muthen et al., 2017) 
+
+```{r, echo=FALSE, eval=TRUE, out.width = "80%", out.height= "80%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "MX_mediate_lab4.png"))
+```
 
 ______________________________________________
 
@@ -434,6 +485,26 @@ m3_jmed_fit <- mplusModeler(m3_jmed,
 
 ______________________________________________
 
+**Model 3 Mplus output**
+
+TOTAL, INDIRECT, AND DIRECT EFFECTS BASED ON COUNTERFACTUALS (CAUSALLY-DEFINED EFFECTS)
+
+    Effects from TREAT to DEPRESS2
+
+                        Estimate       S.E.  Est./S.E.    P-Value
+    
+      Tot natural IE      -0.026      0.011     -2.357      0.018
+      Pure natural DE     -0.022      0.055     -0.401      0.688
+      Total effect        -0.048      0.055     -0.878      0.380
+    
+     Other effects
+    
+      Pure natural IE     -0.023      0.012     -1.938      0.053
+      Tot natural DE      -0.026      0.052     -0.494      0.621
+      Total effect        -0.048      0.055     -0.878      0.380
+
+______________________________________________
+
 # References
 
 Brader T, Valentino NA, Suhat E (2008). What Triggers Public Opposition to Immigration?
@@ -443,6 +514,8 @@ Anxiety, Group Cues, and Immigration. American Journal of Political Science, 52(
 Hallquist, M. N., & Wiley, J. F. (2018). MplusAutomation: An R Package for Facilitating Large-Scale Latent Variable Analyses in Mplus. Structural equation modeling: a multidisciplinary journal, 25(4), 621-638.
 
 Ingels, S. J., Pratt, D. J., Herget, D. R., Burns, L. J., Dever, J. A., Ottem, R., ... & Leinwand, S. (2011). High School Longitudinal Study of 2009 (HSLS: 09): Base-Year Data File Documentation. NCES 2011-328. National Center for Education Statistics.
+
+Muthén, B. O., Muthén, L. K., & Asparouhov, T. (2017). Regression and mediation analysis using Mplus. Los Angeles, CA: Muthén & Muthén.
 
 Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
 
