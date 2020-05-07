@@ -99,6 +99,7 @@ __________________________________________________________
 - Lab 3: [Moderation](https://garberadamc.github.io/project-site/Lab3-moderation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab3-moderation.pdf){target="_blank"}
 - Lab 4: [Mediation](https://garberadamc.github.io/project-site/Lab4-mediation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab4-mediation.pdf){target="_blank"}
 - Lab 5: [Conditional indirect effects (moderated mediation)](https://garberadamc.github.io/project-site/Lab5-conditional-mediation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab5-conditional-mediation.pdf){target="_blank"}
+- Lab 6: [Latent growth models](https://garberadamc.github.io/project-site/Lab6-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab6-growth-models-p.pdf){target="_blank"}
 
 ## __________________________________________________________
 
