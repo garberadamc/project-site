@@ -118,7 +118,6 @@ __________________________________________________________
 
 <br>
 
-
 ## Replicating analyses using Tidy Workflow & MplusAutomation:
 
 - Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo){target="_blank"}
