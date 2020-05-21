@@ -23,9 +23,7 @@ pre { font-size: 16px; }
 
 ![](figures/island_mark.png){ width=60% }
 
-##### *Picture. Channel Islands, Santa Barbara*
-
-#### University of California, Santa Barbara
+##### *Channel Islands, Santa Barbara*
 
 
 ## __________________________________________________________
