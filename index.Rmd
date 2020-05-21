@@ -1,8 +1,8 @@
 ---
-title: ""
+title: "Tidy Workflow with MplusAutomation"
 author: ""
 date: ""
-subtitle: "" 
+subtitle: "*Adam Garber*" 
 output: 
   html_document:
     theme: cerulean
@@ -21,11 +21,12 @@ p { padding-top: 10px; padding-bottom: 10px; }
 pre { font-size: 16px; }
 </style>
 
-![](figures/tidy_workflow_hex.png){ width=60% }
+![](figures/island_mark.png){ width=60% }
 
-#### *Adam Garber*, University of California, Santa Barbara
+##### *Picture. Channel Islands, Santa Barbara*
 
-##### *Channel Islands, Santa Barbara*
+#### University of California, Santa Barbara
+
 
 ## __________________________________________________________
 
