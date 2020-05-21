@@ -101,6 +101,7 @@ __________________________________________________________
 - Lab 5: [Conditional indirect effects (moderated mediation)](https://garberadamc.github.io/project-site/Lab5-conditional-mediation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab5-conditional-mediation.pdf){target="_blank"}
 - Lab 6: [Latent growth models](https://garberadamc.github.io/project-site/Lab6-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab6-growth-models-p.pdf){target="_blank"}
 - Lab 7: [Advanced growth models](https://garberadamc.github.io/project-site/Lab7-ten-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab7-ten-growth-models-P.pdf){target="_blank"}
+- Lab 8: [Introduction to mixture models (LCA) - Enumeration and Plotting ](https://garberadamc.github.io/project-site/Lab8-Intro-mixture){target="_blank"} 
 
 ## __________________________________________________________
 
