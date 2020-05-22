@@ -15,9 +15,17 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, message = FALSE, warning = FALS
 library(hrbrthemes)
 library(prettydoc)
 library(poLCA)
+library(here)
 ```
 
 `University of California, Santa Barbara`
+
+```{r, echo=FALSE, eval=TRUE, out.width = "60%", out.height= "60%", fig.pos="h"}
+
+knitr::include_graphics(here("figures", "sem_frame_diagram.png"))
+```
+
+*Figure*. Picture has been adapted from study by Múthen, 2006.
 
 ______________________________________________
 
