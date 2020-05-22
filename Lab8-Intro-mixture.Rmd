@@ -1,6 +1,6 @@
 
 ---
-title: "Lab 8 - Introduction to Mixture Models - Latent Class Analysis"
+title: "Lab 8 - Introduction to Mixture Models"
 author: "*Adam Garber*"
 subtitle: 'Structural Equation Modeling - Instructor: Karen Nylund-Gibson'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
@@ -69,6 +69,7 @@ library(semPlot)
 library(reshape2)
 library(cowplot)
 library(filesstrings)
+library(poLCA)
 
 ```
 
@@ -134,7 +135,7 @@ Run a quick LCA using `createMixtures`
 createMixtures(classes = 1:4, filename_stem = "cheat",                                       #
                   rdata = df_cheat,                                                          #
                ANALYSIS = "processors = 10; starts 500 100;",                                #     
-               VARIABLE = "CATEGORICAL = lieexam-copyexam;",                                 #    
+               VARIABLE = "CATEGORICAL = lieexam-copyexam; USEVAR = lieexam-copyexam;",      #    
                    PLOT = "type = plot3; series = lieexam-copyexam(*);")                     #                
 
 files <- data.frame(names = list.files(path = here(), full.names = FALSE))
@@ -229,7 +230,6 @@ ______________________________________________
 
 knitr::include_graphics(here("figures", "LCA_Diagram_SEMLAB8.png"))
 ```
-
 
 Load data
 ```{r, eval=TRUE}
@@ -565,6 +565,10 @@ ggplot(pd_long1, aes(Var, value, shape = variable,                              
 ggsave(here("figures","Class4_KSEP_LCA_plot.png"),             #    
        dpi=300, height=4, width=6, units="in")                 #
 ```
+
+______________________________________________
+
+# [Lab Materials - Return to Home Page](https://garberadamc.github.io/project-site/)
 
 ______________________________________________
 
