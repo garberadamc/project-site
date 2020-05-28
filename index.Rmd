@@ -63,11 +63,11 @@ My name is Adam Garber and I am a PhD student in Education at the University of 
 
 ## Lab materials: Factor Analysis  (UCSB, ED 216B) 
 
-**Data subsets for lab exercises using public use data:**
+**Data examples: All lab exercises utilize public-use data repositories.**
 
 __________________________________________________________
 
-- Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto.pdf){target="_blank"}
+- Lab 1: [Getting Started with MplusAutomation - Explore and Prepare Data. Run Models.](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/explore-prepare-mplus-auto.pdf){target="_blank"}
   - [data](https://garberadamc.github.io/project-site/data/explore_lab_data.sav)
 - Lab 2: [Exploratory Factor Analysis (EFA) - Univariate and Multivariate Diagnostics.](https://garberadamc.github.io/project-site/Lab2-EFA){target="_blank"}
   - [data](https://garberadamc.github.io/project-site/data/els_sub1_spss.sav)
@@ -81,13 +81,13 @@ __________________________________________________________
   - [data](https://garberadamc.github.io/project-site/data/els_sub4.csv)
 - Lab 7: [Principle Component Analysis - PCA](https://garberadamc.github.io/project-site/Lab7-PCA){target="_blank"}
   - [data](https://garberadamc.github.io/project-site/data/els_sub4.csv)
-- Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab8-MIMIC.pdf){target="_blank"}
+- Lab 8: [Multiple Indicator, Multiple Causes, MIMIC Models](https://garberadamc.github.io/project-site/Lab8-MIMIC){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab8-MIMIC.pdf){target="_blank"}
   - [data](https://garberadamc.github.io/project-site/data/els_sub5_data.csv)
-- Lab 9: [Measurement Invariance](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab9-invariance.pdf){target="_blank"}
+- Lab 9: [Measurement Invariance](https://garberadamc.github.io/project-site/Lab9-invariance){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab9-invariance.pdf){target="_blank"}
   - [data](https://garberadamc.github.io/project-site/data/els_sub5_data.csv)
-- Lab 10.1: [Weighted Least Squares Estimator - EFA, CFA, Invariance](https://garberadamc.github.io/project-site/Lab10.1-WLS-efa-cfa-invariance){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab10.1-WLS-efa-cfa-invariance.pdf){target="_blank"}
+- Lab 10.1: [Weighted Least Squares Estimator - EFA, CFA, Invariance](https://garberadamc.github.io/project-site/Lab10.1-WLS-efa-cfa-invariance){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab10.1-WLS-efa-cfa-invariance.pdf){target="_blank"}
   - [data](https://garberadamc.github.io/project-site/data/hsls_fa_data_subset.csv)
-- Lab 10.2: [Higher Order Factor Models](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors.pdf){target="_blank"}
+- Lab 10.2: [Higher Order Factor Models](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab10.2-Higher-Order-Factors.pdf){target="_blank"}
 
 <br>
 
@@ -95,14 +95,16 @@ __________________________________________________________
 
 ## Lab materials: Structural Equation Modeling (UCSB, ED 216F) 
 
-- Lab 1: [Path Analysis - Multiple Indirect Path Model - Single Indicator Factor Model](https://garberadamc.github.io/project-site/Lab1-path-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab1-path-models.pdf){target="_blank"}
-- Lab 2: [Competing Path Models](https://garberadamc.github.io/project-site/Lab2-competing-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab2-competing-models.pdf){target="_blank"}
-- Lab 3: [Moderation](https://garberadamc.github.io/project-site/Lab3-moderation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab3-moderation.pdf){target="_blank"}
-- Lab 4: [Mediation](https://garberadamc.github.io/project-site/Lab4-mediation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab4-mediation.pdf){target="_blank"}
-- Lab 5: [Conditional indirect effects (moderated mediation)](https://garberadamc.github.io/project-site/Lab5-conditional-mediation){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab5-conditional-mediation.pdf){target="_blank"}
-- Lab 6: [Latent growth models](https://garberadamc.github.io/project-site/Lab6-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab6-growth-models-p.pdf){target="_blank"}
-- Lab 7: [Advanced growth models](https://garberadamc.github.io/project-site/Lab7-ten-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF version)}}$](https://garberadamc.github.io/project-site/Lab7-ten-growth-models-P.pdf){target="_blank"}
+- Lab 1: [Path Analysis - Multiple Indirect Path Model - Single Indicator Factor Model](https://garberadamc.github.io/project-site/Lab1-path-models){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab1-path-models.pdf){target="_blank"}
+- Lab 2: [Competing Path Models](https://garberadamc.github.io/project-site/Lab2-competing-models){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab2-competing-models.pdf){target="_blank"}
+- Lab 3: [Moderation](https://garberadamc.github.io/project-site/Lab3-moderation){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab3-moderation.pdf){target="_blank"}
+- Lab 4: [Mediation](https://garberadamc.github.io/project-site/Lab4-mediation){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab4-mediation.pdf){target="_blank"}
+- Lab 5: [Conditional indirect effects (moderated mediation)](https://garberadamc.github.io/project-site/Lab5-conditional-mediation){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab5-conditional-mediation.pdf){target="_blank"}
+- Lab 6: [Latent growth models](https://garberadamc.github.io/project-site/Lab6-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab6-growth-models-p.pdf){target="_blank"}
+- Lab 7: [Advanced growth models](https://garberadamc.github.io/project-site/Lab7-ten-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab7-ten-growth-models-P.pdf){target="_blank"}
 - Lab 8: [Introduction to mixture models (LCA) - Enumeration and Plotting ](https://garberadamc.github.io/project-site/Lab8-Intro-mixture){target="_blank"} 
+- Lab 9: [Mixture Models with Covariates and Distal Outcomes  - Manual Three Step Approach ](https://garberadamc.github.io/project-site/Lab9-three-step-mixtures){target="_blank"} 
+
 
 ## __________________________________________________________
 
@@ -110,11 +112,7 @@ __________________________________________________________
 
 ## Lab materials: Applied Mixture Modeling (UCSB, ED 216G) 
 
-- Lab 1: [Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)](https://garberadamc.github.io/project-site/lca-enumeration){target="_blank"}
-- Lab 2:
-- Lab 3:
-- Lab 4:
-- Lab 5:
+- Lab 1: Tidy Enumeration with MplusAutomation - Latent Class Analysis (LCA)
 
 ## __________________________________________________________
 
