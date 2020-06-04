@@ -104,7 +104,8 @@ __________________________________________________________
 - Lab 7: [Advanced growth models](https://garberadamc.github.io/project-site/Lab7-ten-growth-models){target="_blank"} [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/Lab7-ten-growth-models-P.pdf){target="_blank"}
 - Lab 8: [Introduction to mixture models (LCA) - Enumeration and Plotting ](https://garberadamc.github.io/project-site/Lab8-Intro-mixture){target="_blank"} 
 - Lab 9: [Mixture Models with Covariates and Distal Outcomes  - Manual Three Step Approach ](https://garberadamc.github.io/project-site/Lab9-three-step-mixtures){target="_blank"} 
-
+- Lab 10.1: [Observed Response Patterns in Latent Class Analysis ](https://garberadamc.github.io/project-site/Lab10.1-response-patterns){target="_blank"} 
+- Lab 10.2: [Introduction to Latent Profile Analysis ](https://garberadamc.github.io/project-site/Lab10.2-profile-analysis){target="_blank"} 
 
 ## __________________________________________________________
 
