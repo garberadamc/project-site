@@ -138,6 +138,8 @@ Henry, K. L., & Muthén, B. (2010). Multilevel latent class analysis: An applica
 
 Horst, A. (2020). Course & Workshop Materials. GitHub Repositories, https://https://allisonhorst.github.io/
 
+Muthén, B. & Asparouhov, T. (2020). [\textcolor{blue}{Latent Transition Analysis with Random Intercepts (RI-LTA)}](https://www.statmodel.com/download/MuthenRevision3.pdf). Under review. Version 3. 
+
 Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
 
 R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/
