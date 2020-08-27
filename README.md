@@ -108,7 +108,7 @@ My name is Adam Garber and I am a PhD student in Education at the University of 
 ## Replicating analyses using Tidy Workflow & MplusAutomation:
 
 - Random Intercept Latent Transition Analysis (RI-LTA): [Replication of analyses presented in Muthén & Asparouhov (2020)](https://garberadamc.github.io/project-site/RI-LTA-replication.pdf)
-- Multi-level Latent Class Analysis (MLCA) : [Replication of examples provided in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-demo)
+- Multi-level Latent Class Analysis (MLCA) : [Replication of models presented in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-replication) [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/mlca-demo.pdf)
 - Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size)
 
 
@@ -132,4 +132,4 @@ R Core Team (2017). R: A language and environment for statistical computing. R F
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
 
-![](figures/UCSB_Navy_mark.png){ width=75% }
+![](figures/UCSB_Navy_mark.png)
