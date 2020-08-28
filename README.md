@@ -132,4 +132,6 @@ R Core Team (2017). R: A language and environment for statistical computing. R F
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
 
+<br>
+
 ![](figures/UCSB_Navy_mark.png)
