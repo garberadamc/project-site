@@ -108,8 +108,8 @@ My name is Adam Garber and I am a PhD student in Education at the University of 
 ## Replicating analyses using Tidy Workflow & MplusAutomation:
 
 - Random Intercept Latent Transition Analysis (RI-LTA): [Replication of analyses presented in Muthén & Asparouhov (2020)](https://garberadamc.github.io/project-site/RI-LTA-replication.pdf)
-- Multi-level Latent Class Analysis (MLCA) : [Replication of models presented in Henry, & Muthén, (2010)](https://garberadamc.github.io/project-site/mlca-replication) [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/mlca-demo.pdf)
-- Monte Carlo Simulation of Power & Sample Size: [Replication & adaptation of examples provided in Muthén, & Muthén, (2002)](https://garberadamc.github.io/project-site/sim-power-size)
+- Multi-level Latent Class Analysis (MLCA) : [Replication of models presented in Henry & Muthén (2010)](https://garberadamc.github.io/project-site/mlca-replication) [$\color{darkred}{\text{(PDF)}}$](https://garberadamc.github.io/project-site/mlca-demo.pdf)
+- Monte Carlo Simulation of Power & Sample Size: [Replication of examples presented in Muthén & Muthén (2002)](https://garberadamc.github.io/project-site/sim-power-size.pdf)
 
 
 <br>
@@ -127,6 +127,8 @@ Horst, A. (2020). Course & Workshop Materials. GitHub Repositories, https://http
 Muthén, B. & Asparouhov, T. (2020). [\textcolor{blue}{Latent Transition Analysis with Random Intercepts (RI-LTA)}](https://www.statmodel.com/download/MuthenRevision3.pdf). Under review. Version 3. 
 
 Muthén, L.K. and Muthén, B.O. (1998-2017).  Mplus User’s Guide.  Eighth Edition. Los Angeles, CA: Muthén & Muthén
+
+Muthén, L. K., & Muthén, B. O. (2002). [\textcolor{blue}{How to use a Monte Carlo study to decide on sample size and determine power.}](https://www.tandfonline.com/doi/pdf/10.1207/S15328007SEM0904_8) Structural equation modeling, 9(4), 599-620.
 
 R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/
 
