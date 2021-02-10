@@ -139,10 +139,6 @@ Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Softwar
 
 ![](figures/UCSB_Navy_mark.png)
 
-\textcolor{white}{INVISIBLE}
-
-[\textcolor{white}{INVISIBLE}](https://garberadamc.github.io/project-site/rcode-lca-coping-bd.pdf)
-
 
 
 
