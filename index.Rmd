@@ -14,6 +14,17 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158630433-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-158630433-2');
+</script>
+</head> 
+
 <style type="text/css">
 body{ font-size: 16px; max-width: 1600px; margin: auto; padding: 1em; }
 code.r{ font-size: 18px; }
