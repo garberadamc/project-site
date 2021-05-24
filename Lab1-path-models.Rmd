@@ -1,5 +1,5 @@
 ---
-title: "Lab 1 - Path Models, Indirect Effects, and Single Indicator Factors "
+title: "Lab 1 - Path Models, Indirect Effects, and Single Indicator Factors"
 author: "*Adam Garber*"
 subtitle: 'Structural Equation Modeling ED 216F - Instructor: Karen Nylund-Gibson'
 date: "`r format(Sys.time(), '%B %d, %Y')`"
