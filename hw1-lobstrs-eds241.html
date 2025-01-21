@@ -372,7 +372,7 @@ Abundance (<em>Panulirus Interruptus</em>)</h1>
 <h3 class="subtitle">Assessing the Impact of Marine Protected Areas
 (MPAs) at 5 Reef Sites in Santa Barbara County</h3>
 <h4 class="author">EDS 241</h4>
-<h4 class="date">1/8/2024 (Due 1/22)</h4>
+<h4 class="date">1/8/2024 (Due 1/26)</h4>
 
 </div>
 
@@ -611,14 +611,13 @@ specifications.</p>
 <p>Step 7: Building intuition - fixed effects</p>
 <p><strong>a.</strong> Create new <code>df</code> with the
 <code>year</code> variable converted to a factor</p>
-<p><strong>b.</strong> Run the following OLS model using
-<code>lm()</code></p>
+<p><strong>b.</strong> Run the following negative binomial model using
+<code>glm.nb()</code></p>
 <ul>
-<li>Use the following specification for the outcome
-<code>log(counts+1)</code></li>
-<li>Estimate fixed effects for <code>year</code></li>
-<li>Include an interaction term between variables <code>treat</code> and
-<code>year</code></li>
+<li>Add fixed effects for <code>year</code> (i.e., dummy
+coefficients)</li>
+<li>Include an interaction term between variables <code>treat</code>
+&amp; <code>year</code> (<code>treat*year</code>)</li>
 </ul>
 <p><strong>c.</strong> Take a look at the regression output. Each
 coefficient provides a comparison or the difference in means for a
@@ -630,8 +629,11 @@ negative? *Does this result make sense?</p>
 <pre class="r"><code>ff_counts &lt;- spiny_counts %&gt;% 
     mutate(year=as_factor(year))
     
-m5_fixedeffs &lt;- lm(
-    log(counts+1) ~ treat*year,
+m5_fixedeffs &lt;- glm.nb(
+    counts ~ 
+        treat +
+        year +
+        treat*year,
     data = ff_counts)
 
 summ(m5_fixedeffs, model.fit = FALSE)</code></pre>
@@ -640,11 +642,10 @@ summ(m5_fixedeffs, model.fit = FALSE)</code></pre>
 <code>interactions</code> to plot mean predictions by year and treatment
 status.</p>
 <p><strong>f.</strong> Re-evaluate your responses (c) and (b) above.</p>
-<pre class="r"><code># Hint 1: Group counts by `year` and `mpa` and calculate the `mean_count`
-# Hint 2: Convert variable `year` to a factor
+<pre class="r"><code>interact_plot(m5_fixedeffs, pred = year, modx = treat,
+              outcome.scale = &quot;link&quot;) # NOTE: y-axis on log-scale
 
-interact_plot(m5_fixedeffs, pred = year, modx = treat,
-              outcome.scale = &quot;response&quot;)</code></pre>
+# HINT: Change `outcome.scale` to &quot;response&quot; to convert y-axis scale to counts</code></pre>
 <p><strong>g.</strong> Using <code>ggplot()</code> create a plot in same
 style as the previous <code>interaction plot</code>, but displaying the
 original scale of the outcome variable (lobster counts). This type of
