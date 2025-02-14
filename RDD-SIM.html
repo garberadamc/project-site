@@ -100,7 +100,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -155,6 +154,7 @@ window.Quarto = {
 </section>
 <section id="load-packages" class="level3">
 <h3 class="anchored" data-anchor-id="load-packages">Load packages</h3>
+<hr>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rdrobust)</span>
@@ -167,9 +167,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
 <p>Run RDD analysis &amp; present results using <code>lm()</code> &amp; <code>ggplot()</code></p>
 <hr>
-</section>
-<section id="simulate-example-data" class="level3">
-<h3 class="anchored" data-anchor-id="simulate-example-data">Simulate Example Data</h3>
+<p>Simulate Example Data</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reproducibility</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2102025</span>)  </span>
@@ -190,6 +188,7 @@ window.Quarto = {
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Store in a data frame</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X, Treated, Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<hr>
 <p>Visualize the data</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y, <span class="at">color =</span> <span class="fu">as.factor</span>(Treated))) <span class="sc">+</span></span>
@@ -210,7 +209,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Run regression using <code>lm()</code></p>
+<hr>
+<p>Estimate the RDD regression using <code>lm()</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rdd_ols <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> Treated <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                  X <span class="sc">+</span></span>
@@ -312,6 +312,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<hr>
+<p>Create RDD plot using simple OLS approach</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y, <span class="at">color =</span> <span class="fu">as.factor</span>(Treated))) <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
@@ -331,20 +333,20 @@ window.Quarto = {
 </div>
 <hr>
 </section>
-<section id="using-package-rdrobust" class="level3">
-<h3 class="anchored" data-anchor-id="using-package-rdrobust">Using package {<code>rdrobust</code>}</h3>
+<section id="estimate-visialize-rdd-using-rdrobust" class="level3">
+<h3 class="anchored" data-anchor-id="estimate-visialize-rdd-using-rdrobust">Estimate &amp; Visialize RDD using {<code>rdrobust</code>}</h3>
 <hr>
-<p><strong>RDD Robust Estimation Method (<code>local polynomial regression</code>)</strong>2:</p>
-<p>Local polynomial regression is a method used to estimate relationships between variables while giving more weight to observations near a specific point— in this case, the cutoff in a Regression Discontinuity Design (RDD). Instead of fitting an ordinary linear regression, it fits separate curved-regressions on either side of the cutoff using only nearby data points. The method allows for flexibility in capturing non-linear patterns.</p>
-<p>This tutorial walks you through using <strong>Regression Discontinuity Design (RDD)</strong> to estimate causal effects when treatment assignment is determined by a cutoff value. We’ll explain each step in detail so that even if you’re new to RDD, you can follow along!</p>
+<p><strong>RDD Robust Estimation Method (<code>local polynomial regression</code>)</strong>:</p>
+<p>Local polynomial regression is a method used to estimate relationships between variables while giving more weight to observations near a specific point— in this case, the RDD threshold. Instead of fitting an ordinary linear regression, it fits separate non-linear regressions on either side of the cutoff using only data points near the cutoff.</p>
 <p><strong>Interpreting output</strong>:</p>
 <p><em>Default estimation options used by the <code>rdrobust()</code> function</em>:</p>
 <ul>
-<li>Bandwidth Optimization (<code>BW type: mserd</code>): The Mean Squared Error optimal bandwidth is chosen to balance accuracy &amp; bias.</li>
-<li>Bandwidth Estimate (<code>h = 0.461</code>): This is the range around the cutoff (X = 0) where the model uses a subste of the data to estimate the treatment effect.</li>
+<li>Bandwidth Optimization (<code>BW type: mserd</code>): The Mean Squared Error bandwidth is optimized to balance accuracy &amp; bias.</li>
+<li>Bandwidth Estimate (<code>h = 0.461</code>): This is the range around the cutoff (X = 0) where the model uses a subset of the data to estimate the treatment effect.</li>
 <li>Kernel (<code>Triangular</code>): Gives more weight to data points closer to the cutoff, meaning observations near (<code>X=0</code>)</li>
-<li>Variance Estimation (Nearest Neighbor; <code>VCE method: NN</code>): Instead of assuming equal variance across all observations, this method adjusts the uncertainty estimates by considering how variability changes near the cutoff.</li>
+<li>Variance Estimation (Nearest Neighbor; <code>VCE method: NN</code>): Instead of assuming equal variance across all observations, the error estimates are adjusted by considering how variability changes near the cutoff.</li>
 </ul>
+<hr>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate RDD with a sharp cutoff at X = 0</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rdd_model <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(Y, X, <span class="at">c =</span> <span class="dv">0</span>)</span>
@@ -376,6 +378,7 @@ Unique Obs.                     247          253
 =============================================================================</code></pre>
 </div>
 </div>
+<hr>
 <p><strong>Visualize the RDD discontinuity using <code>rdplot()</code></strong>:</p>
 <p>This plot presents the local polynomial regression curves fit on either side of the cutoff.</p>
 <div class="cell">
@@ -416,102 +419,93 @@ Unique Obs.                     247          253
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data.frame</span></span>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X, Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<hr>
+<p>Visualize the discontinuity using <code>rdplot()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run rdrobust with sharp cutoff at X = 0</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>rdd_model <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(Y, X, <span class="at">c =</span> <span class="dv">0</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of results</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Sharp RD estimates using local polynomial regression.
-
-Number of Obs.                  500
-BW type                       mserd
-Kernel                   Triangular
-VCE method                       NN
-
-Number of Obs.                  234          266
-Eff. Number of Obs.              86           94
-Order est. (p)                    1            1
-Order bias  (q)                   2            2
-BW est. (h)                   0.765        0.765
-BW bias (b)                   1.163        1.163
-rho (h/b)                     0.658        0.658
-Unique Obs.                     234          266
-
-=============================================================================
-        Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
-=============================================================================
-  Conventional     2.144     0.325     6.593     0.000     [1.507 , 2.781]     
-        Robust         -         -     5.350     0.000     [1.329 , 2.865]     
-=============================================================================</code></pre>
-</div>
-</div>
-<p>Plot RDD using</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot RDD</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rdplot</span>(Y, X, <span class="at">c =</span> <span class="dv">0</span>, <span class="at">title =</span> <span class="st">"Regression Discontinuity Plot- Non-Linear Trends"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot RDD</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rdplot</span>(Y, X, <span class="at">c =</span> <span class="dv">0</span>, <span class="at">title =</span> <span class="st">"Regression Discontinuity Plot- Non-Linear Trends"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="RDD-SIM_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="RDD-SIM_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <hr>
 </section>
-<section id="make-figure-for-lecture-slides" class="level3">
-<h3 class="anchored" data-anchor-id="make-figure-for-lecture-slides">Make figure for lecture slides</h3>
+<section id="make-rdd-illustration-for-lecture-slides" class="level3">
+<h3 class="anchored" data-anchor-id="make-rdd-illustration-for-lecture-slides">Make RDD illustration for lecture slides</h3>
 <hr>
 <p>Simulate data</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reproducibility</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2102025</span>)  </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate running variable X</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1600</span>, <span class="dv">2400</span>, <span class="at">length.out =</span> n) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">30</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Treatment assignment: 1 if X &gt;= 2000, else 0</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(X <span class="sc">&gt;=</span> <span class="dv">2000</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate outcome variable Y with a discontinuity at X = 2000</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(D <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">19000</span> <span class="sc">+</span> <span class="dv">5</span><span class="sc">*</span>X <span class="sc">+</span> <span class="dv">500</span>, <span class="dv">19000</span> <span class="sc">+</span> <span class="dv">4</span><span class="sc">*</span>X) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">300</span>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Store in a data.frame</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X, Y, D)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reproducibility</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2102025</span>)  </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate running variable X</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1600</span>, <span class="dv">2400</span>, <span class="at">length.out =</span> n) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">30</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Treatment assignment: 1 if X &gt;= 2000, else 0</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(X <span class="sc">&gt;=</span> <span class="dv">2000</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate outcome variable Y with a discontinuity at X = 2000</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(D <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">19000</span> <span class="sc">+</span> <span class="dv">5</span><span class="sc">*</span>X <span class="sc">+</span> <span class="dv">500</span>, <span class="dv">19000</span> <span class="sc">+</span> <span class="dv">4</span><span class="sc">*</span>X) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">300</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Store in a data.frame</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X, Y, D)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<hr>
 <p>Run separate regressions for control &amp; treatment groups</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regression for control group (X &lt; 2000)</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>control_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> data, <span class="at">subset =</span> (D <span class="sc">==</span> <span class="dv">0</span>))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Regression for treated group (X &gt;= 2000)</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>treated_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> data, <span class="at">subset =</span> (D <span class="sc">==</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regression for control group (X &lt; 2000)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>control_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> data, <span class="at">subset =</span> (D <span class="sc">==</span> <span class="dv">0</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Regression for treated group (X &gt;= 2000)</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>treated_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> data, <span class="at">subset =</span> (D <span class="sc">==</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<hr>
 <p>Create plot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y, <span class="at">color =</span> <span class="fu">as.factor</span>(D))) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">2000</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span>  <span class="co"># cutoff line</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="fu">aes</span>(<span class="at">group =</span> <span class="fu">as.factor</span>(D)), <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"D = 0"</span>, <span class="st">"D = 1"</span>)) <span class="sc">+</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">""</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="fu">expression</span>(X[i]), <span class="at">y =</span> <span class="fu">expression</span>(Y[i]),</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Treatment"</span>) <span class="sc">+</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y, <span class="at">color =</span> <span class="fu">as.factor</span>(D))) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">2000</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span>  <span class="co"># cutoff line</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="fu">aes</span>(<span class="at">group =</span> <span class="fu">as.factor</span>(D)), <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"D = 0"</span>, <span class="st">"D = 1"</span>)) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="fu">expression</span>(X[i]), <span class="at">y =</span> <span class="fu">expression</span>(Y[i]),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Treatment"</span>) <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="RDD-SIM_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="RDD-SIM_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Save plot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"figures"</span>, <span class="st">"rdd_illus_plot.png"</span>), <span class="at">dpi=</span><span class="dv">300</span>, <span class="at">height=</span><span class="dv">4</span>, <span class="at">width=</span><span class="dv">9</span>, <span class="at">units=</span><span class="st">"in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"figures"</span>, <span class="st">"rdd_illus_plot.png"</span>), <span class="at">dpi=</span><span class="dv">300</span>, <span class="at">height=</span><span class="dv">4</span>, <span class="at">width=</span><span class="dv">9</span>, <span class="at">units=</span><span class="st">"in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ --------- 
+&lt; The End &gt;
+ --------- 
+      \
+       \
+
+         __
+        /o \
+      &lt;=   |         ==
+        |__|        /===
+        |   \______/  =
+        \     ====   /
+         \__________/     [ab]</code></pre>
+</div>
 </div>
 </section>
 
